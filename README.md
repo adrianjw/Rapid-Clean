@@ -1,2 +1,31 @@
-# 41026-advanced-software-development
-41026 Advanced Software Development (Spring 2020)
+# 41026 Advanced Software Development
+
+- **University:** University of Technology Sydney
+- **Session:** Spring 2020
+- **Subject:** 41026 Advanced Software Development
+
+## Members
+
+- *12948865* Adrian Wong
+- *13363332* Bao Hoang
+- *13404417* Bryan Guntoro
+- *13254949* Sandy Nguyen
+- *13009093* Thai Tran
+- *13005158* Quang Nhat Minh Le
+
+## Web App Tech Stack
+
+### Front-end
+- 
+
+### Back-end
+- 
+
+## Google Drive Repo
+
+- [Main link](https://drive.google.com/drive/folders/1hdTvi7Bo-zambJzEDHbgPkcgIwm1xmUr?usp=sharing)
+
+## Software & Tools
+
+- [Apache NetBeans](https://netbeans.apache.org/download/index.html)
+- [GitHub Desktop](https://desktop.github.com/)
