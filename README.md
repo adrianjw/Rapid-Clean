@@ -6,9 +6,8 @@
 
 ## Members
 
+- *13404417* Bryan Guntoro (Team Lead)
 - *12948865* Adrian Wong
-- *13363332* Bao Hoang
-- *13404417* Bryan Guntoro
 - *13254949* Sandy Nguyen
 - *13009093* Thai Tran
 - *13005158* Quang Nhat Minh Le
