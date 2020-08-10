@@ -22,7 +22,7 @@
 
 ## Google Drive Repo
 
-- [Main link](https://drive.google.com/drive/folders/1hdTvi7Bo-zambJzEDHbgPkcgIwm1xmUr?usp=sharing)
+- [Main link](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
 
 ## Software & Tools
 
