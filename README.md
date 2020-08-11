@@ -18,8 +18,8 @@
 - HTML/CSS
 
 ### Back-end
+- Java SE 8
 - MongoDB
-- 
 
 ## Links
 
