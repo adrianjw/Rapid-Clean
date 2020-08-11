@@ -15,7 +15,7 @@
 ## Web App Tech Stack
 
 ### Front-end
-- 
+- HTML/CSS
 
 ### Back-end
 - MongoDB
