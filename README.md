@@ -20,9 +20,10 @@
 ### Back-end
 - 
 
-## Google Drive Repo
+## Links
 
-- [Main link](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
+- [Google Drive](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
+- [Slack](https://app.slack.com/client/T0187MBJ8E6/C018XGMRZSL)
 
 ## Software & Tools
 
