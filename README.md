@@ -24,6 +24,7 @@
 
 - [Google Drive](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
 - [Slack](https://app.slack.com/client/T0187MBJ8E6/C018XGMRZSL)
+- [Monday](https://introdcution-to-software-development.monday.com/boards/676182606)
 
 ## Software & Tools
 
