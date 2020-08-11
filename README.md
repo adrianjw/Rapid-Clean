@@ -6,11 +6,11 @@
 
 ## Members
 
-- *13404417* Bryan Guntoro (Team Lead)
-- *12948865* Adrian Wong
-- *13254949* Sandy Nguyen
-- *13009093* Thai Tran
-- *13005158* Quang Nhat Minh Le
+- 13404417 Bryan Guntoro (Team Lead)
+- 12948865 Adrian Wong
+- 13254949 Sandy Nguyen
+- 13009093 Thai Tran
+- 13005158 Quang Nhat Minh Le
 
 ## Web App Tech Stack
 
