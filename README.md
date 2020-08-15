@@ -19,7 +19,8 @@
 - Bootstrap 4
 
 ### Back-end
-- Java SE 8
+- Java EE 8
+- Java Server Pages (JSP)
 - MongoDB
 
 ## Links
