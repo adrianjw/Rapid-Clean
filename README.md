@@ -33,3 +33,4 @@
 
 - [Apache NetBeans](https://netbeans.apache.org/download/index.html)
 - [GitHub Desktop](https://desktop.github.com/)
+- [JDK 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
