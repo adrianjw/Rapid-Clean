@@ -16,13 +16,12 @@
             $("#nav-placeholder").load("navigationbar.jsp");
              });
         </script>
-
     </head>
     <body bgcolor="white">
-<!--Navigation bar, right after <body> tag-->
-<div id="nav-placeholder">
-</div>
-
+        <!--Navigation bar, right after <body> tag-->
+        <div id="nav-placeholder">
+            
+        </div>
         <h1> This is the SERVICES PAGE</h1>
     </body>
 </html>

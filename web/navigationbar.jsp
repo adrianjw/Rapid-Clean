@@ -1,5 +1,3 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,16 +18,15 @@
                 </ul>
             </nav>
             <div class="dropdown">
-            <a class="cta" href="#"><button>MY PROFILE ⯆</button></a>
-            <div class="dropdown-content" style="right:0">
-                <a href="#">MY ACCOUNT</a>
-                <a href="#">MY ADDRESSES</a>
-                <a href="#">MY PAYMENT DETAILS</a>
-                <a href="#">MY ORDERS</a>
-                <a href="#">LOGOUT</a>
+                <a class="cta" href="#"><button>MY PROFILE ⯆</button></a>
+                <div class="dropdown-content" style="right:0">
+                    <a href="#">MY ACCOUNT</a>
+                    <a href="#">MY ADDRESSES</a>
+                    <a href="#">MY PAYMENT DETAILS</a>
+                    <a href="#">MY ORDERS</a>
+                    <a href="#">LOGOUT</a>
+                </div>
             </div>
-            </div>
-
         </header>
         <hr>
     </body>
