@@ -12,11 +12,10 @@
                 position: fixed;
                 top: 0;
                 width: 100%;
+                z-index: 1;
             }
 
-            .sticky + .content {
-                padding-top: 60px;
-            }
+           
         </style>
     </head>
     <body>
