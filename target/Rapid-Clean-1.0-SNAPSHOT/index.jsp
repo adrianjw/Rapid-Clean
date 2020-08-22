@@ -20,6 +20,5 @@
             </tr>        
         </table>
         <p> Login as Cleaner <a href="cleanerhome.jsp">here</a> </p>
-        <p>test 123</p>
     </body>
 </html>
