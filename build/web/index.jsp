@@ -15,9 +15,10 @@
                     <h1> Hi there! </h1>
                     <h2 class="sub"> Are you looking for cleaners to be at your doorstep as soon as possible? <br>
                         Become a member & book one of the rapid cleaners at your area now! </h2> <br>
-                    <a href="home.jsp"><button class="button button2">Log In</button></a> <button class="button button2"> Sign Up </button>
+                        <a href="home.jsp"><button class="button button2"> Log In </button></a> <button class="button button2"> Sign Up </button>
                 </td>
             </tr>        
         </table>
+        <p> Login as Cleaner <a href="cleanerhome.jsp">here</a> </p>
     </body>
 </html>
