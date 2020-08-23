@@ -20,6 +20,6 @@
             </tr>        
         </table>
         <p> Login as Cleaner <a href="cleanerhome.jsp">here</a> </p>
-        <asdp> test </dasas>
+        
     </body>
 </html>
