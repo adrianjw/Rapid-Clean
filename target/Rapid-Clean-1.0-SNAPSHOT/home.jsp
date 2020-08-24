@@ -1,8 +1,4 @@
-<%-- 
-    Document   : home
-    Created on : Aug 21, 2020, 12:27:08 AM
-    Author     : David Guntoro
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
