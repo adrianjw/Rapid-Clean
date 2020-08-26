@@ -28,6 +28,12 @@
 - [Google Drive](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
 - [Slack](https://app.slack.com/client/T0187MBJ8E6/C018XGMRZSL)
 - [Monday](https://introdcution-to-software-development.monday.com/boards/676182606)
+- [Codeship](https://app.codeship.com/rapid-clean)
+- [Heroku](https://rapidclean.herokuapp.com/)
+- [Heroku Console](https://dashboard.heroku.com/apps/rapidclean)
+- [GCP](https://rapid-clean-287217.ts.r.appspot.com/)
+- [GCP Console](https://console.cloud.google.com/home/dashboard?project=rapid-clean-287217)
+- [MongoDB](https://www.mlab.com/databases/heroku_t46f2fmd)
 
 ## Software & Tools
 
