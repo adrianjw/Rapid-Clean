@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-   version="4.0">
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CustomerSignUpServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CustomerSignUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CleanerSignUpServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CleanerSignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerSignUpServlet</servlet-name>
+        <url-pattern>/CustomerSignUpServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CleanerSignUpServlet</servlet-name>
+        <url-pattern>/CleanerSignUpServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

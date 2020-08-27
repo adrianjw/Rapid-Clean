@@ -15,8 +15,9 @@
 ## Web App Tech Stack
 
 ### Front-end
-- HTML 5 / CSS 3
-- Bootstrap 4
+- HTML/CSS
+- JavaScript
+- Bootstrap
 
 ### Back-end
 - Java EE 8
