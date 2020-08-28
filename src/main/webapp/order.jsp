@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Rapid Clean Services</title>
         <style>
             body {
                 /*margin: 0;*/
@@ -137,8 +137,16 @@
             
             
         </style>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
     </head>
     <body>
+        <div id="nav-placeholder">
+            
+        </div>
         
         <h1>Pick A Service That Suits You</h1>
         <!--Start of box-->
