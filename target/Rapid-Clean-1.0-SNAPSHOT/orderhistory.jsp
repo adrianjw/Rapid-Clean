@@ -41,8 +41,17 @@
                 margin-top: 2em;
             }
         </style>
+        
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
     </head>
     <body>
+        <div id="nav-placeholder">
+            
+        </div>
         <a class="btn-back" href="home.jsp">Go back</a>
         <h1>Order History</h1>
         <div class="container">
