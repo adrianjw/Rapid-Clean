@@ -123,6 +123,18 @@
                 margin-bottom: 2em;
             }
             
+            a {
+                width: 73%;
+                text-decoration: none;
+                height: 20px;
+                text-align: center;
+                font-family: sans-serif;
+                padding: 10px;
+                background: #7f8c8d;
+                color: white;
+                font-weight: 300;
+            }
+            
             
         </style>
     </head>
@@ -169,6 +181,8 @@
                 </div>
             </div>
         <!--End of box-->
+        
+        <a href="home.jsp">Back</a>
         </div>
     </body>
 </html>
