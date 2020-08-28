@@ -32,7 +32,7 @@
                         <a href="myaddresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
                         <a href="orderhistory.jsp">MY ORDERS</a>
-                        <a href="rapidloadingscreen.jsp">LOGOUT</a>
+                        <a href="customerlogout.jsp">LOGOUT</a>
                     </div>
                 </div>
 

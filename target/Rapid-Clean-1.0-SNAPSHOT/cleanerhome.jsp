@@ -57,7 +57,7 @@
                 overflow: hidden;
                 margin:auto;
                 position: relative;
-                width: 1750px;;
+                width: 1200px;;
                 max-width: 100%;
                 left:0;
                 right:0;
