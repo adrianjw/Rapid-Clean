@@ -11,9 +11,20 @@
         </script>
         <title>Login</title>
     </head>
-    <body>
-        <div id="nav-placeholder"></div>
-        <a href="home.jsp"><button class="button button2"> Login </button></a>
+    <body style="background-color: #51abff">
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+            </table>
+        </form>
+        <a href="home.jsp"><button class="button button2" type="submit"> Login </button></a>
         <a href="index.jsp"><button class="button button2"> Go Back </button></a>
     </body>
 </html>
