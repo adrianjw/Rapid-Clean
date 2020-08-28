@@ -20,7 +20,7 @@
                 <nav>
                     <ul class="nav__links">
                         <li class="tab"><a href="home.jsp">Home</a></li>
-                        <li class="tab"><a href="#">Book Now</a></li>
+                        <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>
                         <li class="tab"><a href="#">Contact Us</a></li>
                     </ul>
@@ -31,7 +31,7 @@
                         <a href="#">MY ACCOUNT</a>
                         <a href="myaddresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
-                        <a href="#">MY ORDERS</a>
+                        <a href="orderhistory.jsp">MY ORDERS</a>
                         <a href="rapidloadingscreen.jsp">LOGOUT</a>
                     </div>
                 </div>
