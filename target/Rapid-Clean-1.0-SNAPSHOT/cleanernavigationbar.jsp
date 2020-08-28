@@ -38,7 +38,7 @@
                         <a href="#">MY ACCOUNT</a>
                         <a href="#">MY PAYMENTS</a>
                         <a href="#">MY JOB HISTORY</a>
-                        <a href="#">MY RATINGS</a>
+                        <a href="ratings.jsp">MY RATINGS</a>
                         <a href="cleanerlogout.jsp">LOGOUT</a>
                     </div>
                 </div>
