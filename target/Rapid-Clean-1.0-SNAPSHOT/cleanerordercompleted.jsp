@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cleanerorderaccepted
-    Created on : Aug 22, 2020, 10:01:00 PM
-    Author     : David Guntoro
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
