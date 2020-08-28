@@ -2,16 +2,16 @@ package com.uts.rapid.clean.model;
 
 public class Address {
     
-    private String id;
+    private String _id;
     private String customer_id;
     private String streetAddress;
     private String suburb;
     private String state;
     private int postcode;
 
-    public Address(String id, String customer_id, String streetAddress,
+    public Address(String _id, String customer_id, String streetAddress,
             String suburb, String state, int postcode) {
-        this.id = id;
+        this._id = _id;
         this.customer_id = customer_id;
         this.streetAddress = streetAddress;
         this.suburb = suburb;
@@ -20,10 +20,10 @@ public class Address {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
-    public String getCustomer_id() {
+    public String getCustomerId() {
         return customer_id;
     }
 

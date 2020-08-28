@@ -2,15 +2,15 @@ package com.uts.rapid.clean.model;
 
 public class Customer {
     
-    private String id;
+    private String _id;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
 
-    public Customer(String id, String firstName, String lastName,
+    public Customer(String _id, String firstName, String lastName,
             String email, String phone) {
-        this.id = id;
+        this._id = _id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -18,7 +18,7 @@ public class Customer {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public String getFirstName() {
