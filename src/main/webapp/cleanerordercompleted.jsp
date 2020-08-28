@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cleanerorderaccepted
-    Created on : Aug 22, 2020, 10:01:00 PM
-    Author     : David Guntoro
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -52,5 +47,8 @@
             </a>
            
         </div>
+        
+         <div style="padding-top: 155px"></div>
+        <p style="font-size: 13px;"> Need help with anything or want to report an issue? Click <a href="contactus.jsp" style="font-family: arial; font-size: 12px;"> <u>here</u> </a> </p>
     </body>
 </html>
