@@ -3,15 +3,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script>
-          $(function(){
-          $("#nav-placeholder").load("navigationbar.jsp");
-          });
-        </script>
+        <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
         <title>Customer Sign Up</title>
     </head>
-    <body style="background-color: #51abff">
+    <body>
         <form action="" method="POST">
             <table>
                 <tr>
@@ -40,7 +35,7 @@
                 </tr>
             </table>
         </form>
-        <a href="home.jsp"><button class="button button2"> Create Account </button></a>
-        <a href="signup.jsp"><button class="button button2"> Go Back </button></a>
+        <a href="home.jsp"><button class="button"> Create Account </button></a>
+        <a href="signup.jsp"><button class="button"> Go Back </button></a>
     </body>
 </html>
