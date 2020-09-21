@@ -34,7 +34,7 @@
 - [Heroku Console](https://dashboard.heroku.com/apps/rapidclean)
 - [GCP](https://rapid-clean-287217.ts.r.appspot.com/)
 - [GCP Console](https://console.cloud.google.com/home/dashboard?project=rapid-clean-287217)
-- [MongoDB](https://www.mlab.com/databases/heroku_t46f2fmd)
+- [MongoDB Atlas](https://cloud.mongodb.com/v2/5f421021eb308e2f3016e728#clusters)
 
 ## Software & Tools
 
