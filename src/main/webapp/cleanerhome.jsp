@@ -460,12 +460,13 @@
             <% for (Order orderList : orderDet) { 
             AcceptServiceDAO temp = new AcceptServiceDAO();   
             Customer customer = temp.findCustomer(orderList.getCustomer_id());
+            Address address = temp.findAddress(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
                 <div class="course">
                     <div class="preview">
-                        <h6> ORDER <%=orderList.getId()%> </h6>
+                        <h6 style="font-size: 18px"> ORDER #<%=orderList.getId()%> </h6>
                         <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
                         <a> <%=orderList.getDateTime()%> </a>
 
@@ -478,9 +479,9 @@
 
                             <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: <%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
 
-                                Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
+                                <%=orderList.getOrderCategoryDesc()%>
                             </h6>
                         </div>
                         <div class='btn-cont' style="text-align:left;">
