@@ -71,7 +71,7 @@ public class AcceptServiceDAO extends MongoDB {
     }
      // Get Address Details from Address ID
     @SuppressWarnings("unchecked")
-    public Address findAddress(String addressId) {
+    public Address address(String addressId) {
         MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = addresses.find(eq("_id", addressObjId)).first();
@@ -128,7 +128,7 @@ public class AcceptServiceDAO extends MongoDB {
         System.out.println("---------------------------------------------------------------------------------------------------------------");
         shipmentdetails.stream().forEach((shipmentdetail) -> {
             Customer customer = findCustomer(shipmentdetail.getCustomer_id());
-            Address address = findAddress(shipmentdetail.getAddress_id());
+            Address address = address(shipmentdetail.getAddress_id());
             System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", shipmentdetail.getId(), customer.getFirstName(), shipmentdetail.getAddress_id(), shipmentdetail.getResidentialType(), shipmentdetail.getOrderCategoryDesc());
             System.out.println(address.getFullAddress());
         });

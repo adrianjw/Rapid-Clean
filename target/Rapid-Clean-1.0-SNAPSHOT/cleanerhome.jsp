@@ -463,11 +463,13 @@
             @SuppressWarnings("unchecked")
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
+            @SuppressWarnings("unchecked") 
+            Address address = daoObject.address(orderList.getAddress_id());
+            
             @SuppressWarnings("unchecked")
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
             
-            @SuppressWarnings("unchecked") 
-            Address address = (Address) daoObject.findAddress(orderList.getAddress_id());
+            
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
