@@ -58,4 +58,8 @@ public class Address {
     public void setPostcode(int postcode) {
         this.postcode = postcode;
     }
+    
+    public String getFullAddress() {
+        return (streetAddress + ", " + suburb + ", " + state + ", " + postcode);
+    }
 }

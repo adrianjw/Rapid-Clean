@@ -15,15 +15,18 @@ import static com.mongodb.client.model.Updates.*;
 import org.bson.Document;
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MongoDB {
-    public static void main(String[] args) {
+    
+    protected MongoDatabase database; 
+    
+    public MongoDB()
+    {
         String uri = "mongodb+srv://asduser1:uts2020@cluster0.vldlh.mongodb.net/rapidclean?retryWrites=true&w=majority";
         MongoClient mongoClient = MongoClients.create(uri);
-        MongoDatabase database = mongoClient.getDatabase("rapidclean");
-        for (String name : database.listCollectionNames()) {
-            System.out.println(name);
-        }
+        database = mongoClient.getDatabase("rapidclean");
     }
+
 }
