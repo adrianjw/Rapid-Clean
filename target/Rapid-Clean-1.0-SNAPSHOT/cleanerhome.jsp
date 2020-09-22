@@ -396,7 +396,7 @@
             <h1 class="ml11">
                 <span class="text-wrapper">
                     <span class="line line1"></span>
-                    <span class="letters">Welcome ${cleaner.getFirstName()}</span> <!--customer.getName() -->
+                    <span class="letters">Welcome <%=cleaner.getFirstName()%></span> <!--customer.getName() -->
                 </span>
             </h1>
 
@@ -460,8 +460,6 @@
             <% for (Order orderList : orderDet) { 
             AcceptServiceDAO temp = new AcceptServiceDAO();   
             Customer customer = temp.findCustomer(orderList.getCustomer_id());
-            AcceptServiceDAO temp2 = new AcceptServiceDAO();   
-            Address address = temp2.findAddress(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
@@ -480,7 +478,7 @@
 
                             <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address:  <br> 
 
                                 <%=orderList.getOrderCategoryDesc()%>
                             </h6>
