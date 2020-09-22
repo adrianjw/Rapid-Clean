@@ -464,7 +464,7 @@
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
             @SuppressWarnings("unchecked") 
-            Address address = daoObject.address(orderList.getAddress_id());
+            Cleaner cleaners = daoObject.findCleaner(orderList.getAddress_id());
             
             @SuppressWarnings("unchecked")
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
