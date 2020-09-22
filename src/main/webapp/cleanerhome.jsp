@@ -461,6 +461,8 @@
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
+            
+            @SuppressWarnings("unchecked") 
             Address address = (Address) daoObject.findAddress(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
