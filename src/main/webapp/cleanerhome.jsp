@@ -461,10 +461,9 @@
             %>
             <% for (Order orderList : orderDet) { 
             @SuppressWarnings("unchecked")
-            AcceptServiceDAO daoObject = new AcceptServiceDAO();   
-            @SuppressWarnings("unchecked")
-            Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
-            Address address =  new AcceptServiceDAO().findAddress(orderList.getAddress_id());
+            AcceptServiceDAO temp = new AcceptServiceDAO();
+            Customer customer = new AcceptServiceDAO().findCustomer(orderList.getCustomer_id());
+            Address address =  daoObject.findAddress(orderList.getAddress_id());
             %>
             
 
