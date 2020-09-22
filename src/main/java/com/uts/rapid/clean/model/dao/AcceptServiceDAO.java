@@ -62,7 +62,7 @@ public class AcceptServiceDAO extends MongoDB {
     }
 
     // Returns the cleaner object
-    public Cleaner cleaner(String cleanerId) {
+    public Cleaner findCleaner(String cleanerId) {
         MongoCollection<Document> cleaners = super.database.getCollection("Cleaner");
         ObjectId cleanerObjId = new ObjectId(cleanerId);
         Document doc = cleaners.find(eq("_id", cleanerObjId)).first();
@@ -153,7 +153,7 @@ public class AcceptServiceDAO extends MongoDB {
     // Delete OrderAccepted after Inserting to OrderCompleted
     
     // Get Address Details from Address ID
-     public Address address(String addressId) {
+     public Address findAddress(String addressId) {
         MongoCollection<Document> cleaners = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = cleaners.find(eq("_id", addressObjId)).first();
