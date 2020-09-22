@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MongoDB {
     
-    private MongoDatabase database;
+    protected MongoDatabase database;
     private MongoClient mongoClient;
     
     public MongoDB() {
