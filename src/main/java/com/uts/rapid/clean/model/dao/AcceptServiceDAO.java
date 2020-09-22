@@ -18,14 +18,14 @@ public class AcceptServiceDAO extends MongoDB {
 
     private MongoCollection<Document> collection;
 
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
         AcceptServiceDAO obj = new AcceptServiceDAO();
         // obj.insertReject("test1", "test2");
         //Customer customer1 = obj.customer("5f68bb24176a20e541479151");
         //System.out.println(customer1.getFirstName());
         Address address = obj.findAddress("5f69ecf4c0e7ef5f1ea51e0b");
         System.out.println(address.getFullAddress());
-    }
+    } */
 
     // Build a connection with MongoDB Atlas
     public AcceptServiceDAO() {
