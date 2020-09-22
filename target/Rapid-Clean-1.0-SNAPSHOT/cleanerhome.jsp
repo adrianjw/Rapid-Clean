@@ -463,7 +463,7 @@
             @SuppressWarnings("unchecked")
             AcceptServiceDAO temp = new AcceptServiceDAO();
             Customer customer = new AcceptServiceDAO().findCustomer(orderList.getCustomer_id());
-            Address address =  daoObject.findAddress(orderList.getAddress_id());
+            Address address =  temp.findAddress(orderList.getAddress_id());
             %>
             
 
