@@ -127,7 +127,9 @@ public class AcceptServiceDAO extends MongoDB {
         System.out.println("---------------------------------------------------------------------------------------------------------------");
         shipmentdetails.stream().forEach((shipmentdetail) -> {
             Customer customer = findCustomer(shipmentdetail.getCustomer_id());
-            System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", shipmentdetail.getId(), customer.getFirstName(), shipmentdetail.getAddress_id(), shipmentdetail.getResidentialType(), shipmentdetail.getHourlyRate());
+            Address address = findAddress(shipmentdetail.getAddress_id());
+            System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", shipmentdetail.getId(), customer.getFirstName(), shipmentdetail.getAddress_id(), shipmentdetail.getResidentialType(), shipmentdetail.getOrderCategoryDesc());
+            System.out.println(address.getFullAddress());
         });
         System.out.println();
 
