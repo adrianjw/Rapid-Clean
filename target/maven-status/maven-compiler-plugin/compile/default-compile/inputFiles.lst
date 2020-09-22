@@ -6,10 +6,10 @@ C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Ra
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Address.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CustomerSignUpServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\Test.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Cleaner.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderCompleted.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Order.java
+C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AcceptServiceDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderHistoryServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerSignUpServlet.java
@@ -20,8 +20,10 @@ C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Ra
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\RatingDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\LoginServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderAccepted.java
+C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\RejectedOrder.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.java
+C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerCalculateWorkedHoursServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Payment.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderHistory.java

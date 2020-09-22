@@ -15,16 +15,50 @@ public class CustomerSignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Validator validator = new Validator();
+        CustomerDAO customerDAO = new CustomerDAO();
         
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirmPassword");
         String phone = request.getParameter("phone");
         
-        CustomerDAO customerDAO = new CustomerDAO();
-        customerDAO.createCustomer(firstName, lastName, email, password, phone);
-        request.getRequestDispatcher("home.jsp").include(request, response);
+        Validator validator = new Validator();
+        validator.clear(session);
+        int validationTestPassed = 0;
+        
+        if (validator.validateName(firstName))
+            validationTestPassed++;
+        else
+            session.setAttribute("firstNameError", "Invalid name");
+        
+        if (validator.validateName(lastName))
+            validationTestPassed++;
+        else
+            session.setAttribute("lastNameError", "Invalid name");
+        
+        if (validator.validateEmail(email))
+            validationTestPassed++;
+        else
+            session.setAttribute("emailError", "Invalid email address");
+        
+        if (validator.validatePassword(password) && password.equals(confirmPassword))
+            validationTestPassed++;
+        else
+            session.setAttribute("passwordError", "Passwords do not match");
+        
+        if (validator.validatePhoneNumber(phone))
+            validationTestPassed++;
+        else
+            session.setAttribute("phoneNumberError", "Invalid phone number");
+        
+        if (validationTestPassed == 5) {
+            customerDAO.createCustomer(firstName, lastName, email, password, phone);
+            request.getRequestDispatcher("home.jsp").include(request, response);
+        }
+        else {
+            request.getRequestDispatcher("customersignup.jsp").include(request, response);
+        }
     }
 }

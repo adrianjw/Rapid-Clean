@@ -10,7 +10,6 @@ com\uts\rapid\clean\model\OrderCompleted.class
 com\uts\rapid\clean\model\dao\CustomerDAO.class
 com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.class
 com\uts\rapid\clean\model\PaymentDetails.class
-com\uts\rapid\clean\model\dao\Test.class
 com\uts\rapid\clean\controller\CustomerSignUpServlet.class
 com\uts\rapid\clean\model\Payment.class
 com\uts\rapid\clean\resources\JavaEE8Resource.class

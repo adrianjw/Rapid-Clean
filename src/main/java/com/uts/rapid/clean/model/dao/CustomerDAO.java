@@ -2,7 +2,6 @@ package com.uts.rapid.clean.model.dao;
 
 import com.uts.rapid.clean.model.Customer;
 import com.mongodb.client.MongoCollection;
-import com.uts.rapid.clean.model.Customer;
 import org.bson.Document;
 
 public class CustomerDAO extends MongoDB {
@@ -11,7 +10,7 @@ public class CustomerDAO extends MongoDB {
     
     public CustomerDAO() {
         super();
-        collection = super.getCollection("Customer");
+        collection = super.database.getCollection("Customer");
     }
     
     public void createCustomer(String firstName, String lastName, String email, String password, String phone) {

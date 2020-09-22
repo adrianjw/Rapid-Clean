@@ -11,27 +11,27 @@
             <table>
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="firstName" required></td>
+                    <td><input type="text" name="firstName" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="lastName" required></td>
+                    <td><input type="text" name="lastName" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input type="email" name="email" required></td>
+                    <td><input type="email" name="email" maxlength="100" required></td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><input type="text" name="phone" required></td>
+                    <td><input type="text" name="phone" minlength="10" maxlength="10" required></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password" required></td>
+                    <td><input type="password" name="password" minlength="8" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
-                    <td><input type="password" name="confirmPassword" required></td>
+                    <td><input type="password" name="confirmPassword" minlength="8" maxlength="50" required></td>
                 </tr>
             </table>
             <button class="button" type="submit"> Create Account </button>
