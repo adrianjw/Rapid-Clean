@@ -463,10 +463,10 @@
             @SuppressWarnings("unchecked")
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             @SuppressWarnings("unchecked")
-            //Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
-            Address address = daoObject.address(orderList.getAddress_id());
+            Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
             %>
             
+
 
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
@@ -483,9 +483,9 @@
 
                             </div>
 
-                            <h6 style="background-color: #24252A; text-align: left">Customer:   </h6> 
+                            <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: TEST !@# <br> 
 
                                 <%=orderList.getOrderCategoryDesc()%>
                             </h6>
