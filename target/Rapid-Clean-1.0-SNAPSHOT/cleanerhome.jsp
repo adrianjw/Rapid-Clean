@@ -1,3 +1,4 @@
+<%@page import="com.uts.rapid.clean.model.dao.AddressDAO"%>
 <%@page import="com.uts.rapid.clean.model.dao.AcceptServiceDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.uts.rapid.clean.model.*"%>
@@ -464,6 +465,7 @@
             AcceptServiceDAO temp = new AcceptServiceDAO();
             Customer customer = new AcceptServiceDAO().findCustomer(orderList.getCustomer_id());
             Address address =  new Address("123", "12as", "geas1", "asdas","sad", 123);
+            address = new AddressDAO().findAddress(orderList.getAddress_id());
             %>
             
 
