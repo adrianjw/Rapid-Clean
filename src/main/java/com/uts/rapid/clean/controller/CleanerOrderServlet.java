@@ -1,5 +1,6 @@
 package com.uts.rapid.clean.controller;
 
+import com.uts.rapid.clean.model.Cleaner;
 import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.dao.AcceptServiceDAO;
 import com.uts.rapid.clean.model.dao.AddressDAO;
@@ -22,10 +23,14 @@ public class CleanerOrderServlet extends HttpServlet {
         ArrayList <Order> orderD = null;
         
         orderD = manager.orderList();
+        Cleaner cleaner = manager.findCleaner(cleanerId);
+        
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
+            session.setAttribute("cleaner", cleaner);
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
         } else {
+            session.setAttribute("cleaner", cleaner);
             session.setAttribute("orderErr", "There are no orders available around your area");
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
         }
