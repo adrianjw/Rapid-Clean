@@ -69,8 +69,9 @@ public class AcceptServiceDAO extends MongoDB {
         Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (int) doc.get("bankBsb"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolder"), (String) doc.get("phone"));
         return cleaner;
     }
-        // Get Address Details from Address ID
-     public Address findAddress(String addressId) {
+     // Get Address Details from Address ID
+    @SuppressWarnings("unchecked")
+    public Address findAddress(String addressId) {
         MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = addresses.find(eq("_id", addressObjId)).first();
