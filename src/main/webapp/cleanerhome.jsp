@@ -456,10 +456,14 @@
             <br>
             <br>
             <br>
-            <% if (orderDet != null) { %>
+            <% 
+              if (orderDet != null) { 
+            %>
             <% for (Order orderList : orderDet) { 
+            @SuppressWarnings("unchecked")
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
+            @SuppressWarnings("unchecked")
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
             
             @SuppressWarnings("unchecked") 
