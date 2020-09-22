@@ -462,8 +462,8 @@
               if (orderDet != null) { 
             %>
             <% for (Order orderList : orderDet) { 
-            //Customer customer = orderManager.findCustomer(orderList.getCustomer_id());
-            Address address = orderManager.findAddress(orderList.getAddress_id());
+            Customer customer = orderManager.findCustomer(orderList.getCustomer_id());
+            //Address address = orderManager.findAddress(orderList.getAddress_id());
             %>
             
 
@@ -483,12 +483,12 @@
 
                             </div>
 
-                            <h6 style="background-color: #24252A; text-align: left">Customer:  </h6> 
+                            <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
                             <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
                                 <br> 
                                
-                                Address: <%=address.getFullAddress()%> <br> 
+                                Address:  <br> 
                                 
 
                                 Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
