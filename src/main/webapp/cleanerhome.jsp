@@ -458,10 +458,10 @@
             <br>
             <% if (orderDet != null) { %>
             <% for (Order orderList : orderDet) { 
-            AcceptServiceDAO temp = new AcceptServiceDAO();   
+            AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
-            Customer customer = temp.findCustomer(orderList.getCustomer_id());
-            Address address = temp.findAddress(orderList.getAddress_id());
+            Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
+            Address address = daoObject.findAddress(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
