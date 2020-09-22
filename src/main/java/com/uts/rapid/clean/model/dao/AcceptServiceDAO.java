@@ -154,9 +154,9 @@ public class AcceptServiceDAO extends MongoDB {
     
     // Get Address Details from Address ID
      public Address findAddress(String addressId) {
-        MongoCollection<Document> cleaners = super.database.getCollection("Address");
+        MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
-        Document doc = cleaners.find(eq("_id", addressObjId)).first();
+        Document doc = addresses.find(eq("_id", addressObjId)).first();
         Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address;
     }
