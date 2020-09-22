@@ -9,6 +9,7 @@
         <%
             
         Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+        AcceptServiceDAO orderManager = (AcceptServiceDAO) session.getAttribute("orderManager");
         ArrayList <Order> orderDet = (ArrayList) session.getAttribute("orderD");
         String orderErr = (String) session.getAttribute("orderErr");
         %>
@@ -461,11 +462,7 @@
               if (orderDet != null) { 
             %>
             <% for (Order orderList : orderDet) { 
-            @SuppressWarnings("unchecked")
-            AcceptServiceDAO temp = new AcceptServiceDAO();
-            Customer customer = new AcceptServiceDAO().findCustomer(orderList.getCustomer_id());
-            String tempS = new String();
-            tempS = temp.addressDets(orderList.getAddress_id());
+            Customer customer = orderManager.findCustomer(orderList.getCustomer_id());
             
             %>
             
@@ -490,8 +487,8 @@
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
                             <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=tempS%>
                                 <br> 
-                               <% Address address = temp.findAddress(orderList.getAddress_id()); %>
-                                Address: <%=address.getStreetAddress()%> <br> 
+                               
+                                Address:  <br> 
                                 
 
                                 <%=orderList.getOrderCategoryDesc()%>
