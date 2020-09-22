@@ -88,6 +88,15 @@ public class AcceptServiceDAO extends MongoDB {
         Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address;
     }
+    
+    public String addressDets (String addressId)
+    {
+        MongoCollection<Document> addresses = super.database.getCollection("Address");
+        ObjectId addressObjId = new ObjectId(addressId);
+        Document doc = addresses.find(eq("_id", addressObjId)).first();
+        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
+        return address.getFullAddress();
+    }
 
     // Returns the customer object
     public Customer findCustomer(String customerId) {

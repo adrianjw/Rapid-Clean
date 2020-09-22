@@ -464,7 +464,8 @@
             @SuppressWarnings("unchecked")
             AcceptServiceDAO temp = new AcceptServiceDAO();
             Customer customer = new AcceptServiceDAO().findCustomer(orderList.getCustomer_id());
-            // Address address =  new Address("123", "12as", "geas1", "asdas","sad", 123);
+            String tempS = new String();
+            tempS = temp.addressDets(orderList.getAddress_id());
             
             %>
             
@@ -487,7 +488,7 @@
 
                             <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=tempS%>
                                 <br> 
                                <% Address address = temp.findAddress(orderList.getAddress_id()); %>
                                 Address: <%=address.getStreetAddress()%> <br> 
