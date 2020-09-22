@@ -462,14 +462,14 @@
             <% for (Order orderList : orderDet) { 
             @SuppressWarnings("unchecked")
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
-            
-            @SuppressWarnings("unchecked") 
-            Cleaner cleaners = daoObject.findCleaner(orderList.getAddress_id());
-            
             @SuppressWarnings("unchecked")
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
+            %>
             
-            
+            <% 
+            AcceptServiceDAO newObject = new AcceptServiceDAO();
+            Address address = null;
+            address = newObject.address(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
@@ -488,7 +488,7 @@
 
                             <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: <%=cleaner.getFirstName()%> <br> 
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
 
                                 <%=orderList.getOrderCategoryDesc()%>
                             </h6>
