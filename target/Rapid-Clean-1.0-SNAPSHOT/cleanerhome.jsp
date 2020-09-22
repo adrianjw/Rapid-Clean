@@ -461,7 +461,7 @@
             AcceptServiceDAO daoObject = new AcceptServiceDAO();   
             
             Customer customer = daoObject.findCustomer(orderList.getCustomer_id());
-            Address address = daoObject.findAddress(orderList.getAddress_id());
+            Address address = (Address) daoObject.findAddress(orderList.getAddress_id());
             %>
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
