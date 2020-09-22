@@ -19,11 +19,12 @@ public class CleanerOrderServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String cleanerId = request.getParameter("cleanerId");
-        AcceptServiceDAO manager = new AcceptServiceDAO();
+        AcceptServiceDAO orderManager = new AcceptServiceDAO();
         ArrayList <Order> orderD = null;
         
-        orderD = manager.orderList();
-        Cleaner cleaner = manager.findCleaner(cleanerId);
+        orderD = orderManager.orderList();
+        Cleaner cleaner = orderManager.findCleaner(cleanerId);
+        session.setAttribute("orderManager", orderManager);
         
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
