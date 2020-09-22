@@ -1,7 +1,9 @@
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
 com\uts\rapid\clean\controller\CleanerSignUpServlet.class
 com\uts\rapid\clean\controller\Validator.class
+com\uts\rapid\clean\model\dao\AcceptServiceDAO.class
 com\uts\rapid\clean\controller\OrderHistoryServlet.class
+com\uts\rapid\clean\controller\CleanerOrderServlet.class
 com\uts\rapid\clean\controller\OrderServlet.class
 com\uts\rapid\clean\model\Address.class
 com\uts\rapid\clean\model\OrderCompleted.class
@@ -18,6 +20,7 @@ com\uts\rapid\clean\controller\CleanerRejectOrderServlet.class
 com\uts\rapid\clean\model\dao\MongoDB.class
 com\uts\rapid\clean\controller\LoginServlet.class
 com\uts\rapid\clean\model\dao\RatingDAO.class
+com\uts\rapid\clean\model\RejectedOrder.class
 com\uts\rapid\clean\model\Order.class
 com\uts\rapid\clean\model\Cleaner.class
 com\uts\rapid\clean\model\OrderHistory.class

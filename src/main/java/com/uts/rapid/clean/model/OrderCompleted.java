@@ -8,13 +8,16 @@ package com.uts.rapid.clean.model;
 import java.security.Timestamp;
 
 public class OrderCompleted {
+
     private String _id;
+    private String order_id;
     private Timestamp startTime;
-    private Timestamp  endTime;
+    private Timestamp endTime;
     private double workedHours;
 
-    public OrderCompleted(String _id, Timestamp startTime, Timestamp endTime, double workedHours) {
+    public OrderCompleted(String _id, String order_id, Timestamp startTime, Timestamp endTime, double workedHours) {
         this._id = _id;
+        this.order_id = order_id;
         this.startTime = startTime;
         this.endTime = endTime;
         this.workedHours = workedHours;
@@ -22,6 +25,14 @@ public class OrderCompleted {
 
     public String getId() {
         return _id;
+    }
+
+    public String getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;
     }
 
     public void setId(String _id) {
@@ -51,6 +62,5 @@ public class OrderCompleted {
     public void setWorkedHours(double workedHours) {
         this.workedHours = workedHours;
     }
-    
-    
+
 }
