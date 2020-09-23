@@ -24,7 +24,7 @@ public class CleanerOrderServlet extends HttpServlet {
         
         orderD = orderManager.orderList();
         Cleaner cleaner = orderManager.findCleaner(cleanerId);
-        session.setAttribute("orderManager", orderManager);
+        
         
         if (orderD != null) {
             session.setAttribute("orderD", orderD);

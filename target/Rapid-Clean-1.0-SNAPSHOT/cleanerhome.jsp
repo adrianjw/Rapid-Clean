@@ -461,9 +461,10 @@
             <% 
               if (orderDet != null) { 
             %>
-            <% for (Order orderList : orderDet) { 
-            Customer customer = orderManager.findCustomer(orderList.getCustomer_id());
-            Order order = orderManager.order(orderList.getId());
+            <% for (Order orderList : orderDet) {
+            AcceptServiceDAO temp = new AcceptServiceDAO();
+            Customer customer = temp.findCustomer(orderList.getCustomer_id());
+            Address address = temp.address(orderList.getAddress_id());
             %>
             
 
@@ -488,7 +489,7 @@
                             <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
                                 <br> 
                                
-                                Address:  <%=order.getAddress_id()%><br> 
+                                Address:  <%=address.getStreetAddress()%><br> 
                                 
 
                                 Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
