@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class CleanerOrderServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String cleanerId = request.getParameter("cleanerId");
