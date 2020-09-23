@@ -5,8 +5,10 @@
  */
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 
-public class Cleaner {
+
+public class Cleaner implements Serializable {
     private String _id;
     private String firstName;
     private String lastName;
