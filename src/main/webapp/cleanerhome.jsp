@@ -496,7 +496,7 @@
                             </h6>
                         </div>
                         <div class='btn-cont' style="text-align:left;">
-                            <a class='btn' href="cleanerorderaccepted.jsp"  style="color: #3CB371">
+                            <a class='btn' href="CleanerOrderAcceptedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderList.getId()%>&customerId<%=orderList.getCustomer_id()%>"  style="color: #3CB371">
                                 Accept Order
                                 <span class='line-1'></span>
                                 <span class='line-2'></span>

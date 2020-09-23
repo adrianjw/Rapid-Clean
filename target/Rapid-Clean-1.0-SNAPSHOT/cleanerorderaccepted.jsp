@@ -4,10 +4,21 @@
     Author     : David Guntoro
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.uts.rapid.clean.model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+            Order order = (Order) session.getAttribute("order");
+            Customer customer = (Customer) session.getAttribute("customer");
+            Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+            Address address = (Address) session.getAttribute("address");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            String date = DATE_FORMAT.format(order.getDateTime());
+
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -16,7 +27,7 @@
             });
         </script>
 
-        <title>Order #12371231ADAS</title> <!-- order.getId() -->
+        <title>Order #<%=order.getId()%></title>
         <style>
 
             body {
@@ -134,16 +145,16 @@
         <div id="nav-placeholder">
         </div>
         <!-- Obtain the customer details from the customer_id provided in the order-->
-        <h1 style="text-transform: uppercase; font-size: 35px; padding-top: 50px; padding-bottom: 30px;"> Order #12831921D32OA ACCEPTED</h1>
+        <h1 style="text-transform: uppercase; font-size: 35px; padding-top: 50px; padding-bottom: 30px;"> Order #<%=order.getId()%> ACCEPTED</h1>
         <hr>
         <br>
         <br>
         <div class="container">
             <div class="course">
                 <div class="preview">
-                    <h6> ORDER #12831921D32OA </h6>
+                    <h6> ORDER #<%=order.getId()%>< </h6>
                     <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                    <a> 16/08/2020, 5:20 PM </a>
+                    <a> <%=date%>< </a>
 
                 </div>
                 <div class="info">
@@ -152,14 +163,14 @@
 
                         </div>
 
-                        <h6 style="background-color: #24252A; text-align: left">Customer: Bryan Guntoro </h6> 
-                        <h2  style="background-color: #24252A; text-align: left""> PREMIUM CLEANING </h2>
-                        <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $39/hr <br> Residential type: House <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
+                        <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%> </h6> 
+                        <h2  style="background-color: #24252A; text-align: left""> <%=order.getOrderCategory()%> </h2>
+                        <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=order.getHourlyRate()%>/hr <br> Residential type: <%=order.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
 
-                            Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
+                            Cleaning Involved: <%=order.getOrderCategoryDesc()%>
                         </h6>
 
-                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <!-- customer.getFirstName() --> Bryan: <!-- customer.getPhone() --> 0410053712 </h6>
+                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <%=customer.getFirstName()%>: <%=customer.getPhone()%> </h6>
                     </div>
 
 
