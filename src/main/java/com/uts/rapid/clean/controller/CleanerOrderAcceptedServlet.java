@@ -20,14 +20,14 @@ public class CleanerOrderAcceptedServlet extends HttpServlet {
          String customerId = request.getParameter("customerId");
          String cleanerId = request.getParameter("cleanerId");
          
-         Order order = orderManager.order(orderId);
+         Order orderAccepted = orderManager.order(orderId);
          Customer customer = orderManager.findCustomer(customerId);
-         Address address = orderManager.address(order.getAddress_id());
+         Address address = orderManager.address(orderAccepted.getAddress_id());
          
          // Insert the order to AcceptOrder Database to avoid being displayed for other cleaners
          //orderManager.insertAcceptOrder(orderId, cleanerId);
          
-         session.setAttribute("order", order);
+         session.setAttribute("orderAccepted", orderAccepted);
          session.setAttribute("customer", customer);
          session.setAttribute("address", address);
          request.getRequestDispatcher("cleanerorderaccepted.jsp").include(request, response);
