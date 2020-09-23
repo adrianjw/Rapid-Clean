@@ -53,9 +53,9 @@ public class AcceptServiceDAO extends MongoDB {
 
     // Returns the Order object to retrieve its details
     public Order order(String orderId) {
-        MongoCollection<Document> customers = super.database.getCollection("Customer");
+        MongoCollection<Document> orders = super.database.getCollection("Order");
         ObjectId orderObjId = new ObjectId(orderId);
-        Document doc = customers.find(eq("_id", orderObjId)).first();
+        Document doc = orders.find(eq("_id", orderObjId)).first();
         Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"), (String) doc.get("resdientialType"), (double) doc.get("hourlyRate"), (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"), (Date) doc.get("dateTime"));
         return order;
     }
