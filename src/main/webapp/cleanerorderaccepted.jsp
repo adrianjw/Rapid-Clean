@@ -15,7 +15,7 @@
             Customer customer = (Customer) session.getAttribute("customer");
             Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
             Address address = (Address) session.getAttribute("address");
-            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
             String date = DATE_FORMAT.format(orderAccepted.getDateTime());
 
         %>
@@ -152,9 +152,9 @@
         <div class="container">
             <div class="course">
                 <div class="preview">
-                    <h6> ORDER #<%=orderAccepted.getId()%>< </h6>
+                    <h6> ORDER #<%=orderAccepted.getId()%></h6>
                     <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                    <a> <%=date%>< </a>
+                    <a> <%=date%> </a>
 
                 </div>
                 <div class="info">
@@ -164,7 +164,7 @@
                         </div>
 
                         <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%> </h6> 
-                        <h2  style="background-color: #24252A; text-align: left""> <%=orderAccepted.getOrderCategory()%> </h2>
+                        <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderAccepted.getOrderCategory()%> </h2>
                         <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderAccepted.getHourlyRate()%>/hr <br> Residential type: <%=orderAccepted.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
 
                             Cleaning Involved: <%=orderAccepted.getOrderCategoryDesc()%>
