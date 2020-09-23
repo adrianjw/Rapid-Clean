@@ -463,7 +463,7 @@
             %>
             <% for (Order orderList : orderDet) { 
             Customer customer = orderManager.findCustomer(orderList.getCustomer_id());
-            //Address address = orderManager.findAddress(orderList.getAddress_id());
+            Order order = orderManager.order(orderList.getId());
             %>
             
 
@@ -488,7 +488,7 @@
                             <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
                                 <br> 
                                
-                                Address:  <br> 
+                                Address:  <%=order.getAddress_id()%><br> 
                                 
 
                                 Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
