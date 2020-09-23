@@ -25,6 +25,6 @@
                 </td>
             </tr>        
         </table>
-        <p> Login as Cleaner <a href="CleanerOrderServlet?cleanerId='<%=cleaner.getId()%>'">here</a> </p>
+        <p> Login as Cleaner <a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">here</a> </p>
     </body>
 </html>
