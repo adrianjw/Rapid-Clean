@@ -20,6 +20,10 @@
         <servlet-name>CleanerOrderServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CleanerOrderAcceptedServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>CleanerOrderServlet</servlet-name>
         <url-pattern>/CleanerOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
+        <url-pattern>/CleanerOrderAcceptedServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
