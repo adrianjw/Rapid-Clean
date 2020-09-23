@@ -489,7 +489,7 @@
                             <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
                                 <br> 
                                
-                                Address:  <%=address.getStreetAddress()%><br> 
+                                Address:  <%=address.getFullAddress()%><br> 
                                 
 
                                 Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
