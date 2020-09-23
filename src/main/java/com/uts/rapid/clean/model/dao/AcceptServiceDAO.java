@@ -23,8 +23,6 @@ public class AcceptServiceDAO extends MongoDB {
         // obj.insertReject("test1", "test2");
         //Customer customer1 = obj.customer("5f68bb24176a20e541479151");
         //System.out.println(customer1.getFirstName());
-        Address address = obj.findAddress("5f69ecf4c0e7ef5f1ea51e0b");
-        System.out.println(address.getFullAddress());
     } 
 
     // Build a connection with MongoDB Atlas
@@ -80,14 +78,6 @@ public class AcceptServiceDAO extends MongoDB {
         return address;
     }
     
-    public Address findAddress(String addressId)
-    {
-        MongoCollection<Document> addresses = super.database.getCollection("Address");
-        ObjectId addressObjId = new ObjectId(addressId);
-        Document doc = addresses.find(eq("_id", addressObjId)).first();
-        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
-        return address;
-    }
     
     public String addressDets (String addressId)
     {
@@ -180,6 +170,10 @@ public class AcceptServiceDAO extends MongoDB {
                 System.out.println("THIS IS NOT EMPTY");
         }
     } */
+    
+    // Delete Order (Rejected)
+    
+    
     // Delete OrderAccepted after Inserting to OrderCompleted
     
 

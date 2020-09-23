@@ -20,21 +20,20 @@ public class CleanerOrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String cleanerId = request.getParameter("cleanerId");
         AcceptServiceDAO orderManager = new AcceptServiceDAO();
-        ArrayList <Order> orderD = null;
-        
+        ArrayList<Order> orderD = null;
+
         orderD = orderManager.orderList();
-        Cleaner cleaner = orderManager.findCleaner(cleanerId);
-        
-        
+        Cleaner cleaner = null;
+        cleaner = orderManager.findCleaner(cleanerId);
+        session.setAttribute("cleaner", cleaner);
+
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
-            session.setAttribute("cleaner", cleaner);
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
         } else {
-            session.setAttribute("cleaner", cleaner);
             session.setAttribute("orderErr", "There are no orders available around your area");
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
         }
-        }
-        
     }
+
+}

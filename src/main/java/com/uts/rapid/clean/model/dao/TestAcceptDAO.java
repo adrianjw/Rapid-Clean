@@ -22,7 +22,7 @@ public class TestAcceptDAO {
         ArrayList<Order> orderList = test1.orderList();
         for (Order orderL : orderList)
         {
-            Address address =  test1.findAddress(orderL.getAddress_id());
+            Address address =  test1.address(orderL.getAddress_id());
             Customer customer = test1.findCustomer(orderL.getCustomer_id());
             
             System.out.println(address.getFullAddress());
