@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.uts.rapid.clean.model.dao.AddressDAO"%>
 <%@page import="com.uts.rapid.clean.model.dao.AcceptServiceDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -465,6 +466,8 @@
             AcceptServiceDAO temp = new AcceptServiceDAO();
             Customer customer = temp.findCustomer(orderList.getCustomer_id());
             Address address = temp.address(orderList.getAddress_id());
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+            String date = DATE_FORMAT.format(orderList.getDateTime());
             %>
             
 
@@ -475,7 +478,7 @@
                     <div class="preview">
                         <h6> ORDER #<%=orderList.getId()%> </h6>
                         <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                        <a> <%=orderList.getDateTime()%> </a>
+                        <a> <%=date%> </a>
 
                     </div>
                     <div class="info">
