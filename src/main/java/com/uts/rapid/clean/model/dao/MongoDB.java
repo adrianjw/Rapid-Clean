@@ -22,14 +22,14 @@ public class MongoDB {
         String uri = "mongodb+srv://asduser1:uts2020@cluster0.vldlh.mongodb.net/rapidclean?retryWrites=true&w=majority";
         mongoClient = MongoClients.create();
         database = mongoClient.getDatabase("rapidclean");
-        MongoCollection<Document> collection = database.getCollection("Order");
-        Document document = new Document("customer_id", "507f1f77bcf86cd799439011")
-                                .append("residentialType", "apartment")
-                                .append("hourlyRate", 50)
-                                .append("orderCategory", "DELUXE")
-                                .append("orderCategoryDesc", "Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.")
-                                .append("dateTime", new Date());
-        collection.insertOne(document);
+//        MongoCollection<Document> collection = database.getCollection("Order");
+//        Document document = new Document("customer_id", "507f1f77bcf86cd799439011")
+//                                .append("residentialType", "apartment")
+//                                .append("hourlyRate", 50)
+//                                .append("orderCategory", "DELUXE")
+//                                .append("orderCategoryDesc", "Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.")
+//                                .append("dateTime", new Date());
+//        collection.insertOne(document);
     }
     
 //    public static void main(String args[]) {
