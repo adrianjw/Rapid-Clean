@@ -7,47 +7,47 @@
         <title>Cleaner Sign Up</title>
     </head>
     <body>
-        <form action="" method="POST">
+        <form action="CleanerSignUpServlet" method="POST">
             <table>
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="firstName"></td>
+                    <td><input type="text" name="firstName" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="lastName"></td>
+                    <td><input type="text" name="lastName" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input type="email" name="email"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td>Confirm Password</td>
-                    <td><input type="password" name="confirmPassword"></td>
+                    <td><input type="email" name="email" maxlength="100" required></td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><input type="text" name="phoneNumber"></td>
+                    <td><input type="text" name="phoneNumber" minlength="10" maxlength="10" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" minlength="8" maxlength="50" required></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="confirmPassword" minlength="8" maxlength="50" required></td>
                 </tr>
                 <tr>
                     <td>BSB Number</td>
-                    <td><input type="text" name="bsbNumber"></td>
+                    <td><input type="text" name="bankBsbNumber" minlength="6" maxlength="6" required>></td>
                 </tr>
                 <tr>
                     <td>Account Number</td>
-                    <td><input type="text" name="accountNumber"></td>
+                    <td><input type="text" name="bankAccountNumber" minlength="6" maxlength="6" required>></td>
                 </tr>
                 <tr>
                     <td>Account Holder Name</td>
-                    <td><input type="text" name="accountHolderName"></td>
+                    <td><input type="text" name="bankAccountHolderName" maxlength="100" required>></td>
                 </tr>
             </table>
+            <button class="button" type="submit"> Create Account </button>
+            <a href="signup.jsp"><button class="button" type="button"> Go Back </button></a>
         </form>
-        <a href="home.jsp"><button class="button"> Create Account </button></a>
-        <a href="signup.jsp"><button class="button"> Go Back </button></a>
     </body>
 </html>

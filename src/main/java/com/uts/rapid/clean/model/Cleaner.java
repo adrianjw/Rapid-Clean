@@ -17,7 +17,7 @@ public class Cleaner implements Serializable {
     private int bankBsb;
     private int bankAccountNumber;
     private String bankAccountHolderName;
-    private String phone;
+    private String phoneNumber;
 
     public Cleaner(String _id, String firstName, String lastName, String email, String password, int bankBsb, int bankAccountNumber, String bankAccountHolderName, String phone) {
         this._id = _id;
@@ -28,7 +28,7 @@ public class Cleaner implements Serializable {
         this.bankBsb = bankBsb;
         this.bankAccountNumber = bankAccountNumber;
         this.bankAccountHolderName = bankAccountHolderName;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getId() {
@@ -96,12 +96,10 @@ public class Cleaner implements Serializable {
     }
 
     public String getPhone() {
-        return phone;
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-    
-    
 }
