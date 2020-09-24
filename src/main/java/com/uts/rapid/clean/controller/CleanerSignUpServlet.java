@@ -56,17 +56,17 @@ public class CleanerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
-        if (validator.validatePhoneNumber(bankBsbNumber))
+        if (validator.validateBankNumber(bankBsbNumber))
             validationTestPassed++;
         else
             session.setAttribute("bankBsbNumberError", "Invalid BSB number");
         
-        if (validator.validatePhoneNumber(bankAccountNumber))
+        if (validator.validateBankNumber(bankAccountNumber))
             validationTestPassed++;
         else
             session.setAttribute("bankAccountNumberError", "Invalid account number");
         
-        if (validator.validatePhoneNumber(bankAccountHolderName))
+        if (validator.validateBankName(bankAccountHolderName))
             validationTestPassed++;
         else
             session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
