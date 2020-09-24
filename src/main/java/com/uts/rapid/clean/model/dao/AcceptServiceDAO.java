@@ -115,8 +115,8 @@ public class AcceptServiceDAO extends MongoDB {
     
         // Find OrderAccepted Object
     public OrderCompleted findOrderCompleted(String orderId) {
-        MongoCollection<Document> customers = super.database.getCollection("Customer");
-        Document doc = customers.find(eq("order_id", orderId)).first();
+        MongoCollection<Document> orderCompletedDB = super.database.getCollection("OrderCompleted");
+        Document doc = orderCompletedDB.find(eq("order_id", orderId)).first();
         ObjectId orderCompletedObjId = (ObjectId) doc.get("_id");
         String newOrderCompletedId = orderCompletedObjId.toString();
         OrderCompleted orderCompleted = new OrderCompleted(newOrderCompletedId, (String) doc.get("order_id"), (Date) doc.get("startTime"), (Date) doc.get("endTime"), (double) doc.get("workedHours"), (String) doc.get("cleaner_id"));
