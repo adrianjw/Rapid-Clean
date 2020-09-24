@@ -42,13 +42,29 @@ public class AcceptServiceDAO extends MongoDB {
         rejectedOrder.insertOne(document);
     }
 
-    //Insert to the Accepted Orders Collection - for Cleaners (Accept Order button pressed)
+    //Insert to the  Orders Accepted Collection - for Cleaners (Accept Order button pressed)
     public void insertAcceptOrder(String orderId, String cleanerId) {
         MongoCollection<Document> orderAccepted = super.database.getCollection("OrderAccepted");
-        Document document = new Document("order_id", orderId)
-                .append("cleaner_id", cleanerId);
+        ObjectId orderObjId = new ObjectId(orderId);
+        ObjectId cleanerObjId = new ObjectId(cleanerId);
+        Document document = new Document("order_id", orderObjId)
+                .append("cleaner_id", cleanerObjId);
 
         orderAccepted.insertOne(document);
+    }
+    
+    // Insert to the Order Completed Collection - for Cleaners (Finish button pressed)
+    public void insertCompletedOrder (String order_id, Date startTime, Date endTime, double workedHours, String cleaner_id)
+    {
+        MongoCollection<Document> orderCompleted = super.database.getCollection("OrderCompleted");
+        Document document = new Document("order_id", order_id)
+                .append("cleaner_id", cleaner_id)
+                .append("startTime", startTime)
+                .append("endTime", endTime)
+                .append("workedHours", workedHours);
+
+
+        orderCompleted.insertOne(document);
     }
 
     // Returns the Order object to retrieve its details
@@ -96,6 +112,17 @@ public class AcceptServiceDAO extends MongoDB {
         Customer customer = new Customer(customerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phone"));
         return customer;
     }
+    
+        // Find OrderAccepted Object
+    public OrderCompleted findOrderCompleted(String orderId) {
+        MongoCollection<Document> customers = super.database.getCollection("Customer");
+        Document doc = customers.find(eq("order_id", orderId)).first();
+        ObjectId orderCompletedObjId = (ObjectId) doc.get("_id");
+        String newOrderCompletedId = orderCompletedObjId.toString();
+        OrderCompleted orderCompleted = new OrderCompleted(newOrderCompletedId, (String) doc.get("order_id"), (Date) doc.get("startTime"), (Date) doc.get("endTime"), (double) doc.get("workedHours"), (String) doc.get("cleaner_id"));
+        return orderCompleted;
+    }
+    
 
     // List out the current orders which has not been Accepted (Does not exist in orderAccepted collection)
     public ArrayList<Order> orderList() {
@@ -178,5 +205,5 @@ public class AcceptServiceDAO extends MongoDB {
     
 
     
-    // Find OrderAccepted Object
+
 }
