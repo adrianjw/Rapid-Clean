@@ -1,12 +1,26 @@
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Address.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\LoginServlet.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\CustomerDAO.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerViewRatingsServlet.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Customer.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerSignUpServlet.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\MongoDB.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CustomerSignUpServlet.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\RatingDAO.java
-D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Rating.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CustomerSignUpServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Customer.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/RatingDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerSignUpServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Rating.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerRejectOrderServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/MongoDB.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderAccepted.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderAcceptedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderFormServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/AddressDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderHistory.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/resources/JavaEE8Resource.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderCompletedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Address.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderHistoryServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderCompleted.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/PaymentDetails.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerViewRatingsServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/LoginServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Payment.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Order.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/CustomerDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerCalculateWorkedHoursServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Cleaner.java

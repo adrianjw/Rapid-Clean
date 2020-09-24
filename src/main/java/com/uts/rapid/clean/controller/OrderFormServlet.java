@@ -5,50 +5,28 @@
  */
 package com.uts.rapid.clean.controller;
 
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.MongoCredential;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.uts.rapid.clean.model.dao.MongoDB;
+import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.uts.rapid.clean.model.Order;
 import javax.servlet.http.HttpSession;
-import org.bson.Document;
-import org.bson.types.ObjectId;
 
 /**
  *
  * @author trandamtrungthai
  */
-public class OrderServlet extends HttpServlet {
+public class OrderFormServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-//        String orderCategory = request.getParameter("orderCategory");
-//        int price = Integer.parseInt(request.getParameter("price"));
-//        session.setAttribute("service", service);
-        
-        request.getRequestDispatcher("orderform.jsp").include(request, response);
-        
-        
-           
-    }
+       
+        }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -76,7 +54,19 @@ public class OrderServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        String orderCategory = request.getParameter("orderCategory");
+        String orderCategoryDesc = request.getParameter("orderCategoryDesc");
+        int price = Integer.parseInt(request.getParameter("price"));
+        String resident = request.getParameter("resident");
+        Date dateTime = new Date();
+        System.out.println(dateTime);
+        
+        OrderDAO order = new OrderDAO();
+        
+        order.addOrder(orderCategory, price, resident, orderCategoryDesc, dateTime);
+        
+        request.getRequestDispatcher("home.jsp").include(request, response);
     }
 
     /**
