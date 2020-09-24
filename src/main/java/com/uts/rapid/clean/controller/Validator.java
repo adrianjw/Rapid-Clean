@@ -12,6 +12,7 @@ public class Validator implements Serializable {
     private String passwordPattern = "[a-zA-Z0-9!@#$%^&*]{8,}";
     private String phoneNumberPattern = "0[23478]\\d{8}";
     private String bankNumberPattern = "\\d{6}";
+    private String bankNamePattern = "([A-Z][a-z]+)( [A-Z][a-z]+)*";
     
     public Validator() {}
     
@@ -39,6 +40,10 @@ public class Validator implements Serializable {
     
     public boolean validateBankNumber(String value) {
         return validate(bankNumberPattern, value);
+    }
+    
+    public boolean validateBankName(String value) {
+        return validate(bankNamePattern, value);
     }
     
     public void clear(HttpSession session) {

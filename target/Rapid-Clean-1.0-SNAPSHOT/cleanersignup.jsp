@@ -35,15 +35,15 @@
                 </tr>
                 <tr>
                     <td>BSB Number</td>
-                    <td><input type="text" name="bankBsbNumber" minlength="6" maxlength="6" required>></td>
+                    <td><input type="text" name="bankBsbNumber" minlength="6" maxlength="6" required></td>
                 </tr>
                 <tr>
                     <td>Account Number</td>
-                    <td><input type="text" name="bankAccountNumber" minlength="6" maxlength="6" required>></td>
+                    <td><input type="text" name="bankAccountNumber" minlength="6" maxlength="6" required></td>
                 </tr>
                 <tr>
                     <td>Account Holder Name</td>
-                    <td><input type="text" name="bankAccountHolderName" maxlength="100" required>></td>
+                    <td><input type="text" name="bankAccountHolderName" maxlength="100" required></td>
                 </tr>
             </table>
             <button class="button" type="submit"> Create Account </button>
