@@ -43,17 +43,22 @@ public class CustomerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("emailError", "Invalid email address");
         
-        if (validator.validatePassword(password) && password.equals(confirmPassword))
+        if (validator.validatePassword(password))
             validationTestPassed++;
         else
-            session.setAttribute("passwordError", "Passwords do not match");
+            session.setAttribute("passwordError", "Invalid password");
+        
+        if (password.equals(confirmPassword))
+            validationTestPassed++;
+        else
+            session.setAttribute("confirmPasswordError", "Passwords do not match");
         
         if (validator.validatePhoneNumber(phoneNumber))
             validationTestPassed++;
         else
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
-        if (validationTestPassed == 5) {
+        if (validationTestPassed == 6) {
             customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
             request.getRequestDispatcher("home.jsp").include(request, response);
         }

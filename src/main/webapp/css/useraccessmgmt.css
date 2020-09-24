@@ -33,6 +33,10 @@ input {
     color: white;
 }
 
+.errorMessage {
+    color: #ff0000;
+}
+
 .customer-button {
     width: 350px;
     height: 350px;

@@ -51,9 +51,11 @@ public class Validator implements Serializable {
         session.setAttribute("lastNameError", "");
         session.setAttribute("emailError", "");
         session.setAttribute("passwordError", "");
+        session.setAttribute("confirmPasswordError", "");
         session.setAttribute("phoneNumberError", "");
         session.setAttribute("bankBsbNumberError", "");
         session.setAttribute("bankAccountNumberError", "");
         session.setAttribute("bankAccountHolderNameError", "");
+        session.setAttribute("userExistsError", "");
     }
 }

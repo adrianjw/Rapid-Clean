@@ -46,10 +46,15 @@ public class CleanerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("emailError", "Invalid email address");
         
-        if (validator.validatePassword(password) && password.equals(confirmPassword))
+        if (validator.validatePassword(password))
             validationTestPassed++;
         else
-            session.setAttribute("passwordError", "Passwords do not match");
+            session.setAttribute("passwordError", "Invalid password");
+        
+        if (password.equals(confirmPassword))
+            validationTestPassed++;
+        else
+            session.setAttribute("confirmPasswordError", "Passwords do not match");
         
         if (validator.validatePhoneNumber(phoneNumber))
             validationTestPassed++;
@@ -71,7 +76,7 @@ public class CleanerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
         
-        if (validationTestPassed == 8) {
+        if (validationTestPassed == 9) {
             cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
                     bankBsbNumber, bankAccountNumber, bankAccountHolderName);
             request.getRequestDispatcher("home.jsp").include(request, response);
