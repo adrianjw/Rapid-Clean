@@ -25,7 +25,7 @@ public class CleanerOrderAcceptedServlet extends HttpServlet {
          Address address = orderManager.address(orderAccepted.getAddress_id());
          
          // Insert the order to AcceptOrder Database to avoid being displayed for other cleaners
-         //orderManager.insertAcceptOrder(orderId, cleanerId);
+         orderManager.insertAcceptOrder(orderId, cleanerId);
          
          session.setAttribute("orderAccepted", orderAccepted);
          session.setAttribute("customer", customer);
