@@ -152,7 +152,7 @@ public class AcceptServiceDAO extends MongoDB {
                     for (Document rejectedCleaner : listRejected) {
                         String cleanerIdDB = (String) rejectedCleaner.get("cleaner_id");
                         // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
-                        if (cleanerIdDB.equalsIgnoreCase(cleanerId)) {
+                        if (!cleanerIdDB.equalsIgnoreCase(cleanerId)) {
                             
                             ObjectId orderObjId = (ObjectId) orders.get("_id");
                             String newOrderId = orderObjId.toString();
