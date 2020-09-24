@@ -122,22 +122,22 @@
                 color: #fff;
 
             }
-            
+
             input [type=time] {
                 color: #fff;
-                
-                
+
+
             }
-            
+
             input {
-            border-top-style: hidden;
-            border-right-style: hidden;
-            border-left-style: hidden;
-            border-bottom-style: groove;
-            width: 110px;
-            color: #fff;
-            font-family: Montserrat, Arial;
-            text-align: center;
+                border-top-style: hidden;
+                border-right-style: hidden;
+                border-left-style: hidden;
+                border-bottom-style: groove;
+                width: 110px;
+                color: #fff;
+                font-family: Montserrat, Arial;
+                text-align: center;
             }
         </style>
     </head>
@@ -185,16 +185,16 @@
             <table class="center">
                 <tr style="border-color: #24252A"><td style="border-top: 0px; font-size: 18px; text-transform: uppercase;"> Start Time </td> <td style="font-size: 18px; text-transform: uppercase;"> End Time </td> </tr>
                 <tr><td><input type="time" style="color:#fff" class="no-outline" name="startTime" required></td>
-                
-                <td> <input type="time" class="no-outline" name="endTime" style="color:#fff"  required></td></tr>            
+
+                    <td> <input type="time" class="no-outline" name="endTime" style="color:#fff"  required></td></tr>            
             </table>
-            
+
             <p style="text-transform: uppercase; font-size: 12px; padding-bottom: 20px;"> *WARNING! Faking Start Time and End Time will result in serious sanctions </p>
 
 
-          <!-- Add Missing calculate work hours button for R1 --> 
+            <p style="padding-bottom: 25px;"> <img src="css/inprogress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
+            <button type="submit" value="Finish"> Finish  </button>
         </form>
-        <p style="padding-bottom: 25px;"> <img src="css/inprogress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
-        <a href="cleanerordercompleted.jsp"><button> Finish  </button> </a>
+
     </body>
 </html>
