@@ -24,7 +24,7 @@
 
         <h1 style="text-align: center; padding-top: 70px; padding-bottom: 20px"> GREAT! </h1>
 
-        <h1 style="text-align: center; font-weight: lighter  ;font-size: 25px; padding-bottom: 15px;"> Order #<%=orderCompleted.getOrder_id()%> Completed</h1>
+        <h1 style="text-align: center; font-weight: lighter  ;font-size: 25px; padding-bottom: 15px; text-transform:uppercase"> Order #<%=orderCompleted.getOrder_id()%> Completed</h1>
         <img src="css/tick_1.png" width="2%" style="margin:auto; margin-left:0 auto; display: flex; max-width: 4%; padding-bottom: 24px"> 
         <p style="font-size: 13px"> Thank you for working as our Rapid Cleaner </p>
         <p style="font-size: 13px"> Your total payout is <b> $<%=orderCompleted.getWorkedHours()%> </b>and is expected to be received by the end of this week </p>
