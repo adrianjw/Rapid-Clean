@@ -20,12 +20,19 @@ public class TestAcceptDAO {
     public static void main (String[] args){
         AcceptServiceDAO test1 = new AcceptServiceDAO();
         ArrayList<Order> orderList = test1.orderList("5f69e1da84ebe990acfef9d6");
+        if (orderList != null)
+        {
         for (Order orderL : orderList)
         {
             Address address =  test1.address(orderL.getAddress_id());
             Customer customer = test1.findCustomer(orderL.getCustomer_id());
             
             System.out.println(orderL.getId());
+        }
+        }
+        else 
+        {
+            System.out.println("E<PTY :P ");
         }
     }
 }
