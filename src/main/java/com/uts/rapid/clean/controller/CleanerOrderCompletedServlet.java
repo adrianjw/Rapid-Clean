@@ -45,10 +45,10 @@ public class CleanerOrderCompletedServlet extends HttpServlet {
             
             session.setAttribute("orderCompleted", orderCompleted);
             session.setAttribute("cleaner", cleaner);
-            request.getRequestDispatcher("cleanerorderaccepted.jsp").include(request, response);
+            request.getRequestDispatcher("cleanerordercompleted.jsp").include(request, response);
         } catch (ParseException ex) {
             Logger.getLogger(CleanerOrderCompletedServlet.class.getName()).log(Level.SEVERE, null, ex);
-            request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
+            
         }
 
         // Insert the order_id, startTime, endTime, workdedHours and cleaner_id
