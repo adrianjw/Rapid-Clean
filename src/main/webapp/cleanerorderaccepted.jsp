@@ -170,7 +170,7 @@
                             Cleaning Involved: <%=orderAccepted.getOrderCategoryDesc()%>
                         </h6>
 
-                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <%=customer.getFirstName()%>: <%=customer.getPhone()%> </h6>
+                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <%=customer.getFirstName()%>: <%=customer.getPhoneNumber()%> </h6>
                     </div>
 
 

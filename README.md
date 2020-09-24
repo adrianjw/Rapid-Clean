@@ -17,7 +17,6 @@
 ### Front-end
 - HTML/CSS
 - JavaScript
-- Bootstrap
 
 ### Back-end
 - Java EE 8

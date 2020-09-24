@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><input type="text" name="phone" minlength="10" maxlength="10" required></td>
+                    <td><input type="text" name="phoneNumber" minlength="10" maxlength="10" required></td>
                 </tr>
                 <tr>
                     <td>Password</td>
@@ -35,7 +35,7 @@
                 </tr>
             </table>
             <button class="button" type="submit"> Create Account </button>
-            <a href="signup.jsp"><button class="button"> Go Back </button></a>
+            <a href="signup.jsp"><button class="button" type="button"> Go Back </button></a>
         </form>
     </body>
 </html>

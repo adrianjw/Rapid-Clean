@@ -13,12 +13,13 @@ public class CustomerDAO extends MongoDB {
         collection = super.database.getCollection("Customer");
     }
     
-    public void createCustomer(String firstName, String lastName, String email, String password, String phone) {
+    public void createCustomer(String firstName, String lastName, String email,
+            String password, String phoneNumber) {
         Document document = new Document("firstName", firstName)
                 .append("lastName", lastName)
                 .append("email", email)
                 .append("password", password)
-                .append("phone", phone);
+                .append("phoneNumber", phoneNumber);
         collection.insertOne(document);
     }
 }

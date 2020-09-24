@@ -22,7 +22,7 @@ public class CustomerSignUpServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-        String phone = request.getParameter("phone");
+        String phoneNumber = request.getParameter("phoneNumber");
         
         Validator validator = new Validator();
         validator.clear(session);
@@ -48,13 +48,13 @@ public class CustomerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("passwordError", "Passwords do not match");
         
-        if (validator.validatePhoneNumber(phone))
+        if (validator.validatePhoneNumber(phoneNumber))
             validationTestPassed++;
         else
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
         if (validationTestPassed == 5) {
-            customerDAO.createCustomer(firstName, lastName, email, password, phone);
+            customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
             request.getRequestDispatcher("home.jsp").include(request, response);
         }
         else {

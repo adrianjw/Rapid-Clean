@@ -7,16 +7,16 @@ public class Customer {
     private String lastName;
     private String email;
     private String password;
-    private String phone;
+    private String phoneNumber;
 
     public Customer(String _id, String firstName, String lastName,
-            String email, String password, String phone) {
+            String email, String password, String phoneNumber) {
         this._id = _id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getId() {
@@ -39,8 +39,8 @@ public class Customer {
         return password;
     }
     
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setFirstName(String firstName) {
@@ -56,12 +56,10 @@ public class Customer {
     }
 
     public void setPassword(String password) {
-        this.phone = password;
+        this.password = password;
     }
     
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-    
-    
 }
