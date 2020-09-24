@@ -143,18 +143,28 @@ public class AcceptServiceDAO extends MongoDB {
         for (Document orders : orderList) {
             List<Document> list = (List<Document>) orders.get("OrdersAccepted");
             List<Document> listRejected = (List<Document>) orders.get("OrdersRejected");
+
+            // if the particular order has not been accepted, i.e OrderAccepted is empty
             if (list.isEmpty()) {
 
-                for (Document rejectedCleaner : listRejected) 
-                {
-                    String cleanerIdDB = (String) rejectedCleaner.get("cleaner_id");
-                    if (!cleanerIdDB.equalsIgnoreCase(cleanerId))
-                    {
-                        ObjectId orderObjId = (ObjectId) orders.get("_id");
-                        String newOrderId = orderObjId.toString();
-                        Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
-                        table.add(order);
+                if (!listRejected.isEmpty()) {
+                    
+                    for (Document rejectedCleaner : listRejected) {
+                        String cleanerIdDB = (String) rejectedCleaner.get("cleaner_id");
+                        // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
+                        if (cleanerIdDB.equalsIgnoreCase(cleanerId)) {
+                            
+                            ObjectId orderObjId = (ObjectId) orders.get("_id");
+                            String newOrderId = orderObjId.toString();
+                            Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                            table.add(order);
+                        }
                     }
+                } else {
+                    ObjectId orderObjId = (ObjectId) orders.get("_id");
+                    String newOrderId = orderObjId.toString();
+                    Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                    table.add(order);
                 }
             }
         }

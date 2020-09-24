@@ -18,14 +18,15 @@ public class TestAcceptDAO {
     
     
     public static void main (String[] args){
-        /*AcceptServiceDAO test1 = new AcceptServiceDAO();
-        ArrayList<Order> orderList = test1.orderList();
+        AcceptServiceDAO test1 = new AcceptServiceDAO();
+        ArrayList<Order> orderList = test1.orderList("5f69e1da84ebe990acfef9d6");
         for (Order orderL : orderList)
         {
             Address address =  test1.address(orderL.getAddress_id());
             Customer customer = test1.findCustomer(orderL.getCustomer_id());
             
-            System.out.println(orderL); */
+            System.out.println(orderL.getId());
         }
     }
+}
 
