@@ -179,7 +179,7 @@
                 </div>
             </div>
         </div>
-        <form action="welcome.jsp" method="post" style="color: #Fff">
+        <form action="welcome.jsp" method="post" action="CleanerOrderCompletedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderAccepted.getId()%>" style="color: #Fff">
 
 
             <table class="center">
