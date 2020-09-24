@@ -36,12 +36,13 @@ public class CleanerOrderCompletedServlet extends HttpServlet {
             Date endTimeFormatted = format.parse(endTime);
             long difference = endTimeFormatted.getTime() - startTimeFormatted.getTime();
             double workedHours = orderedCompleted.getHourlyRate() * difference / (60 * 60 * 1000);
+            OrderCompleted orderCompleted = null;
             
             
             // When inserted to MongoDB, date will be recorded as the starting value of the Date datatype in MongoDB
             // Only the time part is used in the date attribute, so the value of date don't matter.
             orderManager.insertCompletedOrder(orderId, startTimeFormatted, endTimeFormatted, workedHours, cleanerId);
-            OrderCompleted orderCompleted = orderManager.findOrderCompleted(orderId);
+            orderCompleted = orderManager.findOrderCompleted(orderId);
             
             
             session.setAttribute("orderCompleted", orderCompleted);
