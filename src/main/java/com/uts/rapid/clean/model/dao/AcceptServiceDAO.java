@@ -18,12 +18,13 @@ public class AcceptServiceDAO extends MongoDB {
 
     private MongoCollection<Document> collection;
 
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         AcceptServiceDAO obj = new AcceptServiceDAO();
+        obj.displayOrderTest();
         // obj.insertReject("test1", "test2");
         //Customer customer1 = obj.customer("5f68bb24176a20e541479151");
         //System.out.println(customer1.getFirstName());
-    } 
+    }
 
     // Build a connection with MongoDB Atlas
     public AcceptServiceDAO() {
@@ -33,10 +34,7 @@ public class AcceptServiceDAO extends MongoDB {
     // Insert to the RejectedOrder - for Cleaners (Reject Order button pressed)
     public void insertRejectOrder(String orderId, String cleanerId) {
         MongoCollection<Document> rejectedOrder = super.database.getCollection("RejectedOrder");
-        // Convert orderId string to ObjectId
-        ObjectId orderObjId = new ObjectId(orderId);
-
-        Document document = new Document("order_id", orderObjId)
+        Document document = new Document("order_id", orderId)
                 .append("cleaner_id", cleanerId);
 
         rejectedOrder.insertOne(document);
@@ -52,17 +50,15 @@ public class AcceptServiceDAO extends MongoDB {
 
         orderAccepted.insertOne(document);
     }
-    
+
     // Insert to the Order Completed Collection - for Cleaners (Finish button pressed)
-    public void insertCompletedOrder (String order_id, Date startTime, Date endTime, double workedHours, String cleaner_id)
-    {
+    public void insertCompletedOrder(String order_id, Date startTime, Date endTime, double workedHours, String cleaner_id) {
         MongoCollection<Document> orderCompleted = super.database.getCollection("OrderCompleted");
         Document document = new Document("order_id", order_id)
                 .append("cleaner_id", cleaner_id)
                 .append("startTime", startTime)
                 .append("endTime", endTime)
                 .append("workedHours", workedHours);
-
 
         orderCompleted.insertOne(document);
     }
@@ -84,7 +80,8 @@ public class AcceptServiceDAO extends MongoDB {
         Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (int) doc.get("bankBsb"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolder"), (String) doc.get("phone"));
         return cleaner;
     }
-     // Get Address Details from Address ID
+    // Get Address Details from Address ID
+
     @SuppressWarnings("unchecked")
     public Address address(String addressId) {
         MongoCollection<Document> addresses = super.database.getCollection("Address");
@@ -93,10 +90,8 @@ public class AcceptServiceDAO extends MongoDB {
         Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address;
     }
-    
-    
-    public String addressDets (String addressId)
-    {
+
+    public String addressDets(String addressId) {
         MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = addresses.find(eq("_id", addressObjId)).first();
@@ -112,8 +107,8 @@ public class AcceptServiceDAO extends MongoDB {
         Customer customer = new Customer(customerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phone"));
         return customer;
     }
-    
-        // Find OrderAccepted Object
+
+    // Find OrderAccepted Object
     public OrderCompleted findOrderCompleted(String orderId) {
         MongoCollection<Document> orderCompletedDB = super.database.getCollection("OrderCompleted");
         Document doc = orderCompletedDB.find(eq("order_id", orderId)).first();
@@ -122,30 +117,45 @@ public class AcceptServiceDAO extends MongoDB {
         OrderCompleted orderCompleted = new OrderCompleted(newOrderCompletedId, (String) doc.get("order_id"), (Date) doc.get("startTime"), (Date) doc.get("endTime"), (double) doc.get("workedHours"), (String) doc.get("cleaner_id"));
         return orderCompleted;
     }
-    
 
     // List out the current orders which has not been Accepted (Does not exist in orderAccepted collection)
-    public ArrayList<Order> orderList() {
+    public ArrayList<Order> orderList(String cleanerId) {
         MongoCollection<Document> orderListsMongo = database.getCollection("Order");
 
         Bson lookup = new Document("$lookup",
                 new Document("from", "OrderAccepted")
                         .append("localField", "_id")
                         .append("foreignField", "order_id")
-                        .append("as", "Orders"));
+                        .append("as", "OrdersAccepted"));
+
+        Bson lookup2 = new Document("$lookup",
+                new Document("from", "OrderRejected")
+                        .append("localField", "_id")
+                        .append("foreignField", "order_id")
+                        .append("as", "OrdersRejected"));
 
         List<Bson> filters = new ArrayList<>();
         filters.add(lookup);
+        filters.add(lookup2);
 
         ArrayList<Document> orderList = orderListsMongo.aggregate(filters).into(new ArrayList<>());
         ArrayList<Order> table = new ArrayList();
         for (Document orders : orderList) {
-            List<Document> list = (List<Document>) orders.get("Orders");
+            List<Document> list = (List<Document>) orders.get("OrdersAccepted");
+            List<Document> listRejected = (List<Document>) orders.get("OrdersRejected");
             if (list.isEmpty()) {
-                ObjectId orderObjId = (ObjectId) orders.get("_id");
-                String newOrderId = orderObjId.toString();
-                Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
-                table.add(order);
+
+                for (Document rejectedCleaner : listRejected) 
+                {
+                    String cleanerIdDB = (String) rejectedCleaner.get("cleaner_id");
+                    if (!cleanerIdDB.equalsIgnoreCase(cleanerId))
+                    {
+                        ObjectId orderObjId = (ObjectId) orders.get("_id");
+                        String newOrderId = orderObjId.toString();
+                        Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                        table.add(order);
+                    }
+                }
             }
         }
 
@@ -157,7 +167,7 @@ public class AcceptServiceDAO extends MongoDB {
     }
 
     private void viewAllOrders() {
-        ArrayList<Order> shipmentdetails = orderList();
+        ArrayList<Order> shipmentdetails = orderList("ASDASDAS");
         System.out.println("Saved Shipping Details:");
         System.out.println("---------------------------------------------------------------------------------------------------------------");
         System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", "Order ID", "Customer Name", "Address ID", "residentialType", "hourlyRate");
@@ -172,7 +182,7 @@ public class AcceptServiceDAO extends MongoDB {
 
     }
 
-    /* public void displayOrderTest() {
+    public void displayOrderTest() {
         MongoCollection<Document> orderListsMongo = database.getCollection("Order");
 
         Bson lookup = new Document("$lookup",
@@ -180,30 +190,34 @@ public class AcceptServiceDAO extends MongoDB {
                         .append("localField", "_id")
                         .append("foreignField", "order_id")
                         .append("as", "Orders"));
-        Bson match = new Document("$match",
-                new Document("Orders", ""));
+
+        Bson lookup2 = new Document("$lookup",
+                new Document("from", "OrderRejected")
+                        .append("localField", "_id")
+                        .append("foreignField", "order_id")
+                        .append("as", "OrdersRejected"));
 
         List<Bson> filters = new ArrayList<>();
         filters.add(lookup);
-        //filters.add(match);
+        filters.add(lookup2);
 
-        ArrayList <Document> test = orderListsMongo.aggregate(filters).into(new ArrayList<>());//.find(query).into(new ArrayList<>());
+        ArrayList<Document> test = orderListsMongo.aggregate(filters).into(new ArrayList<>());//.find(query).into(new ArrayList<>());
         for (Document orders : test) {
             System.out.println(orders);
-            List <Document> list = (List <Document>) orders.get("Orders");
-            if (list.size() > 0)
-                    System.out.println("This is EMPTY");
-            else 
+            List<Document> list = (List<Document>) orders.get("Orders");
+            if (list.size() > 0) {
+                for (Document lister : list) {
+                    System.out.println(lister.get("order_id"));
+                }
+
+                System.out.println();
+                System.out.println("This is EMPTY");
+            } else {
                 System.out.println("THIS IS NOT EMPTY");
+            }
         }
-    } */
-    
+    }
+
     // Delete Order (Rejected)
-    
-    
     // Delete OrderAccepted after Inserting to OrderCompleted
-    
-
-    
-
 }

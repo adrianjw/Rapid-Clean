@@ -22,7 +22,7 @@ public class CleanerOrderServlet extends HttpServlet {
         AcceptServiceDAO orderManager = new AcceptServiceDAO();
         ArrayList<Order> orderD = null;
 
-        orderD = orderManager.orderList();
+        orderD = orderManager.orderList(cleanerId);
         Cleaner cleaner = null;
         cleaner = orderManager.findCleaner(cleanerId);
         session.setAttribute("cleaner", cleaner);

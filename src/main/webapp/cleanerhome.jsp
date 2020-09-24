@@ -510,7 +510,7 @@
                             &nbsp;
                             &nbsp;
 
-                            <a class='btn2' href='#' style="color: #FF8484;">
+                            <a class='btn2' href="CleanerOrderRejectedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderList.getId()%>" style="color: #FF8484;">
                                 Reject Order
                                 <span class='line-1' style="background-color: #FF8484"></span>
                                 <span class='line-2'style="background-color: #FF8484"></span>
