@@ -34,7 +34,7 @@ public class CleanerOrderCompletedServlet extends HttpServlet {
             Cleaner cleaner = orderManager.findCleaner(cleanerId);
             Date startTimeFormatted = format.parse(startTime);
             Date endTimeFormatted = format.parse(endTime);
-            long difference = startTimeFormatted.getTime() - endTimeFormatted.getTime();
+            long difference = endTimeFormatted.getTime() - startTimeFormatted.getTime();
             double workedHours = orderedCompleted.getHourlyRate() * ((difference / (1000 * 60 * 60))% 24);
             
             
