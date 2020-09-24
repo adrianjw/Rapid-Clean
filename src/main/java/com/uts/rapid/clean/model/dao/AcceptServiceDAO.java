@@ -33,7 +33,7 @@ public class AcceptServiceDAO extends MongoDB {
 
     // Insert to the RejectedOrder - for Cleaners (Reject Order button pressed)
     public void insertRejectOrder(String orderId, String cleanerId) {
-        MongoCollection<Document> rejectedOrder = super.database.getCollection("RejectedOrder");
+        MongoCollection<Document> rejectedOrder = super.database.getCollection("OrderRejected");
         Document document = new Document("order_id", orderId)
                 .append("cleaner_id", cleanerId);
 
