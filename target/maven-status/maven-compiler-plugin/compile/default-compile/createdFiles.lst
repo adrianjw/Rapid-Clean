@@ -21,6 +21,7 @@ com\uts\rapid\clean\model\dao\RatingDAO.class
 com\uts\rapid\clean\model\RejectedOrder.class
 com\uts\rapid\clean\model\Order.class
 com\uts\rapid\clean\model\dao\TestAcceptDAO.class
+com\uts\rapid\clean\controller\CleanerOrderRejectedServlet.class
 com\uts\rapid\clean\model\Cleaner.class
 com\uts\rapid\clean\model\OrderHistory.class
 com\uts\rapid\clean\model\Rating.class

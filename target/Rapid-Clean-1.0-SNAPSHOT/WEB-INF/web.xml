@@ -28,6 +28,10 @@
         <servlet-name>CleanerOrderCompletedServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderCompletedServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CleanerOrderRejectedServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CleanerOrderRejectedServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>CleanerOrderCompletedServlet</servlet-name>
         <url-pattern>/CleanerOrderCompletedServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CleanerOrderRejectedServlet</servlet-name>
+        <url-pattern>/CleanerOrderRejectedServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
