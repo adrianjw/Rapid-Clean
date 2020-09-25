@@ -77,9 +77,15 @@ public class CleanerSignUpServlet extends HttpServlet {
             session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
         
         if (validationTestPassed == 9) {
-            cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
-                    bankBsbNumber, bankAccountNumber, bankAccountHolderName);
-            request.getRequestDispatcher("home.jsp").include(request, response);
+            if (!cleanerDAO.findCleaner(email)) {
+                cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
+                        bankBsbNumber, bankAccountNumber, bankAccountHolderName);
+                request.getRequestDispatcher("home.jsp").include(request, response);
+            }
+            else {
+                session.setAttribute("emailError", "Email address already in use");
+                request.getRequestDispatcher("cleanersignup.jsp").include(request, response);
+            }
         }
         else {
             request.getRequestDispatcher("cleanersignup.jsp").include(request, response);

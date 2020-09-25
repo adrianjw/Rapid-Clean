@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.uts.rapid.clean.model.Cleaner;
 import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
+import com.uts.rapid.clean.model.Cleaner;
 
 public class CleanerDAO extends MongoDB {
     
@@ -25,5 +26,9 @@ public class CleanerDAO extends MongoDB {
                 .append("bankAccountNumber", bankAccountNumber)
                 .append("bankAccountHolderName", bankAccountHolderName);
         collection.insertOne(document);
+    }
+    
+    public boolean findCleaner(String email) {
+        return collection.find(eq("email", email)).first() != null;
     }
 }
