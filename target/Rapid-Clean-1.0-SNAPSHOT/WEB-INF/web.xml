@@ -17,6 +17,10 @@
         <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>OrderFormServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderFormServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CleanerOrderServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
     </servlet>
@@ -51,6 +55,10 @@
     <servlet-mapping>
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderFormServlet</servlet-name>
+        <url-pattern>/OrderFormServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CleanerOrderServlet</servlet-name>

@@ -12,20 +12,8 @@
         <title>Rapid Clean Services</title>
         <style>
             body {
-                /*margin: 0;*/
-                /*padding: 0;*/
-                /*display: flex;*/
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                background-color: #24252A;
-            }
-            
-            .container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                /*justify-content: space-between;*/
+                margin: 0;
+                padding: 0;
             }
             
             .container .box {
@@ -38,7 +26,13 @@
                 margin: 20px;
                 overflow: hidden;
                 box-sizing: border-box;
-                font-family: Arial, sans-serif;
+                font-family: Helvetica, sans-serif;
+            }
+            
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .container .box .icon {
@@ -55,37 +49,67 @@
                 font-size: 25px;
                 font-weight: 700;
                 font-family: Helvetica, sans-serif;
-                transition: 0.3s;
+                /*transition: 0.3s;*/
             }
             
-            .container .box:nth-child(1) .icon {
+            .box {
+                margin-bottom: 2em;
+                /*cursor: pointer;*/
+                color: black;
+                transition: 0.2s;
+            }
+            
+            .content {
+                transition: none !important;
+            }
+            
+            .box:hover {
+                background: #51abff;
+                color: #fff;    
+            }
+            
+            .box-1:hover {
+                background: #eccc68;
+                color: #fff;    
+            }
+            
+            .box-2:hover {
+                background: #1e272e;
+                color: #fff;    
+            }
+            
+            .content {
+                height: 200px;
+            }
+            
+            .container .box .icon {
                 box-shadow: 0 0 0 0 #51abff;
                 background: #51abff;
                 
             }
             
-            .container .box:nth-child(1):hover .icon {
+/*            .container .box:nth-child(1):hover .icon {
                 box-shadow: 0 0 0 400px #51abff;
-            }
+            }*/
             
-            .container .box:nth-child(2) .icon {
+            .container .box-1 .icon {
                 box-shadow: 0 0 0 0 #eccc68;
                 background: #eccc68;
                 
             }
             
-            .container .box:nth-child(2):hover .icon {
+/*            .container .box:nth-child(2):hover .icon {
                 box-shadow: 0 0 0 400px #eccc68;
-            }
+            }*/
             
-            .container .box:nth-child(3) .icon {
+            .container .box-2 .icon {
                 box-shadow: 0 0 0 0 #1e272e;
                 background: #1e272e;                
             }
             
-            .container .box:nth-child(3):hover .icon {
+/*            .container .box:nth-child(3):hover .icon {
                 box-shadow: 0 0 0 400px #1e272e;
-            }
+            }*/
             
             .container .box .content {
                 position: relative;
@@ -93,53 +117,78 @@
             }
             
             .container .box:hover .content {
-                color: #fff;
+                /*color: #fff;*/
+            }            
+         
+            .content h3 {
+                text-align: center;
+                margin-top: 1em;
+                margin-bottom: 0.5em;
             }
             
-            .content h3 {
+            p {
                 text-align: center;
             }
             
-            button {
+            .btn-book {
                 border: 0px solid #ecf0f1;
                 width: 100%;
-                height: 30px;
-                background: white;
-                transition: 0.5s;
+                height: 33px;
+                font-size: 14px;
+                font-family: sans-serif;
+                background: #fff;
+                color: black;
+                position: relative;
+                justify-content: center;
+                text-align: center;
                 border-radius: 25px;
                 cursor: pointer;
+                margin: 0 auto;
+                display: inline-block;
             }
             
-            button:hover {
-                background: #ecf0f1;
-                color: black;
+            .btn-book:hover {
+                background-color: white;
             }
             
             h1 {
                 text-align: center;
                 font-family: Helvetica, sans-serif;
                 color: white;
-                margin-top: 3em;
-                margin-bottom: 2em;
+                margin-top: 1em;
+                margin-bottom: 1em;
             }
             
-            a {
+            .btn-back a {
                 width: 73%;
-                text-decoration: none;
-                height: 20px;
-                text-align: center;
-                font-family: sans-serif;
-                padding: 10px;
-                background: #7f8c8d;
-                color: white;
-                font-weight: 300;
+                position: relative;
             }
             
+            .notbutton {
+                background: green;
+                width: 73%;
+                height: 40px;
+                padding: 10px;
+                position: relative;
+                justify-content: center;
+                text-align: center;
+                margin: 0;
+                border-radius: 5px;
+            }
             
+            .price {
+                text-align: center;
+                margin-top: 1em;
+            }
+            
+            .price:hover {
+                font-weight: 1000;
+            }
         </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(function(){
-            $("#nav-placeholder").load("navigationbar.jsp");
+            $("#nav-placeholder").load("navigationbar_1.jsp");
              });
         </script>
     </head>
@@ -150,47 +199,68 @@
         
         <h1>Pick A Service That Suits You</h1>
         <!--Start of box-->
-        <div class="container">            
-            <div class="box">
-                <div class="icon">01</div>
-                <div class="title">
-                    <div class="content">
-                        <h3>Rapid Cleaning</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                        <button class="btn-book">Book Now <b>(38$/hr)</b></button>
+        <div class="container">
+            <form action="OrderServlet" method="post">
+                <input type="hidden" name="orderCategory" value="rapid" />
+                <input type="hidden" name="orderCategoryDesc" value="Kitchen Cleaning, Bathroom Cleaning, Living Room Cleaning, and Room Cleaning" />
+                <input type="hidden" name="price" value="38" />
+                <div class="box" id="one">
+                    <div class="icon">01</div>
+                    <div class="title">
+                        <div class="content">
+                            <h3>Rapid Cleaning</h3>
+                            <p>Kitchen Cleaning, Bathroom Cleaning, Living Room Cleaning, and Room Cleaning</p>
+                        </div>
+                        <!--<div class="price"><b>38$/hr</b></div>-->
+                        <button class="btn-book" type="submit">Book Now <b style="background-color: white">(38$/hr)</b></button>
                     </div>
                 </div>
-            </div>
+            </form>
+            
         <!--End of box-->
         
         <!--Start of box-->
-            <div class="box">
+        <form action="OrderServlet" method="post">
+            <div class="box box-1">
+                <input type="hidden" name="orderCategory" value="deluxe" />
+                <input type="hidden" name="orderCategoryDesc" value="Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation." />
+                <input type="hidden" name="price" value="50"/>
                 <div class="icon">02</div>
                 <div class="title">
                     <div class="content">
                         <h3>Deluxe Cleaning</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                        <button class="btn-book">Book Now <b>(50$/hr)</b></button>
+                        <p>Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.</p>
                     </div>
+                    <!--<div class="price"><b>50$/hr</b></div>-->
+                    <button class="btn-book" type="submit">Book Now <b>(50$/hr)</b></button>
                 </div>
+                
             </div>
+        </form>
+            
         <!--End of box-->
             
         <!--Start of box-->
-            <div class="box">
+        <form action="OrderServlet" method="post">
+            <div class="box box-2">
+                <input type="hidden" name="orderCategory" value="premium" />
+                <input type="hidden" name="orderCategoryDesc" value="Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation" />
+                <input type="hidden" name="price" value="90"/>
                 <div class="icon">03</div>
-                <h4></h4>
                 <div class="title">
                     <div class="content">
                         <h3>Premium Cleaning</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                        <button class="btn-book">Book Now <b>(90$/hr)</b></button>
+                        <p>Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation</p>
                     </div>
+<!--                    <div class="price"><b>90$/hr</b></div>-->
+                    <button class="btn-book" type="submit">Book Now <b>(90$/hr)</b></button>
                 </div>
             </div>
+        </form>
+            
         <!--End of box-->
         
-        <a href="home.jsp">Back</a>
+        <a href="home.jsp" class="notbutton">Back</a>
         </div>
     </body>
 </html>

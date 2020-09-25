@@ -4,9 +4,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252A;
 }
 
+body {
+    background-color: #24252A;
+}
 
 li, a, button {
     font-family: "Montserrat", sans-serif;
