@@ -10,7 +10,7 @@ public class MongoDB {
     
     public MongoDB() {
         String uri = "mongodb+srv://asduser1:uts2020@cluster0.vldlh.mongodb.net/rapidclean?retryWrites=true&w=majority";
-        mongoClient = MongoClients.create();
+        mongoClient = MongoClients.create(uri);
         database = mongoClient.getDatabase("rapidclean");
     }
                 

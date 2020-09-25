@@ -60,12 +60,17 @@ public class OrderFormServlet extends HttpServlet {
         String orderCategoryDesc = request.getParameter("orderCategoryDesc");
         int price = Integer.parseInt(request.getParameter("price"));
         String resident = request.getParameter("resident");
+//        Customer customer = new Customer();
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss z");
         
+//        String customerId = customer.getId();
+
         String dateTime = formatter.format(date);
         
         OrderDAO order = new OrderDAO();
+        
+//        order.findAddressId(customerId);
         
         order.addOrder(orderCategory, price, resident, orderCategoryDesc, dateTime);
         
