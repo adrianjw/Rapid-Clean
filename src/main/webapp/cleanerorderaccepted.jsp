@@ -4,10 +4,21 @@
     Author     : David Guntoro
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.uts.rapid.clean.model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+            Order orderAccepted = (Order) session.getAttribute("orderAccepted");
+            Customer customer = (Customer) session.getAttribute("customer");
+            Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+            Address address = (Address) session.getAttribute("address");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+            String date = DATE_FORMAT.format(orderAccepted.getDateTime());
+
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -16,7 +27,7 @@
             });
         </script>
 
-        <title>Order #12371231ADAS</title> <!-- order.getId() -->
+        <title>Order #<%=orderAccepted.getId()%></title>
         <style>
 
             body {
@@ -111,22 +122,22 @@
                 color: #fff;
 
             }
-            
+
             input [type=time] {
                 color: #fff;
-                
-                
+
+
             }
-            
+
             input {
-            border-top-style: hidden;
-            border-right-style: hidden;
-            border-left-style: hidden;
-            border-bottom-style: groove;
-            width: 110px;
-            color: #fff;
-            font-family: Montserrat, Arial;
-            text-align: center;
+                border-top-style: hidden;
+                border-right-style: hidden;
+                border-left-style: hidden;
+                border-bottom-style: groove;
+                width: 110px;
+                color: #fff;
+                font-family: Montserrat, Arial;
+                text-align: center;
             }
         </style>
     </head>
@@ -134,16 +145,16 @@
         <div id="nav-placeholder">
         </div>
         <!-- Obtain the customer details from the customer_id provided in the order-->
-        <h1 style="text-transform: uppercase; font-size: 35px; padding-top: 50px; padding-bottom: 30px;"> Order #12831921D32OA ACCEPTED</h1>
+        <h1 style="text-transform: uppercase; font-size: 35px; padding-top: 50px; padding-bottom: 30px;"> Order #<%=orderAccepted.getId()%> ACCEPTED</h1>
         <hr>
         <br>
         <br>
         <div class="container">
             <div class="course">
                 <div class="preview">
-                    <h6> ORDER #12831921D32OA </h6>
+                    <h6> ORDER #<%=orderAccepted.getId()%></h6>
                     <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                    <a> 16/08/2020, 5:20 PM </a>
+                    <a> <%=date%> </a>
 
                 </div>
                 <div class="info">
@@ -152,14 +163,14 @@
 
                         </div>
 
-                        <h6 style="background-color: #24252A; text-align: left">Customer: Bryan Guntoro </h6> 
-                        <h2  style="background-color: #24252A; text-align: left""> PREMIUM CLEANING </h2>
-                        <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $39/hr <br> Residential type: House <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
+                        <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%> </h6> 
+                        <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderAccepted.getOrderCategory()%> </h2>
+                        <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderAccepted.getHourlyRate()%>/hr <br> Residential type: <%=orderAccepted.getResidentialType()%> <br> Address: <%=address.getFullAddress()%> <br> 
 
-                            Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
+                            Cleaning Involved: <%=orderAccepted.getOrderCategoryDesc()%>
                         </h6>
 
-                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <!-- customer.getFirstName() --> Bryan: <!-- customer.getPhone() --> 0410053712 </h6>
+                        <h6 style="background-color: #24252A; text-align: left; padding-top: 25px;"> Call <%=customer.getFirstName()%>: <%=customer.getPhoneNumber()%> </h6>
                     </div>
 
 
@@ -168,22 +179,22 @@
                 </div>
             </div>
         </div>
-        <form action="welcome.jsp" method="post" style="color: #Fff">
+        <form method="post" action="CleanerOrderCompletedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderAccepted.getId()%>" style="color: #Fff">
 
 
             <table class="center">
                 <tr style="border-color: #24252A"><td style="border-top: 0px; font-size: 18px; text-transform: uppercase;"> Start Time </td> <td style="font-size: 18px; text-transform: uppercase;"> End Time </td> </tr>
                 <tr><td><input type="time" style="color:#fff" class="no-outline" name="startTime" required></td>
-                
-                <td> <input type="time" class="no-outline" name="endTime" style="color:#fff"  required></td></tr>            
+
+                    <td> <input type="time" class="no-outline" name="endTime" style="color:#fff"  required></td></tr>            
             </table>
-            
+
             <p style="text-transform: uppercase; font-size: 12px; padding-bottom: 20px;"> *WARNING! Faking Start Time and End Time will result in serious sanctions </p>
 
 
-          <!-- Add Missing calculate work hours button for R1 --> 
+            <p style="padding-bottom: 25px;"> <img src="css/inprogress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
+            <button type="submit" value="Finish"> Finish  </button>
         </form>
-        <p style="padding-bottom: 25px;"> <img src="css/inprogress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
-        <a href="cleanerordercompleted.jsp"><button> Finish  </button> </a>
+
     </body>
 </html>

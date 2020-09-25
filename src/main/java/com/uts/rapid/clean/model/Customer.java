@@ -6,15 +6,17 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    private String phone;
+    private String password;
+    private String phoneNumber;
 
     public Customer(String _id, String firstName, String lastName,
-            String email, String phone) {
+            String email, String password, String phoneNumber) {
         this._id = _id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phone = phone;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getId() {
@@ -33,8 +35,12 @@ public class Customer {
         return email;
     }
 
-    public String getPhhone() {
-        return phone;
+    public String getPassword() {
+        return password;
+    }
+    
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setFirstName(String firstName) {
@@ -49,7 +55,11 @@ public class Customer {
         this.email = email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

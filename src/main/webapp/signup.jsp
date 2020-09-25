@@ -3,17 +3,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script>
-          $(function(){
-          $("#nav-placeholder").load("navigationbar.jsp");
-          });
-        </script>
+        <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
         <title>Sign Up</title>
     </head>
-    <body style="background-color: #51abff">
-        <a href="customersignup.jsp"><button class="button button2"> Customer </button></a>
-        <a href="cleanersignup.jsp"><button class="button button2"> Cleaner </button></a>
-        <a href="index.jsp"><button class="button button2"> Go Back </button></a>
+    <body>
+        <h1> Sign Up As</h1>
+        <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
+        <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
     </body>
 </html>

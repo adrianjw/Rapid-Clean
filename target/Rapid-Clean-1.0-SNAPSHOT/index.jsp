@@ -1,7 +1,12 @@
+<%@page import="com.uts.rapid.clean.model.Cleaner"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        Cleaner cleaner = new Cleaner ("5f69e1da84ebe990acfef9d6", "Bryan", "Guntoro", "12312asd", "ASdasd", 123123, 1221, "ASdasd", "Asdasd");
+        %>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/rapidclean.css" rel="stylesheet" type="text/css">
         <title>Welcome to Rapid Clean!</title>
@@ -20,6 +25,7 @@
                 </td>
             </tr>        
         </table>
-        <p> Login as Cleaner <a href="cleanerhome.jsp">here</a> </p>
+        <p> Login as Cleaner <a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">here</a> </p>
+        <jsp:include page="/SessionServlet" flush="true"/>
     </body>
 </html>

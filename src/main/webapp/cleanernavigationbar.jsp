@@ -1,9 +1,13 @@
 
 
+<%@page import="com.uts.rapid.clean.model.Cleaner"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to RapidClean!</title>
         <link rel="stylesheet" href="css/navbar.css">
@@ -26,7 +30,7 @@
                 <img class="logo" src="css/logotp.png" alt ="logo" width="10%" height="10%">
                 <nav>
                     <ul class="nav__links">
-                        <li class="tab"><a href="cleanerhome.jsp">Home</a></li>
+                        <li class="tab"><a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">Home</a></li>
                         <li class="tab"><a href="#">Earnings</a></li>
                         <li class="tab"><a href="#">Safety Checklist</a></li>
                         <li class="tab"><a href="#">Contact Us</a></li>

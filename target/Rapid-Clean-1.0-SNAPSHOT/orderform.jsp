@@ -118,6 +118,8 @@
                             <option value="Apartment">Apartment</option>
                             <option value="House">House</option>
                             <option value="Building">Building</option>
+                            <option value="Dorm">Dorm</option>
+                            <option value="Studio">Studio</option>
                         </select>
                     </div>
                     <button class="btn-submit" type="submit">Submit</button> <br/>

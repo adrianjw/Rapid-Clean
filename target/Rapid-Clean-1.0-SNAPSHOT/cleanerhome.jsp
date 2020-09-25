@@ -1,7 +1,20 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.uts.rapid.clean.model.dao.AddressDAO"%>
+<%@page import="com.uts.rapid.clean.model.dao.AcceptServiceDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.uts.rapid.clean.model.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Welcome Rapid Cleaner!</title>
+        <%
+            
+        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+        AcceptServiceDAO orderManager = (AcceptServiceDAO) session.getAttribute("orderManager");
+        ArrayList <Order> orderDet = (ArrayList) session.getAttribute("orderD");
+        String orderErr = (String) session.getAttribute("orderErr");
+        %>
+        
 
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -386,7 +399,7 @@
             <h1 class="ml11">
                 <span class="text-wrapper">
                     <span class="line line1"></span>
-                    <span class="letters">Welcome Bryan</span> <!--customer.getName() -->
+                    <span class="letters">Welcome <%=cleaner.getFirstName()%></span> <!--customer.getName() -->
                 </span>
             </h1>
 
@@ -402,13 +415,13 @@
                         .add({
                             targets: '.ml11 .line',
                             scaleY: [0, 1],
-                            opacity: [1, 1],
+                            opacity: [0.5, 1],
                             easing: "easeOutExpo",
                             duration: 700
                         })
                         .add({
                             targets: '.ml11 .line',
-                            translateX: [0, $(".ml11 .letters").width()],
+                            translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
                             easing: "easeOutExpo",
                             duration: 700,
                             delay: 100
@@ -418,12 +431,10 @@
                     easing: "easeOutExpo",
                     duration: 600,
                     offset: '-=775',
-                    delay: function (el, i) {
-                        return 34 * (i + 1)
-                    }
+                    delay: (el, i) => 34 * (i + 1)
                 }).add({
                     targets: '.ml11',
-                    opacity: 100,
+                    opacity: 0,
                     duration: 1000,
                     easing: "easeOutExpo",
                     delay: 1000
@@ -448,14 +459,26 @@
             <br>
             <br>
             <br>
+            <% 
+              if (orderDet != null) { 
+            %>
+            <% for (Order orderList : orderDet) {
+            AcceptServiceDAO temp = new AcceptServiceDAO();
+            Customer customer = temp.findCustomer(orderList.getCustomer_id());
+            Address address = temp.address(orderList.getAddress_id());
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+            String date = DATE_FORMAT.format(orderList.getDateTime());
+            %>
+            
+
 
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
                 <div class="course">
                     <div class="preview">
-                        <h6> ORDER #12831921D32OA </h6>
+                        <h6> ORDER #<%=orderList.getId()%> </h6>
                         <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                        <a> 16/08/2020, 5:20 PM </a>
+                        <a> <%=date%> </a>
 
                     </div>
                     <div class="info">
@@ -464,15 +487,19 @@
 
                             </div>
 
-                            <h6 style="background-color: #24252A; text-align: left">Customer: Bryan Guntoro </h6> 
-                            <h2  style="background-color: #24252A; text-align: left""> PREMIUM CLEANING </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $39/hr <br> Residential type: House <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
+                            <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
+                            <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
+                                <br> 
+                               
+                                Address:  <%=address.getFullAddress()%><br> 
+                                
 
-                                Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
+                                Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
                             </h6>
                         </div>
                         <div class='btn-cont' style="text-align:left;">
-                            <a class='btn' href="cleanerorderaccepted.jsp"  style="color: #3CB371">
+                            <a class='btn' href="CleanerOrderAcceptedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderList.getId()%>&customerId=<%=orderList.getCustomer_id()%>"  style="color: #3CB371">
                                 Accept Order
                                 <span class='line-1'></span>
                                 <span class='line-2'></span>
@@ -483,7 +510,7 @@
                             &nbsp;
                             &nbsp;
 
-                            <a class='btn2' href='#' style="color: #FF8484;">
+                            <a class='btn2' href="CleanerOrderRejectedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderList.getId()%>" style="color: #FF8484;">
                                 Reject Order
                                 <span class='line-1' style="background-color: #FF8484"></span>
                                 <span class='line-2'style="background-color: #FF8484"></span>
@@ -499,118 +526,15 @@
                 </div>
             </div>
             <!-- Order Lists Ends here -->
-
-            <!-- Order list starts here, iterate forLoops -->
-            <div class="container">
-                <div class="course">
-                    <div class="preview">
-                        <h6> ORDER #12831921D32OA </h6>
-                        <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                        <a> 16/08/2020, 5:20 PM </a>
-
-                    </div>
-                    <div class="info">
-                        <div class="progress-wrapper">
-                            <div class="progress">
-
-                            </div>
-
-                            <h6 style="background-color: #24252A; text-align: left">Customer: Bryan Guntoro </h6> 
-                            <h2  style="background-color: #24252A; text-align: left""> PREMIUM CLEANING </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $39/hr <br> Residential type: House <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
-
-                                Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
-                            </h6>
-                        </div>
-                        <div class='btn-cont' style="text-align:left;">
-                            <a class='btn' href="cleanerorderaccepted.jsp"  style="color: #3CB371">
-                                Accept Order
-                                <span class='line-1'></span>
-                                <span class='line-2'></span>
-                                <span class='line-3'></span>
-                                <span class='line-4'></span>
-                            </a>
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-
-                            <a class='btn2' href='#' style="color: #FF8484;">
-                                Reject Order
-                                <span class='line-1' style="background-color: #FF8484"></span>
-                                <span class='line-2'style="background-color: #FF8484"></span>
-                                <span class='line-3'style="background-color: #FF8484"></span>
-                                <span class='line-4'style="background-color: #FF8484"></span>
-                            </a>
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- Order Lists Ends here -->
-            <!-- Order list starts here, iterate forLoops -->
-            <div class="container">
-                <div class="course">
-                    <div class="preview">
-                        <h6> ORDER #12831921D32OA </h6>
-                        <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
-                        <a> 16/08/2020, 5:20 PM </a>
-
-                    </div>
-                    <div class="info">
-                        <div class="progress-wrapper">
-                            <div class="progress">
-
-                            </div>
-
-                            <h6 style="background-color: #24252A; text-align: left">Customer: Bryan Guntoro </h6> 
-                            <h2  style="background-color: #24252A; text-align: left""> PREMIUM CLEANING </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $39/hr <br> Residential type: House <br> Address: 25 Rosewood Avenue, Roselands, NSW, 2201 <br> 
-
-                                Cleaning Involved: Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation
-                            </h6>
-                        </div>
-                        <div class='btn-cont' style="text-align:left;">
-                            <a class='btn' href="cleanerorderaccepted.jsp"  style="color: #3CB371">
-                                Accept Order
-                                <span class='line-1'></span>
-                                <span class='line-2'></span>
-                                <span class='line-3'></span>
-                                <span class='line-4'></span>
-                            </a>
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-
-                            <a class='btn2' href='#' style="color: #FF8484;">
-                                Reject Order
-                                <span class='line-1' style="background-color: #FF8484"></span>
-                                <span class='line-2'style="background-color: #FF8484"></span>
-                                <span class='line-3'style="background-color: #FF8484"></span>
-                                <span class='line-4'style="background-color: #FF8484"></span>
-                            </a>
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- Order Lists Ends here -->
-
+            <% } } else {%>
+            <h1 style="background-color: #1a1a1a"> Sorry! There are no current orders available. </h1>
+            <% } %>
         </div>
-
-
-
-
         <script>
             $("a").click(function () {
                 $('html, body').animate({
                     scrollTop: $(".bookingsection").offset().top},
-                       'fast');
+                        'fast');
             });
         </script>
     </body>

@@ -1,3 +1,4 @@
 
 target/classes/.netbeans_automatic_build
 target/test-classes/.netbeans_automatic_build
+target/Rapid-Clean-1.0-SNAPSHOT/WEB-INF/lib/mongo-java-driver-3.12.7.jar

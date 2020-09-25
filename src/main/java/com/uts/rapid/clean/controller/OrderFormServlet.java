@@ -9,6 +9,7 @@ import com.uts.rapid.clean.model.dao.MongoDB;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -59,8 +60,10 @@ public class OrderFormServlet extends HttpServlet {
         String orderCategoryDesc = request.getParameter("orderCategoryDesc");
         int price = Integer.parseInt(request.getParameter("price"));
         String resident = request.getParameter("resident");
-        Date dateTime = new Date();
-        System.out.println(dateTime);
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss z");
+        
+        String dateTime = formatter.format(date);
         
         OrderDAO order = new OrderDAO();
         

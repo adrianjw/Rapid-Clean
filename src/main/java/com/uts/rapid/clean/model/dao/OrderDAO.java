@@ -27,7 +27,7 @@ public class OrderDAO extends MongoDB{
     }
    
     
-    public void addOrder(String service, int price, String resident, String orderCategoryDesc, Date dateTime) {
+    public void addOrder(String service, int price, String resident, String orderCategoryDesc, String dateTime) {
         collection = super.database.getCollection("Order");
         Document doc = new Document("orderCategory", service)
                 .append("hourlyRate", price)
@@ -37,15 +37,13 @@ public class OrderDAO extends MongoDB{
         collection.insertOne(doc);
     }
     
-//    public void getCustomerId(String customerId) {
-//        collection = super.database.getCollection("Customer");
-//        ObjectId customerObjId = new ObjectId(customerId);
-//        Document document = collection.find(eq("_id", customerObjId)).first();
-//    }
+
      //get customerid using session in servlet 
-    public void getAddressId(String customerId) {
-        collection = super.database.getCollection("Address");
+    public String findAddressId(String customerId) {
+        collection = super.database.getCollection("Address");        
         ObjectId customerObjId = new ObjectId(customerId);
-        Document document = collection.find(eq("customer_id", customerObjId)).first(); //this one might need to be converted to string
+        Document document = collection.find(eq("customer_id", customerObjId)).first(); 
+        String addressId = (String) document.get("_id");
+        return addressId;        
     }
 }

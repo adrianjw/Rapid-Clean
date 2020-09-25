@@ -21,7 +21,6 @@ html {
   color: #51abff;
   height: 100%;
   width: 3px;
-  margin-left: 20px;
   background-color: #51abff;
   transform-origin: 0 50%;
 }
@@ -29,7 +28,6 @@ html {
 .ml11 .line1 { 
   top: 0; 
   left: 0;
-  margin-left: 20px;
   color: #51abff;
 }
 
