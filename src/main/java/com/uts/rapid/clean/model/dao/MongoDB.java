@@ -1,10 +1,11 @@
 package com.uts.rapid.clean.model.dao;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoClient;
+
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
 
 public class MongoDB {
- 
+    
     protected MongoDatabase database;
     protected MongoClient mongoClient;
     
@@ -13,5 +14,4 @@ public class MongoDB {
         mongoClient = MongoClients.create(uri);
         database = mongoClient.getDatabase("rapidclean");
     }
-                
 }
