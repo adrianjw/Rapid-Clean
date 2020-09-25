@@ -1,27 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model;
 
-/**
- *
- * @author Sandy
- */
+import java.util.Date;
+
 public class Rating {
     private String id;
     private String customerId;
     private String orderHistoryId;
     private int rating;
     private String comment;
+    private Date date;
 
-    public Rating(String id, String customerId, String orderHistoryId, int rating, String comment) {
+    public Rating(String id, String customerId, String orderHistoryId, int rating, String comment, Date date) {
         this.id = id;
         this.customerId = customerId;
         this.orderHistoryId = orderHistoryId;
         this.rating = rating;
         this.comment = comment;
+        this.date = date;
     }
     
     public String getId() {
@@ -63,5 +58,13 @@ public class Rating {
     public void setComment(String comment) {
         this.comment = comment;
     }
-    
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
 }
