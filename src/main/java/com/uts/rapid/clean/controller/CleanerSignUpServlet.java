@@ -77,7 +77,7 @@ public class CleanerSignUpServlet extends HttpServlet {
             session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
         
         if (validationTestPassed == 9) {
-            if (!cleanerDAO.findCleaner(email)) {
+            if (!cleanerDAO.hasCleaner(email)) {
                 cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
                         bankBsbNumber, bankAccountNumber, bankAccountHolderName);
                 request.getRequestDispatcher("home.jsp").include(request, response);

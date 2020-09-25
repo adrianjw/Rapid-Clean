@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.uts.rapid.clean.model.Customer;
 import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
+import com.uts.rapid.clean.model.Customer;
 
 public class CustomerDAO extends MongoDB {
     
@@ -21,5 +22,9 @@ public class CustomerDAO extends MongoDB {
                 .append("password", password)
                 .append("phoneNumber", phoneNumber);
         collection.insertOne(document);
+    }
+    
+    public boolean hasCustomer(String email) {
+        return collection.find(eq("email", email)).first() != null;
     }
 }

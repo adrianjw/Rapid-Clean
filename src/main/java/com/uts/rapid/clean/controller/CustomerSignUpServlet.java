@@ -59,8 +59,14 @@ public class CustomerSignUpServlet extends HttpServlet {
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
         if (validationTestPassed == 6) {
-            customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
-            request.getRequestDispatcher("home.jsp").include(request, response);
+            if (!customerDAO.hasCustomer(email)) {
+                customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
+                request.getRequestDispatcher("home.jsp").include(request, response);
+            }
+            else {
+                session.setAttribute("emailError", "Email address already in use");
+                request.getRequestDispatcher("customersignup.jsp").include(request, response);
+            }
         }
         else {
             request.getRequestDispatcher("customersignup.jsp").include(request, response);

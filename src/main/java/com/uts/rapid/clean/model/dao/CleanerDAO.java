@@ -28,7 +28,7 @@ public class CleanerDAO extends MongoDB {
         collection.insertOne(document);
     }
     
-    public boolean findCleaner(String email) {
+    public boolean hasCleaner(String email) {
         return collection.find(eq("email", email)).first() != null;
     }
 }
