@@ -51,7 +51,7 @@
   </section>
   <!-- Previous experience details -->
   </section>
-<a href="editCustomer.jsp"><button class="button"> Edit </button></a>
+<a href="editcustomer.jsp"><button class="button"> Edit </button></a>
     </body>
 </html>
 
