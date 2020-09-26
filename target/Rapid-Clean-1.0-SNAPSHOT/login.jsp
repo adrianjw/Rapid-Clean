@@ -21,6 +21,9 @@
                 <tr>
                     <td><input type="password" name="password"></td>
                 </tr>
+                <tr>
+                    <td class="errorMessage"><%session.getAttribute("loginError");%></td>
+                </tr>
             </table>
             <button class="button" type="submit"> Login </button>
             <a href="index.jsp"><button class="button" type="button"> Go Back </button></a>

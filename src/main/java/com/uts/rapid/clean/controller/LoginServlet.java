@@ -37,6 +37,10 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("cleaner", cleaner);
                 request.getRequestDispatcher("/CleanerOrderServlet").include(request, response);
             }
+            else {
+                session.setAttribute("loginError", "Invalid username or password");
+                request.getRequestDispatcher("login.jsp").include(request, response);
+            }
         }
         else {
             session.setAttribute("loginError", "Invalid username or password");

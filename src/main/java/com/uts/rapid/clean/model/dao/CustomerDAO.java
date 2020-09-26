@@ -32,7 +32,7 @@ public class CustomerDAO extends MongoDB {
     public Customer findCustomer(String email, String password) {
         Document document = collection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
-            return new Customer((String) document.get("_id"), (String) document.get("firstName"),
+            return new Customer(document.get("_id").toString(), (String) document.get("firstName"),
                     (String) document.get("lastName"), (String) document.get("email"),
                     (String) document.get("password"), (String) document.get("phoneNumber"));
         }
