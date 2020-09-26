@@ -37,7 +37,7 @@
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderRejectedServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SessionServlet</servlet-name>
+        <servlet-name>ClearSessionServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ClearSessionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
