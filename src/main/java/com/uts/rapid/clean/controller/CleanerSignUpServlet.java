@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.uts.rapid.clean.model.Cleaner;
+import com.uts.rapid.clean.model.dao.CustomerDAO;
 import com.uts.rapid.clean.model.dao.CleanerDAO;
 
 public class CleanerSignUpServlet extends HttpServlet {
@@ -15,6 +15,7 @@ public class CleanerSignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        CustomerDAO customerDAO = new CustomerDAO();
         CleanerDAO cleanerDAO = new CleanerDAO();
         
         String firstName = request.getParameter("firstName");
@@ -77,7 +78,7 @@ public class CleanerSignUpServlet extends HttpServlet {
             session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
         
         if (validationTestPassed == 9) {
-            if (!cleanerDAO.hasCleaner(email)) {
+            if (!customerDAO.hasCustomer(email) && !cleanerDAO.hasCleaner(email)) {
                 cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
                         Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
                         bankAccountHolderName);

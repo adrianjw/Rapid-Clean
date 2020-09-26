@@ -22,5 +22,6 @@ public class SessionServlet extends HttpServlet {
         session.setAttribute("bankBsbNumberError", "");
         session.setAttribute("bankAccountNumberError", "");
         session.setAttribute("bankAccountHolderNameError", "");
+        session.setAttribute("loginError", "");
     }
 }
