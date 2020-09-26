@@ -38,7 +38,7 @@
     </servlet>
     <servlet>
         <servlet-name>SessionServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.SessionServlet</servlet-class>
+        <servlet-class>com.uts.rapid.clean.controller.ClearSessionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -77,8 +77,8 @@
         <url-pattern>/CleanerOrderRejectedServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SessionServlet</servlet-name>
-        <url-pattern>/SessionServlet</url-pattern>
+        <servlet-name>CLearSessionServlet</servlet-name>
+        <url-pattern>/ClearSessionServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

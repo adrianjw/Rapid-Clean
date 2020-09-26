@@ -82,6 +82,7 @@ public class CleanerSignUpServlet extends HttpServlet {
                 cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
                         Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
                         bankAccountHolderName);
+                session.setAttribute("cleaner", cleanerDAO.findCleaner(email, password));
                 request.getRequestDispatcher("/CleanerOrderServlet").include(request, response);
             }
             else {
