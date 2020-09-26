@@ -77,7 +77,7 @@
         <url-pattern>/CleanerOrderRejectedServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CLearSessionServlet</servlet-name>
+        <servlet-name>ClearSessionServlet</servlet-name>
         <url-pattern>/ClearSessionServlet</url-pattern>
     </servlet-mapping>
     <session-config>
