@@ -4,6 +4,8 @@
     Author     : trandamtrungthai
 --%>
 
+<%@page import="com.uts.rapid.clean.model.Customer"%>
+<%@page import="com.uts.rapid.clean.model.dao.OrderDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,13 +20,15 @@
             
             .container {
                 border-spacing: 1em;
+                text-align: center;
             }
             
             h1 {
                 text-align: center;
                 color: white;
                 margin-top: 1em;
-                margin-bottom: 2em;
+                margin-bottom: 1em;
+                font-family: sans-serif;
             }
             
             .card {
@@ -70,6 +74,10 @@
                 color: white;
                 margin-top: 2em;
             }
+            
+            .btn {
+                margin: 0 auto;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -81,13 +89,18 @@
     <body>
         <div id="nav-placeholder"></div>
         <div class="container">
+            <h1>Your Order History</h1>
+            <h1><%Customer customer = (Customer) session.getAttribute("customer");
+                    String customerId = customer.getId();
+                OrderDAO orderManager = new OrderDAO();
+                    orderManager.getOrderList(customerId);%></h1>
             <div class="card">
-                <div class="card-body">
-                    <h4>Body</h4>
-                    <p class="card-text">This is a sample text</p>
-                    <button class="card-btn">View</button>
-                </div>
-            </div>
+               <div class="card-body">
+                   <h4>Body</h4>
+                   <p class="card-text">This is a sample text</p>
+                   <button class="card-btn">View</button>
+               </div>
+           </div>
         </div>
     </body>
 </html>

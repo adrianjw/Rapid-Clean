@@ -1,19 +1,25 @@
+<%-- 
+    Document   : orderhistory
+    Created on : 27/08/2020, 1:44:27 PM
+    Author     : trandamtrungthai
+--%>
+
+<%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script>
-          $(function(){
-          $("#nav-placeholder").load("navigationbar.jsp");
-          });
-        </script>
-        
-        <style>            
+        <META HTTP-EQUIV="Refresh" CONTENT="5">
+        <title>JSP Page</title>
+        <style>
+/*            body {
+                background-color: #24252A;
+            }*/
+            
             .container {
                 border-spacing: 1em;
+                text-align: center;
             }
             
             h1 {
@@ -21,6 +27,10 @@
                 color: white;
                 margin-top: 1em;
                 margin-bottom: 2em;
+            }
+            
+            h3 {
+                color: white;
             }
             
             .card {
@@ -66,11 +76,37 @@
                 color: white;
                 margin-top: 2em;
             }
+            
+            .btn {
+                margin: 0 auto;
+            }
         </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
     </head>
     <body>
         <div id="nav-placeholder"></div>
-        
-       
+        <% OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
+        response.setIntHeader("Refresh", 5);
+        %>
+        <div class="container">
+        <% if (orderCompleted != null) {%>
+        <div class="card">
+               <div class="card-body">
+                   <h4>Order Id: <%= orderCompleted.getOrder_id()%></h4>
+                   <p class="card-text">Hours work: <%= orderCompleted.getWorkedHours()%></p>
+                   <p class="card-text">Start time: <%= orderCompleted.getStartTime()%></p>
+                   <p class="card-text">End time: <%= orderCompleted.getEndTime()%></p>
+                   <button class="card-btn">Pay</button>
+               </div>
+           </div>
+        </div>
+        <%} else {%>
+        <h3>Your order is not ready. Please refresh and try again.</h3>
+        <%}%>
     </body>
 </html>

@@ -19,6 +19,7 @@
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/AcceptServiceDAO.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Address.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderHistoryServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderPayServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderCompleted.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderRejectedServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/Validator.java
