@@ -90,8 +90,8 @@
     </section>
   <!-- Previous experience details -->
   </section>
-<a href="editcustomer.jsp"><button class="button"> Edit </button></a>
-<a href="DeleteCustomerServlet?_id=${customer.id} "><button class="button"> Delete </button></a>
+    <a href="editcustomer.jsp"><button class="button"> Edit </button></a>
+    <a href="DeleteCustomerServlet?id=<%=customer.getId()%>"><button class="button"> Delete </button></a>
     </form>
         </body>
 </html>

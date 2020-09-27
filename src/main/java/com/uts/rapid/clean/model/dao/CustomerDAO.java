@@ -42,8 +42,7 @@ public class CustomerDAO extends MongoDB {
         }
     }
     
-    public void deleteCustomer(String id)
-    {
+    public void deleteCustomer(String id) {
         ObjectId queryId = new ObjectId(id);
         collection.deleteOne(eq("_id", queryId));
     }

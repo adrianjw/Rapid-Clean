@@ -28,29 +28,21 @@ public class DeleteCustomerServlet extends HttpServlet{
             throws ServletException, IOException {
         
         try {
-        // Get current session and ratingDAO
-        HttpSession session = request.getSession();
-        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
-        
-        // Gets Rating id
-        String id = request.getParameter("id");
+            CustomerDAO customerDAO = new CustomerDAO();
 
-        // Deletes the rating
-        customerDAO.deleteCustomer(id);
+            // Gets cstomer id
+            String id = request.getParameter("id");
+
+            // Deletes the rating
+            customerDAO.deleteCustomer(id);
+
+            // Redirects to index
+            request.getRequestDispatcher("index.jsp").include(request, response);
         
         } catch (NullPointerException e) { 
             System.out.println("Missing Resources!");
         } catch (Exception e) {
             System.out.println("Account cannot be deleted!");
         }
-        // Redirects to ratings list
-        response.sendRedirect("login.jsp");
-    }
-    
-    // In the case that POST is triggered, do GET
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }
