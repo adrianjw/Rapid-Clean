@@ -113,6 +113,22 @@
                         <input type="text" name="hourlyRate" value=<%= hourlyRate %> readonly>
                     </div>
                     <div class="input-field">
+                        <p>Street Address</p>
+                        <input type="text" name="streetAddress">
+                    </div>
+                    <div class="input-field">
+                        <p>Suburb</p>
+                        <input type="text" name="suburb">
+                    </div>
+                    <div class="input-field">
+                        <p>State</p>
+                        <input type="text" name="state">
+                    </div>
+                    <div class="input-field">
+                        <p>Postcode</p>
+                        <input type="text" name="postcode">
+                    </div>
+                    <div class="input-field">
                         <p>Type of resident</p>
                         <select name="residentialType">    
                             <option value="Apartment">Apartment</option>

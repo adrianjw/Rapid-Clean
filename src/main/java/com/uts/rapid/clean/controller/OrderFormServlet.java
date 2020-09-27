@@ -7,6 +7,7 @@ package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
 import com.uts.rapid.clean.model.Order;
+import com.uts.rapid.clean.model.dao.AddressDAO;
 import com.uts.rapid.clean.model.dao.MongoDB;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
@@ -64,6 +65,12 @@ public class OrderFormServlet extends HttpServlet {
         String orderCategoryDesc = request.getParameter("orderCategoryDesc");
         double hourlyRate = Double.parseDouble(request.getParameter("hourlyRate"));
         String residentialType = request.getParameter("residentialType");
+        
+        String streetAddress = request.getParameter("streetAddress");
+        String suburb = request.getParameter("suburb");
+        String state = request.getParameter("state");
+        String postcode = request.getParameter("postcode");
+        
         Customer customer = (Customer) session.getAttribute("customer");
               
         Date dateTime = new Date();
@@ -71,12 +78,13 @@ public class OrderFormServlet extends HttpServlet {
         
         String customerId = customer.getId();
         
+        OrderDAO orderManager = new OrderDAO();
+        
+        orderManager.insertAddress(customerId, streetAddress, suburb, state, postcode);
 //        String dateTime = formatter.format(date);
 //        Date newDateTime = formatter.parse(dateTime);
         
-        OrderDAO orderManager = new OrderDAO();
-        
-        
+                
         
         String addressId = orderManager.findAddress(customerId);        
         

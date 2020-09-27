@@ -37,8 +37,8 @@
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderRejectedServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SessionServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.SessionServlet</servlet-class>
+        <servlet-name>ClearSessionServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.ClearSessionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderPayServlet</servlet-name>
@@ -81,8 +81,8 @@
         <url-pattern>/CleanerOrderRejectedServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SessionServlet</servlet-name>
-        <url-pattern>/SessionServlet</url-pattern>
+        <servlet-name>ClearSessionServlet</servlet-name>
+        <url-pattern>/ClearSessionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderPayServlet</servlet-name>

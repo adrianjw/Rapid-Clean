@@ -50,6 +50,24 @@ public class OrderDAO extends MongoDB{
         collection.insertOne(doc);
     }
     
+    public double findOrderRate(String orderId) {
+        collection = super.database.getCollection("Order");
+        ObjectId orderObjId = new ObjectId(orderId);
+        Document document = collection.find(eq("_id", orderObjId)).first(); 
+        double rate = (double) document.get("hourlyRate");
+        return rate;
+    }
+    
+     public void insertAddress(String customerId, String streetAddress, String suburb, String state, String postcode) {
+        MongoCollection<Document> collection = super.database.getCollection("Address");
+        Document doc = new Document("customer_id", customerId)
+                .append("streetAddress", streetAddress)
+                .append("suburb", suburb)
+                .append("state", state)
+                .append("postcode", postcode);
+        collection.insertOne(doc);
+    }
+    
 
      //get addressid using session in servlet 
     public String findAddress(String customerId) {
@@ -86,6 +104,13 @@ public class OrderDAO extends MongoDB{
         
         return cleanerId;
     }
+    
+//    public Order order(String orderId) {
+//        collection = super.database.getCollection("Order");
+//        ObjectId orderObjId = new ObjectId(orderId);
+//        Document doc = collection.find(eq("_id", orderObjId)).first();
+//        Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"), (String) doc.get("residentialType"), (double) doc.get("hourlyRate"), (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"), (Date) doc.get("dateTime"));
+//        return order;
     
 //    public String findOrderId(Date dateTime, String customerId) {
 //        collection = super.database.getCollection("Order");

@@ -72,14 +72,13 @@ public class OrderPayServlet extends HttpServlet {
         
         OrderDAO orderManager = new OrderDAO();
         
-        //
         ArrayList<String> orderIdList = orderManager.getOrderList(customerId);
         
 //        String orderId = orderManager.findOrderId(dateTime, customerId);
         OrderCompleted orderCompleted = null;
         
         //check if orderId is in OrderCompleted collection
-        String orderIdToUse = ""; 
+        String orderIdToUse = ""; //this is the orderId to put in parameter to find order
         for (String orderId : orderIdList) {
             boolean checkOrderCompletedExist = orderManager.checkOrderCompletedExist(orderId);
             if (checkOrderCompletedExist == true) {
@@ -95,15 +94,38 @@ public class OrderPayServlet extends HttpServlet {
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
         }    
+        
+        double totalAmount = 0;
+//        calculate total amount
+        if (orderCompleted != null) {
+            try {
+                double workHours = orderCompleted.getWorkedHours();
+                double rate = orderManager.findOrderRate(orderIdToUse);
+                totalAmount = workHours * rate;
+                session.setAttribute("totalAmount", totalAmount);
+            } catch (NullPointerException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        
        
-        //set sesssion to retreive in orderpay.jsp
+        //set sesssion for orderCompleted object
         if (orderCompleted != null) {
             session.setAttribute("orderCompleted", orderCompleted);
         } else {
             System.out.println("null");
         }
+        
+        try {
+            session.setAttribute("totalAmount", totalAmount);
+            request.getRequestDispatcher("orderpay.jsp").include(request, response);
+        } catch (NullPointerException ex) {
+            System.out.println(ex.getMessage());
+            request.getRequestDispatcher("orderpay.jsp").include(request, response);
+            
+        } 
                 
-        request.getRequestDispatcher("orderpay.jsp").include(request, response);
+        
         
     }
 

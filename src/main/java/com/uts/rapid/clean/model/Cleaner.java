@@ -14,92 +14,94 @@ public class Cleaner implements Serializable {
     private String lastName;
     private String email;
     private String password;
-    private int bankBsb;
+    private int bankBsbNumber;
     private int bankAccountNumber;
     private String bankAccountHolderName;
     private String phoneNumber;
 
-    public Cleaner(String _id, String firstName, String lastName, String email, String password, int bankBsb, int bankAccountNumber, String bankAccountHolderName, String phone) {
+    public Cleaner(String _id, String firstName, String lastName, String email,
+            String password, String phoneNumber, int bankBsbNumber,
+            int bankAccountNumber, String bankAccountHolderName) {
         this._id = _id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.bankBsb = bankBsb;
+        this.phoneNumber = phoneNumber;
+        this.bankBsbNumber = bankBsbNumber;
         this.bankAccountNumber = bankAccountNumber;
         this.bankAccountHolderName = bankAccountHolderName;
-        this.phoneNumber = phoneNumber;
     }
 
     public String getId() {
         return _id;
     }
 
-    public void setId(String _id) {
-        this._id = _id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
-
-    public int getBankBsb() {
-        return bankBsb;
-    }
-
-    public void setBankBsb(int bankBsb) {
-        this.bankBsb = bankBsb;
+    
+    public int getBankBsbNumber() {
+        return bankBsbNumber;
     }
 
     public int getBankAccountNumber() {
         return bankAccountNumber;
     }
 
-    public void setBankAccountNumber(int bankAccountNumber) {
-        this.bankAccountNumber = bankAccountNumber;
-    }
-
     public String getBankAccountHolderName() {
         return bankAccountHolderName;
     }
 
+    public void setId(String _id) {
+        this._id = _id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
+    public void setBankBsbNumber(int bankBsbNumber) {
+        this.bankBsbNumber = bankBsbNumber;
+    }
+
+    public void setBankAccountNumber(int bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
+    }
+
     public void setBankAccountHolderName(String bankAccountHolderName) {
         this.bankAccountHolderName = bankAccountHolderName;
-    }
-
-    public String getPhone() {
-        return phoneNumber;
-    }
-
-    public void setPhone(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 }

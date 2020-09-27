@@ -11,6 +11,7 @@ public class AddressDAO extends MongoDB {
     public AddressDAO() {
         super();
     }
+    
 
     public Address findAddress(String addressId) {
         MongoCollection<Document> addresses = super.database.getCollection("Address");
@@ -19,4 +20,5 @@ public class AddressDAO extends MongoDB {
         Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address;
     }
+    
 }

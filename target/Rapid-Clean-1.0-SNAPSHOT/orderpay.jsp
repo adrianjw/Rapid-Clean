@@ -91,7 +91,7 @@
     <body>
         <div id="nav-placeholder"></div>
         <% OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
-        response.setIntHeader("Refresh", 5);
+           double totalAmount = (Double) session.getAttribute("totalAmount");
         %>
         <div class="container">
         <% if (orderCompleted != null) {%>
@@ -101,12 +101,13 @@
                    <p class="card-text">Hours work: <%= orderCompleted.getWorkedHours()%></p>
                    <p class="card-text">Start time: <%= orderCompleted.getStartTime()%></p>
                    <p class="card-text">End time: <%= orderCompleted.getEndTime()%></p>
+                   <p class="card-text">Total Amount: $<%=(totalAmount != 0 ? totalAmount : "")%></p>
                    <button class="card-btn">Pay</button>
                </div>
            </div>
         </div>
         <%} else {%>
-        <h3>Your order is not ready. Please refresh and try again.</h3>
+        <h3>There is no order available. Please refresh and try again.</h3>
         <%}%>
     </body>
 </html>
