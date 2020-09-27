@@ -45,12 +45,16 @@
         <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateRatingServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
+        <servlet-name>DeleteAccountServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.DeleteAccountServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -97,12 +101,16 @@
         <url-pattern>/OrderPayServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateRatingServlet</servlet-name>
-        <url-pattern>/CreateRatingServlet</url-pattern>
+        <servlet-name>DeleteAccountServlet</servlet-name>
+        <url-pattern>/DeleteAccountServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>
         <url-pattern>/ViewRatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <url-pattern>/CreateRatingServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
