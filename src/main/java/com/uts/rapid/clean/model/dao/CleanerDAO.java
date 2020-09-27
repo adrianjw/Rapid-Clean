@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Cleaner;
 
 public class CleanerDAO extends MongoDB {
@@ -15,6 +16,7 @@ public class CleanerDAO extends MongoDB {
         collection = super.database.getCollection("Cleaner");
     }
     
+    // Insert cleaner document
     public void createCleaner(String firstName, String lastName, String email,
             String password, String phoneNumber,int bankBsbNumber,
             int bankAccountNumber, String bankAccountHolderName) {
@@ -29,10 +31,12 @@ public class CleanerDAO extends MongoDB {
         collection.insertOne(document);
     }
     
+    // Find whether a cleaner document exists with the specified email address
     public boolean hasCleaner(String email) {
         return collection.find(eq("email", email)).first() != null;
     }
     
+    // Find a cleaner document with the specified email address and password and return the cleaner java bean
     public Cleaner findCleaner(String email, String password) {
         Document document = collection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -45,5 +49,11 @@ public class CleanerDAO extends MongoDB {
         else {
             return null;
         }
+    }
+    
+    // Delete cleaner document
+    public void deleteCleaner(String id) {
+        ObjectId cleanerId = new ObjectId(id);
+        collection.deleteOne(eq("_id", cleanerId));
     }
 }
