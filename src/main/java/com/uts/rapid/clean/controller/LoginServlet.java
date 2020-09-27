@@ -34,9 +34,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("home.jsp").include(request, response);
             }
             else if (cleaner != null) {
-                session.setAttribute("cleaner", cleaner);
-                String cleanerId = cleaner.getId();
-                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleanerId).include(request, response);
+                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
                 session.setAttribute("loginError", "Invalid username or password");

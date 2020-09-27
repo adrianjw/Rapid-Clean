@@ -63,7 +63,8 @@ public class CustomerSignUpServlet extends HttpServlet {
         if (validationTestPassed == 6) {
             if (!customerDAO.hasCustomer(email) && !cleanerDAO.hasCleaner(email)) {
                 customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
-                session.setAttribute("customer", customerDAO.findCustomer(email, password));
+                Customer customer = customerDAO.findCustomer(email, password);
+                session.setAttribute("customer", customer);
                 request.getRequestDispatcher("home.jsp").include(request, response);
             }
             else {
