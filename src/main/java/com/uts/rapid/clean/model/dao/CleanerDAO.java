@@ -36,9 +36,9 @@ public class CleanerDAO extends MongoDB {
     
     public Cleaner findCleaner(String email, String password) {
         Document document = collection.find(and(eq("email", email), eq("password", password))).first();
-        ObjectId cleanerObjId = (ObjectId) document.get("_id");
-        String cleanerId = cleanerObjId.toString();
         if (document != null) {
+            ObjectId cleanerObjId = (ObjectId) document.get("_id");
+            String cleanerId = cleanerObjId.toString();
             return new Cleaner(cleanerId, (String) document.get("firstName"),
                     (String) document.get("lastName"), (String) document.get("email"),
                     (String) document.get("password"), (String) document.get("phoneNumber"),

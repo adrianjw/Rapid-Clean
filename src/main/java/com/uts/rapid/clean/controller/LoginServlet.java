@@ -14,7 +14,7 @@ import com.uts.rapid.clean.model.Cleaner;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         CustomerDAO customerDAO = new CustomerDAO();

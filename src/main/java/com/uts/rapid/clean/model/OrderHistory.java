@@ -56,12 +56,4 @@ public class OrderHistory {
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
-    
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        // TODO code application logic here
-    }
 }
