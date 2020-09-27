@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.uts.rapid.clean.model.dao.CustomerDAO;
 import com.uts.rapid.clean.model.dao.CleanerDAO;
+import com.uts.rapid.clean.model.Cleaner;
 
 public class CleanerSignUpServlet extends HttpServlet {
 
@@ -82,8 +83,9 @@ public class CleanerSignUpServlet extends HttpServlet {
                 cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
                         Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
                         bankAccountHolderName);
-                session.setAttribute("cleaner", cleanerDAO.findCleaner(email, password));
-                request.getRequestDispatcher("/CleanerOrderServlet").include(request, response);
+                Cleaner cleaner = cleanerDAO.findCleaner(email, password);
+                session.setAttribute("cleaner", cleaner);
+                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");

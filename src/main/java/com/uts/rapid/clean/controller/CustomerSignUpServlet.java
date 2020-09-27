@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.uts.rapid.clean.model.dao.CustomerDAO;
 import com.uts.rapid.clean.model.dao.CleanerDAO;
+import com.uts.rapid.clean.model.Customer;
 
 public class CustomerSignUpServlet extends HttpServlet {
 

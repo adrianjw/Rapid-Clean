@@ -18,14 +18,6 @@ public class AcceptServiceDAO extends MongoDB {
 
     private MongoCollection<Document> collection;
 
-    public static void main(String[] args) {
-        AcceptServiceDAO obj = new AcceptServiceDAO();
-        obj.displayOrderTest();
-        // obj.insertReject("test1", "test2");
-        //Customer customer1 = obj.customer("5f68bb24176a20e541479151");
-        //System.out.println(customer1.getFirstName());
-    }
-
     // Build a connection with MongoDB Atlas
     public AcceptServiceDAO() {
         super();
@@ -78,7 +70,7 @@ public class AcceptServiceDAO extends MongoDB {
         MongoCollection<Document> cleaners = super.database.getCollection("Cleaner");
         ObjectId cleanerObjId = new ObjectId(cleanerId);
         Document doc = cleaners.find(eq("_id", cleanerObjId)).first();
-        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"), (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolder"));
+        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"), (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolderName"));
         return cleaner;
     }
     // Get Address Details from Address ID
@@ -109,7 +101,7 @@ public class AcceptServiceDAO extends MongoDB {
         return customer;
     }
 
-    // Find OrderAccepted Object
+    // Find OrderCompleted Object
     public OrderCompleted findOrderCompleted(String orderId) {
         MongoCollection<Document> orderCompletedDB = super.database.getCollection("OrderCompleted");
         Document doc = orderCompletedDB.find(eq("order_id", orderId)).first();
