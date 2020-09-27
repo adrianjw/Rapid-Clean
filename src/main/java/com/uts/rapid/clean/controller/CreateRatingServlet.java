@@ -28,19 +28,22 @@ public class CreateRatingServlet extends HttpServlet {
         // Get current session, customer, paid order and ratingDAO
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("Customer");
-        OrderHistory orderHistory = (OrderHistory) session.getAttribute("OrderHistory");
-        RatingDAO ratingDAO = (RatingDAO) session.getAttribute("RatingDAO");
+        RatingDAO ratingDAO = new RatingDAO();
         
         // Gets all details/parameters/input
         String id = new ObjectId().toHexString(); // Randomised new ID
+        
         String customerId = customer.getId(); // Pre-existing
-        String orderHistoryId = orderHistory.getId(); // Pre-existing
+        // String customerId = new ObjectId().toHexString();
+        
+        String orderCompleteId = request.getParameter("orderCompletedId"); // Pre-existing
+        
         String rating = request.getParameter("rating"); // Form
         String comment = request.getParameter("comment"); // Form
         Date date = new Date(); // Current time
         
         // Create Rating object to be converted and added to the database
-        Rating rate = new Rating(id, customerId, orderHistoryId, Integer.parseInt(rating), comment, date);
+        Rating rate = new Rating(id, customerId, orderCompleteId, Integer.parseInt(rating), comment, date);
         ratingDAO.createRating(rate);
             
         } catch (NullPointerException e) { 
@@ -50,7 +53,7 @@ public class CreateRatingServlet extends HttpServlet {
         }
         
         // Re-directs to Order History
-        response.sendRedirect("orderhistory.jsp");
+        response.sendRedirect("home.jsp");
         
     }
 

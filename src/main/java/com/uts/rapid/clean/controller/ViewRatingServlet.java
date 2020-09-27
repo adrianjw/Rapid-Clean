@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.bson.types.ObjectId;
 
 @WebServlet(name = "ViewRatingServlet", urlPatterns = {"/ViewRatingServlet"})
 public class ViewRatingServlet extends HttpServlet {
@@ -22,21 +23,15 @@ public class ViewRatingServlet extends HttpServlet {
         
         // Get current session, ratingDAO
         HttpSession session = request.getSession();
-        //RatingDAO ratingDAO = (RatingDAO) session.getAttribute("ratingDAO");
         RatingDAO ratingDAO = new RatingDAO();
+        // Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");  
         
         // Stores all ratings in arraylist and displays
-        try {
-        ArrayList<Rating> allRatings = ratingDAO.viewAllRatings();
-        System.out.println(allRatings.size());
-        session.setAttribute("listRatings", allRatings);
-        } catch (NullPointerException e) { 
-            System.out.println("Missing Resources!");
-        } catch (Exception e) {
-            ArrayList<Rating> allRatings = ratingDAO.viewAllRatings();
-            System.out.println(allRatings.size());
-            System.out.println("Cannot view Ratings");
-        }
+        ArrayList<Rating> listRatings = ratingDAO.viewAllRatings();
+        System.out.println(listRatings.size());
+        session.setAttribute("listRatings", listRatings);
+
+        System.out.println("\n\nTotal Entries: "+listRatings.size()+"\n\n");
         
         // Redirects to All Ratings and forward req,res resources
         RequestDispatcher dispatcher = request.getRequestDispatcher("ratings.jsp");
