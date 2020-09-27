@@ -5,6 +5,7 @@ import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
 import com.uts.rapid.clean.model.Customer;
+import org.bson.types.ObjectId;
 
 public class CustomerDAO extends MongoDB {
     
@@ -39,5 +40,11 @@ public class CustomerDAO extends MongoDB {
         else {
             return null;
         }
+    }
+    
+    public void deleteCustomer(String id)
+    {
+        ObjectId queryId = new ObjectId(id);
+        collection.deleteOne(eq("_id", queryId));
     }
 }
