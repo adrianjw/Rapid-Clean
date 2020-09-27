@@ -16,7 +16,7 @@
     </head>
     <body class="rating__bd">
         <div id="nav-placeholder"></div>
-        <form style="background-color: #1a1a1a;" method="GET" action="CreateRatingServlet?orderCompletedId=5f705f19c465d542cfe76870">
+        <form style="background-color: #1a1a1a;" method="POST" action="CreateRatingServlet?orderCompletedId=5f705f19c465d542cfe76870">
 
             <h1 id="rating-h1">Leave a Rating!</h1>
             <table class="rating-stars__tb center">
