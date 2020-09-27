@@ -7,7 +7,7 @@
         <title>Login</title>
     </head>
     <body>
-        <form action="/LoginServlet" method="POST">
+        <form action="LoginServlet" method="POST">
             <table>
                 <tr>
                     <td>Email</td>
