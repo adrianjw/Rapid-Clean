@@ -21,7 +21,6 @@
                 </td>
             </tr>        
         </table>
-        <p> Login as Cleaner <a href="CleanerOrderServlet?cleanerId=5f704dcf71921265c278ada2">here</a> </p>
         <jsp:include page="/ClearSessionServlet" flush="true"/>
     </body>
 </html>

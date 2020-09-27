@@ -80,7 +80,7 @@ public class OrderFormServlet extends HttpServlet {
         
         OrderDAO orderManager = new OrderDAO();
         
-        orderManager.insertAddress(customerId, streetAddress, suburb, state, postcode);
+        orderManager.insertAddress(customerId, streetAddress, suburb, state, Integer.parseInt(postcode));
 //        String dateTime = formatter.format(date);
 //        Date newDateTime = formatter.parse(dateTime);
         

@@ -58,7 +58,7 @@ public class OrderDAO extends MongoDB{
         return rate;
     }
     
-     public void insertAddress(String customerId, String streetAddress, String suburb, String state, String postcode) {
+     public void insertAddress(String customerId, String streetAddress, String suburb, String state, int postcode) {
         MongoCollection<Document> collection = super.database.getCollection("Address");
         Document doc = new Document("customer_id", customerId)
                 .append("streetAddress", streetAddress)
