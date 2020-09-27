@@ -35,4 +35,5 @@ com\uts\rapid\clean\model\Cleaner.class
 com\uts\rapid\clean\model\OrderHistory.class
 com\uts\rapid\clean\model\Rating.class
 com\uts\rapid\clean\model\OrderAccepted.class
+com\uts\rapid\clean\model\Test.class
 com\uts\rapid\clean\model\dao\AddressDAO.class
