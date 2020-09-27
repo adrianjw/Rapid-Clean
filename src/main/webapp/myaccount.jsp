@@ -19,7 +19,7 @@
         <link href="css/useraccountmgmt.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form action="LoginServlet" method="POST">
+        <form action="LoginServlet" method="GET">
         <%
             //Customer customer = new Customer("123","ad","ad","ad","ad","ad");
             Customer customer = (Customer) session.getAttribute("customer");
@@ -91,12 +91,12 @@
     </section>
   <!-- Previous experience details -->
   </section>
-    <a href="editcustomer.jsp"><button class="button"> Edit </button></a>
+    <a href="editcustomer.jsp"><button class="button" type="button"> Edit </button></a>
     <% if (customer != null) { %>
-        <a href="DeleteAccountServlet?id=<%=customer.getId()%>"><button class="button"> Delete Account </button></a>
+        <a href="DeleteAccountServlet?id=<%=customer.getId()%>"><button class="button" type="button"> Delete Account </button></a>
     <% } %>
     <% if (cleaner != null) { %>
-        <a href="DeleteAccountServlet?id=<%=cleaner.getId()%>"><button class="button"> Delete Account </button></a>
+        <a href="DeleteAccountServlet?id=<%=cleaner.getId()%>"><button class="button" type="button"> Delete Account </button></a>
     <% } %>
     </form>
         </body>
