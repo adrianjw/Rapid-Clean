@@ -45,8 +45,8 @@
         <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DeleteCustomerServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.DeleteCustomerServlet</servlet-class>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
@@ -97,8 +97,8 @@
         <url-pattern>/OrderPayServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DeleteCustomerServlet</servlet-name>
-        <url-pattern>/DeleteCustomerServlet</url-pattern>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <url-pattern>/CreateRatingServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>

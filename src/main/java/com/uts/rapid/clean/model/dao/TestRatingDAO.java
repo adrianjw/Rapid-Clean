@@ -21,6 +21,8 @@ public class TestRatingDAO {
         RatingDAO ratingDAO = new RatingDAO();
         ArrayList<Rating> allRatings = new ArrayList<>();
         
+        System.out.println("Documents in rapidclean.rating collection: ");
+        
         allRatings = ratingDAO.viewAllRatings();
         for (Rating rating : allRatings) {
             String id = rating.getId();

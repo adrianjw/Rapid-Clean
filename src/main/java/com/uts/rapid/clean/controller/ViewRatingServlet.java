@@ -34,15 +34,7 @@ public class ViewRatingServlet extends HttpServlet {
         System.out.println("\n\nTotal Entries: "+listRatings.size()+"\n\n");
         
         // Redirects to All Ratings and forward req,res resources
-        RequestDispatcher dispatcher = request.getRequestDispatcher("ratings.jsp");
-        dispatcher.forward(request, response);
-    }
-    
-    // In the case that GET is triggered, do POST
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doPost(request, response);
+        request.getRequestDispatcher("ratings.jsp").include(request, response);
     }
 
 }
