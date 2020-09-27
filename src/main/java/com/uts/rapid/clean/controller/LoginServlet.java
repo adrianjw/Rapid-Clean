@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("customer", customer);
                 request.getRequestDispatcher("home.jsp").include(request, response);
             }
-            if (cleaner != null) {
+            else if (cleaner != null) {
                 request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
