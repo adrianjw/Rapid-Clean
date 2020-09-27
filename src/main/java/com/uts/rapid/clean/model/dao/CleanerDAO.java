@@ -1,8 +1,10 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.uts.rapid.clean.model.Cleaner;
 import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
+import com.uts.rapid.clean.model.Cleaner;
 
 public class CleanerDAO extends MongoDB {
     
@@ -14,8 +16,8 @@ public class CleanerDAO extends MongoDB {
     }
     
     public void createCleaner(String firstName, String lastName, String email,
-            String password, String phoneNumber,String bankBsbNumber,
-            String bankAccountNumber, String bankAccountHolderName) {
+            String password, String phoneNumber,int bankBsbNumber,
+            int bankAccountNumber, String bankAccountHolderName) {
         Document document = new Document("firstName", firstName)
                 .append("lastName", lastName)
                 .append("email", email)
@@ -25,5 +27,23 @@ public class CleanerDAO extends MongoDB {
                 .append("bankAccountNumber", bankAccountNumber)
                 .append("bankAccountHolderName", bankAccountHolderName);
         collection.insertOne(document);
+    }
+    
+    public boolean hasCleaner(String email) {
+        return collection.find(eq("email", email)).first() != null;
+    }
+    
+    public Cleaner findCleaner(String email, String password) {
+        Document document = collection.find(and(eq("email", email), eq("password", password))).first();
+        if (document != null) {
+            return new Cleaner(document.get("_id").toString(), (String) document.get("firstName"),
+                    (String) document.get("lastName"), (String) document.get("email"),
+                    (String) document.get("password"), (String) document.get("phoneNumber"),
+                    (int) document.get("bankBsbNumber"), (int) document.get("bankAccountNumber"),
+                    (String) document.get("bankAccountHolderName"));
+        }
+        else {
+            return null;
+        }
     }
 }

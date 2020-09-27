@@ -31,10 +31,18 @@ input {
     border: 2px solid #FFFFFF;
     background-color: #51abff; 
     color: white;
+    outline-width: 0;
 }
 
-.errorMessage {
-    color: #ff0000;
+button {
+    background-color: #51abff; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: arial;
+    transition-duration: 0.4s;
+    outline-width: 0;
+    cursor: pointer;
 }
 
 .customer-button {
@@ -44,14 +52,7 @@ input {
     padding-top: 280px;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
-    background-color: #51abff; 
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: arial;
     font-size: 25px;
-    transition-duration: 0.4s;
-    cursor: pointer;
     background-image: url("customer-icon-white.png");
 }
 
@@ -68,14 +69,7 @@ input {
     padding-top: 280px;
     border: 3px solid #FFFFFF;
     border-radius: 30px;
-    background-color: #51abff; 
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: arial;
     font-size: 25px;
-    transition-duration: 0.4s;
-    cursor: pointer;
     background-image: url("cleaner-icon-white.png");
 }
 
@@ -91,17 +85,14 @@ input {
     margin: 0px 10px;
     border: 2px solid #FFFFFF;
     border-radius: 8px;
-    background-color: #51abff; 
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: arial;
     font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
 }
 
 .button:hover {
     background-color: #FFFFFF;
     color: #51abff;
+}
+
+.errorMessage {
+    color: #ff0000;
 }

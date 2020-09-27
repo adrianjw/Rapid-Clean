@@ -6,8 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.uts.rapid.clean.model.Customer;
 import com.uts.rapid.clean.model.dao.CustomerDAO;
+import com.uts.rapid.clean.model.dao.CleanerDAO;
+import com.uts.rapid.clean.model.Customer;
 
 public class CustomerSignUpServlet extends HttpServlet {
 
@@ -16,6 +17,7 @@ public class CustomerSignUpServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         CustomerDAO customerDAO = new CustomerDAO();
+        CleanerDAO cleanerDAO = new CleanerDAO();
         
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -59,8 +61,16 @@ public class CustomerSignUpServlet extends HttpServlet {
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
         if (validationTestPassed == 6) {
-            customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
-            request.getRequestDispatcher("home.jsp").include(request, response);
+            if (!customerDAO.hasCustomer(email) && !cleanerDAO.hasCleaner(email)) {
+                customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
+                Customer customer = customerDAO.findCustomer(email, password);
+                session.setAttribute("customer", customer);
+                request.getRequestDispatcher("home.jsp").include(request, response);
+            }
+            else {
+                session.setAttribute("emailError", "Email address already in use");
+                request.getRequestDispatcher("customersignup.jsp").include(request, response);
+            }
         }
         else {
             request.getRequestDispatcher("customersignup.jsp").include(request, response);

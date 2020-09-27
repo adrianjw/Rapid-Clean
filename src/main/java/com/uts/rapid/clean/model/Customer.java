@@ -43,6 +43,10 @@ public class Customer {
         return phoneNumber;
     }
 
+    public void setId(String _id) {
+        this._id = _id;
+    }
+    
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

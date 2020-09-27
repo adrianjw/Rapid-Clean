@@ -36,5 +36,4 @@ public class CleanerOrderServlet extends HttpServlet {
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
         }
     }
-
 }
