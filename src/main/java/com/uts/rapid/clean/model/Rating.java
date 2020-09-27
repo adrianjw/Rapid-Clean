@@ -5,7 +5,7 @@ import java.util.Date;
 public class Rating {
     private String id;
     private String customerId;
-    private String orderHistoryId;
+    private String orderCompletedId;
     private int rating;
     private String comment;
     private Date date;
@@ -13,7 +13,7 @@ public class Rating {
     public Rating(String id, String customerId, String orderHistoryId, int rating, String comment, Date date) {
         this.id = id;
         this.customerId = customerId;
-        this.orderHistoryId = orderHistoryId;
+        this.orderCompletedId = orderCompletedId;
         this.rating = rating;
         this.comment = comment;
         this.date = date;
@@ -35,12 +35,12 @@ public class Rating {
         this.customerId = customerId;
     }
 
-    public String getOrderHistoryId() {
-        return orderHistoryId;
+    public String getOrderCompletedId() {
+        return orderCompletedId;
     }
 
-    public void setOrderHistoryId(String orderHistoryId) {
-        this.orderHistoryId = orderHistoryId;
+    public void setOrderCompletedId(String orderHistoryId) {
+        this.orderCompletedId = orderHistoryId;
     }
 
     public int getRating() {
