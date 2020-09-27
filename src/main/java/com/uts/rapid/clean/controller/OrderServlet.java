@@ -35,7 +35,7 @@ public class OrderServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
 //        String orderCategory = request.getParameter("orderCategory");
-//        int price = Integer.parseInt(request.getParameter("price"));
+//        int hourlyRate = Integer.parseInt(request.getParameter("hourlyRate"));
 //        session.setAttribute("service", service);
         
         request.getRequestDispatcher("orderform.jsp").include(request, response);

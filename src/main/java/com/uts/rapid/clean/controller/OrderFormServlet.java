@@ -5,17 +5,22 @@
  */
 package com.uts.rapid.clean.controller;
 
+import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.Order;
+import com.uts.rapid.clean.model.dao.AddressDAO;
 import com.uts.rapid.clean.model.dao.MongoDB;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.bson.Document;
 
 /**
  *
@@ -58,21 +63,32 @@ public class OrderFormServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String orderCategory = request.getParameter("orderCategory");
         String orderCategoryDesc = request.getParameter("orderCategoryDesc");
-        int price = Integer.parseInt(request.getParameter("price"));
-        String resident = request.getParameter("resident");
-//        Customer customer = new Customer();
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss z");
+        double hourlyRate = Double.parseDouble(request.getParameter("hourlyRate"));
+        String residentialType = request.getParameter("residentialType");
         
-//        String customerId = customer.getId();
-
-        String dateTime = formatter.format(date);
+        String streetAddress = request.getParameter("streetAddress");
+        String suburb = request.getParameter("suburb");
+        String state = request.getParameter("state");
+        String postcode = request.getParameter("postcode");
         
-        OrderDAO order = new OrderDAO();
+        Customer customer = (Customer) session.getAttribute("customer");
+              
+        Date dateTime = new Date();
+//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss z");
         
-//        order.findAddressId(customerId);
+        String customerId = customer.getId();
         
-        order.addOrder(orderCategory, price, resident, orderCategoryDesc, dateTime);
+        OrderDAO orderManager = new OrderDAO();
+        
+        orderManager.insertAddress(customerId, streetAddress, suburb, state, postcode);
+//        String dateTime = formatter.format(date);
+//        Date newDateTime = formatter.parse(dateTime);
+        
+                
+        
+        String addressId = orderManager.findAddress(customerId);        
+        
+        orderManager.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         
         request.getRequestDispatcher("home.jsp").include(request, response);
     }

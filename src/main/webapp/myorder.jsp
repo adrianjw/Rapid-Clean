@@ -1,19 +1,26 @@
+<%-- 
+    Document   : orderhistory
+    Created on : 27/08/2020, 1:44:27 PM
+    Author     : trandamtrungthai
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script>
-          $(function(){
-          $("#nav-placeholder").load("navigationbar.jsp");
-          });
-        </script>
         
-        <style>            
+        <title>JSP Page</title>
+        <style>
+/*            body {
+                background-color: #24252A;
+            }*/
+            
             .container {
                 border-spacing: 1em;
+                text-align: center;
+                display: flex;
+                justify-content: center;
             }
             
             h1 {
@@ -22,29 +29,7 @@
                 margin-top: 1em;
                 margin-bottom: 2em;
             }
-            
-            .card {
-                margin-bottom: 1.5em;
-                padding: 10px;
-                margin: 4em;
-                width: 40%;
-                color: white;
-                font-family: sans-serif;
-                margin: 0 auto;
-                margin-top: 1em;
-                text-align: center;
-            }
-            
-            .card-body {
-                border: 1px white solid;
-                padding: 10px;
-                border-radius: 5px;
-            }
-            
-            .card-text {
-                margin-top: 0.5em;
-            }
-            
+                        
             .card-btn {
                 color: black;
                 background-color: #ff7675;
@@ -66,11 +51,32 @@
                 color: white;
                 margin-top: 2em;
             }
+            
+            .btn {
+                margin: 0 auto;
+                margin-top: 2em;
+                margin-left: 2em;
+            }
         </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
     </head>
     <body>
         <div id="nav-placeholder"></div>
-        
-       
+        <div class="container">
+            <form action="OrderPayServlet" method="get">
+                <button class="card-btn btn" type="submit">View unpaid order</button>
+            </form>
+            
+            <form action="" method="get">
+                <button class="card-btn btn" type="submit">Order History</button>
+            </form>
+            
+            
+        </div>
     </body>
 </html>

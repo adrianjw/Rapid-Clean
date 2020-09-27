@@ -94,7 +94,7 @@
     </head>
     <body>
         <% String orderCategory = request.getParameter("orderCategory");
-           String price = request.getParameter("price");
+           String hourlyRate = request.getParameter("hourlyRate");
            String orderCategoryDesc = request.getParameter("orderCategoryDesc");
         %>
         <div id="nav-placeholder"></div>
@@ -110,11 +110,27 @@
                     </div>
                     <div class="input-field">
                         <p>Price per hour</p>
-                        <input type="text" name="price" value=<%= price%> readonly>
+                        <input type="text" name="hourlyRate" value=<%= hourlyRate %> readonly>
+                    </div>
+                    <div class="input-field">
+                        <p>Street Address</p>
+                        <input type="text" name="streetAddress">
+                    </div>
+                    <div class="input-field">
+                        <p>Suburb</p>
+                        <input type="text" name="suburb">
+                    </div>
+                    <div class="input-field">
+                        <p>State</p>
+                        <input type="text" name="state">
+                    </div>
+                    <div class="input-field">
+                        <p>Postcode</p>
+                        <input type="text" name="postcode">
                     </div>
                     <div class="input-field">
                         <p>Type of resident</p>
-                        <select name="resident">    
+                        <select name="residentialType">    
                             <option value="Apartment">Apartment</option>
                             <option value="House">House</option>
                             <option value="Building">Building</option>

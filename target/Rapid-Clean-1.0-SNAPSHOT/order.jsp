@@ -4,6 +4,7 @@
     Author     : trandamtrungthai
 --%>
 
+<%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -196,14 +197,14 @@
         <div id="nav-placeholder">
             
         </div>
-        
+       
         <h1>Pick A Service That Suits You</h1>
         <!--Start of box-->
         <div class="container">
             <form action="OrderServlet" method="post">
                 <input type="hidden" name="orderCategory" value="rapid" />
                 <input type="hidden" name="orderCategoryDesc" value="Kitchen Cleaning, Bathroom Cleaning, Living Room Cleaning, and Room Cleaning" />
-                <input type="hidden" name="price" value="38" />
+                <input type="hidden" name="hourlyRate" value="38" />
                 <div class="box" id="one">
                     <div class="icon">01</div>
                     <div class="title">
@@ -224,7 +225,7 @@
             <div class="box box-1">
                 <input type="hidden" name="orderCategory" value="deluxe" />
                 <input type="hidden" name="orderCategoryDesc" value="Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation." />
-                <input type="hidden" name="price" value="50"/>
+                <input type="hidden" name="hourlyRate" value="50"/>
                 <div class="icon">02</div>
                 <div class="title">
                     <div class="content">
@@ -245,7 +246,7 @@
             <div class="box box-2">
                 <input type="hidden" name="orderCategory" value="premium" />
                 <input type="hidden" name="orderCategoryDesc" value="Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation" />
-                <input type="hidden" name="price" value="90"/>
+                <input type="hidden" name="hourlyRate" value="90"/>
                 <div class="icon">03</div>
                 <div class="title">
                     <div class="content">

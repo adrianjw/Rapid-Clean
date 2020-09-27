@@ -31,7 +31,7 @@
                         <a href="myaccount.jsp">MY ACCOUNT</a>
                         <a href="myaddresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
-                        <a href="orderhistory.jsp">MY ORDERS</a>
+                        <a href="myorder.jsp">MY ORDERS</a>
                         <a href="customerlogout.jsp">LOGOUT</a>
                     </div>
                 </div>
