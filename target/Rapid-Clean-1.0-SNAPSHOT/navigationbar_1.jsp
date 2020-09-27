@@ -28,7 +28,7 @@
                 <div class="dropdown">
                     <a class="cta" href="#"><button>MY PROFILE ⯆</button></a>
                     <div class="dropdown-content" style="right:0">
-                        <a href="myaccount.jsp">MY ACCOUNT</a>
+                        <a href="#">MY ACCOUNT</a>
                         <a href="myaddresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
                         <a href="myorder.jsp">MY ORDERS</a>
