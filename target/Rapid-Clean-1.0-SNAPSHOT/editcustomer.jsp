@@ -43,28 +43,6 @@
       <p><span>Phone      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
     </div>
   </section>
-  <section class="section1">
-    <h2 class="sectionTitle">Address</h2>
-    <hr class="sectionTitleRule">
-    <hr class="sectionTitleRule2">
-    <div class="section1Content">
-      <p><span>Street Address:</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Suburb        :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>State         :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Postcode      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-    </div>
-  </section>
-  <!-- Previous experience details -->
-  <section class="section1">
-    <h2 class="sectionTitle">Billing Details</h2>
-    <hr class="sectionTitleRule">
-    <hr class="sectionTitleRule2">
-    <div class="section1Content">
-      <p><span>Card holder name :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Card Number      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Expiry Date      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-    </div>
-    </section>
   </section>
     <a href="#"><button class="button" type="submit" value="Update"> Update </button></a>
     <a href="myaccount.jsp"><button class="button"> Go Back </button></a>

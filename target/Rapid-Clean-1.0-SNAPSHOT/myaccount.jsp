@@ -1,3 +1,4 @@
+<%@page import="java.lang.String"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.uts.rapid.clean.model.dao.*"%>
 <%@page import="com.uts.rapid.clean.model.dao.*"%>
@@ -19,8 +20,9 @@
     </head>
     <body>
         <%
-           Customer customer = (Customer) session.getAttribute("customer");
-           Address address = (Address) session.getAttribute("adresss");
+           Customer customer = new Customer ("5f69e1da84ebe990acfef9d6","John","Doe","password123","johndoe@gmail.com","0123412333");
+           session.setAttribute("customer", customer);
+
         
         %>
         <div id="nav-placeholder"></div>
@@ -41,26 +43,15 @@
     <hr class="sectionTitleRule">
     <hr class="sectionTitleRule2">
     <div class="section1Content">
-      <p><span>First Name :<%customer.getFirstName();%></span></p>
-      <p><span>Last Name  :<%customer.getLastName();%></span></p>
-      <p><span>Email      :<%customer.getEmail();%></span></p>
-      <p><span>Phone      :<%customer.getPhoneNumber();%></span></p>
-    </div>
-  </section>
-  <section class="section1">
-    <h2 class="sectionTitle">Address</h2>
-    <hr class="sectionTitleRule">
-    <hr class="sectionTitleRule2">
-    <div class="section1Content">
-      <p><span>Street Address : <%address.getStreetAddress();%></span></p>
-      <p><span>Suburb :<%address.getSuburb();%></span></p>
-      <p><span>State : <%address.getState();%></span></p>
-      <p><span>Postcode : <%address.getPostcode();%></span></p>
+      <p><span>First Name :<%//customer.getFirstName();%></span></p>
+      <p><span>Last Name  :<%//customer.getLastName();%></span></p>
+      <p><span>Email      :<%//customer.getEmail();%></span></p>
+      <p><span>Phone      :<%//customer.getPhoneNumber();%></span></p>
     </div>
   </section>
   <!-- Previous experience details -->
   </section>
-<a href="editCustomer.jsp"><button class="button"> Edit </button></a>
+<a href="editcustomer.jsp"><button class="button"> Edit </button></a>
     </body>
 </html>
 
