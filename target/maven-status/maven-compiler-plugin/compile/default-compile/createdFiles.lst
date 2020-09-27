@@ -19,7 +19,7 @@ com\uts\rapid\clean\controller\ClearSessionServlet.class
 com\uts\rapid\clean\controller\CustomerSignUpServlet.class
 com\uts\rapid\clean\controller\OrderFormServlet.class
 com\uts\rapid\clean\model\Payment.class
-com\uts\rapid\clean\controller\DeleteCustomerServlet.class
+com\uts\rapid\clean\controller\DeleteAccountServlet.class
 com\uts\rapid\clean\resources\JavaEE8Resource.class
 com\uts\rapid\clean\model\Customer.class
 com\uts\rapid\clean\controller\ViewRatingServlet.class

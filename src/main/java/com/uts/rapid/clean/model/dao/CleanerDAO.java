@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Cleaner;
 
 public class CleanerDAO extends MongoDB {
@@ -45,5 +46,10 @@ public class CleanerDAO extends MongoDB {
         else {
             return null;
         }
+    }
+    
+    public void deleteCleaner(String id) {
+        ObjectId cleanerId = new ObjectId(id);
+        collection.deleteOne(eq("_id", cleanerId));
     }
 }

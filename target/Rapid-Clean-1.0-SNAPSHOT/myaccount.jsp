@@ -23,6 +23,7 @@
         <%
             //Customer customer = new Customer("123","ad","ad","ad","ad","ad");
             Customer customer = (Customer) session.getAttribute("customer");
+            Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
             Address address = (Address) session.getAttribute("address");
             /*
            String email = request.getParameter("emailErr");
@@ -91,7 +92,12 @@
   <!-- Previous experience details -->
   </section>
     <a href="editcustomer.jsp"><button class="button"> Edit </button></a>
-    <a href="DeleteCustomerServlet?id=<%=customer.getId()%>"><button class="button"> Delete </button></a>
+    <% if (customer != null) { %>
+        <a href="DeleteAccountServlet?id=<%=customer.getId()%>"><button class="button"> Delete Account </button></a>
+    <% } %>
+    <% if (cleaner != null) { %>
+        <a href="DeleteAccountServlet?id=<%=cleaner.getId()%>"><button class="button"> Delete Account </button></a>
+    <% } %>
     </form>
         </body>
 </html>
