@@ -19,6 +19,7 @@
         <link href="css/UserAccount.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <form action="LoginServlet" method="POST">
         <%
             //Customer customer = new Customer("123","ad","ad","ad","ad","ad");
             Customer customer = (Customer) session.getAttribute("customer");
@@ -49,9 +50,13 @@
     <hr class="sectionTitleRule2">
     <div class="section1Content">
       <p><span>First Name :${customer.firstName}</span></p>
+      <br>
       <p><span>Last Name  :${customer.lastName}</span></p>
+      <br>
       <p><span>Email      :${customer.email}</span></p>
+      <br>
       <p><span>Phone      :${customer.phoneNumber}</span></p>
+      <br>
     </div>
   </section>
   <section class="section1">
@@ -60,9 +65,13 @@
     <hr class="sectionTitleRule2">
     <div class="section1Content">
       <p><span>Street Address : ${address.streetAddress}</span></p>
+      <br>
       <p><span>Suburb : ${address.surburb}</span></p>
+      <br>
       <p><span>State : ${address.state}</span></p>
+      <br>
       <p><span>Postcode : ${address.postcode}</span></p>
+      <br>
     </div>
   </section>
   <!-- Previous experience details -->
@@ -72,13 +81,18 @@
     <hr class="sectionTitleRule2">
     <div class="section1Content">
       <p><span>Card holder name :</span></p>
+      <br>
       <p><span>Card Number :</span></p>
+      <br>
       <p><span>Expiry Date :</span></p>
+      <br>
     </div>
     </section>
   <!-- Previous experience details -->
   </section>
 <a href="editcustomer.jsp"><button class="button"> Edit </button></a>
-    </body>
+<a href="DeleteCustomerServlet?_id=${customer.id} "><button class="button"> Delete </button></a>
+    </form>
+        </body>
 </html>
 
