@@ -58,7 +58,7 @@ public class OrderDAO extends MongoDB{
         return rate;
     }
     
-     public void insertAddress(String customerId, String streetAddress, String suburb, String state, String postcode) {
+     public void insertAddress(String customerId, String streetAddress, String suburb, String state, int postcode) {
         MongoCollection<Document> collection = super.database.getCollection("Address");
         Document doc = new Document("customer_id", customerId)
                 .append("streetAddress", streetAddress)
@@ -105,12 +105,6 @@ public class OrderDAO extends MongoDB{
         return cleanerId;
     }
     
-//    public Order order(String orderId) {
-//        collection = super.database.getCollection("Order");
-//        ObjectId orderObjId = new ObjectId(orderId);
-//        Document doc = collection.find(eq("_id", orderObjId)).first();
-//        Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"), (String) doc.get("residentialType"), (double) doc.get("hourlyRate"), (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"), (Date) doc.get("dateTime"));
-//        return order;
     
 //    public String findOrderId(Date dateTime, String customerId) {
 //        collection = super.database.getCollection("Order");

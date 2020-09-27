@@ -126,7 +126,7 @@
                     </div>
                     <div class="input-field">
                         <p>Postcode</p>
-                        <input type="text" name="postcode">
+                        <input type="text" name="postcode" pattern="[0-9]{4}">
                     </div>
                     <div class="input-field">
                         <p>Type of resident</p>

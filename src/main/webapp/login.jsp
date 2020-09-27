@@ -6,11 +6,6 @@
         <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
         <title>Login</title>
     </head>
-    <%
-        String emailErr = request.getParameter("emailErr");
-        String passwordErr = request.getParameter("passErr");
-        String emptyErr = request.getParameter("empty");
-    %>
     <body>
         <form action="LoginServlet" method="POST">
             <table>
@@ -18,21 +13,19 @@
                     <td>Email</td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="email" class="form-control" placeholder="<%=(emailErr != null ? emailErr : "Enter email")%>" id="inputEmail1"name="email"required>
-                    </td>
+                    <td><input type="email" name="email"></td>
                 </tr>
                 <tr>
                     <td>Password</td>
                 </tr>
                 <tr>
-                    <td><input type="password" class="form-control" placeholder="<%=(passwordErr != null ? passwordErr : "Enter password")%>" id="inputPassword1" name="password"required></td>
+                    <td><input type="password" name="password"></td>
                 </tr>
                 <tr>
                     <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
-            <a href="myaccount.jsp"><button class="button" type="submit"> Login </button></a>
+            <button class="button" type="submit"> Login </button>
             <a href="index.jsp"><button class="button" type="button"> Go Back </button></a>
         </form>
     </body>
