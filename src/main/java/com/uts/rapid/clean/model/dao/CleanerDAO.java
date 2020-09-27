@@ -6,6 +6,7 @@ import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Cleaner;
+import org.bson.types.ObjectId;
 
 public class CleanerDAO extends MongoDB {
     
@@ -37,7 +38,9 @@ public class CleanerDAO extends MongoDB {
     public Cleaner findCleaner(String email, String password) {
         Document document = collection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
-            return new Cleaner(document.get("_id").toString(), (String) document.get("firstName"),
+            ObjectId cleanerObjId = (ObjectId) document.get("_id");
+            String cleanerId = cleanerObjId.toString();
+            return new Cleaner(cleanerId, (String) document.get("firstName"),
                     (String) document.get("lastName"), (String) document.get("email"),
                     (String) document.get("password"), (String) document.get("phoneNumber"),
                     (int) document.get("bankBsbNumber"), (int) document.get("bankAccountNumber"),

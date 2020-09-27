@@ -141,28 +141,25 @@ public class AcceptServiceDAO extends MongoDB {
             if (list.isEmpty()) {
 
                 if (!listRejected.isEmpty()) {
-                    
+
                     for (Document rejectedCleaner : listRejected) {
                         ArrayList<String> cleanerList = new ArrayList();
                         String cleanerIdDB = (String) rejectedCleaner.get("cleaner_id");
                         cleanerList.add(cleanerIdDB);
-                        
-                            
 
-                            // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
-                            if (cleanerIdDB.equalsIgnoreCase(cleanerId) == true) {
+                        // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
+                        if (cleanerIdDB.equalsIgnoreCase(cleanerId) == true) {
 
-                           helper = true;
-                                
-                            } 
+                            helper = true;
+
+                        }
                     }
-                    
-                    if (helper == false)
-                    {
-                             ObjectId orderObjId = (ObjectId) orders.get("_id");
-                                String newOrderId = orderObjId.toString();
-                                Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
-                                table.add(order);
+
+                    if (helper == false) {
+                        ObjectId orderObjId = (ObjectId) orders.get("_id");
+                        String newOrderId = orderObjId.toString();
+                        Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                        table.add(order);
                     }
                 } else {
                     ObjectId orderObjId = (ObjectId) orders.get("_id");
@@ -232,6 +229,4 @@ public class AcceptServiceDAO extends MongoDB {
         }
     }
 
-    // Delete Order (Rejected)
-    // Delete OrderAccepted after Inserting to OrderCompleted
 }
