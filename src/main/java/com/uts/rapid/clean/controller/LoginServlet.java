@@ -27,16 +27,14 @@ public class LoginServlet extends HttpServlet {
         validator.clear(session);
         
         if (validator.validateEmail(email) && validator.validatePassword(password)) {
-//            Customer customer = customerDAO.findCustomer(email, password);
+            Customer customer = customerDAO.findCustomer(email, password);
             Cleaner cleaner = cleanerDAO.findCleaner(email, password);
-//            if (customer != null) {
-//                session.setAttribute("customer", customer);
-//                request.getRequestDispatcher("home.jsp").include(request, response);
-//            }
+            if (customer != null) {
+                session.setAttribute("customer", customer);
+                request.getRequestDispatcher("home.jsp").include(request, response);
+            }
             if (cleaner != null) {
-//                session.setAttribute("cleanerId", cleaner.getId());
-                String cleanerId = cleaner.getId();
-                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleanerId).include(request, response);
+                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
                 session.setAttribute("loginError", "Invalid username or password");
