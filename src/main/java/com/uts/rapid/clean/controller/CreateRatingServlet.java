@@ -52,8 +52,8 @@ public class CreateRatingServlet extends HttpServlet {
             System.out.println("Rating cannot be created!");
         }
         
-        // Re-directs to Order History
-        response.sendRedirect("home.jsp");
+        // Re-directs to Home
+        request.getRequestDispatcher("home.jsp").include(request, response);
         
     }
 
