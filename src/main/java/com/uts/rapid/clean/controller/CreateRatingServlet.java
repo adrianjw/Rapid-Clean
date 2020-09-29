@@ -20,11 +20,9 @@ import org.bson.types.ObjectId;
 public class CreateRatingServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        try {
-            
         // Get current session, customer, paid order and ratingDAO
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("Customer");
@@ -45,12 +43,6 @@ public class CreateRatingServlet extends HttpServlet {
         // Create Rating object to be converted and added to the database
         Rating rate = new Rating(id, customerId, orderCompleteId, Integer.parseInt(rating), comment, date);
         ratingDAO.createRating(rate);
-            
-        } catch (NullPointerException e) { 
-            System.out.println("Missing Resources!");
-        } catch (Exception e) { 
-            System.out.println("Rating cannot be created!");
-        }
         
         // Re-directs to Home
         request.getRequestDispatcher("home.jsp").include(request, response);

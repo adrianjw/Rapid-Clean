@@ -18,7 +18,7 @@ import org.bson.types.ObjectId;
 public class ViewRatingServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         // Get current session, ratingDAO
