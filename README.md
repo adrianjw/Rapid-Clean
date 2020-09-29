@@ -27,10 +27,10 @@
 
 - [Google Drive](https://drive.google.com/drive/folders/1hYSAZWtSsTQhhmAIcCVMuD98-YkmWGMC?usp=sharing)
 - [Slack](https://app.slack.com/client/T0187MBJ8E6/C018XGMRZSL)
-- [Monday](https://introdcution-to-software-development.monday.com/boards/676182606)
 - [Codeship](https://app.codeship.com/rapid-clean)
 - [Heroku](https://rapidclean.herokuapp.com/)
 - [Heroku Console](https://dashboard.heroku.com/apps/rapidclean)
+- [Papertrail](https://my.papertrailapp.com/groups/21279852/events?q=%22%22)
 - [GCP](https://rapid-clean-287217.ts.r.appspot.com/)
 - [GCP Console](https://console.cloud.google.com/home/dashboard?project=rapid-clean-287217)
 - [MongoDB Atlas](https://cloud.mongodb.com/v2/5f421021eb308e2f3016e728#clusters)
