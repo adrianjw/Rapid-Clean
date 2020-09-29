@@ -398,7 +398,6 @@
         <div class="moving-letters">
             <h1 class="ml11">
                 <span class="text-wrapper">
-                    <span class="line line1"></span>
                     <span class="letters">Welcome <%=cleaner.getFirstName()%></span> <!--customer.getName() -->
                 </span>
             </h1>

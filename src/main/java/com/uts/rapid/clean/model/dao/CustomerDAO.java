@@ -5,6 +5,7 @@ import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
 import com.uts.rapid.clean.model.Customer;
+import org.bson.types.ObjectId;
 
 public class CustomerDAO extends MongoDB {
     
@@ -15,6 +16,7 @@ public class CustomerDAO extends MongoDB {
         collection = super.database.getCollection("Customer");
     }
     
+    // Insert customer document
     public void createCustomer(String firstName, String lastName, String email,
             String password, String phoneNumber) {
         Document document = new Document("firstName", firstName)
@@ -25,10 +27,12 @@ public class CustomerDAO extends MongoDB {
         collection.insertOne(document);
     }
     
+    // Find whether a customer document exists with the specified email address
     public boolean hasCustomer(String email) {
         return collection.find(eq("email", email)).first() != null;
     }
     
+    // Find a customer document with the specified email address and password and return the customer java bean
     public Customer findCustomer(String email, String password) {
         Document document = collection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -39,5 +43,11 @@ public class CustomerDAO extends MongoDB {
         else {
             return null;
         }
+    }
+    
+    // Delete customer document
+    public void deleteCustomer(String id) {
+        ObjectId customerId = new ObjectId(id);
+        collection.deleteOne(eq("_id", customerId));
     }
 }

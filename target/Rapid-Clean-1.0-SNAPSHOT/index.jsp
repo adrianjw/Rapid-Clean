@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%
-        Cleaner cleaner = new Cleaner ("5f69e1da84ebe990acfef9d6", "Bryan", "Guntoro", "asd@asd.com", "password123", "0412341234", 123456, 123456, "Bryan Guntoro");
-        %>
-        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/rapidclean.css" rel="stylesheet" type="text/css">
         <title>Welcome to Rapid Clean!</title>
@@ -25,7 +21,6 @@
                 </td>
             </tr>        
         </table>
-        <p> Login as Cleaner <a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">here</a> </p>
         <jsp:include page="/ClearSessionServlet" flush="true"/>
     </body>
 </html>

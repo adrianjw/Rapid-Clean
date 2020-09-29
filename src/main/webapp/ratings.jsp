@@ -4,7 +4,9 @@
     Author     : Sandy
 --%>
 
+<%@page import="com.uts.rapid.clean.model.dao.RatingDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html class="rating__html">
     <head>
@@ -46,16 +48,35 @@
         <!-- Each <div class="rating-masonry__item"> is a rating/review. -->
         
         <div class="rating-masonry center">
-
+        <c:forEach var="rate" items="${listRatings}">
             <div class="rating-masonry__item">
-                <c:forEach var="rate" items="${allRatings}">
-                <p id="wingdings"><c:out value="${rate.rating}"/></p>
-                <p id="rating-username"></p>
-                <hr>
-                <p>"<c:out value="${rate.comment}"/>"</p>
-                <c:forEach/>
-            </div>
 
+                <p style="background-color: #24252A;" id="wingdings">
+                    <c:choose>
+                        <c:when test="${rate.rating == 5}">
+                            «««««
+                        </c:when>
+                        <c:when test="${rate.rating == 4}">
+                            ««««
+                        </c:when>
+                        <c:when test="${rate.rating == 3}">
+                            «««
+                        </c:when>
+                        <c:when test="${rate.rating == 2}">
+                            ««
+                        </c:when>
+                        <c:when test="${rate.rating == 1}">
+                            «
+                        </c:when>
+                    </c:choose>
+                </p>
+                <p style="background-color: #24252A;" id="rating-username">#<c:out value="${rate.customerId}"/></p>
+                <hr>
+                <p style="background-color: #24252A;">"<c:out value="${rate.comment}"/>"</p>
+
+            </div>
+        </c:forEach>
         </div>
+
     </body>
 </html>

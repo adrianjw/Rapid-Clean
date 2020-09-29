@@ -7,6 +7,8 @@ package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.*;
 import com.uts.rapid.clean.model.Rating;
+import com.uts.rapid.clean.model.dao.CleanerDAO;
+import com.uts.rapid.clean.model.dao.CustomerDAO;
 import com.uts.rapid.clean.model.dao.RatingDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,38 +21,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "DeleteRatingServlet", urlPatterns = {"/DeleteRatingServlet"})
-public class DeleteRatingServlet extends HttpServlet {
+@WebServlet(name = "DeleteCustomerServlet", urlPatterns = {"/DeleteCustomerServlet"})
 
+public class DeleteAccountServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         try {
-        // Get current session and ratingDAO
-        HttpSession session = request.getSession();
-        RatingDAO ratingDAO = (RatingDAO) session.getAttribute("ratingDAO");
-        
-        // Gets Rating id
-        String id = request.getParameter("id");
+            CustomerDAO customerDAO = new CustomerDAO();
+            CleanerDAO cleanerDAO = new CleanerDAO();
+            // Gets user id
+            String id = request.getParameter("id");
 
-        // Deletes the rating
-        ratingDAO.deletRating(id);
+            // Deletes the user
+            customerDAO.deleteCustomer(id);
+            cleanerDAO.deleteCleaner(id);
+            
+            // Redirects to index
+            request.getRequestDispatcher("index.jsp").include(request, response);
         
         } catch (NullPointerException e) { 
             System.out.println("Missing Resources!");
         } catch (Exception e) {
-            System.out.println("Rating cannot be deleted!");
+            System.out.println("Account cannot be deleted!");
         }
-        // Redirects to ratings list
-        response.sendRedirect("orderhistory.jsp");
     }
-    
-    // In the case that POST is triggered, do GET
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
-
 }

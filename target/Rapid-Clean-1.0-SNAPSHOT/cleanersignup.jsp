@@ -7,7 +7,7 @@
         <title>Cleaner Sign Up</title>
     </head>
     <body>
-        <form action="CleanerSignUpServlet" method="POST">
+        <form action="CleanerSignUpServlet" method="GET">
             <table>
                 <tr>
                     <td>First Name</td>

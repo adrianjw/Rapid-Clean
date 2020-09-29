@@ -68,7 +68,7 @@ public class OrderFormServlet extends HttpServlet {
         String streetAddress = request.getParameter("streetAddress");
         String suburb = request.getParameter("suburb");
         String state = request.getParameter("state");
-        int postcode = Integer.parseInt(request.getParameter("postcode"));
+        String postcode = request.getParameter("postcode");
         
         Customer customer = (Customer) session.getAttribute("customer");
               
@@ -79,7 +79,7 @@ public class OrderFormServlet extends HttpServlet {
         
         OrderDAO orderManager = new OrderDAO();
         
-        orderManager.insertAddress(customerId, streetAddress, suburb, state, postcode);
+        orderManager.insertAddress(customerId, streetAddress, suburb, state, Integer.parseInt(postcode));
 //        String dateTime = formatter.format(date);
 //        Date newDateTime = formatter.parse(dateTime);
         

@@ -14,7 +14,7 @@ import com.uts.rapid.clean.model.Cleaner;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         CustomerDAO customerDAO = new CustomerDAO();
@@ -34,8 +34,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("home.jsp").include(request, response);
             }
             else if (cleaner != null) {
-                session.setAttribute("cleaner", cleaner);
-                request.getRequestDispatcher("home.jsp").include(request, response);
+                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
                 session.setAttribute("loginError", "Invalid username or password");
