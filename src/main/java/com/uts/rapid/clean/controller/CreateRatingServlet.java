@@ -43,7 +43,7 @@ public class CreateRatingServlet extends HttpServlet {
         // Create Rating object to be converted and added to the database
         Rating rate = new Rating(id, customerId, orderCompleteId, Integer.parseInt(rating), comment, date);
         ratingDAO.createRating(rate);
-
+        
         // Re-directs to Home
         request.getRequestDispatcher("home.jsp").include(request, response);
         
