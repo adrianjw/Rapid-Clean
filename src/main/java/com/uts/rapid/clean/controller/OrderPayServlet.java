@@ -76,6 +76,7 @@ public class OrderPayServlet extends HttpServlet {
         
 //        String orderId = orderManager.findOrderId(dateTime, customerId);
         OrderCompleted orderCompleted = null;
+        Order order = null;
         
         //check if orderId is in OrderCompleted collection
         String orderIdToUse = ""; //this is the orderId to put in parameter to find order
@@ -94,30 +95,18 @@ public class OrderPayServlet extends HttpServlet {
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
         }    
-        
-        double totalAmount = 0;
-//        calculate total amount
-        if (orderCompleted != null) {
-            try {
-                double workHours = orderCompleted.getWorkedHours();
-                double rate = orderManager.findOrderRate(orderIdToUse);
-                totalAmount = workHours * rate;
-                session.setAttribute("totalAmount", totalAmount);
-            } catch (NullPointerException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
-        
+                    
        
         //set sesssion for orderCompleted object
         if (orderCompleted != null) {
+            order = orderManager.order(orderIdToUse);
             session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
         } else {
             System.out.println("null");
         }
-        
+                
         try {
-            session.setAttribute("totalAmount", totalAmount);
             request.getRequestDispatcher("orderpay.jsp").include(request, response);
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
@@ -125,8 +114,6 @@ public class OrderPayServlet extends HttpServlet {
             
         } 
                 
-        
-        
     }
 
     /**

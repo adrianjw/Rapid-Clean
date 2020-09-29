@@ -4,6 +4,7 @@
     Author     : trandamtrungthai
 --%>
 
+<%@page import="com.uts.rapid.clean.model.Order"%>
 <%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -91,17 +92,20 @@
     <body>
         <div id="nav-placeholder"></div>
         <% OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
-           double totalAmount = (Double) session.getAttribute("totalAmount");
+           Order order = (Order) session.getAttribute("order");
         %>
         <div class="container">
-        <% if (orderCompleted != null) {%>
+        <% if (orderCompleted != null && order != null) {%>
         <div class="card">
                <div class="card-body">
                    <h4>Order Id: <%= orderCompleted.getOrder_id()%></h4>
-                   <p class="card-text">Hours work: <%= orderCompleted.getWorkedHours()%></p>
+                   <p class="card-text">Total Price: $<%= orderCompleted.getWorkedHours()%></p>
                    <p class="card-text">Start time: <%= orderCompleted.getStartTime()%></p>
                    <p class="card-text">End time: <%= orderCompleted.getEndTime()%></p>
-                   <p class="card-text">Total Amount: $<%=(totalAmount != 0 ? totalAmount : "")%></p>
+                   <p class="card-text">Service: <%= order.getOrderCategory()%></p>
+                   <p class="card-text">Residential Type: <%= order.getResidentialType()%></p>
+                   <p class="card-text">Hourly Rate: <%= order.getHourlyRate()%></p>
+                   <p class="card-text">Date Ordered <%= order.getDateTime()%></p>
                    <button class="card-btn">Pay</button>
                </div>
            </div>
