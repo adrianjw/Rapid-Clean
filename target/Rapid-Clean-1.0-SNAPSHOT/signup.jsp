@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.uts.rapid.clean.controller.Validator"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +11,17 @@
         <h1> Sign Up As</h1>
         <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
         <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
-        <jsp:include page="/ClearSessionServlet" flush="true"/>
+        <%
+            session.setAttribute("firstNameError", "");
+            session.setAttribute("lastNameError", "");
+            session.setAttribute("emailError", "");
+            session.setAttribute("passwordError", "");
+            session.setAttribute("confirmPasswordError", "");
+            session.setAttribute("phoneNumberError", "");
+            session.setAttribute("bankBsbNumberError", "");
+            session.setAttribute("bankAccountNumberError", "");
+            session.setAttribute("bankAccountHolderNameError", "");
+            session.setAttribute("loginError", "");
+        %>
     </body>
 </html>

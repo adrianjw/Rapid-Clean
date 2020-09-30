@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.bson.types.ObjectId;
 
-
 @WebServlet(name = "CreateRatingServlet", urlPatterns = {"/CreateRatingServlet"})
 public class CreateRatingServlet extends HttpServlet {
 
@@ -26,7 +25,7 @@ public class CreateRatingServlet extends HttpServlet {
         // Get current session, customer, paid order and ratingDAO
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("Customer");
-        RatingDAO ratingDAO = new RatingDAO();
+        RatingDAO ratingDAO = (RatingDAO) session.getAttribute("ratingDAO");
         
         // Gets all details/parameters/input
         String id = new ObjectId().toHexString(); // Randomised new ID
@@ -48,5 +47,4 @@ public class CreateRatingServlet extends HttpServlet {
         request.getRequestDispatcher("home.jsp").include(request, response);
         
     }
-
 }

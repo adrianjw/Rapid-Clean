@@ -17,8 +17,8 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        CustomerDAO customerDAO = new CustomerDAO();
-        CleanerDAO cleanerDAO = new CleanerDAO();
+        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
+        CleanerDAO cleanerDAO = (CleanerDAO) session.getAttribute("cleanerDAO");
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");

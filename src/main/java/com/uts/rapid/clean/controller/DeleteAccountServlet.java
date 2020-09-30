@@ -27,24 +27,18 @@ public class DeleteAccountServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
+        CleanerDAO cleanerDAO = (CleanerDAO) session.getAttribute("cleanerDAO");
         
-        try {
-            CustomerDAO customerDAO = new CustomerDAO();
-            CleanerDAO cleanerDAO = new CleanerDAO();
-            // Gets user id
-            String id = request.getParameter("id");
+        // Gets user id
+        String id = request.getParameter("id");
 
-            // Deletes the user
-            customerDAO.deleteCustomer(id);
-            cleanerDAO.deleteCleaner(id);
-            
-            // Redirects to index
-            request.getRequestDispatcher("index.jsp").include(request, response);
-        
-        } catch (NullPointerException e) { 
-            System.out.println("Missing Resources!");
-        } catch (Exception e) {
-            System.out.println("Account cannot be deleted!");
-        }
+        // Deletes the user
+        customerDAO.deleteCustomer(id);
+        cleanerDAO.deleteCleaner(id);
+
+        // Redirects to index
+        request.getRequestDispatcher("index.jsp").include(request, response);
     }
 }

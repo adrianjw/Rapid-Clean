@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model.dao;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.uts.rapid.clean.model.Rating;
 import java.util.ArrayList;
@@ -18,7 +14,8 @@ public class TestRatingDAO {
     
     // Testing DAO methods for operations that cannot be manually tested
     public static void main(String[] args) {
-        RatingDAO ratingDAO = new RatingDAO();
+        MongoDatabase database = new MongoDB().getDatabase();
+        RatingDAO ratingDAO = new RatingDAO(database);
         ArrayList<Rating> allRatings = new ArrayList<>();
         
         System.out.println("Documents in rapidclean.rating collection: ");
@@ -41,5 +38,4 @@ public class TestRatingDAO {
         
         //System.out.println("Customer Name: " + ratingDAO.getCustomerName("5f6f2d6543c90043b7fa226e"));
     }
-
 }
