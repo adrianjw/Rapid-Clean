@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model;
 
 import java.util.Date;
 
-/**
- *
- * @author trandamtrungthai
- */
 public class Order {
 
     private String _id;
