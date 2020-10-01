@@ -1,3 +1,4 @@
+com\uts\rapid\clean\controller\LogoutServlet.class
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
 com\uts\rapid\clean\controller\CleanerSignUpServlet.class
 com\uts\rapid\clean\controller\Validator.class

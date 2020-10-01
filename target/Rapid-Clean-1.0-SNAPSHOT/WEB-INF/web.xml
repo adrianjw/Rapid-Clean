@@ -41,6 +41,10 @@
         <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>OrderServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
     </servlet>
@@ -80,7 +84,7 @@
         <servlet-name>ConnectionServlet</servlet-name>
         <url-pattern>/ConnectionServlet</url-pattern>
     </servlet-mapping>
-      <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CreateRatingServlet</servlet-name>
         <url-pattern>/CreateRatingServlet</url-pattern>
     </servlet-mapping>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderFormServlet</servlet-name>
