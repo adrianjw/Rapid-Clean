@@ -17,6 +17,6 @@ public class LogoutServlet extends HttpServlet {
         MongoClient mongoClient = (MongoClient) session.getAttribute("mongoClient");
         mongoClient.close();
         session.invalidate();
-        request.getRequestDispatcher("index.jsp").include(request, response);
+        request.getRequestDispatcher("logout.jsp").include(request, response);
     }
 }
