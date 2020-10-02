@@ -458,18 +458,15 @@
             <br>
             <br>
             <br>
-            <% 
-              if (orderDet != null) { 
+            <% if (orderDet != null) { %>
+            <%
+                for (Order orderList : orderDet) {
+                    AcceptServiceDAO temp = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
+                    Customer customer = temp.findCustomer(orderList.getCustomer_id());
+                    Address address = temp.address(orderList.getAddress_id());
+                    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+                    String date = DATE_FORMAT.format(orderList.getDateTime());
             %>
-            <% for (Order orderList : orderDet) {
-            AcceptServiceDAO temp = new AcceptServiceDAO();
-            Customer customer = temp.findCustomer(orderList.getCustomer_id());
-            Address address = temp.address(orderList.getAddress_id());
-            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-            String date = DATE_FORMAT.format(orderList.getDateTime());
-            %>
-            
-
 
             <!-- Order list starts here, iterate forLoops -->
             <div class="container">
