@@ -23,6 +23,7 @@
     <servlet>
         <servlet-name>ConnectionServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ConnectionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>CreateRatingServlet</servlet-name>
