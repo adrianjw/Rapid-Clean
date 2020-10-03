@@ -42,7 +42,7 @@ public class OrderPayServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         String customerId = customer.getId();
-        OrderDAO orderDAO = (OrderDAO) session.getAttribute("ratingDAO");
+        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
         ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
         

@@ -29,12 +29,12 @@ public class CleanerOrderServlet extends HttpServlet {
 
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
-            request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
+            request.getRequestDispatcher("cleanerhome.jsp").forward(request, response);
         }
         else {
             session.setAttribute("orderD", null);
             session.setAttribute("orderErr", "There are no orders available around your area");
-            request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
+            request.getRequestDispatcher("cleanerhome.jsp").forward(request, response);
         }
     }
 }

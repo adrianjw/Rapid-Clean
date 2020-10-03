@@ -44,7 +44,7 @@ public class CreateRatingServlet extends HttpServlet {
         ratingDAO.createRating(rate);
         
         // Re-directs to Home
-        request.getRequestDispatcher("home.jsp").include(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
         
     }
 }

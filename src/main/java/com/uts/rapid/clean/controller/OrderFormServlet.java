@@ -19,17 +19,6 @@ import org.bson.Document;
 
 public class OrderFormServlet extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -62,7 +51,7 @@ public class OrderFormServlet extends HttpServlet {
         
         orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         
-        request.getRequestDispatcher("home.jsp").include(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     @Override

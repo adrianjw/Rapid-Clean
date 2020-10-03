@@ -39,6 +39,6 @@ public class DeleteAccountServlet extends HttpServlet{
         cleanerDAO.deleteCleaner(id);
 
         // Redirects to index
-        request.getRequestDispatcher("index.jsp").include(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

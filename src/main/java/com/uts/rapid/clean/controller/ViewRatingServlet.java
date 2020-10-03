@@ -30,7 +30,7 @@ public class ViewRatingServlet extends HttpServlet {
         System.out.println("\n\nTotal Entries: "+listRatings.size()+"\n\n");
         
         // Redirects to All Ratings and forward req,res resources
-        request.getRequestDispatcher("ratings.jsp").include(request, response);
+        request.getRequestDispatcher("ratings.jsp").forward(request, response);
     }
 
 }

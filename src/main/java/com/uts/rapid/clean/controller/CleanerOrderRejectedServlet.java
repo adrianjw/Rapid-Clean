@@ -23,6 +23,6 @@ public class CleanerOrderRejectedServlet extends HttpServlet {
         // Insert the order to OrderRejected Database to avoid being displayed for the particular cleaner after rejected
         acceptServiceDAO.insertRejectOrder(orderId, cleanerId);
 
-        request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleanerId).include(request, response);
+        request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleanerId).forward(request, response);
     }
 }

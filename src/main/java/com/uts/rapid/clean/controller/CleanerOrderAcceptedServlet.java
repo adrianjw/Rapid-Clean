@@ -30,6 +30,6 @@ public class CleanerOrderAcceptedServlet extends HttpServlet {
         session.setAttribute("orderAccepted", orderAccepted);
         session.setAttribute("customer", customer);
         session.setAttribute("address", address);
-        request.getRequestDispatcher("cleanerorderaccepted.jsp").include(request, response);
+        request.getRequestDispatcher("cleanerorderaccepted.jsp").forward(request, response);
     }
 }
