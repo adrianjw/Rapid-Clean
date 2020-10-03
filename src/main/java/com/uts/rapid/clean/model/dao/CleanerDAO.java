@@ -1,6 +1,5 @@
 package com.uts.rapid.clean.model.dao;
 
-import java.io.Serializable;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
@@ -9,7 +8,7 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Cleaner;
 
-public class CleanerDAO implements Serializable {
+public class CleanerDAO {
     
     private MongoCollection<Document> cleanerCollection;
     
