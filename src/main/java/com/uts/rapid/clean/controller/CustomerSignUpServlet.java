@@ -65,15 +65,15 @@ public class CustomerSignUpServlet extends HttpServlet {
                 customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
                 Customer customer = customerDAO.findCustomer(email, password);
                 session.setAttribute("customer", customer);
-                request.getRequestDispatcher("home.jsp").include(request, response);
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("customersignup.jsp").include(request, response);
+                request.getRequestDispatcher("customersignup.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("customersignup.jsp").include(request, response);
+            request.getRequestDispatcher("customersignup.jsp").forward(request, response);
         }
     }
 }

@@ -84,15 +84,15 @@ public class CleanerSignUpServlet extends HttpServlet {
                         Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
                         bankAccountHolderName);
                 Cleaner cleaner = cleanerDAO.findCleaner(email, password);
-                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
+                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).forward(request, response);
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("cleanersignup.jsp").include(request, response);
+                request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("cleanersignup.jsp").include(request, response);
+            request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
         }
     }
 }

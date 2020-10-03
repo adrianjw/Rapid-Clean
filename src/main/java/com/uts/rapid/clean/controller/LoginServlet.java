@@ -31,19 +31,19 @@ public class LoginServlet extends HttpServlet {
             Cleaner cleaner = cleanerDAO.findCleaner(email, password);
             if (customer != null) {
                 session.setAttribute("customer", customer);
-                request.getRequestDispatcher("home.jsp").include(request, response);
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
             else if (cleaner != null) {
                 request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
             }
             else {
                 session.setAttribute("loginError", "Invalid username or password");
-                request.getRequestDispatcher("login.jsp").include(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
         else {
             session.setAttribute("loginError", "Invalid username or password");
-            request.getRequestDispatcher("login.jsp").include(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }
