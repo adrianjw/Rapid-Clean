@@ -13,13 +13,13 @@
                     <td>Email</td>
                 </tr>
                 <tr>
-                    <td><input type="email" name="email"></td>
+                    <td><input type="email" name="email" requied></td>
                 </tr>
                 <tr>
                     <td>Password</td>
                 </tr>
                 <tr>
-                    <td><input type="password" name="password"></td>
+                    <td><input type="password" name="password" requied></td>
                 </tr>
                 <tr>
                     <td class="errorMessage"><%=session.getAttribute("loginError")%></td>

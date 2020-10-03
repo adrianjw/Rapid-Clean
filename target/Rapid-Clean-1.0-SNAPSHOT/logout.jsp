@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Goodbye!</title>
         <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
-        <meta http-equiv="refresh" content="3;url=index.jsp" />
+        <meta http-equiv="refresh" content="2;url=index.jsp" />
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
             .example {
