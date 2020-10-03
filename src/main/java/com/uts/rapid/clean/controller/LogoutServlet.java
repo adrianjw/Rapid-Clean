@@ -1,6 +1,5 @@
 package com.uts.rapid.clean.controller;
 
-import com.mongodb.client.MongoClient;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
