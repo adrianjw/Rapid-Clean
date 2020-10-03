@@ -14,8 +14,6 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        MongoClient mongoClient = (MongoClient) session.getAttribute("mongoClient");
-        mongoClient.close();
         session.invalidate();
         request.getRequestDispatcher("logout.jsp").include(request, response);
     }
