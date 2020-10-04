@@ -27,7 +27,7 @@
                 <tr>
                     <td>Phone Number</td>
                     <td><input type="text" name="phoneNumber" minlength="10" maxlength="10" required></td>
-                    <td class="errorMessage"<%=session.getAttribute("phoneNumberError")%></td>
+                    <td class="errorMessage"><%=session.getAttribute("phoneNumberError")%></td>
                 </tr>
                 <tr>
                     <td>Password</td>
