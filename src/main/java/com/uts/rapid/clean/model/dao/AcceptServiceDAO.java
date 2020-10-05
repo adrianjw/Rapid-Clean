@@ -74,20 +74,8 @@ public class AcceptServiceDAO {
                 (Date) doc.get("dateTime"));
         return order;
     }
-
-    // Returns the cleaner object
-    public Cleaner findCleaner(String cleanerId) {
-        ObjectId cleanerObjId = new ObjectId(cleanerId);
-        Document doc = cleanerCollection.find(eq("_id", cleanerObjId)).first();
-        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
-                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"),
-                (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"),
-                (String) doc.get("bankAccountHolderName"));
-        return cleaner;
-    }
     
     // Get Address Details from Address ID
-    @SuppressWarnings("unchecked")
     public Address address(String addressId) {
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = addressCollection.find(eq("_id", addressObjId)).first();
@@ -113,6 +101,17 @@ public class AcceptServiceDAO {
         return customer;
     }
 
+    // Returns the cleaner object
+    public Cleaner findCleaner(String cleanerId) {
+        ObjectId cleanerObjId = new ObjectId(cleanerId);
+        Document doc = cleanerCollection.find(eq("_id", cleanerObjId)).first();
+        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
+                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"),
+                (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"),
+                (String) doc.get("bankAccountHolderName"));
+        return cleaner;
+    }
+    
     // Find OrderCompleted Object
     public OrderCompleted findOrderCompleted(String orderId) {
         Document doc = orderCompletedCollection.find(eq("order_id", orderId)).first();
