@@ -14,8 +14,7 @@ import javax.servlet.http.HttpSession;
 
 public class CleanerOrderServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String cleanerId = (String) session.getAttribute("cleanerId");
@@ -36,5 +35,17 @@ public class CleanerOrderServlet extends HttpServlet {
             session.setAttribute("orderErr", "There are no orders available around your area");
             request.getRequestDispatcher("cleanerhome.jsp").forward(request, response);
         }
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }
