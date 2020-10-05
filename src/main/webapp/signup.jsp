@@ -8,9 +8,14 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <h1> Sign Up As</h1>
-        <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
-        <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
+        <div>
+            <a href="index.jsp"><button class="back-button">←</button></a>
+            <h1> Sign Up As </h1>
+        </div>
+        <div>
+            <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
+            <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
+        </div>
         <%
             session.setAttribute("firstNameError", "");
             session.setAttribute("lastNameError", "");

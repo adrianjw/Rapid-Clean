@@ -19,7 +19,6 @@
                 margin: 25px 100px;
                 padding: 0px;
             }
-
             div.a {
                 text-align: center;
             }

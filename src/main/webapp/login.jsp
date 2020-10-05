@@ -7,6 +7,7 @@
         <title>Login</title>
     </head>
     <body>
+        <a href="index.jsp"><button class="back-button">←</button></a>
         <form action="LoginServlet" method="GET">
             <table>
                 <tr>
@@ -25,8 +26,7 @@
                     <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
-            <button class="button" type="submit"> Login </button>
-            <a href="index.jsp"><button class="button" type="button"> Go Back </button></a>
+            <button class="regular-button" type="submit"> Login </button>
         </form>
     </body>
 </html>

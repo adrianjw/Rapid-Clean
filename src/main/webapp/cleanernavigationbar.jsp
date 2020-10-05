@@ -43,7 +43,7 @@
                         <a href="#">MY PAYMENTS</a>
                         <a href="#">MY JOB HISTORY</a>
                         <a href="ViewRatingServlet">MY RATINGS</a>
-                        <a href="cleanerlogout.jsp">LOGOUT</a>
+                        <a href="LogoutServlet">LOGOUT</a>
                     </div>
                 </div>
 
