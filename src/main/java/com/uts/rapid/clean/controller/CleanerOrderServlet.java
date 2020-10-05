@@ -18,7 +18,7 @@ public class CleanerOrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String cleanerId = request.getParameter("cleanerId");
+        String cleanerId = (String) session.getAttribute("cleanerId");
         AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
         ArrayList<Order> orderD = null;
 

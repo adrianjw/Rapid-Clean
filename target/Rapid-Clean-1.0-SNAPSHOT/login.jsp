@@ -8,7 +8,7 @@
     </head>
     <body>
         <a href="index.jsp"><button class="back-button">←</button></a>
-        <form action="LoginServlet" method="GET">
+        <form action="LoginServlet" method="POST">
             <table>
                 <tr>
                     <td>Email</td>

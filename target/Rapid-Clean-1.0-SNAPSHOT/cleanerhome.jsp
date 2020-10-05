@@ -8,14 +8,11 @@
     <head>
         <title>Welcome Rapid Cleaner!</title>
         <%
-            
-        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
-        AcceptServiceDAO orderManager = (AcceptServiceDAO) session.getAttribute("orderManager");
-        ArrayList <Order> orderDet = (ArrayList) session.getAttribute("orderD");
-        String orderErr = (String) session.getAttribute("orderErr");
+            Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+            AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
+            ArrayList <Order> orderDet = (ArrayList) session.getAttribute("orderD");
+            String orderErr = (String) session.getAttribute("orderErr");
         %>
-        
-
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -36,13 +33,11 @@
                 margin-top:300px;
                 margin-bottom: auto;
                 height: 200px;
-
             }
 
             .divbutton a:hover {
                 color: #51abff;
                 transition: all 0.4s ease 0.1s;
-
             }
 
             .divbutton {
@@ -74,26 +69,19 @@
                 max-width: 100%;
                 left:0;
                 right:0;
-
-
                 margin-left: auto;
                 margin-right: auto;
-
-
-
-
             }
+            
             .container {
                 background-color: #1a1a1a;
                 padding-bottom: 100px;
-
             }
 
             .course h6 {
                 background-color: #51abff;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-
             }
 
             .course h2 {
@@ -124,19 +112,16 @@
                 width: 100%;
             }
 
-
             .container {
                 margin-left: auto;
                 margin-right: auto;
             }
 
-
-
             .btn-cont {
                 text-align: center;
                 margin-top: 50px;
-
             }
+            
             .btn-cont .btn {
                 background-color: #1a1a1a;
                 border-radius: 3px;
@@ -151,14 +136,13 @@
                 letter-spacing: 0.1px;
                 -webkit-font-smoothing: antialiased;
                 max-width: 30px;
-
             }
-
 
             .btn:hover {
                 border:0px;
                 border:none;
             }
+            
             .btn-cont .btn2 {
                 background-color: #1a1a1a;
                 border-radius: 3px;
@@ -173,14 +157,13 @@
                 letter-spacing: 0.1px;
                 -webkit-font-smoothing: antialiased;
                 max-width: 30px;
-
             }
-
 
             .btn2:hover {
                 border:0px;
                 border:none;
             }
+            
             .btn-cont .btn:hover .line-1 {
                 -webkit-animation: move1 1500ms infinite ease;
                 animation: move1 1500ms infinite ease;
@@ -214,6 +197,7 @@
                 -webkit-animation: move4 1500ms infinite ease;
                 animation: move4 1500ms infinite ease;
             }
+            
             .btn-cont .line-1 {
                 content: "";
                 display: block;
@@ -288,6 +272,7 @@
                     bottom: 0;
                 }
             }
+            
             @-webkit-keyframes move2 {
                 0% {
                     width: 0;
@@ -302,6 +287,7 @@
                     left: 100%;
                 }
             }
+            
             @keyframes move2 {
                 0% {
                     width: 0;
@@ -316,6 +302,7 @@
                     left: 100%;
                 }
             }
+            
             @-webkit-keyframes move3 {
                 0% {
                     height: 100%;
@@ -334,6 +321,7 @@
                     top: 0;
                 }
             }
+            
             @keyframes move3 {
                 0% {
                     height: 100%;
@@ -352,6 +340,7 @@
                     top: 0;
                 }
             }
+            
             @-webkit-keyframes move4 {
                 0% {
                     width: 0;
@@ -366,6 +355,7 @@
                     right: 100%;
                 }
             }
+            
             @keyframes move4 {
                 0% {
                     width: 0;
@@ -380,7 +370,6 @@
                     right: 100%;
                 }
             }
-
         </style>
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -439,12 +428,9 @@
                     delay: 1000
                 });
             </script>
-
-
         </div>
 
         <div class="divbutton"><a href="#positioned"> START ACCEPTING BOOKINGS </a> </div>
-
 
         <!-- Accept Bookings or Service Section -->
         <div class="bookingsection">
@@ -485,14 +471,10 @@
 
                             <h6 style="background-color: #24252A; text-align: left">Customer: <%=customer.getFirstName()%> <%=customer.getLastName()%>  </h6> 
                             <h2  style="background-color: #24252A; text-align: left; text-transform: uppercase"> <%=orderList.getOrderCategory()%> </h2>
-                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br> Residential type: <%=orderList.getResidentialType()%>
-                                <br> 
-                               
-                                Address:  <%=address.getFullAddress()%><br> 
-                                
-
-                                Cleaning Involved: <%=orderList.getOrderCategoryDesc()%>
-                            </h6>
+                            <h6 style="background-color: #24252A; text-align: left">Hourly Rate: $<%=orderList.getHourlyRate()%>/hr <br>
+                                Residential type: <%=orderList.getResidentialType()%> <br> 
+                                Address:  <%=address.getFullAddress()%> <br> 
+                                Cleaning Involved: <%=orderList.getOrderCategoryDesc()%> </h6>
                         </div>
                         <div class='btn-cont' style="text-align:left;">
                             <a class='btn' href="CleanerOrderAcceptedServlet?cleanerId=<%=cleaner.getId()%>&orderId=<%=orderList.getId()%>&customerId=<%=orderList.getCustomer_id()%>"  style="color: #3CB371">
@@ -513,11 +495,7 @@
                                 <span class='line-3'style="background-color: #FF8484"></span>
                                 <span class='line-4'style="background-color: #FF8484"></span>
                             </a>
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>

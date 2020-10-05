@@ -15,37 +15,33 @@
         <link href="css/edituser.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <%
-           
-        
-        %>
         <div id="nav-placeholder"></div>
         <header>
 
-  <!-- Identity details -->
-  <section class="profileHeader">
-    <h1>Hello </h1>
-  </section>
-  <!-- Links to Social network accounts -->
+        <!-- Identity details -->
+        <section class="profileHeader">
+          <h1>Hello </h1>
+        </section>
+        <!-- Links to Social network accounts -->
 
-</header>
-<!-- content -->
-<section class="mainContent"> 
-  <!-- Contact details -->
-  <section class="section1">
-    <h2 class="sectionTitle">Personal Information</h2>
-    <hr class="sectionTitleRule">
-    <hr class="sectionTitleRule2">
-    <div class="section1Content">
-      <p><span>First Name :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Last Name  :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Email      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-      <p><span>Phone      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
-    </div>
-  </section>
-  </section>
-    <a href="#"><button class="button" type="submit" value="Update"> Update </button></a>
-    <a href="myaccount.jsp"><button class="button"> Go Back </button></a>
+        </header>
+        <!-- content -->
+        <section class="mainContent"> 
+          <!-- Contact details -->
+        <section class="section1">
+            <h2 class="sectionTitle">Personal Information</h2>
+            <hr class="sectionTitleRule">
+            <hr class="sectionTitleRule2">
+            <div class="section1Content">
+                <p><span>First Name :</span><input style="color: white;" type="text" name="first Name" value=""></p>
+                <p><span>Last Name  :</span><input style="color: white;" type="text" name="first Name" value=""></p>
+                <p><span>Email      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
+                <p><span>Phone      :</span><input style="color: white;" type="text" name="first Name" value=""></p>
+            </div>
+        </section>
+        </section>
+        <a href="#"><button class="button" type="submit" value="Update"> Update </button></a>
+        <a href="myaccount.jsp"><button class="button"> Go Back </button></a>
     </body>
 </html>
 

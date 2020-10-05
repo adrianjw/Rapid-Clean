@@ -5,13 +5,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%
-        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
-        %>
+        <% Cleaner cleaner = (Cleaner) session.getAttribute("cleaner"); %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to RapidClean!</title>
         <link rel="stylesheet" href="css/navbar.css">
-
         <style>
             .sticky {
                 position: fixed;
@@ -20,8 +17,6 @@
                 padding-top: 1px;
                 z-index: 1;
             }
-
-            
         </style>
     </head>
     <body>
@@ -46,12 +41,9 @@
                         <a href="LogoutServlet">LOGOUT</a>
                     </div>
                 </div>
-
             </header>
             <hr>
         </div>
-
-
         <script>
             window.onscroll = function () {
                 myFunction();
@@ -68,6 +60,5 @@
                 }
             }
         </script>
-
     </body>
 </html>

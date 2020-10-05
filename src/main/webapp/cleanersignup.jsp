@@ -8,7 +8,7 @@
     </head>
     <body>
         <a href="signup.jsp"><button class="back-button">←</button></a>
-        <form action="CleanerSignUpServlet" method="GET">
+        <form action="CleanerSignUpServlet" method="POST">
             <table>
                 <tr>
                     <td>First Name</td>
