@@ -14,8 +14,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "ViewRatingServlet", urlPatterns = {"/ViewRatingServlet"})
 public class ViewRatingServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         // Get current session, ratingDAO
@@ -32,5 +31,16 @@ public class ViewRatingServlet extends HttpServlet {
         // Redirects to All Ratings and forward req,res resources
         request.getRequestDispatcher("ratings.jsp").forward(request, response);
     }
-
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 }

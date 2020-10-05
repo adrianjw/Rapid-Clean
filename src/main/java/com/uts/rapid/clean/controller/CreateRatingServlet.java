@@ -15,11 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.bson.types.ObjectId;
 
-@WebServlet(name = "CreateRatingServlet", urlPatterns = {"/CreateRatingServlet"})
 public class CreateRatingServlet extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         // Get current session, customer, paid order and ratingDAO
@@ -46,5 +44,17 @@ public class CreateRatingServlet extends HttpServlet {
         // Re-directs to Home
         request.getRequestDispatcher("home.jsp").forward(request, response);
         
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

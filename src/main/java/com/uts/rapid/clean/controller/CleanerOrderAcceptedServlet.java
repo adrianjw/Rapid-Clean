@@ -11,8 +11,7 @@ import javax.servlet.http.HttpSession;
 
 public class CleanerOrderAcceptedServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
@@ -31,5 +30,17 @@ public class CleanerOrderAcceptedServlet extends HttpServlet {
         session.setAttribute("customer", customer);
         session.setAttribute("address", address);
         request.getRequestDispatcher("cleanerorderaccepted.jsp").forward(request, response);
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }
