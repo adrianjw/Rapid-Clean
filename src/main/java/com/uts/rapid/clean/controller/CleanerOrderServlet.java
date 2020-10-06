@@ -14,26 +14,38 @@ import javax.servlet.http.HttpSession;
 
 public class CleanerOrderServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String cleanerId = request.getParameter("cleanerId");
-        AcceptServiceDAO orderManager = new AcceptServiceDAO();
+        String cleanerId = (String) session.getAttribute("cleanerId");
+        AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
         ArrayList<Order> orderD = null;
 
-        orderD = orderManager.orderList(cleanerId);
+        orderD = acceptServiceDAO.orderList(cleanerId);
         Cleaner cleaner = null;
-        cleaner = orderManager.findCleaner(cleanerId);
+        cleaner = acceptServiceDAO.findCleaner(cleanerId);
         session.setAttribute("cleaner", cleaner);
 
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
-            request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
-        } else {
+            request.getRequestDispatcher("cleanerhome.jsp").forward(request, response);
+        }
+        else {
             session.setAttribute("orderD", null);
             session.setAttribute("orderErr", "There are no orders available around your area");
-            request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
+            request.getRequestDispatcher("cleanerhome.jsp").forward(request, response);
         }
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

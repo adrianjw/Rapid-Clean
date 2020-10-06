@@ -11,27 +11,36 @@ import javax.servlet.http.HttpSession;
 
 public class CleanerOrderAcceptedServlet extends HttpServlet {
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
+        String orderId = request.getParameter("orderId");
+        String customerId = request.getParameter("customerId");
+        String cleanerId = request.getParameter("cleanerId");
+
+        Order orderAccepted = acceptServiceDAO.order(orderId);
+        Customer customer = acceptServiceDAO.findCustomer(customerId);
+        Address address = acceptServiceDAO.address(orderAccepted.getAddress_id());
+
+        // Insert the order to AcceptOrder Database to avoid being displayed for other cleaners
+        acceptServiceDAO.insertAcceptOrder(orderId, cleanerId);
+
+        session.setAttribute("orderAccepted", orderAccepted);
+        session.setAttribute("customer", customer);
+        session.setAttribute("address", address);
+        request.getRequestDispatcher("cleanerorderaccepted.jsp").forward(request, response);
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         HttpSession session = request.getSession();
-         AcceptServiceDAO orderManager = new AcceptServiceDAO();
-         String orderId = request.getParameter("orderId");
-         String customerId = request.getParameter("customerId");
-         String cleanerId = request.getParameter("cleanerId");
-         
-         Order orderAccepted = orderManager.order(orderId);
-         Customer customer = orderManager.findCustomer(customerId);
-         Address address = orderManager.address(orderAccepted.getAddress_id());
-         
-         // Insert the order to AcceptOrder Database to avoid being displayed for other cleaners
-         orderManager.insertAcceptOrder(orderId, cleanerId);
-         
-         session.setAttribute("orderAccepted", orderAccepted);
-         session.setAttribute("customer", customer);
-         session.setAttribute("address", address);
-         request.getRequestDispatcher("cleanerorderaccepted.jsp").include(request, response);
-         
-         
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

@@ -1,3 +1,4 @@
+com\uts\rapid\clean\controller\LogoutServlet.class
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
 com\uts\rapid\clean\controller\CleanerSignUpServlet.class
 com\uts\rapid\clean\controller\Validator.class
@@ -6,6 +7,7 @@ com\uts\rapid\clean\controller\OrderHistoryServlet.class
 com\uts\rapid\clean\controller\CleanerOrderServlet.class
 com\uts\rapid\clean\controller\OrderServlet.class
 com\uts\rapid\clean\model\Address.class
+com\uts\rapid\clean\controller\ConnectionServlet.class
 com\uts\rapid\clean\model\dao\OrderDAO.class
 com\uts\rapid\clean\model\OrderCompleted.class
 com\uts\rapid\clean\model\dao\CustomerDAO.class
@@ -15,7 +17,6 @@ com\uts\rapid\clean\model\PaymentDetails.class
 com\uts\rapid\clean\controller\OrderPayServlet.class
 com\uts\rapid\clean\controller\CreateRatingServlet.class
 com\uts\rapid\clean\model\dao\TestRatingDAO.class
-com\uts\rapid\clean\controller\ClearSessionServlet.class
 com\uts\rapid\clean\controller\CustomerSignUpServlet.class
 com\uts\rapid\clean\controller\OrderFormServlet.class
 com\uts\rapid\clean\model\Payment.class

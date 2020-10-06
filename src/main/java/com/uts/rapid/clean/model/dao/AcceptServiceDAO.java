@@ -1,11 +1,9 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.client.AggregateIterable;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,106 +12,119 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-public class AcceptServiceDAO extends MongoDB {
+public class AcceptServiceDAO {
 
-    private MongoCollection<Document> collection;
+    private MongoCollection<Document> customerCollection;
+    private MongoCollection<Document> cleanerCollection;
+    private MongoCollection<Document> orderCollection;
+    private MongoCollection<Document> orderAcceptedCollection;
+    private MongoCollection<Document> orderRejectedCollection;
+    private MongoCollection<Document> orderCompletedCollection;
+    private MongoCollection<Document> addressCollection;
 
     // Build a connection with MongoDB Atlas
-    public AcceptServiceDAO() {
-        super();
+    public AcceptServiceDAO(MongoDatabase database) {
+        customerCollection = database.getCollection("Customer");
+        cleanerCollection = database.getCollection("Cleaner");
+        orderCollection = database.getCollection("Order");
+        orderAcceptedCollection = database.getCollection("OrderAccepted");
+        orderRejectedCollection = database.getCollection("OrderRejected");
+        orderCompletedCollection = database.getCollection("OrderCompleted");
+        addressCollection = database.getCollection("Address");
     }
 
     // Insert to the RejectedOrder - for Cleaners (Reject Order button pressed)
     public void insertRejectOrder(String orderId, String cleanerId) {
-        MongoCollection<Document> rejectedOrder = super.database.getCollection("OrderRejected");
         ObjectId orderObjId = new ObjectId(orderId);
         Document document = new Document("order_id", orderObjId)
                 .append("cleaner_id", cleanerId);
 
-        rejectedOrder.insertOne(document);
+        orderRejectedCollection.insertOne(document);
     }
 
     //Insert to the  Orders Accepted Collection - for Cleaners (Accept Order button pressed)
     public void insertAcceptOrder(String orderId, String cleanerId) {
-        MongoCollection<Document> orderAccepted = super.database.getCollection("OrderAccepted");
         ObjectId orderObjId = new ObjectId(orderId);
         ObjectId cleanerObjId = new ObjectId(cleanerId);
         Document document = new Document("order_id", orderObjId)
                 .append("cleaner_id", cleanerObjId);
 
-        orderAccepted.insertOne(document);
+        orderAcceptedCollection.insertOne(document);
     }
 
     // Insert to the Order Completed Collection - for Cleaners (Finish button pressed)
-    public void insertCompletedOrder(String order_id, Date startTime, Date endTime, double workedHours, String cleaner_id) {
-        MongoCollection<Document> orderCompleted = super.database.getCollection("OrderCompleted");
+    public void insertCompletedOrder(String order_id, Date startTime, Date endTime,
+            double workedHours, String cleaner_id) {
         Document document = new Document("order_id", order_id)
                 .append("cleaner_id", cleaner_id)
                 .append("startTime", startTime)
                 .append("endTime", endTime)
                 .append("workedHours", workedHours);
 
-        orderCompleted.insertOne(document);
+        orderCompletedCollection.insertOne(document);
     }
 
     // Returns the Order object to retrieve its details
     public Order order(String orderId) {
-        MongoCollection<Document> orders = super.database.getCollection("Order");
         ObjectId orderObjId = new ObjectId(orderId);
-        Document doc = orders.find(eq("_id", orderObjId)).first();
-        Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"), (String) doc.get("residentialType"), (double) doc.get("hourlyRate"), (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"), (Date) doc.get("dateTime"));
+        Document doc = orderCollection.find(eq("_id", orderObjId)).first();
+        Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"),
+                (String) doc.get("residentialType"), (double) doc.get("hourlyRate"),
+                (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"),
+                (Date) doc.get("dateTime"));
         return order;
     }
-
-    // Returns the cleaner object
-    public Cleaner findCleaner(String cleanerId) {
-        MongoCollection<Document> cleaners = super.database.getCollection("Cleaner");
-        ObjectId cleanerObjId = new ObjectId(cleanerId);
-        Document doc = cleaners.find(eq("_id", cleanerObjId)).first();
-        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"), (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolderName"));
-        return cleaner;
-    }
+    
     // Get Address Details from Address ID
-
-    @SuppressWarnings("unchecked")
     public Address address(String addressId) {
-        MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
-        Document doc = addresses.find(eq("_id", addressObjId)).first();
-        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
+        Document doc = addressCollection.find(eq("_id", addressObjId)).first();
+        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"),
+                (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address;
     }
 
     public String addressDets(String addressId) {
-        MongoCollection<Document> addresses = super.database.getCollection("Address");
         ObjectId addressObjId = new ObjectId(addressId);
-        Document doc = addresses.find(eq("_id", addressObjId)).first();
-        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"), (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
+        Document doc = addressCollection.find(eq("_id", addressObjId)).first();
+        Address address = new Address(addressId, (String) doc.get("customer_id"), (String) doc.get("streetAddress"),
+                (String) doc.get("suburb"), (String) doc.get("state"), (int) doc.get("postcode"));
         return address.getFullAddress();
     }
 
     // Returns the customer object
     public Customer findCustomer(String customerId) {
-        MongoCollection<Document> customers = super.database.getCollection("Customer");
         ObjectId customerObjId = new ObjectId(customerId);
-        Document doc = customers.find(eq("_id", customerObjId)).first();
-        Customer customer = new Customer(customerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"));
+        Document doc = customerCollection.find(eq("_id", customerObjId)).first();
+        Customer customer = new Customer(customerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
+                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"));
         return customer;
     }
 
+    // Returns the cleaner object
+    public Cleaner findCleaner(String cleanerId) {
+        ObjectId cleanerObjId = new ObjectId(cleanerId);
+        Document doc = cleanerCollection.find(eq("_id", cleanerObjId)).first();
+        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
+                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"),
+                (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"),
+                (String) doc.get("bankAccountHolderName"));
+        return cleaner;
+    }
+    
     // Find OrderCompleted Object
     public OrderCompleted findOrderCompleted(String orderId) {
-        MongoCollection<Document> orderCompletedDB = super.database.getCollection("OrderCompleted");
-        Document doc = orderCompletedDB.find(eq("order_id", orderId)).first();
+        Document doc = orderCompletedCollection.find(eq("order_id", orderId)).first();
         ObjectId orderCompletedObjId = (ObjectId) doc.get("_id");
         String newOrderCompletedId = orderCompletedObjId.toString();
-        OrderCompleted orderCompleted = new OrderCompleted(newOrderCompletedId, (String) doc.get("order_id"), (Date) doc.get("startTime"), (Date) doc.get("endTime"), (double) doc.get("workedHours"), (String) doc.get("cleaner_id"));
+        OrderCompleted orderCompleted = new OrderCompleted(newOrderCompletedId, (String) doc.get("order_id"),
+                (Date) doc.get("startTime"), (Date) doc.get("endTime"), (double) doc.get("workedHours"),
+                (String) doc.get("cleaner_id"));
         return orderCompleted;
     }
 
     // List out the current orders which has not been Accepted (Does not exist in orderAccepted collection)
     public ArrayList<Order> orderList(String cleanerId) {
-        MongoCollection<Document> orderListsMongo = database.getCollection("Order");
         boolean helper = false;
         Bson lookup = new Document("$lookup",
                 new Document("from", "OrderAccepted")
@@ -131,7 +142,7 @@ public class AcceptServiceDAO extends MongoDB {
         filters.add(lookup);
         filters.add(lookup2);
 
-        ArrayList<Document> orderList = orderListsMongo.aggregate(filters).into(new ArrayList<>());
+        ArrayList<Document> orderList = orderCollection.aggregate(filters).into(new ArrayList<>());
         ArrayList<Order> table = new ArrayList();
         for (Document orders : orderList) {
             List<Document> list = (List<Document>) orders.get("OrdersAccepted");
@@ -158,13 +169,19 @@ public class AcceptServiceDAO extends MongoDB {
                     if (helper == false) {
                         ObjectId orderObjId = (ObjectId) orders.get("_id");
                         String newOrderId = orderObjId.toString();
-                        Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                        Order order = new Order(newOrderId, (String) orders.get("customer_id"),
+                                (String) orders.get("address_id"), (String) orders.get("residentialType"),
+                                (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"),
+                                (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
                         table.add(order);
                     }
                 } else {
                     ObjectId orderObjId = (ObjectId) orders.get("_id");
                     String newOrderId = orderObjId.toString();
-                    Order order = new Order(newOrderId, (String) orders.get("customer_id"), (String) orders.get("address_id"), (String) orders.get("residentialType"), (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"), (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
+                    Order order = new Order(newOrderId, (String) orders.get("customer_id"),
+                            (String) orders.get("address_id"), (String) orders.get("residentialType"),
+                            (double) orders.get("hourlyRate"), (String) orders.get("orderCategory"),
+                            (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
                     table.add(order);
                 }
             }
@@ -186,7 +203,9 @@ public class AcceptServiceDAO extends MongoDB {
         shipmentdetails.stream().forEach((shipmentdetail) -> {
             Customer customer = findCustomer(shipmentdetail.getCustomer_id());
             Address address = address(shipmentdetail.getAddress_id());
-            System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", shipmentdetail.getId(), customer.getFirstName(), shipmentdetail.getAddress_id(), shipmentdetail.getResidentialType(), shipmentdetail.getOrderCategoryDesc());
+            System.out.printf("%-10s %-20s %-30s %-20s %-20s \n", shipmentdetail.getId(),
+                    customer.getFirstName(), shipmentdetail.getAddress_id(),
+                    shipmentdetail.getResidentialType(), shipmentdetail.getOrderCategoryDesc());
             System.out.println(address.getFullAddress());
         });
         System.out.println();
@@ -194,8 +213,6 @@ public class AcceptServiceDAO extends MongoDB {
     }
 
     public void displayOrderTest() {
-        MongoCollection<Document> orderListsMongo = database.getCollection("Order");
-
         Bson lookup = new Document("$lookup",
                 new Document("from", "OrderAccepted")
                         .append("localField", "_id")
@@ -212,7 +229,7 @@ public class AcceptServiceDAO extends MongoDB {
         filters.add(lookup);
         filters.add(lookup2);
 
-        ArrayList<Document> test = orderListsMongo.aggregate(filters).into(new ArrayList<>());//.find(query).into(new ArrayList<>());
+        ArrayList<Document> test = orderCollection.aggregate(filters).into(new ArrayList<>());//.find(query).into(new ArrayList<>());
         for (Document orders : test) {
             System.out.println(orders);
             List<Document> list = (List<Document>) orders.get("Orders");
@@ -228,5 +245,4 @@ public class AcceptServiceDAO extends MongoDB {
             }
         }
     }
-
 }

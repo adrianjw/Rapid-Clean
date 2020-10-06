@@ -8,6 +8,7 @@ package com.uts.rapid.clean.model;
  * @author Bryan Guntoro
  */
 public class PaymentDetails {
+    
     private String _id;
     private int cardNumber;
     private String expiryDate;
@@ -15,7 +16,8 @@ public class PaymentDetails {
     private String cardholderName;
     private String customer_id;
 
-    public PaymentDetails(String _id, int cardNumber, String expiryDate, int cvc, String cardholderName, String customer_id) {
+    public PaymentDetails(String _id, int cardNumber, String expiryDate,
+            int cvc, String cardholderName, String customer_id) {
         this._id = _id;
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
@@ -71,6 +73,4 @@ public class PaymentDetails {
     public void setCustomer_id(String customer_id) {
         this.customer_id = customer_id;
     }
-    
-    
 }

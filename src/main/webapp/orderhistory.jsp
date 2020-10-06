@@ -90,10 +90,14 @@
         <div id="nav-placeholder"></div>
         <div class="container">
             <h1>Your Order History</h1>
-            <h1><%Customer customer = (Customer) session.getAttribute("customer");
-                    String customerId = customer.getId();
-                OrderDAO orderManager = new OrderDAO();
-                    orderManager.getOrderList(customerId);%></h1>
+            <h1>
+            <%
+                Customer customer = (Customer) session.getAttribute("customer");
+                String customerId = customer.getId();
+                OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+                orderDAO.getOrderList(customerId);
+            %>
+            </h1>
             <div class="card">
                <div class="card-body">
                    <h4>Body</h4>
