@@ -10,7 +10,7 @@
         <%
             Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
             AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
-            ArrayList <Order> orderDet = (ArrayList) session.getAttribute("orderD");
+            ArrayList<Order> orderDet = (ArrayList) session.getAttribute("orderD");
             String orderErr = (String) session.getAttribute("orderErr");
         %>
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
@@ -447,9 +447,8 @@
             <% if (orderDet != null) { %>
             <%
                 for (Order orderList : orderDet) {
-                    AcceptServiceDAO temp = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
-                    Customer customer = temp.findCustomer(orderList.getCustomer_id());
-                    Address address = temp.address(orderList.getAddress_id());
+                    Customer customer = acceptServiceDAO.findCustomer(orderList.getCustomer_id());
+                    Address address = acceptServiceDAO.address(orderList.getAddress_id());
                     SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
                     String date = DATE_FORMAT.format(orderList.getDateTime());
             %>

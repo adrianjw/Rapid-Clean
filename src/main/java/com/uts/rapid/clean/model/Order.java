@@ -13,9 +13,8 @@ public class Order {
     private String orderCategoryDesc;
     private Date dateTime;
 
-    
-
-    public Order(String _id, String customer_id, String address_id, String residentialType, double hourlyRate, String orderCategory, String orderCategoryDesc, Date dateTime) {
+    public Order(String _id, String customer_id, String address_id, String residentialType,
+            double hourlyRate, String orderCategory, String orderCategoryDesc, Date dateTime) {
         this._id = _id;
         this.customer_id = customer_id;
         this.address_id = address_id;
@@ -89,5 +88,4 @@ public class Order {
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
-
 }

@@ -36,9 +36,4 @@ public class OrderAccepted {
     public void setOrder_id(ObjectId order_id) {
         this.order_id = order_id;
     }
-
-   
-    
-    
-    
 }
