@@ -3,11 +3,13 @@
  */
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bryan Guntoro
  */
-public class PaymentDetails {
+public class PaymentDetails implements Serializable {
     
     private String _id;
     private int cardNumber;

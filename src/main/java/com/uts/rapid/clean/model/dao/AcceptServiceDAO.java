@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-public class AcceptServiceDAO {
+public class AcceptServiceDAO implements Serializable {
 
     private MongoCollection<Document> customerCollection;
     private MongoCollection<Document> cleanerCollection;

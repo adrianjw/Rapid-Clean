@@ -10,12 +10,13 @@ import com.uts.rapid.clean.model.Address;
 import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.OrderAccepted;
 import com.uts.rapid.clean.model.OrderCompleted;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class OrderDAO {
+public class OrderDAO implements Serializable {
     
     private MongoCollection<Document> orderCollection;
     private MongoCollection<Document> orderAcceptedCollection;
