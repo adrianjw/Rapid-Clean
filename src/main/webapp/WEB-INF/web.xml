@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CustomerSignUpServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CustomerSignUpServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CleanerSignUpServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>OrderServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>OrderFormServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderFormServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CleanerOrderServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderAcceptedServlet</servlet-class>
     </servlet>
@@ -37,49 +13,54 @@
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderRejectedServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ClearSessionServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.ClearSessionServlet</servlet-class>
+        <servlet-name>CleanerOrderServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OrderPayServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
+        <servlet-name>CleanerSignUpServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CleanerSignUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConnectionServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.ConnectionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CustomerSignUpServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CustomerSignUpServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteAccountServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.DeleteAccountServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderFormServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderFormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderPayServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>CreateRatingServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CustomerSignUpServlet</servlet-name>
-        <url-pattern>/CustomerSignUpServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <url-pattern>/CleanerSignUpServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OrderServlet</servlet-name>
-        <url-pattern>/OrderServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OrderFormServlet</servlet-name>
-        <url-pattern>/OrderFormServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CleanerOrderServlet</servlet-name>
-        <url-pattern>/CleanerOrderServlet</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
         <url-pattern>/CleanerOrderAcceptedServlet</url-pattern>
@@ -93,24 +74,52 @@
         <url-pattern>/CleanerOrderRejectedServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ClearSessionServlet</servlet-name>
-        <url-pattern>/ClearSessionServlet</url-pattern>
+        <servlet-name>CleanerOrderServlet</servlet-name>
+        <url-pattern>/CleanerOrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>OrderPayServlet</servlet-name>
-        <url-pattern>/OrderPayServlet</url-pattern>
+        <servlet-name>CleanerSignUpServlet</servlet-name>
+        <url-pattern>/CleanerSignUpServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConnectionServlet</servlet-name>
+        <url-pattern>/ConnectionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateRatingServlet</servlet-name>
+        <url-pattern>/CreateRatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerSignUpServlet</servlet-name>
+        <url-pattern>/CustomerSignUpServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteAccountServlet</servlet-name>
         <url-pattern>/DeleteAccountServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewRatingServlet</servlet-name>
-        <url-pattern>/ViewRatingServlet</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateRatingServlet</servlet-name>
-        <url-pattern>/CreateRatingServlet</url-pattern>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderFormServlet</servlet-name>
+        <url-pattern>/OrderFormServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderPayServlet</servlet-name>
+        <url-pattern>/OrderPayServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewRatingServlet</servlet-name>
+        <url-pattern>/ViewRatingServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

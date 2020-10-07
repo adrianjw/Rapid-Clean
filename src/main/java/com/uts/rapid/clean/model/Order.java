@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author trandamtrungthai
- */
-public class Order {
+public class Order implements Serializable {
 
     private String _id;
     private String customer_id;
@@ -22,9 +14,8 @@ public class Order {
     private String orderCategoryDesc;
     private Date dateTime;
 
-    
-
-    public Order(String _id, String customer_id, String address_id, String residentialType, double hourlyRate, String orderCategory, String orderCategoryDesc, Date dateTime) {
+    public Order(String _id, String customer_id, String address_id, String residentialType,
+            double hourlyRate, String orderCategory, String orderCategoryDesc, Date dateTime) {
         this._id = _id;
         this.customer_id = customer_id;
         this.address_id = address_id;
@@ -98,5 +89,4 @@ public class Order {
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
-
 }

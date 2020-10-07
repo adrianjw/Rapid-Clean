@@ -1,6 +1,8 @@
 package com.uts.rapid.clean.model;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     
     private String _id;
     private String customer_id;

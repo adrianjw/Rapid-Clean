@@ -13,11 +13,11 @@ import com.uts.rapid.clean.model.Cleaner;
 public class CleanerSignUpServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        CustomerDAO customerDAO = new CustomerDAO();
-        CleanerDAO cleanerDAO = new CleanerDAO();
+        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
+        CleanerDAO cleanerDAO = (CleanerDAO) session.getAttribute("cleanerDAO");
         
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -84,15 +84,16 @@ public class CleanerSignUpServlet extends HttpServlet {
                         Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
                         bankAccountHolderName);
                 Cleaner cleaner = cleanerDAO.findCleaner(email, password);
-                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
+                session.setAttribute("cleanerId", cleaner.getId());
+                request.getRequestDispatcher("/CleanerOrderServlet").forward(request, response);
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("cleanersignup.jsp").include(request, response);
+                request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("cleanersignup.jsp").include(request, response);
+            request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
         }
     }
 }

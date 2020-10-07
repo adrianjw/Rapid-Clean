@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import org.bson.types.ObjectId;
 
-public class OrderAccepted {
+public class OrderAccepted implements Serializable {
     private String _id;
     private ObjectId cleaner_id;
     private ObjectId order_id;
@@ -41,9 +37,4 @@ public class OrderAccepted {
     public void setOrder_id(ObjectId order_id) {
         this.order_id = order_id;
     }
-
-   
-    
-    
-    
 }

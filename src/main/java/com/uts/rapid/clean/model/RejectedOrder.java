@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 
-public class RejectedOrder {
+public class RejectedOrder implements Serializable {
+    
     private String _id;
     private String orderId;
     private String cleanerId;

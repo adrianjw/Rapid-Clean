@@ -5,8 +5,8 @@
 <html>
     <head>
         <%
-        OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
-        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
+            OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
+            Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -29,9 +29,8 @@
         <p style="font-size: 13px"> Thank you for working as our Rapid Cleaner </p>
         <p style="font-size: 13px"> Your total payout is <b> $<%=orderCompleted.getWorkedHours()%> </b>and is expected to be received by the end of this week </p>
         <div class="btn-cont" style="text-align:center; padding-top: 50px; ">
-            
-  
-                <a class='btn' href="cleanerpayments.jsp"">
+
+             <a class='btn' href="cleanerpayments.jsp"">
                 VIEW PAYMENTS
                 <span class='line-1'></span>
                 <span class='line-2'></span>
@@ -53,7 +52,7 @@
            
         </div>
         
-         <div style="padding-top: 155px"></div>
+        <div style="padding-top: 155px"></div>
         <p style="font-size: 13px;"> Need help with anything or want to report an issue? Click <a href="contactus.jsp" style="font-family: arial; font-size: 12px;"> <u>here</u> </a> </p>
     </body>
 </html>

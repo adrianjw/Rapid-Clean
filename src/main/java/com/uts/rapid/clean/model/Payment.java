@@ -1,13 +1,16 @@
 /*
- * Tthis is for RELEASE 2
+ * This is for RELEASE 2
  */
 package com.uts.rapid.clean.model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Bryan Guntoro
  */
-public class Payment {
+public class Payment implements Serializable {
+    
     private String _id;
     private String orderCompleted_id;
 
@@ -31,6 +34,4 @@ public class Payment {
     public void setOrderCompleted_id(String orderCompleted_id) {
         this.orderCompleted_id = orderCompleted_id;
     }
-    
-    
 }
