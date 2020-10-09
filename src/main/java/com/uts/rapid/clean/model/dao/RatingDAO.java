@@ -1,27 +1,20 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import static com.mongodb.client.model.Filters.*;
 import com.uts.rapid.clean.model.Rating;
-import java.sql.Timestamp;
 import java.util.*;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class RatingDAO extends MongoDB {
+public class RatingDAO {
    
-    MongoCollection collection;
-    MongoCollection customerCollection;
+    MongoCollection ratingCollection;
     
     // Accessing collection via connection established in MongoDB
-    public RatingDAO() {
-        super();
-        collection = super.database.getCollection("Rating");
-        customerCollection = super.database.getCollection("Customer");
+    public RatingDAO(MongoDatabase database) {
+        ratingCollection = database.getCollection("Rating");
     }
     
     // List all ratings. 
@@ -30,7 +23,7 @@ public class RatingDAO extends MongoDB {
     public ArrayList<Rating> viewAllRatings() {
 
         ArrayList<Rating> allRatings = new ArrayList<>();
-        FindIterable<Document> cursor = collection.find();
+        FindIterable<Document> cursor = ratingCollection.find();
         Iterator it = cursor.iterator();
             while (it.hasNext()) {
                 Document document = (Document) it.next();
@@ -49,10 +42,10 @@ public class RatingDAO extends MongoDB {
     
     // Create rating by passing a new Rating Object and converting it to a document
     public void createRating(Rating rating) {
-        collection.insertOne(toDocument(rating));
+        ratingCollection.insertOne(toDocument(rating));
     }
 
-    // Filtering by rating.
+    // Filtering by rating
     public ArrayList<Rating> sortByRating (String mode) {
         ArrayList<Rating> sorted = new ArrayList<>();
         return sorted;
@@ -76,6 +69,5 @@ public class RatingDAO extends MongoDB {
     
     public void ratingByCleaner(String cleanerId) {
         ObjectId queryId = new ObjectId(cleanerId);
-    } 
-   
+    }
 }

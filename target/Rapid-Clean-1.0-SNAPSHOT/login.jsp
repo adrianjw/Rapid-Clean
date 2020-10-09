@@ -26,7 +26,7 @@
                 </tr>
             </table>
             <button class="button" type="submit"> Login </button>
-            <a href="index.jsp"><button class="button" type="button"> Go Back </button></a>
+            <a href="home.jsp"><button class="button" type="button"> Go Back </button></a>
         </form>
     </body>
 </html>

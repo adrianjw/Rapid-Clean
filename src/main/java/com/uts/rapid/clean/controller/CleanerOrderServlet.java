@@ -19,18 +19,19 @@ public class CleanerOrderServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String cleanerId = request.getParameter("cleanerId");
-        AcceptServiceDAO orderManager = new AcceptServiceDAO();
+        AcceptServiceDAO acceptServiceDAO = (AcceptServiceDAO) session.getAttribute("acceptServiceDAO");
         ArrayList<Order> orderD = null;
 
-        orderD = orderManager.orderList(cleanerId);
+        orderD = acceptServiceDAO.orderList(cleanerId);
         Cleaner cleaner = null;
-        cleaner = orderManager.findCleaner(cleanerId);
+        cleaner = acceptServiceDAO.findCleaner(cleanerId);
         session.setAttribute("cleaner", cleaner);
 
         if (orderD != null) {
             session.setAttribute("orderD", orderD);
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);
-        } else {
+        }
+        else {
             session.setAttribute("orderD", null);
             session.setAttribute("orderErr", "There are no orders available around your area");
             request.getRequestDispatcher("cleanerhome.jsp").include(request, response);

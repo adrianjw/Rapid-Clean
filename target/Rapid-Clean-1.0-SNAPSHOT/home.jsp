@@ -1,8 +1,12 @@
+<%@page import="com.uts.rapid.clean.model.Order"%>
+<%@page import="com.uts.rapid.clean.model.OrderAccepted"%>
+<%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/card.css">
         <title>Home</title>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -66,11 +70,41 @@
                 color: white;
                 margin-top: 2em;
             }
+            
+            p {
+                color: white;
+            }
         </style>
     </head>
     <body>
         <div id="nav-placeholder"></div>
-        
+        <%
+            OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
+            OrderAccepted orderAccepted = (OrderAccepted) session.getAttribute("orderAccepted");
+            Order order = (Order) session.getAttribute("order");
+        %>
+        <form action="OrderAcceptedServlet" method="get">
+            <button class="card-btn" type="submit">Refresh</button>
+        </form>
+        <% if (orderAccepted != null) {%>
+        <p>There is an order, please wait for order to be completed and pay.</p>
+        <div class="card">
+            <div class="card-body">
+                <h4><%=orderAccepted.getId()%></h4>
+                <p class="card-text">Service: <%=order.getOrderCategory()%></p>
+                <p class="card-text">Residential Type: <%=order.getResidentialType()%>></p>
+                <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%>></p>
+                <!--<button class="card-btn">View</button>-->
+            </div>
+        </div>
+        <% } else if (orderCompleted != null) {%>
+        <p>Your order is ready. Please click the button review your order and pay</p>
+        <form action="OrderPayServlet" method="get">
+            <button class="card-btn" type="submit">Pay</button>
+        </form>
+        <% } else { %>
+        <p>No order yet. Please booked a new order</p>
+        <% } %>
        
     </body>
 </html>

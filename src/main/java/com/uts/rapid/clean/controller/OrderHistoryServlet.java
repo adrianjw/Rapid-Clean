@@ -5,12 +5,17 @@
  */
 package com.uts.rapid.clean.controller;
 
+import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.Order;
+import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,19 +34,7 @@ public class OrderHistoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet OrderHistoryServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet OrderHistoryServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,7 +49,19 @@ public class OrderHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+        String customerId = customer.getId();
+        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+        
+        ArrayList<Order> orders = orderDAO.findOrder(customerId);
+        for (Order order : orders) {
+            System.out.println(order.getOrderCategory());
+        }
+        
+        session.setAttribute("orders", orders);
+        
+        request.getRequestDispatcher("orderhistory.jsp").include(request, response);
     }
 
     /**

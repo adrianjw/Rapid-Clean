@@ -16,8 +16,8 @@ public class CustomerSignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        CustomerDAO customerDAO = new CustomerDAO();
-        CleanerDAO cleanerDAO = new CleanerDAO();
+        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
+        CleanerDAO cleanerDAO = (CleanerDAO) session.getAttribute("cleanerDAO");
         
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");

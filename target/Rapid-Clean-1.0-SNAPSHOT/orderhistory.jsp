@@ -4,6 +4,9 @@
     Author     : trandamtrungthai
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.uts.rapid.clean.model.Order"%>
 <%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page import="com.uts.rapid.clean.model.dao.OrderDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,74 +14,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <link rel="stylesheet" href="css/card.css">  
+        <link rel="stylesheet" href="css/orderhistory.css">
         <title>JSP Page</title>
-        <style>
-/*            body {
-                background-color: #24252A;
-            }*/
-            
-            .container {
-                border-spacing: 1em;
-                text-align: center;
-            }
-            
-            h1 {
-                text-align: center;
-                color: white;
-                margin-top: 1em;
-                margin-bottom: 1em;
-                font-family: sans-serif;
-            }
-            
-            .card {
-                margin-bottom: 1.5em;
-                padding: 10px;
-                margin: 4em;
-                width: 40%;
-                color: white;
-                font-family: sans-serif;
-                margin: 0 auto;
-                margin-top: 1em;
-                text-align: center;
-            }
-            
-            .card-body {
-                border: 1px white solid;
-                padding: 10px;
-                border-radius: 5px;
-            }
-            
-            .card-text {
-                margin-top: 0.5em;
-            }
-            
-            .card-btn {
-                color: black;
-                background-color: #ff7675;
-                transition: none;
-                text-align: center;
-                padding: 8px 18px;
-                border-radius: 5px;
-                margin-top: 1em;
-                margin-left: 0px;
-                font-size: 15px;
-                font-family: Helvetica, sans-serif;
-            }
-            
-            .btn-back {
-                text-align: center;
-                padding: 10px;
-                background: blue;
-                text-decoration: none;
-                color: white;
-                margin-top: 2em;
-            }
-            
-            .btn {
-                margin: 0 auto;
-            }
-        </style>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(function(){
@@ -89,11 +27,21 @@
     <body>
         <div id="nav-placeholder"></div>
         <div class="container">
+        <%
+            Customer customer = (Customer) session.getAttribute("customer");
+            String customerId = customer.getId();
+            OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+            orderDAO.getOrderList(customerId);
+            ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
+            request.setAttribute("orders", orders);
+        %>
             <h1>Your Order History</h1>
-            <h1><%Customer customer = (Customer) session.getAttribute("customer");
-                    String customerId = customer.getId();
-                OrderDAO orderManager = new OrderDAO();
-                    orderManager.getOrderList(customerId);%></h1>
+            
+            <form>
+                <input type="text" name="value">
+                <button class="card-btn">Search</button>
+            </form>
+           
             <div class="card">
                <div class="card-body">
                    <h4>Body</h4>
@@ -101,6 +49,17 @@
                    <button class="card-btn">View</button>
                </div>
            </div>
+            <% for (Order order : orders) {%>
+                <div class="card">
+                   <div class="card-body">
+                       <h4><%=order.getId()%></h4>
+                       <h4><%=order.getDateTime()%></h4> 
+                       <p class="card-text">Service: <%=order.getOrderCategory()%></p>
+                       <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%></p>
+                       <!--<button class="card-btn">View</button>-->
+                   </div>
+               </div>
+            <% } %>
         </div>
     </body>
 </html>

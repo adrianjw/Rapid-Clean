@@ -261,7 +261,7 @@
             
         <!--End of box-->
         
-        <a href="home.jsp" class="notbutton">Back</a>
+        <a href="home.jsp" class="notbutton"s>Back</a>
         </div>
     </body>
 </html>

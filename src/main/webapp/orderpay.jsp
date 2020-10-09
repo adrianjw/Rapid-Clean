@@ -106,7 +106,8 @@
                    <p class="card-text">Residential Type: <%= order.getResidentialType()%></p>
                    <p class="card-text">Hourly Rate: <%= order.getHourlyRate()%></p>
                    <p class="card-text">Date Ordered <%= order.getDateTime()%></p>
-                   <button class="card-btn">Pay</button>
+                   
+                   <button class="card-btn" disabled>Pay</button>
                </div>
            </div>
         </div>

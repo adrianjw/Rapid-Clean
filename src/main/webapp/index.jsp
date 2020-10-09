@@ -21,6 +21,6 @@
                 </td>
             </tr>        
         </table>
-        <jsp:include page="/ClearSessionServlet" flush="true"/>
+        <jsp:include page="/ConnectionServlet" flush="true"/>
     </body>
 </html>

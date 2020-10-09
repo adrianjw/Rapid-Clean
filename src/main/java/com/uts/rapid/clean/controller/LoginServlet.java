@@ -17,8 +17,8 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        CustomerDAO customerDAO = new CustomerDAO();
-        CleanerDAO cleanerDAO = new CleanerDAO();
+        CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
+        CleanerDAO cleanerDAO = (CleanerDAO) session.getAttribute("cleanerDAO");
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
             if (customer != null) {
                 session.setAttribute("customer", customer);
                 request.getRequestDispatcher("home.jsp").include(request, response);
+                request.getRequestDispatcher("/OrderAcceptedServlet").forward(request, response);
             }
             else if (cleaner != null) {
                 request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
