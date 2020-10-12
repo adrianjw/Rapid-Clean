@@ -12,7 +12,7 @@
         <link href="css/rapidclean.css" rel="stylesheet" type="text/css">
         <script>
             $(function () {
-                $("#nav-placeholder").load("cleanernavigationbar.jsp");
+                $("#nav-placeholder").load("cleaner-navigationbar.jsp");
             });
         </script>
         <title>Thank You!</title> <!-- order.getId() -->
