@@ -1,4 +1,3 @@
-
 <%@page import="com.uts.rapid.clean.model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ratings (customer)
-    Created on : 17/08/2020, 6:07:46 PM
-    Author     : Sandy
---%>
-
 <%@page import="com.uts.rapid.clean.model.dao.RatingDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

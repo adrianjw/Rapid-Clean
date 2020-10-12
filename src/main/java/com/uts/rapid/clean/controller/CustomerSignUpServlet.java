@@ -69,11 +69,11 @@ public class CustomerSignUpServlet extends HttpServlet {
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("customersignup.jsp").forward(request, response);
+                request.getRequestDispatcher("customer-signup.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("customersignup.jsp").forward(request, response);
+            request.getRequestDispatcher("customer-signup.jsp").forward(request, response);
         }
     }
 }

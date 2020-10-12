@@ -1,9 +1,3 @@
-<%-- 
-    Document   : orderhistory
-    Created on : 27/08/2020, 1:44:27 PM
-    Author     : trandamtrungthai
---%>
-
 <%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <META HTTP-EQUIV="Refresh" CONTENT="5">
-        <title>JSP Page</title>
+        <title>Order Pay</title>
         <style>
 /*            body {
                 background-color: #24252A;

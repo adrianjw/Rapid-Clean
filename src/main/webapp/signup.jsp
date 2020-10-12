@@ -13,8 +13,8 @@
             <h1> Sign Up As </h1>
         </div>
         <div>
-            <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
-            <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
+            <a href="customer-signup.jsp"><button class="customer-button"> Customer </button></a>
+            <a href="cleaner-signup.jsp"><button class="cleaner-button"> Cleaner </button></a>
         </div>
         <%
             session.setAttribute("firstNameError", "");

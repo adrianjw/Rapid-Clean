@@ -89,11 +89,11 @@ public class CleanerSignUpServlet extends HttpServlet {
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
+                request.getRequestDispatcher("cleaner-signup.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("cleanersignup.jsp").forward(request, response);
+            request.getRequestDispatcher("cleaner-signup.jsp").forward(request, response);
         }
     }
 }

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cleanerorderaccepted
-    Created on : Aug 22, 2020, 10:01:00 PM
-    Author     : David Guntoro
---%>
-
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.uts.rapid.clean.model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

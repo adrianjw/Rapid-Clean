@@ -1,15 +1,9 @@
-<%-- 
-    Document   : orderform
-    Created on : 08/09/2020, 12:34:05 PM
-    Author     : trandamtrungthai
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Order Form</title>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(function(){

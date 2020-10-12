@@ -1,9 +1,3 @@
-<%-- 
-    Document   : order
-    Created on : 24/08/2020, 11:49:06 PM
-    Author     : trandamtrungthai
---%>
-
 <%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
