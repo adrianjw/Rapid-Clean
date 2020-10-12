@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.uts.rapid.clean.model.dao.CustomerDAO;
 import com.uts.rapid.clean.model.dao.CleanerDAO;
-import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.Cleaner;
 
-public class CustomerSignUpServlet extends HttpServlet {
+public class SignupCleanerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -25,6 +25,9 @@ public class CustomerSignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
         String phoneNumber = request.getParameter("phoneNumber");
+        String bankBsbNumber = request.getParameter("bankBsbNumber");
+        String bankAccountNumber = request.getParameter("bankAccountNumber");
+        String bankAccountHolderName = request.getParameter("bankAccountHolderName");
         
         Validator validator = new Validator();
         validator.clear(session);
@@ -60,20 +63,37 @@ public class CustomerSignUpServlet extends HttpServlet {
         else
             session.setAttribute("phoneNumberError", "Invalid phone number");
         
-        if (validationTestPassed == 6) {
+        if (validator.validateBankNumber(bankBsbNumber))
+            validationTestPassed++;
+        else
+            session.setAttribute("bankBsbNumberError", "Invalid BSB number");
+        
+        if (validator.validateBankNumber(bankAccountNumber))
+            validationTestPassed++;
+        else
+            session.setAttribute("bankAccountNumberError", "Invalid account number");
+        
+        if (validator.validateBankName(bankAccountHolderName))
+            validationTestPassed++;
+        else
+            session.setAttribute("bankAccountHolderNameError", "Invalid account holder name");
+        
+        if (validationTestPassed == 9) {
             if (!customerDAO.hasCustomer(email) && !cleanerDAO.hasCleaner(email)) {
-                customerDAO.createCustomer(firstName, lastName, email, password, phoneNumber);
-                Customer customer = customerDAO.findCustomer(email, password);
-                session.setAttribute("customer", customer);
-                request.getRequestDispatcher("home.jsp").forward(request, response);
+                cleanerDAO.createCleaner(firstName, lastName, email, password, phoneNumber,
+                        Integer.parseInt(bankBsbNumber), Integer.parseInt(bankAccountNumber),
+                        bankAccountHolderName);
+                Cleaner cleaner = cleanerDAO.findCleaner(email, password);
+                session.setAttribute("cleanerId", cleaner.getId());
+                request.getRequestDispatcher("/CleanerOrderServlet").forward(request, response);
             }
             else {
                 session.setAttribute("emailError", "Email address already in use");
-                request.getRequestDispatcher("customer-signup.jsp").forward(request, response);
+                request.getRequestDispatcher("signup-cleaner.jsp").forward(request, response);
             }
         }
         else {
-            request.getRequestDispatcher("customer-signup.jsp").forward(request, response);
+            request.getRequestDispatcher("signup-cleaner.jsp").forward(request, response);
         }
     }
 }

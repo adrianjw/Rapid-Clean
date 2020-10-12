@@ -4,11 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
-        <title>Customer Sign Up</title>
+        <title>Sign Up</title>
     </head>
     <body>
         <a href="signup.jsp"><button class="back-button">←</button></a>
-        <form action="CustomerSignUpServlet" method="POST">
+        <form action="SignupCleanerServlet" method="POST">
             <table>
                 <tr>
                     <td>First Name</td>
@@ -39,6 +39,21 @@
                     <td>Confirm Password</td>
                     <td><input type="password" name="confirmPassword" minlength="8" maxlength="50" required></td>
                     <td class="errorMessage"><%=session.getAttribute("confirmPasswordError")%></td>
+                </tr>
+                <tr>
+                    <td>BSB Number</td>
+                    <td><input type="text" name="bankBsbNumber" minlength="6" maxlength="6" required></td>
+                    <td class="errorMessage"><%=session.getAttribute("bankBsbNumberError")%></td>
+                </tr>
+                <tr>
+                    <td>Account Number</td>
+                    <td><input type="text" name="bankAccountNumber" minlength="6" maxlength="6" required></td>
+                    <td class="errorMessage"><%=session.getAttribute("bankAccountNumberError")%></td>
+                </tr>
+                <tr>
+                    <td>Account Holder Name</td>
+                    <td><input type="text" name="bankAccountHolderName" maxlength="100" required></td>
+                    <td class="errorMessage"><%=session.getAttribute("bankAccountHolderNameError")%></td>
                 </tr>
             </table>
             <button class="regular-button" type="submit"> Create Account </button>
