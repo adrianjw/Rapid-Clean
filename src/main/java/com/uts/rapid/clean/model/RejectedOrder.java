@@ -1,6 +1,8 @@
 package com.uts.rapid.clean.model;
 
-public class RejectedOrder {
+import java.io.Serializable;
+
+public class RejectedOrder implements Serializable {
     
     private String _id;
     private String orderId;

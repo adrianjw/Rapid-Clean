@@ -39,7 +39,6 @@ public class ConnectionServlet extends HttpServlet {
             throws ServletException, IOException {      
         HttpSession session = request.getSession();
         
-        session.setAttribute("mongoClient", mongoClient);
         session.setAttribute("customerDAO", customerDAO);
         session.setAttribute("cleanerDAO", cleanerDAO);
         session.setAttribute("addressDAO", addressDAO);

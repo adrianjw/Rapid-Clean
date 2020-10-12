@@ -7,8 +7,9 @@ import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Customer;
+import java.io.Serializable;
 
-public class CustomerDAO {
+public class CustomerDAO implements Serializable {
     
     private MongoCollection<Document> customerCollection;
     

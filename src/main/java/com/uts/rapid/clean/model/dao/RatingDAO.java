@@ -4,11 +4,12 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.uts.rapid.clean.model.Rating;
+import java.io.Serializable;
 import java.util.*;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class RatingDAO {
+public class RatingDAO implements Serializable {
    
     MongoCollection ratingCollection;
     

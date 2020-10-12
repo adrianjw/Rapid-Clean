@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderCompleted {
+public class OrderCompleted implements Serializable {
 
     private String _id;
     private String order_id;
@@ -11,7 +12,8 @@ public class OrderCompleted {
     private double workedHours;
     private String cleaner_id;
 
-    public OrderCompleted(String _id, String order_id, Date startTime, Date endTime, double workedHours, String cleaner_id) {
+    public OrderCompleted(String _id, String order_id, Date startTime,
+            Date endTime, double workedHours, String cleaner_id) {
         this._id = _id;
         this.order_id = order_id;
         this.startTime = startTime;
@@ -27,8 +29,6 @@ public class OrderCompleted {
     public void setCleaner_id(String cleaner_id) {
         this.cleaner_id = cleaner_id;
     }
-
-
 
     public String getId() {
         return _id;
@@ -69,5 +69,4 @@ public class OrderCompleted {
     public void setWorkedHours(double workedHours) {
         this.workedHours = workedHours;
     }
-
 }

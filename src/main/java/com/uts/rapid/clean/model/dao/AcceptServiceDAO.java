@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-public class AcceptServiceDAO {
+public class AcceptServiceDAO implements Serializable {
 
     private MongoCollection<Document> customerCollection;
     private MongoCollection<Document> cleanerCollection;
@@ -159,14 +160,12 @@ public class AcceptServiceDAO {
                         cleanerList.add(cleanerIdDB);
 
                         // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
-                        if (cleanerIdDB.equalsIgnoreCase(cleanerId) == true) {
-
+                        if (cleanerIdDB.equalsIgnoreCase(cleanerId)) {
                             helper = true;
-
                         }
                     }
 
-                    if (helper == false) {
+                    if (!helper) {
                         ObjectId orderObjId = (ObjectId) orders.get("_id");
                         String newOrderId = orderObjId.toString();
                         Order order = new Order(newOrderId, (String) orders.get("customer_id"),
@@ -175,7 +174,8 @@ public class AcceptServiceDAO {
                                 (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
                         table.add(order);
                     }
-                } else {
+                }
+                else {
                     ObjectId orderObjId = (ObjectId) orders.get("_id");
                     String newOrderId = orderObjId.toString();
                     Order order = new Order(newOrderId, (String) orders.get("customer_id"),
@@ -189,7 +189,8 @@ public class AcceptServiceDAO {
 
         if (!table.isEmpty()) {
             return table;
-        } else {
+        }
+        else {
             return null;
         }
     }
@@ -209,7 +210,6 @@ public class AcceptServiceDAO {
             System.out.println(address.getFullAddress());
         });
         System.out.println();
-
     }
 
     public void displayOrderTest() {

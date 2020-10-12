@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import org.bson.types.ObjectId;
 
-public class OrderAccepted {
+public class OrderAccepted implements Serializable {
     private String _id;
     private ObjectId cleaner_id;
     private ObjectId order_id;
@@ -36,9 +37,4 @@ public class OrderAccepted {
     public void setOrder_id(ObjectId order_id) {
         this.order_id = order_id;
     }
-
-   
-    
-    
-    
 }

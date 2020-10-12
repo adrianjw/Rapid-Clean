@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderHistory {
+public class OrderHistory implements Serializable {
     
     private String _id;
     private String cleaner_id;

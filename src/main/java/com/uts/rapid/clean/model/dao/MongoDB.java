@@ -3,8 +3,9 @@ package com.uts.rapid.clean.model.dao;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
+import java.io.Serializable;
 
-public class MongoDB {
+public class MongoDB implements Serializable {
     
     private MongoDatabase database;
     private MongoClient mongoClient;
