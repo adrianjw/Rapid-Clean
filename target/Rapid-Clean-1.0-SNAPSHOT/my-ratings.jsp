@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ratings</title>
-        <link rel="stylesheet" type="text/css" href="css/ratingtickets.css"/>
+        <link rel="stylesheet" type="text/css" href="css/rating-system.css"/>
                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
           $(function(){

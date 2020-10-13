@@ -5,13 +5,13 @@
     <head>
         <% Cleaner cleaner = (Cleaner) session.getAttribute("cleaner"); %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/navigationbar.css">
         <title>Welcome to RapidClean!</title>
     </head>
     <body>
         <div id="navbar">
             <header>
-                <img class="logo" src="css/logotp.png" alt ="logo" width="158px" height="50px">
+                <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
                 <nav>
                     <ul class="nav-links">
                         <li class="tab"><a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">Home</a></li>

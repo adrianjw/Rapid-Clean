@@ -391,7 +391,7 @@
                 </span>
             </h1>
 
-            <link rel="stylesheet" href="css/cleanerpages.css">
+            <link rel="stylesheet" href="css/cleaner-pages.css">
 
             <script>
                 // Wrap every letter in a span
@@ -458,7 +458,7 @@
                 <div class="course">
                     <div class="preview">
                         <h6> ORDER #<%=orderList.getId()%> </h6>
-                        <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
+                        <h2><img src="css/cleaning-bucket-icon.png" height="125px" style="background-color: #51abff"></h2>
                         <a> <%=date%> </a>
 
                     </div>

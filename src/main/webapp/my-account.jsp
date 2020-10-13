@@ -16,7 +16,7 @@
           });
         </script>
         <title>My Account</title>
-        <link href="css/useraccountmgmt.css" rel="stylesheet" type="text/css">
+        <link href="css/user-account-mgmt.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <form action="LoginServlet" method="GET">

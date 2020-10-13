@@ -135,7 +135,7 @@
             <div class="course">
                 <div class="preview">
                     <h6> ORDER #<%=orderAccepted.getId()%></h6>
-                    <h2><img src="css/iconclean.png" height="125px" style="background-color: #51abff"></h2>
+                    <h2><img src="css/cleaning-bucket-icon.png" height="125px" style="background-color: #51abff"></h2>
                     <a> <%=date%> </a>
                 </div>
                 <div class="info">
@@ -170,7 +170,7 @@
 
             <p style="text-transform: uppercase; font-size: 12px; padding-bottom: 20px;"> *WARNING! Faking Start Time and End Time will result in serious sanctions </p>
 
-            <p style="padding-bottom: 25px;"> <img src="css/inprogress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
+            <p style="padding-bottom: 25px;"> <img src="css/in-progress.gif" width="In P35px" height="35px" >  Status: In Progress  </p> 
             
             <button type="submit" value="Finish"> Finish  </button>
             

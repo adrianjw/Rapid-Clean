@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Goodbye!</title>
-        <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
+        <link rel="stylesheet" type="text/css" href="css/rapidclean-loading.css">
         <meta http-equiv="refresh" content="1;url=index.jsp" />
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
