@@ -6,6 +6,10 @@ h1 {
    font-size: 35px;   
 }
 
+button {
+    outline-width: 0;
+}
+
 .centerimg {
   display: block;
   margin-left: auto;

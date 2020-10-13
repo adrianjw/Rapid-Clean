@@ -7,7 +7,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(function(){
-            $("#nav-placeholder").load("navigationbar_1.jsp");
+          $("#nav-placeholder").load("navigationbar.jsp");
              });
         </script>
         <style>

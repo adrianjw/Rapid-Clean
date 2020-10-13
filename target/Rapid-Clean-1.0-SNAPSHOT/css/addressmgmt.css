@@ -1,0 +1,22 @@
+h1 {
+    margin-bottom: 50px;
+}
+
+.main-div {
+    margin: 50px 20%;
+}
+
+.add-address-button {
+    width: 250px;
+    height: 200px;
+    border: 2px dashed lightgrey;
+    border-radius: 20px;
+    cursor: pointer;
+    color: lightgrey;
+    font-size: 16px;
+}
+
+.add-address-button span {
+    color: lightgrey;
+    font-size: 70px;
+}
