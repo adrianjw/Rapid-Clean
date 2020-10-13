@@ -24,7 +24,7 @@
         </style>
     </head>
     <body style="background-color:#24252A">
-        <img src="css/logotp.png" class="centerz">
+        <img src="css/rapidclean-navbar-icon.png" class="centerz">
         <div class="example">
             <div class="sk-fold sk-center">
                 <div class="sk-fold-cube"></div>

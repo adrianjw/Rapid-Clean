@@ -8,7 +8,7 @@
     <body>
         <div id="sticky">
             <header>
-                <img class="logo" src="css/logotp.png" alt ="logo" width="158px" height="50px">
+                <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
                 <nav>
                     <ul class="nav-links">
                         <li class="tab"><a href="home.jsp">Home</a></li>
