@@ -5,7 +5,7 @@
     <head>
         <% Cleaner cleaner = (Cleaner) session.getAttribute("cleaner"); %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/navigationbar.css">
+        <link rel="stylesheet" href="css/cleaner-navigationbar.css">
         <title>Welcome to RapidClean!</title>
     </head>
     <body>
@@ -21,7 +21,7 @@
                     </ul>
                 </nav>
                 <div class="dropdown">
-                    <button class="dropdown-button"> MY PROFILE ▼ </button>
+                    <a href="#"><button>MY PROFILE ▼</button></a>
                     <div class="dropdown-content">
                         <a href="#">MY ACCOUNT</a>
                         <a href="#">MY PAYMENTS</a>
