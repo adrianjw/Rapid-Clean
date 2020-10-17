@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
+        <link href="css/user-access-mgmt.css" rel="stylesheet" type="text/css">
         <title>Sign Up</title>
     </head>
     <body>
@@ -13,8 +13,8 @@
             <h1> Sign Up As </h1>
         </div>
         <div>
-            <a href="customersignup.jsp"><button class="customer-button"> Customer </button></a>
-            <a href="cleanersignup.jsp"><button class="cleaner-button"> Cleaner </button></a>
+            <a href="signup-customer.jsp"><button class="customer-button"> Customer </button></a>
+            <a href="signup-cleaner.jsp"><button class="cleaner-button"> Cleaner </button></a>
         </div>
         <%
             session.setAttribute("firstNameError", "");

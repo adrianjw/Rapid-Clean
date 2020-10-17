@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
+        <link href="css/user-access-mgmt.css" rel="stylesheet" type="text/css">
         <title>Login</title>
     </head>
     <body>

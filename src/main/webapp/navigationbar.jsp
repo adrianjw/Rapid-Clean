@@ -3,22 +3,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/navbar.css">
-        <style>
-            .sticky {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1;
-            }
-        </style>
+        <link rel="stylesheet" href="css/navigationbar.css">
     </head>
     <body>
         <div id="sticky">
             <header>
-                <img class="logo" src="css/logotp.png" alt ="logo" width="10%" height="10%">
+                <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
                 <nav>
-                    <ul class="nav__links">
+                    <ul class="nav-links">
                         <li class="tab"><a href="home.jsp">Home</a></li>
                         <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>
@@ -26,34 +18,30 @@
                     </ul>
                 </nav>
                 <div class="dropdown">
-                    <a class="cta" href="#"><button>MY PROFILE ⯆</button></a>
-                    <div class="dropdown-content" style="right:0">
-                        <a href="myaccount.jsp">MY ACCOUNT</a>
-                        <a href="myaddresses.jsp">MY ADDRESSES</a>
+                    <button class="dropdown-button"> MY PROFILE ▼ </button>
+                    <div class="dropdown-content">
+                        <a href="my-account.jsp">MY ACCOUNT</a>
+                        <a href="my-addresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
-                        <a href="myorder.jsp">MY ORDERS</a>
+                        <a href="my-orders.jsp">MY ORDERS</a>
                         <a href="LogoutServlet">LOGOUT</a>
                     </div>
                 </div>
-
             </header>
             <hr>
         </div>
         <script>
-            window.onscroll = function () {
-                myFunction()
-            };
-
             var navbar = document.getElementById("navbar");
             var sticky = navbar.offsetTop;
-
-            function myFunction() {
+            
+            window.onscroll = function() {
                 if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky")
-                } else {
+                    navbar.classList.add("sticky");
+                }
+                else {
                     navbar.classList.remove("sticky");
                 }
-            }
+            };
         </script>
     </body>
 </html>

@@ -17,10 +17,6 @@
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CleanerSignUpServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ConnectionServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ConnectionServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
@@ -28,10 +24,6 @@
     <servlet>
         <servlet-name>CreateRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CustomerSignUpServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CustomerSignUpServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteAccountServlet</servlet-name>
@@ -58,6 +50,14 @@
         <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SignupCleanerServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.SignupCleanerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignupCustomerServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.SignupCustomerServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
     </servlet>
@@ -78,20 +78,12 @@
         <url-pattern>/CleanerOrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <url-pattern>/CleanerSignUpServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ConnectionServlet</servlet-name>
         <url-pattern>/ConnectionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateRatingServlet</servlet-name>
         <url-pattern>/CreateRatingServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CustomerSignUpServlet</servlet-name>
-        <url-pattern>/CustomerSignUpServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteAccountServlet</servlet-name>
@@ -118,12 +110,18 @@
         <url-pattern>/OrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>SignupCleanerServlet</servlet-name>
+        <url-pattern>/SignupCleanerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignupCustomerServlet</servlet-name>
+        <url-pattern>/SignupCustomerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>
         <url-pattern>/ViewRatingServlet</url-pattern>
     </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>

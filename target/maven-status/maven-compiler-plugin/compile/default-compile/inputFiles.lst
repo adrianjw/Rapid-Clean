@@ -1,10 +1,10 @@
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\MongoDB.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TestAcceptDAO.java
+C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCleanerServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Customer.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Rating.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Address.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CustomerSignUpServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TestRatingDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Cleaner.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderCompleted.java
@@ -15,10 +15,10 @@ C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Ra
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderHistoryServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\LogoutServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerSignUpServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\OrderDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\PaymentDetails.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\Validator.java
+C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCustomerServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CleanerDAO.java
 C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderFormServlet.java
