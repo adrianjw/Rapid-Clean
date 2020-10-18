@@ -55,6 +55,9 @@
                             <td></td>
                             <td class="errorMessage"><%=session.getAttribute("postcodeError")%></td>
                         </tr>
+                        <tr>
+                            <td colspan="3"><%=session.getAttribute("addressExistError")%></td>
+                        </tr>
                     </table>
                     <button class="regular" type="submit">Add address</button>
                 </form>

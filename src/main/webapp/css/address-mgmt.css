@@ -78,7 +78,7 @@ button.add-address span {
 }
 
 .actionResultMessage {
-    color: green;
+    color: #00c800;
 }
 
 .errorMessage {
