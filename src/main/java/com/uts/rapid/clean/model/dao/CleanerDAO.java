@@ -17,7 +17,7 @@ public class CleanerDAO implements Serializable {
         cleanerCollection = database.getCollection("Cleaner");
     }
     
-    // Insert cleaner document
+    // Insert a cleaner document with the specified paramters
     public void createCleaner(String firstName, String lastName, String email,
             String password, String phoneNumber,int bankBsbNumber,
             int bankAccountNumber, String bankAccountHolderName) {
@@ -37,7 +37,7 @@ public class CleanerDAO implements Serializable {
         return cleanerCollection.find(eq("email", email)).first() != null;
     }
     
-    // Find a cleaner document with the specified email address and password and return the cleaner java bean
+    // Find a cleaner document with the specified email address and password, then return the cleaner object
     public Cleaner findCleaner(String email, String password) {
         Document document = cleanerCollection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -52,7 +52,7 @@ public class CleanerDAO implements Serializable {
         }
     }
     
-    // Delete cleaner document
+    // Delete a cleaner document with the specified cleaner ID
     public void deleteCleaner(String id) {
         ObjectId cleanerId = new ObjectId(id);
         cleanerCollection.deleteOne(eq("_id", cleanerId));

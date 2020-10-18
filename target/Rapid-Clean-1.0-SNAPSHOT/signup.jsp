@@ -9,12 +9,12 @@
     </head>
     <body>
         <div>
-            <a href="index.jsp"><button class="back-button">←</button></a>
-            <h1> Sign Up As </h1>
+            <a href="index.jsp"><button class="back">←</button></a>
+            <h1>Sign Up As</h1>
         </div>
         <div>
-            <a href="signup-customer.jsp"><button class="customer-button"> Customer </button></a>
-            <a href="signup-cleaner.jsp"><button class="cleaner-button"> Cleaner </button></a>
+            <a href="signup-customer.jsp"><button class="customer">Customer</button></a>
+            <a href="signup-cleaner.jsp"><button class="cleaner">Cleaner</button></a>
         </div>
         <%
             session.setAttribute("firstNameError", "");

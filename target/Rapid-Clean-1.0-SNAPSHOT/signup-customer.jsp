@@ -7,7 +7,7 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <a href="signup.jsp"><button class="back-button">←</button></a>
+        <a href="signup.jsp"><button class="back">←</button></a>
         <form action="SignupCustomerServlet" method="POST">
             <table>
                 <tr>
@@ -41,7 +41,7 @@
                     <td class="errorMessage"><%=session.getAttribute("confirmPasswordError")%></td>
                 </tr>
             </table>
-            <button class="regular-button" type="submit"> Create Account </button>
+            <button class="regular" type="submit">Create Account</button>
         </form>
     </body>
 </html>

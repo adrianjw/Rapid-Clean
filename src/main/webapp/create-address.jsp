@@ -14,6 +14,43 @@
     </head>
     <body>
         <div id="nav-placeholder"></div>
-        
+        <div class="parent">
+            <div class="child">
+                <h2>Add a new address</h2>
+                <form action="CreateAddressServlet" method="POST">
+                    <table>
+                        <tr>
+                            <td colspan="3">Street Address</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input class="long" type="text" name="streetAddress" maxlength="200" required></td>
+                        </tr>
+                        <tr>
+                            <td>Suburb</td>
+                            <td>State</td>
+                            <td>Postcode</td>
+                        </tr>
+                        <tr>
+                            <td><input class="short" type="text" name="suburb" maxlength="50" required></td>
+                            <td>
+                                <select name="state" required>
+                                    <option value="none">Select</option>
+                                    <option value="ACT">ACT</option>
+                                    <option value="NSW">NSW</option>
+                                    <option value="NT">NT</option>
+                                    <option value="QLD">QLD</option>
+                                    <option value="SA">SA</option>
+                                    <option value="TAS">TAS</option>
+                                    <option value="VIC">VIC</option>
+                                    <option value="WA">WA</option>
+                                </select>
+                            </td>
+                            <td><input class="short" type="text" name="postcode" maxlength="4" required></td>
+                        </tr>
+                    </table>
+                    <button class="regular" type="submit">Add address</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

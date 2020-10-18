@@ -61,6 +61,10 @@
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateAddressServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateAddressServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
         <url-pattern>/CleanerOrderAcceptedServlet</url-pattern>
@@ -120,6 +124,10 @@
     <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>
         <url-pattern>/ViewRatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateAddressServlet</servlet-name>
+        <url-pattern>/CreateAddressServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

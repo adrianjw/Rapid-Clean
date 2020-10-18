@@ -1,5 +1,6 @@
 com\uts\rapid\clean\controller\LogoutServlet.class
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
+com\uts\rapid\clean\controller\CreateAddressServlet.class
 com\uts\rapid\clean\controller\Validator.class
 com\uts\rapid\clean\model\dao\AcceptServiceDAO.class
 com\uts\rapid\clean\controller\OrderHistoryServlet.class
