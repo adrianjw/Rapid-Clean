@@ -19,5 +19,12 @@
             <h1>My Addresses</h1>
             <a href="create-address.jsp"><button class="add-address"><span>+</span><br>Add address</button></a>
         </div>
+        <%
+            session.setAttribute("streetAddressError", "");
+            session.setAttribute("suburbError", "");
+            session.setAttribute("postcodeError", "");
+            session.setAttribute("addressExistError", "");
+            session.setAttribute("actionResult", "");
+        %>
     </body>
 </html>
