@@ -76,3 +76,11 @@ button.add-address span {
     color: lightgrey;
     font-size: 70px;
 }
+
+.actionResultMessage {
+    color: green;
+}
+
+.errorMessage {
+    color: red;
+}

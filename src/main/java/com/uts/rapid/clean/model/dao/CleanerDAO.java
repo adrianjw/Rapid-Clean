@@ -54,7 +54,7 @@ public class CleanerDAO implements Serializable {
     
     // Delete a cleaner document with the specified cleaner ID
     public void deleteCleaner(String id) {
-        ObjectId cleanerId = new ObjectId(id);
-        cleanerCollection.deleteOne(eq("_id", cleanerId));
+        ObjectId cleaner_id = new ObjectId(id);
+        cleanerCollection.deleteOne(eq("_id", cleaner_id));
     }
 }

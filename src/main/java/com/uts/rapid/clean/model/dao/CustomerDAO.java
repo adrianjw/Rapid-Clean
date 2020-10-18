@@ -48,7 +48,7 @@ public class CustomerDAO implements Serializable {
     
     // Delete a customer document with the specified customer ID
     public void deleteCustomer(String id) {
-        ObjectId customerId = new ObjectId(id);
-        customerCollection.deleteOne(eq("_id", customerId));
+        ObjectId customer_id = new ObjectId(id);
+        customerCollection.deleteOne(eq("_id", customer_id));
     }
 }

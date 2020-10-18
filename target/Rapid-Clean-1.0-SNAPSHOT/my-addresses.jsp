@@ -15,7 +15,7 @@
     <body>
         <div id="nav-placeholder"></div>
         <div class="main">
-            <h2><%=session.getAttribute("actionResult")%></h2>
+            <h2 class="actionResultMessage"><%=session.getAttribute("actionResult")%></h2>
             <h1>My Addresses</h1>
             <a href="create-address.jsp"><button class="add-address"><span>+</span><br>Add address</button></a>
         </div>
