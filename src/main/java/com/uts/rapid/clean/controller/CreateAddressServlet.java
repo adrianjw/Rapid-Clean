@@ -15,7 +15,7 @@ public class CreateAddressServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AddressDAO addressDAO = (AddressDAO) session.getAttribute("addressDAO");
         
-        String streetAddresss = request.getParameter("streeAddress");
+        String streetAddress = request.getParameter("streetAddress");
         String suburb = request.getParameter("suburb");
         String state = request.getParameter("state");
         String postcode = request.getParameter("postcode");
@@ -24,7 +24,7 @@ public class CreateAddressServlet extends HttpServlet {
         validator.clear(session);
         int validationTestPassed = 0;
         
-        if (validator.validateStreetAddress(streetAddresss))
+        if (validator.validateStreetAddress(streetAddress))
             validationTestPassed++;
         else
             session.setAttribute("streetAddressError", "Invalid address");
@@ -43,8 +43,8 @@ public class CreateAddressServlet extends HttpServlet {
             session.setAttribute("postcodeError", "Invalid postcode");
         
         if (validationTestPassed == 4) {
-            if (!addressDAO.hasAddress(streetAddresss, suburb, state, Integer.parseInt(postcode))) {
-                addressDAO.createAddress(streetAddresss, suburb, state, Integer.parseInt(postcode));
+            if (!addressDAO.hasAddress(streetAddress, suburb, state, Integer.parseInt(postcode))) {
+                addressDAO.createAddress(streetAddress, suburb, state, Integer.parseInt(postcode));
                 session.setAttribute("actionResult", "Address added");
                 request.getRequestDispatcher("my-addresses.jsp").forward(request, response);
             }
