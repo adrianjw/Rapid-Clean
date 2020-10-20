@@ -19,7 +19,7 @@
                 <img class="logo" src="css/logotp.png" alt ="logo" width="10%" height="10%">
                 <nav>
                     <ul class="nav__links">
-                        <li class="tab"><a href="home.jsp">Home</a></li>
+                        <li class="tab"><a href="./OrderAcceptedServlet">Home</a></li>
                         <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>
                         <li class="tab"><a href="#">Contact Us</a></li>

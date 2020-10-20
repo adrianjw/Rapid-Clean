@@ -5,10 +5,11 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.Address;
+import java.io.Serializable;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class AddressDAO {
+public class AddressDAO implements Serializable {
 
     private MongoCollection<Document> addressCollection;
     

@@ -41,20 +41,25 @@
                 <input type="text" name="value">
                 <button class="card-btn">Search</button>
             </form>
+            
+            <form>
+                <button class="card-btn"></button>
+            </form>
            
-            <div class="card">
+<!--            <div class="card">
                <div class="card-body">
                    <h4>Body</h4>
                    <p class="card-text">This is a sample text</p>
                    <button class="card-btn">View</button>
                </div>
-           </div>
+           </div>-->
             <% for (Order order : orders) {%>
                 <div class="card">
                    <div class="card-body">
                        <h4><%=order.getId()%></h4>
                        <h4><%=order.getDateTime()%></h4> 
                        <p class="card-text">Service: <%=order.getOrderCategory()%></p>
+                       <p class="card-text">Residential Type: <%=order.getResidentialType()%></p>
                        <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%></p>
                        <!--<button class="card-btn">View</button>-->
                    </div>

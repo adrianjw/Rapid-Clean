@@ -12,14 +12,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Goodbye!</title>
         <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
-        <meta http-equiv="refresh" content="3;url=index.jsp" />
+        <meta http-equiv="refresh" content="1;url=index.jsp" />
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
             .example {
                 margin: 25px 100px;
                 padding: 0px;
             }
-
             div.a {
                 text-align: center;
             }
@@ -31,7 +30,6 @@
             }
         </style>
     </head>
-    
     <body style="background-color:#24252A">
         <img src="css/logotp.png" class="centerz">
         <div class="example">

@@ -126,11 +126,19 @@ public class OrderAcceptedServlet extends HttpServlet {
             System.out.println("Order id to use" + orderAcceptedId);
         }
         
+        if (orderCompleted != null) {
+            System.out.println("order cpmlte not nullllll");
+        } else {
+            System.out.println("order cpmlte null");
+        }
+        
         if (orderAccepted != null) {
             order = orderDAO.order(orderAcceptedId);
             session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
             session.setAttribute("order", order);
         } else if (orderCompleted != null) {
+            session.setAttribute("orderAccepted", orderAccepted);
             session.setAttribute("orderCompleted", orderCompleted);
         }
                         

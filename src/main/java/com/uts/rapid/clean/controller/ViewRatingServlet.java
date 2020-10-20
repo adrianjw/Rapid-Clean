@@ -5,17 +5,14 @@ import com.uts.rapid.clean.model.dao.RatingDAO;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "ViewRatingServlet", urlPatterns = {"/ViewRatingServlet"})
 public class ViewRatingServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         // Get current session, ratingDAO
@@ -30,7 +27,18 @@ public class ViewRatingServlet extends HttpServlet {
         System.out.println("\n\nTotal Entries: "+listRatings.size()+"\n\n");
         
         // Redirects to All Ratings and forward req,res resources
-        request.getRequestDispatcher("ratings.jsp").include(request, response);
+        request.getRequestDispatcher("ratings.jsp").forward(request, response);
     }
-
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 }

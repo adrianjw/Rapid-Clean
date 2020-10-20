@@ -1,8 +1,9 @@
 package com.uts.rapid.clean.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Rating {
+public class Rating implements Serializable {
     private String id;
     private String customerId;
     private String orderCompletedId;

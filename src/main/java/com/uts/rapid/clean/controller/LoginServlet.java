@@ -14,7 +14,7 @@ import com.uts.rapid.clean.model.Cleaner;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
@@ -32,19 +32,19 @@ public class LoginServlet extends HttpServlet {
             if (customer != null) {
                 session.setAttribute("customer", customer);
                 request.getRequestDispatcher("home.jsp").include(request, response);
-                request.getRequestDispatcher("/OrderAcceptedServlet").forward(request, response);
             }
             else if (cleaner != null) {
-                request.getRequestDispatcher("/CleanerOrderServlet?cleanerId=" + cleaner.getId()).include(request, response);
+                session.setAttribute("cleanerId", cleaner.getId());
+                request.getRequestDispatcher("/CleanerOrderServlet").forward(request, response);
             }
             else {
                 session.setAttribute("loginError", "Invalid username or password");
-                request.getRequestDispatcher("login.jsp").include(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
         else {
             session.setAttribute("loginError", "Invalid username or password");
-            request.getRequestDispatcher("login.jsp").include(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }

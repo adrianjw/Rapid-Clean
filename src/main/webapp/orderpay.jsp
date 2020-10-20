@@ -4,6 +4,7 @@
     Author     : trandamtrungthai
 --%>
 
+<%@page import="com.uts.rapid.clean.model.OrderAccepted"%>
 <%@page import="com.uts.rapid.clean.model.Order"%>
 <%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <META HTTP-EQUIV="Refresh" CONTENT="5">
+        <META HTTP-EQUIV="Refresh" CONTENT="5"; url="./OrderPayServlet">
         <title>JSP Page</title>
         <style>
 /*            body {
@@ -93,6 +94,7 @@
         <div id="nav-placeholder"></div>
         <% OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
            Order order = (Order) session.getAttribute("order");
+           OrderAccepted orderAccepted = (OrderAccepted) session.getAttribute("orderAccepted");
         %>
         <div class="container">
         <% if (orderCompleted != null && order != null) {%>
@@ -110,6 +112,16 @@
                    <button class="card-btn" disabled>Pay</button>
                </div>
            </div>
+        </div>
+        <%} else if (orderCompleted == null && orderAccepted != null) {%>
+        <div class="card">
+            <div class="card-body">
+                <h4><%=orderAccepted.getId()%></h4>
+                <p class="card-text">Service: <%=order.getOrderCategory()%></p>
+                <p class="card-text">Residential Type: <%=order.getResidentialType()%>></p>
+                <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%>></p>
+                <!--<button class="card-btn">View</button>-->
+            </div>
         </div>
         <%} else {%>
         <h3>There is no order available. Please refresh and try again.</h3>

@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-public class AcceptServiceDAO {
+public class AcceptServiceDAO implements Serializable {
 
     private MongoCollection<Document> customerCollection;
     private MongoCollection<Document> cleanerCollection;
@@ -74,20 +75,8 @@ public class AcceptServiceDAO {
                 (Date) doc.get("dateTime"));
         return order;
     }
-
-    // Returns the cleaner object
-    public Cleaner findCleaner(String cleanerId) {
-        ObjectId cleanerObjId = new ObjectId(cleanerId);
-        Document doc = cleanerCollection.find(eq("_id", cleanerObjId)).first();
-        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
-                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"),
-                (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"),
-                (String) doc.get("bankAccountHolderName"));
-        return cleaner;
-    }
     
     // Get Address Details from Address ID
-    @SuppressWarnings("unchecked")
     public Address address(String addressId) {
         ObjectId addressObjId = new ObjectId(addressId);
         Document doc = addressCollection.find(eq("_id", addressObjId)).first();
@@ -113,6 +102,17 @@ public class AcceptServiceDAO {
         return customer;
     }
 
+    // Returns the cleaner object
+    public Cleaner findCleaner(String cleanerId) {
+        ObjectId cleanerObjId = new ObjectId(cleanerId);
+        Document doc = cleanerCollection.find(eq("_id", cleanerObjId)).first();
+        Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"),
+                (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"),
+                (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"),
+                (String) doc.get("bankAccountHolderName"));
+        return cleaner;
+    }
+    
     // Find OrderCompleted Object
     public OrderCompleted findOrderCompleted(String orderId) {
         Document doc = orderCompletedCollection.find(eq("order_id", orderId)).first();
@@ -160,14 +160,12 @@ public class AcceptServiceDAO {
                         cleanerList.add(cleanerIdDB);
 
                         // If the order has not been rejected by cleaner, i.e cleanerId exist in the OrderRejected Document (merged with Order) of a particular Order 
-                        if (cleanerIdDB.equalsIgnoreCase(cleanerId) == true) {
-
+                        if (cleanerIdDB.equalsIgnoreCase(cleanerId)) {
                             helper = true;
-
                         }
                     }
 
-                    if (helper == false) {
+                    if (!helper) {
                         ObjectId orderObjId = (ObjectId) orders.get("_id");
                         String newOrderId = orderObjId.toString();
                         Order order = new Order(newOrderId, (String) orders.get("customer_id"),
@@ -176,7 +174,8 @@ public class AcceptServiceDAO {
                                 (String) orders.get("orderCategoryDesc"), (Date) orders.get("dateTime"));
                         table.add(order);
                     }
-                } else {
+                }
+                else {
                     ObjectId orderObjId = (ObjectId) orders.get("_id");
                     String newOrderId = orderObjId.toString();
                     Order order = new Order(newOrderId, (String) orders.get("customer_id"),
@@ -190,7 +189,8 @@ public class AcceptServiceDAO {
 
         if (!table.isEmpty()) {
             return table;
-        } else {
+        }
+        else {
             return null;
         }
     }
@@ -210,7 +210,6 @@ public class AcceptServiceDAO {
             System.out.println(address.getFullAddress());
         });
         System.out.println();
-
     }
 
     public void displayOrderTest() {

@@ -7,26 +7,26 @@
         <title>Login</title>
     </head>
     <body>
-        <form action="LoginServlet" method="GET">
+        <a href="index.jsp"><button class="back-button">←</button></a>
+        <form action="LoginServlet" method="POST">
             <table>
                 <tr>
                     <td>Email</td>
                 </tr>
                 <tr>
-                    <td><input type="email" name="email"></td>
+                    <td><input type="email" name="email" required></td>
                 </tr>
                 <tr>
                     <td>Password</td>
                 </tr>
                 <tr>
-                    <td><input type="password" name="password"></td>
+                    <td><input type="password" name="password" required></td>
                 </tr>
                 <tr>
                     <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
-            <button class="button" type="submit"> Login </button>
-            <a href="home.jsp"><button class="button" type="button"> Go Back </button></a>
+            <button class="regular-button" type="submit"> Login </button>
         </form>
     </body>
 </html>

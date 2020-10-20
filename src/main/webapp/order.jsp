@@ -196,7 +196,7 @@
     <body>
         <div id="nav-placeholder">
             
-        </div>
+        </div>r
        
         <h1>Pick A Service That Suits You</h1>
         <!--Start of box-->
@@ -212,7 +212,6 @@
                             <h3>Rapid Cleaning</h3>
                             <p>Kitchen Cleaning, Bathroom Cleaning, Living Room Cleaning, and Room Cleaning</p>
                         </div>
-                        <!--<div class="price"><b>38$/hr</b></div>-->
                         <button class="btn-book" type="submit">Book Now <b style="background-color: white">(38$/hr)</b></button>
                     </div>
                 </div>
@@ -232,7 +231,6 @@
                         <h3>Deluxe Cleaning</h3>
                         <p>Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.</p>
                     </div>
-                    <!--<div class="price"><b>50$/hr</b></div>-->
                     <button class="btn-book" type="submit">Book Now <b>(50$/hr)</b></button>
                 </div>
                 
@@ -253,7 +251,6 @@
                         <h3>Premium Cleaning</h3>
                         <p>Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation</p>
                     </div>
-<!--                    <div class="price"><b>90$/hr</b></div>-->
                     <button class="btn-book" type="submit">Book Now <b>(90$/hr)</b></button>
                 </div>
             </div>

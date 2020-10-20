@@ -1,6 +1,5 @@
 package com.uts.rapid.clean.controller;
 
-import com.mongodb.client.MongoClient;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,13 +9,22 @@ import javax.servlet.http.HttpSession;
 
 public class LogoutServlet extends HttpServlet {
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        request.getRequestDispatcher("logout.jsp").forward(request, response);
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        MongoClient mongoClient = (MongoClient) session.getAttribute("mongoClient");
-        mongoClient.close();
-        session.invalidate();
-        request.getRequestDispatcher("logout.jsp").include(request, response);
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

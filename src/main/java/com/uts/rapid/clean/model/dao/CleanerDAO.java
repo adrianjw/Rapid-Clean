@@ -7,8 +7,9 @@ import static com.mongodb.client.model.Filters.and;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import com.uts.rapid.clean.model.Cleaner;
+import java.io.Serializable;
 
-public class CleanerDAO {
+public class CleanerDAO implements Serializable {
     
     private MongoCollection<Document> cleanerCollection;
     
