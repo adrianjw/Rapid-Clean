@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Loading...</title>
-        <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
+        <link rel="stylesheet" type="text/css" href="css/rapidclean-loading.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -34,7 +34,7 @@
     </head>
 
     <body style="background-color:#24252A">
-        <img src="css/logotp.png" class="centerz">
+        <img src="css/rapidclean-navbar-icon.png" class="centerz">
         <div class="example">
             <div class="sk-fold sk-center">
                 <div class="sk-fold-cube"></div>

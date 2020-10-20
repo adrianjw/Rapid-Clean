@@ -13,6 +13,9 @@ public class Validator implements Serializable {
     private String phoneNumberPattern = "0[23478]\\d{8}";
     private String bankNumberPattern = "\\d{6}";
     private String bankNamePattern = "([A-Z][a-z]+)( [A-Z][a-z]+)*";
+    private String streetAddressPattern = "[a-zA-Z0-9- ]+";
+    private String suburbPattern = "[a-zA-Z ]+";
+    private String postcodePattern = "\\d{4}";
     
     public Validator() {}
     
@@ -46,6 +49,18 @@ public class Validator implements Serializable {
         return validate(bankNamePattern, value);
     }
     
+    public boolean validateStreetAddress(String value) {
+        return validate(streetAddressPattern, value);
+    }
+    
+    public boolean validateSuburb(String value) {
+        return validate(suburbPattern, value);
+    }
+    
+    public boolean validatePostcode(String value) {
+        return validate(postcodePattern, value);
+    }
+    
     public void clear(HttpSession session) {
         session.setAttribute("firstNameError", "");
         session.setAttribute("lastNameError", "");
@@ -56,6 +71,11 @@ public class Validator implements Serializable {
         session.setAttribute("bankBsbNumberError", "");
         session.setAttribute("bankAccountNumberError", "");
         session.setAttribute("bankAccountHolderNameError", "");
+        session.setAttribute("streetAddressError", "");
+        session.setAttribute("suburbError", "");
+        session.setAttribute("postcodeError", "");
+        session.setAttribute("addressExistError", "");
         session.setAttribute("loginError", "");
+        session.setAttribute("actionResult", "");
     }
 }
