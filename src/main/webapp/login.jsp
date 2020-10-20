@@ -3,11 +3,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/useraccessmgmt.css" rel="stylesheet" type="text/css">
+        <link href="css/user-access-mgmt.css" rel="stylesheet" type="text/css">
         <title>Login</title>
     </head>
     <body>
-        <a href="index.jsp"><button class="back-button">←</button></a>
+        <a href="index.jsp"><button class="back">←</button></a>
         <form action="LoginServlet" method="POST">
             <table>
                 <tr>
@@ -26,7 +26,7 @@
                     <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
-            <button class="regular-button" type="submit"> Login </button>
+            <button class="regular" type="submit">Login</button>
         </form>
     </body>
 </html>

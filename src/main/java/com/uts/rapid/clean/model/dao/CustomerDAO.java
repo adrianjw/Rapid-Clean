@@ -17,7 +17,7 @@ public class CustomerDAO implements Serializable {
         customerCollection = database.getCollection("Customer");
     }
     
-    // Insert customer document
+    // Insert a customer document with the specified paramters
     public void createCustomer(String firstName, String lastName, String email,
             String password, String phoneNumber) {
         Document document = new Document("firstName", firstName)
@@ -33,7 +33,7 @@ public class CustomerDAO implements Serializable {
         return customerCollection.find(eq("email", email)).first() != null;
     }
     
-    // Find a customer document with the specified email address and password and return the customer java bean
+    // Find a customer document with the specified email address and password, then return the customer object
     public Customer findCustomer(String email, String password) {
         Document document = customerCollection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -46,9 +46,9 @@ public class CustomerDAO implements Serializable {
         }
     }
     
-    // Delete customer document
+    // Delete a customer document with the specified customer ID
     public void deleteCustomer(String id) {
-        ObjectId customerId = new ObjectId(id);
-        customerCollection.deleteOne(eq("_id", customerId));
+        ObjectId customer_id = new ObjectId(id);
+        customerCollection.deleteOne(eq("_id", customer_id));
     }
 }

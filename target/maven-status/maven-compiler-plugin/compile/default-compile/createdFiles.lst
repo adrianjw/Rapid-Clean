@@ -6,13 +6,11 @@ com/uts/rapid/clean/controller/CleanerOrderCompletedServlet.class
 com/uts/rapid/clean/model/OrderCompleted.class
 com/uts/rapid/clean/model/dao/OrderDAO.class
 com/uts/rapid/clean/controller/LoginServlet.class
-com/uts/rapid/clean/controller/CustomerSignUpServlet.class
 com/uts/rapid/clean/model/dao/MongoDB.class
 com/uts/rapid/clean/controller/CleanerOrderRejectedServlet.class
 com/uts/rapid/clean/model/OrderHistory.class
 com/uts/rapid/clean/controller/CleanerOrderAcceptedServlet.class
 com/uts/rapid/clean/controller/OrderServlet.class
-com/uts/rapid/clean/controller/CleanerSignUpServlet.class
 com/uts/rapid/clean/model/dao/CustomerDAO.class
 com/uts/rapid/clean/model/dao/TestAcceptDAO.class
 com/uts/rapid/clean/model/RejectedOrder.class

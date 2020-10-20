@@ -59,10 +59,10 @@ public class OrderPayServlet extends HttpServlet {
         }
                         
         try {
-            request.getRequestDispatcher("orderpay.jsp").include(request, response);
+            request.getRequestDispatcher("order-pay.jsp").forward(request, response);
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
-            request.getRequestDispatcher("orderpay.jsp").include(request, response);
+            request.getRequestDispatcher("order-pay.jsp").include(request, response);
         } 
     }
 

@@ -1,10 +1,9 @@
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/SignupCustomerServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/TestAcceptDAO.java
-/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CustomerSignUpServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Customer.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/RatingDAO.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderAcceptedServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CreateRatingServlet.java
-/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerSignUpServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Rating.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/LogoutServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/MongoDB.java
@@ -28,6 +27,8 @@
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderCompleted.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderRejectedServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/Validator.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CreateAddressServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/SignupCleanerServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/PaymentDetails.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/LoginServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Payment.java

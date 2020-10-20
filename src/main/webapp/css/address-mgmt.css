@@ -1,0 +1,86 @@
+div.main {
+    margin: 50px 20%;
+}
+
+div.parent {
+    text-align: center;
+}
+
+div.child {
+    text-align: left;
+    display: inline-block;
+}
+
+h1, h2 {
+    margin: 50px 0px;
+}
+
+table {
+    margin: 50px 0px;
+    color: white;
+    font-size: 16px;
+}
+
+td {
+    padding: 5px;
+}
+
+input {
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid white;
+    color: white;
+    outline-width: 0;
+}
+
+input.long {
+    width: 450px;
+}
+
+input.short {
+    width: 145px;
+}
+
+select {
+    width: 130px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid white;
+    outline-width: 0;
+}
+
+button.regular {
+    width: 130px;
+    height: 40px;
+    background-color: rgba(81,171,255,1);
+    border: none;
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+}
+
+button.regular:hover {
+    background-color: #6fb6f7;
+}
+
+button.add-address {
+    width: 250px;
+    height: 200px;
+    border: 2px dashed lightgrey;
+    border-radius: 20px;
+    cursor: pointer;
+    color: lightgrey;
+    font-size: 16px;
+}
+
+button.add-address span {
+    color: lightgrey;
+    font-size: 70px;
+}
+
+.actionResultMessage {
+    color: #00c800;
+}
+
+.errorMessage {
+    color: red;
+}
