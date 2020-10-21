@@ -1,18 +1,24 @@
 <%-- 
-    Document   : my-payment-details-add
-    Created on : Oct 22, 2020, 1:55:28 AM
+    Document   : cleanerorderaccepted
+    Created on : Aug 22, 2020, 10:01:00 PM
     Author     : David Guntoro
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>My Payment Detail</title>
-    </head>
-    <body>
-        
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("navigationbar.jsp"); // Edit this
+            });
+        </script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -59,7 +65,7 @@
 
             .form .label{
                 display: block;
-
+                color: #24252A;
                 margin-bottom: 6px;
                 background-color: #f8f8f8;
             }
@@ -74,7 +80,7 @@
                 word-spacing: 3px;
                 outline: none;
                 font-size: 16px;
-
+                color: #24252A;
                 font-family: "Montserrat";
                 background-color: #f8f8f8;
             }
@@ -106,7 +112,7 @@
                 bottom: 12px;
                 left: 15px;
                 font-size: 20px;
-
+                color: #24252A;
                 background-color: #f8f8f8;
 
 
@@ -182,14 +188,12 @@
                 }
             }
         </style>
-        <script>
-            $(function(){
-            $("#nav-placeholder").load("navigationbar.jsp");
-             });
-        </script>
-        
-        <div id="nav-placeholder"></div>
-        
+        <title>My Payment Details</title> 
+    </head>
+    <body>
+        <div id="nav-placeholder">
+        </div>
+
         <div style="padding-bottom: 200px"></div>
         <div class="wrapper">
             <div class="payment">
@@ -242,6 +246,5 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
-    </body>
     </body>
 </html>
