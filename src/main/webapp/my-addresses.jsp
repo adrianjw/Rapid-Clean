@@ -26,11 +26,7 @@
         <div class="main">
             <h2 class="action-result-message"><%=session.getAttribute("actionResult")%></h2>
             <h1>My Addresses</h1>
-            <a href="create-address.jsp">
-                <div class="add-address-button">
-                    Add address
-                </div>
-            </a>
+            <a href="create-address.jsp"><div class="add-address-button">Add address</div></a>
             <%for (Address address : addresses) {%>
                 <div class="address-block">
                     <p><%=address.getStreetAddress()%><br><%=address.getSuburb()%> <%=address.getState()%> <%=address.getPostcode()%></p>
