@@ -18,6 +18,7 @@ com\uts\rapid\clean\controller\OrderPayServlet.class
 com\uts\rapid\clean\controller\CreateRatingServlet.class
 com\uts\rapid\clean\model\dao\TestRatingDAO.class
 com\uts\rapid\clean\controller\OrderFormServlet.class
+com\uts\rapid\clean\model\dao\PaymentDetailsDAO.class
 com\uts\rapid\clean\model\Payment.class
 com\uts\rapid\clean\controller\DeleteAccountServlet.class
 com\uts\rapid\clean\resources\JavaEE8Resource.class
