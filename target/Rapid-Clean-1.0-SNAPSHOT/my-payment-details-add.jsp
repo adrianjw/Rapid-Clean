@@ -12,11 +12,7 @@
         <title>My Payment Detail</title>
     </head>
     <body>
-        <script>
-            $(function(){
-            $("#nav-placeholder").load("navigationbar.jsp");
-             });
-        </script>
+        
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -186,6 +182,11 @@
                 }
             }
         </style>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
         
         <div id="nav-placeholder"></div>
         
