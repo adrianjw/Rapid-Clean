@@ -1,13 +1,13 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
-import org.bson.Document;
-import org.bson.types.ObjectId;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.uts.rapid.clean.model.Cleaner;
 import java.io.Serializable;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class CleanerDAO implements Serializable {
     
@@ -53,8 +53,8 @@ public class CleanerDAO implements Serializable {
     }
     
     // Delete a cleaner document with the specified cleaner ID
-    public void deleteCleaner(String id) {
-        ObjectId cleaner_id = new ObjectId(id);
-        cleanerCollection.deleteOne(eq("_id", cleaner_id));
+    public void deleteCleaner(String cleaner_id) {
+        ObjectId cleanerObjId = new ObjectId(cleaner_id);
+        cleanerCollection.deleteOne(eq("_id", cleanerObjId));
     }
 }

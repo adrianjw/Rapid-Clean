@@ -26,7 +26,7 @@
                             <td colspan="3"><input class="long" type="text" name="streetAddress" maxlength="200" required></td>
                         </tr>
                         <tr>
-                            <td class="errorMessage"><%=session.getAttribute("streetAddressError")%></td>
+                            <td class="error-message"><%=session.getAttribute("streetAddressError")%></td>
                         </tr>
                         <tr>
                             <td>Suburb</td>
@@ -51,12 +51,12 @@
                             <td><input class="short" type="text" name="postcode" maxlength="4" required></td>
                         </tr>
                         <tr>
-                            <td class="errorMessage"><%=session.getAttribute("suburbError")%></td>
+                            <td class="error-message"><%=session.getAttribute("suburbError")%></td>
                             <td></td>
-                            <td class="errorMessage"><%=session.getAttribute("postcodeError")%></td>
+                            <td class="error-message"><%=session.getAttribute("postcodeError")%></td>
                         </tr>
                         <tr>
-                            <td class="errorMessage" colspan="3"><%=session.getAttribute("addressExistError")%></td>
+                            <td class="error-message" colspan="3"><%=session.getAttribute("addressExistError")%></td>
                         </tr>
                     </table>
                     <button class="regular" type="submit">Add address</button>

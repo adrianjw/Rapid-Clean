@@ -24,7 +24,7 @@
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
                         <a href="#">MY PAYMENT DETAILS</a>
                         <a href="my-orders.jsp">MY ORDERS</a>
-                        <a href="LogoutServlet">LOGOUT</a>
+                        <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>
             </header>

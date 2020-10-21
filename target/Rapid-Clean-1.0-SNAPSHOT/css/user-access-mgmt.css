@@ -98,6 +98,6 @@ button.cleaner:hover {
     background-image: url("cleaner-icon-blue.png");
 }
 
-.errorMessage {
+.error-message {
     color: red;
 }
