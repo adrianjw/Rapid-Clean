@@ -17,19 +17,19 @@
             }
 
             button {
-    
-    padding: 12px 45px;
-    background-color: rgba(81,171,255,1);
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-size: 20px;
-}
-button:hover
-{
-    opacity: 0.7;
-}
+
+                padding: 12px 45px;
+                background-color: rgba(81,171,255,1);
+                border: none;
+                border-radius: 0px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+                font-size: 20px;
+            }
+            button:hover
+            {
+                opacity: 0.7;
+            }
 
             .card {
                 margin-bottom: 1.5em;
@@ -118,7 +118,7 @@ button:hover
             <img src="css/customer-home.jpg" width="100%" height="100%" style="z-index:1">
             <div class="top-left"><b><h1 style="background-color: #e4e5ea; color: #24252A; text-align: left; font-weight: bold"> Australia's No. 1 <br> Marketplace for <br> Professional Home <br> Online-based Cleaning </h1></b></div>
             <b><div class="top-left2"><h1 style="background-color: #efeef4; color: #51abff; font-size: 27px; font-weight: bold"> 100% Satisfaction Guarantee </h1></b></div>
-            <button class="top-left3"> Book Now </button>
+<a href="order.jsp"><button class="top-left3"> Book Now </button></a>
 
 
     </body>
