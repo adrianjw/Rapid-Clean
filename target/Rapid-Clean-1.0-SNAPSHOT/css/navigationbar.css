@@ -58,7 +58,7 @@ button {
 .dropdown-button {
     margin-left:20px;
     padding: 9px 25px;
-    background-color: rgba(81,171,255,1);
+    background-color: #51abff;
     border: none;
     border-radius: 0px;
     transition: all 0.3s ease 0s;

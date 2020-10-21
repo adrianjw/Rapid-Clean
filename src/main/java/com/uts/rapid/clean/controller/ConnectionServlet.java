@@ -55,7 +55,12 @@ public class ConnectionServlet extends HttpServlet {
         session.setAttribute("bankBsbNumberError", "");
         session.setAttribute("bankAccountNumberError", "");
         session.setAttribute("bankAccountHolderNameError", "");
+        session.setAttribute("streetAddressError", "");
+        session.setAttribute("suburbError", "");
+        session.setAttribute("postcodeError", "");
+        session.setAttribute("addressExistError", "");
         session.setAttribute("loginError", "");
+        session.setAttribute("actionResult", "");
     }
     
     @Override

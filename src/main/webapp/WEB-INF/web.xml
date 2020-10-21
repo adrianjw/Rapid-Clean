@@ -22,6 +22,10 @@
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
+        <servlet-name>CreateAddressServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateAddressServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CreateRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
     </servlet>
@@ -30,12 +34,12 @@
         <servlet-class>com.uts.rapid.clean.controller.DeleteAccountServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
+        <servlet-name>DeleteAddressServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.DeleteAddressServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.LogoutServlet</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderServlet</servlet-name>
@@ -56,6 +60,10 @@
     <servlet>
         <servlet-name>SignupCustomerServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.SignupCustomerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateAddressServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.UpdateAddressServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
@@ -82,6 +90,10 @@
         <url-pattern>/ConnectionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>CreateAddressServlet</servlet-name>
+        <url-pattern>/CreateAddressServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CreateRatingServlet</servlet-name>
         <url-pattern>/CreateRatingServlet</url-pattern>
     </servlet-mapping>
@@ -90,12 +102,12 @@
         <url-pattern>/DeleteAccountServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
+        <servlet-name>DeleteAddressServlet</servlet-name>
+        <url-pattern>/DeleteAddressServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/LogoutServlet</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderFormServlet</servlet-name>
@@ -116,6 +128,10 @@
     <servlet-mapping>
         <servlet-name>SignupCustomerServlet</servlet-name>
         <url-pattern>/SignupCustomerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateAddressServlet</servlet-name>
+        <url-pattern>/UpdateAddressServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>

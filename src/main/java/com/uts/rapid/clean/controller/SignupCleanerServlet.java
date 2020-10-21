@@ -12,8 +12,7 @@ import com.uts.rapid.clean.model.Cleaner;
 
 public class SignupCleanerServlet extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         CustomerDAO customerDAO = (CustomerDAO) session.getAttribute("customerDAO");
@@ -95,5 +94,17 @@ public class SignupCleanerServlet extends HttpServlet {
         else {
             request.getRequestDispatcher("signup-cleaner.jsp").forward(request, response);
         }
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

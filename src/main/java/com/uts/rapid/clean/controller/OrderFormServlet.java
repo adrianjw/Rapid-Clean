@@ -37,7 +37,7 @@ public class OrderFormServlet extends HttpServlet {
 //        String dateTime = formatter.format(date);
 //        Date newDateTime = formatter.parse(dateTime);
         
-        String addressId = orderDAO.findAddress(customerId);        
+        String addressId = orderDAO.findAddressId(customerId);        
         
         orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         

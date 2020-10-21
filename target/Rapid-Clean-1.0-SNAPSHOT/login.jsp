@@ -7,7 +7,7 @@
         <title>Login</title>
     </head>
     <body>
-        <a href="index.jsp"><button class="back-button">←</button></a>
+        <a href="index.jsp"><button class="back">←</button></a>
         <form action="LoginServlet" method="POST">
             <table>
                 <tr>
@@ -23,10 +23,10 @@
                     <td><input type="password" name="password" required></td>
                 </tr>
                 <tr>
-                    <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
+                    <td class="error-message"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
-            <button class="regular-button" type="submit"> Login </button>
+            <button class="regular" type="submit">Login</button>
         </form>
     </body>
 </html>
