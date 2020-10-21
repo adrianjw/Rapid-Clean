@@ -12,11 +12,7 @@
         <title>My Payment Detail</title>
     </head>
     <body>
-        <script>
-            $(function(){
-            $("#nav-placeholder").load("navigationbar.jsp");
-             });
-        </script>
+        
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -186,6 +182,11 @@
                 }
             }
         </style>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("navigationbar.jsp");
+             });
+        </script>
         
         <div id="nav-placeholder"></div>
         
@@ -212,7 +213,7 @@
                         <i class="far fa-credit-card"></i>
                     </div>
                     <div class="breaks"> </div>
-                    <div class="card-grp space" style="background-color: #fff">
+                    <div class="card-grp space">
                         <div class="card-item icon-relative">
                             <label class="label">Expiry date:</label>
                             <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
