@@ -213,7 +213,7 @@
                         <i class="far fa-credit-card"></i>
                     </div>
                     <div class="breaks"> </div>
-                    <div class="card-grp space" style="background-color: #fff">
+                    <div class="card-grp space">
                         <div class="card-item icon-relative">
                             <label class="label">Expiry date:</label>
                             <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
