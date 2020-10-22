@@ -46,13 +46,14 @@
                 </div>
             </div> 
             
+            
+            <!-- If paymentDetsList is not empty -->
+              <div style="padding-bottom:20px"></div>
+              
             <!-- For loop starts here-->
             <% } else { 
                 for (PaymentDetail paymentDet : paymentDetailList) {
             %>
-            <!-- If paymentDetsList is not empty -->
-              <div style="padding-bottom:20px"></div>
-            
             <div class="credit-card" style="display:flex">
                 <img src="css/visa.png" width="70px" height="70px">
                 <div class="text" style="text-align: left">
@@ -60,7 +61,7 @@
                 <br> 
                 <div style="padding-top: 5px;">•••• •••• •••• <%=paymentDet.getLastFourDigits()%> - Expiry Date: <%=paymentDet.getExpiryDate()%></div>
                 </div>
-                <a href="#"><div class="deletebutton">REMOVE</div></a>
+                <a href="#"style="margin-left:auto; margin-top:auto; margin-bottom: auto;"><div class="deletebutton">REMOVE</div></a>
 
             </div>
             

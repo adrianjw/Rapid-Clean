@@ -41,6 +41,8 @@ public class CreatePaymentDetailServlet extends HttpServlet {
         String cardholderName = request.getParameter("cardholderName");
         String customer_id = request.getParameter("customerId");
         
+        session.setAttribute("invalidCardNumber", null);
+        
         // Checks if there is 16 digits
         if (cardNumberLength == 16)
         {
@@ -52,6 +54,7 @@ public class CreatePaymentDetailServlet extends HttpServlet {
             invalidCardNumber = "Invalid Card Number! Please try again.";
             session.setAttribute("invalidCardNumber", invalidCardNumber);
             request.getRequestDispatcher("my-payment-details-add.jsp").forward(request, response);
+            
         }
         
         
