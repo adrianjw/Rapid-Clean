@@ -29,15 +29,6 @@ public class PaymentDetailsDAO {
 
     }
 
-    public static void main(String[] Args) {
-        PaymentDetailsDAO test = new PaymentDetailsDAO(new MongoDB().getDatabase());
-        test.viewAllPaymentDetailsTest();
-        String s = "10 / 21";
-        s = s.replaceAll("\\s+","");
-        System.out.println(s);
-
-    }
-
     // Create a Payment Detail
     public void createPaymentDetail(String customer_id, String cardNumber, String expiryDate, int cvc, String cardholderName) {
         Document document = new Document("customer_id", customer_id)
@@ -74,16 +65,5 @@ public class PaymentDetailsDAO {
         paymentDetailCollection.deleteOne(eq("_id", _id));
     }
     
-    public void viewAllPaymentDetailsTest()
-    {
-        ArrayList<PaymentDetail> test = paymentList("asdasda");
-        
-
-        for (PaymentDetail forloop : test)
-        {
-            System.out.println(forloop.getCardholderName());
-        }
-
-    }
 
 }

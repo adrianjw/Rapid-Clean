@@ -63,7 +63,7 @@
                     <br> 
                     <div style="padding-top: 5px;">•••• •••• •••• <%=paymentDet.getLastFourDigits()%> - Expiry Date: <%=paymentDet.getExpiryDate()%></div>
                 </div>
-                <a href="#"style="margin-left:auto; margin-top:auto; margin-bottom: auto;"><div class="deletebutton">REMOVE</div></a>
+                <a href="DeletePaymentDetailServlet?paymentDetailId=<%=paymentDet.getId()%>&customerId=<%=customer.getId()%>" style="margin-left:auto; margin-top:auto; margin-bottom: auto;"><div class="deletebutton">REMOVE</div></a>
 
             </div>
 

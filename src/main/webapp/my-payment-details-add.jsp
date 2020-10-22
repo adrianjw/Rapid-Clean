@@ -261,7 +261,7 @@
                 <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
 
 
-                <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>"><div class="btn" style="background-color: #dddddd; color: #24252A">
+                <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>"><div class="btn" style="background-color: #dddddd; color: #24252A; text-align: center">
                         Go Back
                     </div></a>
 
