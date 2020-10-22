@@ -4,6 +4,7 @@
     Author     : David Guntoro
 --%>
 
+<%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -12,13 +13,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <script>
             $(function () {
                 $("#nav-placeholder").load("navigationbar.jsp"); // Edit this
             });
         </script>
+        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -210,39 +212,39 @@
                     <div class="form">
                         <div class="card space icon-relative">
                             <label class="label">Card holder:</label>
-                            <input type="text" class="input" placeholder="Cardholder Name">
+                            <input type="text" class="input" placeholder="Cardholder Name" name="cardholderName">
                             <i class="fas fa-user"></i>
                         </div>
 
                         <div class="breaks"> </div>
                         <div class="card space icon-relative" style="background-color: #f8f8f8;">
                             <label class="label">Card number:</label>
-                            <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+                            <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number" name="cardNumber">
                             <i class="far fa-credit-card"></i>
                         </div>
                         <div class="breaks"> </div>
                         <div class="card-grp space">
                             <div class="card-item icon-relative">
                                 <label class="label">Expiry date:</label>
-                                <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+                                <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00" name="expiryDate">
                                 <i class="far fa-calendar-alt"></i>
                             </div>
                             <div class="breaks"> </div>
                             <div class="card-item icon-relative">
                                 <label class="label">CVC:</label>
-                                <input type="text" class="input" data-mask="000" placeholder="000">
+                                <input type="text" class="input" data-mask="000" placeholder="000" name="cvc">
                                 <i class="fas fa-lock"></i>
 
                             </div>
                         </div>
                         <div class="breaks"> </div>
-                        <a href="#" type="submit" value="Save Payment"><div class="btn" style="background-color: #5bdc9f">
+                        <a href="CreatePaymentDetailServlet?customerId=<%=customer.getId()%>" type="submit" value="Save Payment"><div class="btn" style="background-color: #5bdc9f">
                                 Save Payment
                             </div> </a>
                         <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
 
 
-                        <a href="#"><div class="btn" style="background-color: #dddddd; color: #24252A">
+                        <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>"><div class="btn" style="background-color: #dddddd; color: #24252A">
                                 Go Back
                             </div></a>
 
