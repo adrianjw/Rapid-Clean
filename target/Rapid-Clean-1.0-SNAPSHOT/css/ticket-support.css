@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* --- Global Rules --- */
+.ticket__html, .ticket__bd { 
+    background-color: #1a1a1a; 
+    color: white; 
+    font-family: "Montserrat", sans-serif;
+}
+
+.ticket-button {
+    margin-left:20px;
+    padding: 9px 25px;
+    background-color: rgba(81,171,255,1);
+    border: none;
+    border-radius: 0px;
+    transition: all 0.3s ease 0s;
+    font-size: 16px;
+}
+
+.ticket-button:hover {
+    background-color: #6fb6f7;
+}
+
+.center { margin:auto;}
+#wingdings { font-family: "Wingdings"; }
+.text-color, .ticketboard-tb th { color: #6fb6f7; }
+hr { opacity: 0.1; }
+
+.clear { background-color: #1a1a1a; padding: 1%;}
+
+/* --- Ticket Support Rules --- */
+
+.ticket-form {
+    width: 40%;
+    text-align: center;
+    background-color: #1a1a1a; 
+}
+
+.ticket-tb {
+    background-color: #1a1a1a; 
+    width: 70%;
+    margin: auto;
+}
+
+.ticket-tb td, .ticket-tb th, .ticket-tb tr {
+    background-color: #1a1a1a; 
+    padding: 1%;
+}
+
+.ticket-select, .ticket-select option, #subject {
+    color: white;
+    width: 100%;
+    border: 5px solid #24252A;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.ticket-select select{
+    border: none;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+
+}
+
+.ticket-description {
+    background-color: #1a1a1a;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#subject {
+    padding: 0.5%;
+}
+
+.ticketboard-container {
+    width: 80%;
+}
+
+.ticketboard-tb {
+    width: 100%;
+    text-align: center;
+}
+
+.ticketboard-tb td, .ticketboard-tb th {
+    padding: 1% 2% 1% 2%;
+    background-color: #1a1a1a;
+}
+
+.ticketboard-tb th  {
+    background-color: #24252A;
+}
+
+.ticket-link {
+    color: #FFF;
+}
+
+.ticket-link:hover {
+    color: #6fb6f7;
+}
