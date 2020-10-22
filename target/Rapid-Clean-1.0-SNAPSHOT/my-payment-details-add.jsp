@@ -15,6 +15,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <% Customer customer = (Customer) session.getAttribute("customer");
             String invalidCardNumber = (String) session.getAttribute("invalidCardNumber");
+            String invalidExpiryDate = (String) session.getAttribute("invalidExpiryDate");
         %>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <script>
@@ -207,11 +208,11 @@
         <div id="nav-placeholder">
         </div>
         <div style="margin-top: 50px; font-size: 14px; text-align: center; color: #FF8484"> 
-            <% if (invalidCardNumber == null) { %>
-
-            <% } else { %>
+            <% if (invalidCardNumber != null) { %>
             Invalid Card Number! Please try again.
-            <% }%>
+            <% } else if (invalidExpiryDate != null){ %>
+            Invalid Expiry Date! Please try again.
+            <% } else {}%>
         </div>
         <div style="margin-top: 75px;"></div>
         <div class="wrapper">

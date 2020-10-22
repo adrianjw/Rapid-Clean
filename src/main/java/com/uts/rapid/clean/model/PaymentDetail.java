@@ -29,10 +29,6 @@ public class PaymentDetail implements Serializable {
         
     }
 
-    public static void main(String[] Args) {
-        //PaymentDetail paymentDets = new PaymentDetail("1", "5218009488121234", "12/12", 122, "Bryan Guntoro", "12");
-        //paymentDets.getLastFourDigits();
-    }
 
     public String getId() {
         return _id;
