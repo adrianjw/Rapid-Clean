@@ -124,17 +124,17 @@
 
             .btn{
 
-                background: #51abff;
+                background-color: #5bdc9f;
+                border: 0px; 
                 padding: 12px;
-                text-align: center;
-                color: #fff;
-
-                cursor: pointer;
+                width:100%; 
+                font-size: 16px;
 
             }
 
             .btn:hover{
                 opacity: 0.85;
+                cursor:pointer;
             }
 
 
@@ -253,7 +253,7 @@
                         </div>
                         <div class="breaks"> </div>
                         <div class="hover">
-                        <button type="submit" style="background-color: #5bdc9f; border: 0px; padding: 12px; width:100%; font-size: 16px">
+                        <button type="submit" class="btn">
                             Save Payment 
                         </button> 
                         </div>
