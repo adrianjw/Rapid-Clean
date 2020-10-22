@@ -28,13 +28,13 @@ public class CreatePaymentDetailServlet extends HttpServlet {
         
         String cardNumber = request.getParameter("cardNumber");
         String cvcs = request.getParameter("cvc");
-        int cvc = Integer.parseInt(cvcs);
+        int cvc = 121;
         String expirtyDate = request.getParameter("expiryDate");
         String cardholderName = request.getParameter("cardholderName");
         String customer_id = request.getParameter("customer_id");
         
         manager.createPaymentDetail(customer_id, cardNumber, expirtyDate, cvc, cardholderName);
-        request.getRequestDispatcher("/PaymentDetailServlet?customerId=" + customer_id).forward(request, response);
+        request.getRequestDispatcher("/PaymentDetailServlet?customerId=" + customerId).forward(request, response);
         
     }
 
