@@ -1,11 +1,13 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
-import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.uts.rapid.clean.model.Address;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -34,17 +36,34 @@ public class AddressDAO implements Serializable {
     }
     
     // Find an address document with the specified address ID, then return the address object
-    public Address findAddress(String address_id) {
+    public Address findAddressByAddressId(String address_id) {
         ObjectId addressObjId = new ObjectId(address_id);
         Document document = addressCollection.find(eq("_id", addressObjId)).first();
-        return new Address(address_id, (String) document.get("customer_id"),
-                (String) document.get("streetAddress"), (String) document.get("suburb"),
-                (String) document.get("state"), (int) document.get("postcode"));
+        if (document != null) {
+            return new Address(address_id, (String) document.get("customer_id"),
+                    (String) document.get("streetAddress"), (String) document.get("suburb"),
+                    (String) document.get("state"), (int) document.get("postcode"));
+        }
+        else {
+            return null;
+        }
+    }
+    
+    // Find address document(s) with the specified customer ID, then return an array list of address object(s)
+    public List<Address> findAddressByCustomerId(String customer_id) {
+        List<Document> addressDocuments = addressCollection.find(eq("customer_id", customer_id)).into(new ArrayList<>());
+        List<Address> addressObjects = new ArrayList<>();
+        for (Document document : addressDocuments) {
+            addressObjects.add(new Address(document.get("_id").toString(), (String) document.get("customer_id"),
+                    (String) document.get("streetAddress"), (String) document.get("suburb"),
+                    (String) document.get("state"), (int) document.get("postcode")));
+        }
+        return addressObjects;
     }
     
     // Delete an address document with the specified address ID
-    public void deleteAddress(String id) {
-        ObjectId address_id = new ObjectId(id);
-        addressCollection.deleteOne(eq("_id", address_id));
+    public void deleteAddress(String address_id) {
+        ObjectId addressObjId = new ObjectId(address_id);
+        addressCollection.deleteOne(eq("_id", addressObjId));
     }
 }

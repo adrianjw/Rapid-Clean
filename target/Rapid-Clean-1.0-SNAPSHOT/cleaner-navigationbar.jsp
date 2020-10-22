@@ -27,7 +27,8 @@
                         <a href="#">MY PAYMENTS</a>
                         <a href="#">MY JOB HISTORY</a>
                         <a href="ViewRatingServlet">MY RATINGS</a>
-                        <a href="LogoutServlet">LOGOUT</a>
+                        <a href="TicketCleanerServlet">SUPPORT</a>
+                        <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>
             </header>

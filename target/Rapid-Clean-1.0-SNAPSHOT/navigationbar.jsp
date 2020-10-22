@@ -16,7 +16,7 @@
                         <li class="tab"><a href="home.jsp">Home</a></li>
                         <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>
-                        <li class="tab"><a href="#">Contact Us</a></li>
+                        <li class="tab"><a href="contact-us.jsp">Contact Us</a></li>
                     </ul>
                 </nav>
                 <div class="dropdown">
@@ -26,7 +26,7 @@
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
                         <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a>
                         <a href="my-orders.jsp">MY ORDERS</a>
-                        <a href="LogoutServlet">LOGOUT</a>
+                        <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>
             </header>

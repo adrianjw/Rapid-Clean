@@ -1,13 +1,13 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
-import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
-import org.bson.Document;
-import org.bson.types.ObjectId;
+import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.uts.rapid.clean.model.Customer;
 import java.io.Serializable;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class CustomerDAO implements Serializable {
     
@@ -47,8 +47,8 @@ public class CustomerDAO implements Serializable {
     }
     
     // Delete a customer document with the specified customer ID
-    public void deleteCustomer(String id) {
-        ObjectId customer_id = new ObjectId(id);
-        customerCollection.deleteOne(eq("_id", customer_id));
+    public void deleteCustomer(String customer_id) {
+        ObjectId customerObjId = new ObjectId(customer_id);
+        customerCollection.deleteOne(eq("_id", customerObjId));
     }
 }
