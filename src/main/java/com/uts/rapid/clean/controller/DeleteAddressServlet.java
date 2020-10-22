@@ -12,7 +12,14 @@ public class DeleteAddressServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        AddressDAO addressDAO = (AddressDAO) session.getAttribute("addressDAO");
         
+        String addressId = request.getParameter("addressId");
+        
+        addressDAO.deleteAddress(addressId);
+        session.setAttribute("actionResult", "Address removed");
+        request.getRequestDispatcher("my-addresses.jsp").forward(request, response);
     }
 
     @Override

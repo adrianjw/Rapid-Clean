@@ -17,27 +17,26 @@ public class CleanerDAO implements Serializable {
         cleanerCollection = database.getCollection("Cleaner");
     }
     
-    // Insert a cleaner document with the specified paramters
+    // Insert a cleaner document with the given paramters
     public void createCleaner(String firstName, String lastName, String email,
             String password, String phoneNumber,int bankBsbNumber,
             int bankAccountNumber, String bankAccountHolderName) {
-        Document document = new Document("firstName", firstName)
+        cleanerCollection.insertOne(new Document("firstName", firstName)
                 .append("lastName", lastName)
                 .append("email", email)
                 .append("password", password)
                 .append("phoneNumber", phoneNumber)
                 .append("bankBsbNumber", bankBsbNumber)
                 .append("bankAccountNumber", bankAccountNumber)
-                .append("bankAccountHolderName", bankAccountHolderName);
-        cleanerCollection.insertOne(document);
+                .append("bankAccountHolderName", bankAccountHolderName));
     }
     
-    // Find whether a cleaner document exists with the specified email address
+    // Find whether a cleaner document exists with the given email address
     public boolean hasCleaner(String email) {
         return cleanerCollection.find(eq("email", email)).first() != null;
     }
     
-    // Find a cleaner document with the specified email address and password, then return the cleaner object
+    // Find a cleaner document with the given email address and password, then return the cleaner object
     public Cleaner findCleaner(String email, String password) {
         Document document = cleanerCollection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -52,9 +51,8 @@ public class CleanerDAO implements Serializable {
         }
     }
     
-    // Delete a cleaner document with the specified cleaner ID
-    public void deleteCleaner(String cleaner_id) {
-        ObjectId cleanerObjId = new ObjectId(cleaner_id);
-        cleanerCollection.deleteOne(eq("_id", cleanerObjId));
+    // Delete a cleaner document with the given cleaner ID
+    public void deleteCleaner(String cleanerId) {
+        cleanerCollection.deleteOne(eq("_id", new ObjectId(cleanerId)));
     }
 }

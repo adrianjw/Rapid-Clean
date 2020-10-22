@@ -1,9 +1,10 @@
 package com.uts.rapid.clean.model.dao;
 
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import static com.mongodb.client.model.Filters.eq;
 import com.uts.rapid.clean.model.Rating;
 import com.uts.rapid.clean.model.Ticket;
 import java.io.Serializable;
@@ -13,7 +14,7 @@ import org.bson.types.ObjectId;
 
 public class TicketDAO implements Serializable {
     
-    MongoCollection ticketCollection;
+    private MongoCollection<Document> ticketCollection;
     
     // Accessing collection via connection established in MongoDB
     public TicketDAO(MongoDatabase database) {
