@@ -13,8 +13,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <% Customer customer = (Customer) session.getAttribute("customer"); 
-           String invalidCardNumber = (String) session.getAttribute("invalidCardNumber");
+        <% Customer customer = (Customer) session.getAttribute("customer");
+            String invalidCardNumber = (String) session.getAttribute("invalidCardNumber");
         %>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <script>
@@ -22,7 +22,7 @@
                 $("#nav-placeholder").load("navigationbar.jsp"); // Edit this
             });
         </script>
-        
+
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -194,7 +194,7 @@
                     margin-top: 20px;
                     background-color: #5bdc9f;
                 }
-                button:hover
+                .hover
                 {
                     opacity: 0.85;
                     cursor:pointer;
@@ -207,11 +207,11 @@
         <div id="nav-placeholder">
         </div>
         <div style="margin-top: 50px; font-size: 14px; text-align: center; color: #FF8484"> 
-        <% if(invalidCardNumber == null) { %>
-        
-        <% } else { %>
-        Invalid Card Number! Please try again.
-        <% } %>
+            <% if (invalidCardNumber == null) { %>
+
+            <% } else { %>
+            Invalid Card Number! Please try again.
+            <% }%>
         </div>
         <div style="margin-top: 75px;"></div>
         <div class="wrapper">
@@ -252,21 +252,23 @@
                             </div>
                         </div>
                         <div class="breaks"> </div>
-                         <button type="submit" class="btns" style="background-color: #5bdc9f; border: 0px; padding: 12px; width:100%; font-size: 16px">
-                              Save Payment 
-                            </button> 
-                        </form>
-                        <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
+                        <div class="hover">
+                        <button type="submit" style="background-color: #5bdc9f; border: 0px; padding: 12px; width:100%; font-size: 16px">
+                            Save Payment 
+                        </button> 
+                        </div>
+                </form>
+                <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
 
 
-                        <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>"><div class="btn" style="background-color: #dddddd; color: #24252A">
-                                Go Back
-                            </div></a>
+                <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>"><div class="btn" style="background-color: #dddddd; color: #24252A">
+                        Go Back
+                    </div></a>
 
-                    </div>
-                
             </div>
+
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
-    </body>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+</body>
 </html>
