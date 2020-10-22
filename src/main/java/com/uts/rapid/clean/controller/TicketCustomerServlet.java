@@ -23,9 +23,9 @@ import javax.servlet.http.HttpSession;
  */
 public class TicketCustomerServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         
         HttpSession session = request.getSession();
         TicketDAO ticketDAO = (TicketDAO) session.getAttribute("ticketDAO");
         Customer customer = (Customer) session.getAttribute("customer");
@@ -42,4 +42,15 @@ public class TicketCustomerServlet extends HttpServlet {
         request.getRequestDispatcher("ticketboard.jsp").forward(request, response);
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 }

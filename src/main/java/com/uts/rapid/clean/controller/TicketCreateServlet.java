@@ -16,8 +16,7 @@ import javax.servlet.http.HttpSession;
 
 public class TicketCreateServlet extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
@@ -57,7 +56,18 @@ public class TicketCreateServlet extends HttpServlet {
             // Re-directs to Support page
             request.getRequestDispatcher("cleaner-home.jsp").forward(request, response);
         }
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
 }
