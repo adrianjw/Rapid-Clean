@@ -25,16 +25,35 @@ public class CreatePaymentDetailServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String customerId = request.getParameter("customerId");
         PaymentDetailsDAO manager = (PaymentDetailsDAO) session.getAttribute("paymentDetailsDAO");
+        String invalidCardNumber = null;
         
         String cardNumber = request.getParameter("cardNumber");
-        String cvcs = request.getParameter("cvc");
-        int cvc = 121;
-        String expirtyDate = request.getParameter("expiryDate");
-        String cardholderName = request.getParameter("cardholderName");
-        String customer_id = request.getParameter("customer_id");
+        cardNumber = cardNumber.replaceAll("\\s+","");
+        // Validation purposes check if there is 16 digits
+        int cardNumberLength = cardNumber.length();
         
-        manager.createPaymentDetail(customer_id, cardNumber, expirtyDate, cvc, cardholderName);
+        String cvcs = request.getParameter("cvc");
+        int cvc = Integer.parseInt(cvcs);
+        
+        String expiryDate = request.getParameter("expiryDate");
+        expiryDate = expiryDate.replaceAll("\\s+","");
+        
+        String cardholderName = request.getParameter("cardholderName");
+        String customer_id = request.getParameter("customerId");
+        
+        // Checks if there is 16 digits
+        if (cardNumberLength == 16)
+        {
+        manager.createPaymentDetail(customer_id, cardNumber, expiryDate, cvc, cardholderName);
         request.getRequestDispatcher("/PaymentDetailServlet?customerId=" + customerId).forward(request, response);
+        }
+        else
+        {
+            invalidCardNumber = "Invalid Card Number! Please try again.";
+            session.setAttribute("invalidCardNumber", invalidCardNumber);
+            request.getRequestDispatcher("my-payment-details-add.jsp").forward(request, response);
+        }
+        
         
     }
 
