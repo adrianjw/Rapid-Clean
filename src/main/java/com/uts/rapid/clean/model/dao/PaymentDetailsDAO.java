@@ -32,6 +32,9 @@ public class PaymentDetailsDAO {
     public static void main(String[] Args) {
         PaymentDetailsDAO test = new PaymentDetailsDAO(new MongoDB().getDatabase());
         test.viewAllPaymentDetailsTest();
+        String s = "10 / 21";
+        s = s.replaceAll("\\s+","");
+        System.out.println(s);
 
     }
 

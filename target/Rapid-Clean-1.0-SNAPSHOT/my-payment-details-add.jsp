@@ -13,7 +13,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <% Customer customer = (Customer) session.getAttribute("customer"); %>
+        <% Customer customer = (Customer) session.getAttribute("customer"); 
+           String invalidCardNumber = (String) session.getAttribute("invalidCardNumber");
+        %>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <script>
             $(function () {
@@ -192,9 +194,10 @@
                     margin-top: 20px;
                     background-color: #5bdc9f;
                 }
-                .btns:hover
+                button:hover
                 {
                     opacity: 0.85;
+                    cursor:pointer;
                 }
             }
         </style>
@@ -203,8 +206,14 @@
     <body>
         <div id="nav-placeholder">
         </div>
-
-        <div style="margin-top: 100px;"></div>
+        <div style="margin-top: 50px; font-size: 14px; text-align: center; color: #FF8484"> 
+        <% if(invalidCardNumber == null) { %>
+        
+        <% } else { %>
+        Invalid Card Number! Please try again.
+        <% } %>
+        </div>
+        <div style="margin-top: 75px;"></div>
         <div class="wrapper">
             <div class="payment">
                 <div class="payment-logo">
