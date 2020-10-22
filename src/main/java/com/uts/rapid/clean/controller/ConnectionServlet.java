@@ -50,6 +50,7 @@ public class ConnectionServlet extends HttpServlet {
         session.setAttribute("ratingDAO", ratingDAO);
         session.setAttribute("ticketDAO", ticketDAO);
         session.setAttribute("acceptServiceDAO", acceptServiceDAO);
+        session.setAttribute("paymentDetailsDAO", paymentDetailsDAO);
         
         session.setAttribute("firstNameError", "");
         session.setAttribute("lastNameError", "");
