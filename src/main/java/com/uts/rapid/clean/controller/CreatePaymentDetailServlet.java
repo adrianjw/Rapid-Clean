@@ -27,7 +27,8 @@ public class CreatePaymentDetailServlet extends HttpServlet {
         PaymentDetailsDAO manager = (PaymentDetailsDAO) session.getAttribute("paymentDetailsDAO");
         
         String cardNumber = request.getParameter("cardNumber");
-        int cvc = Integer.parseInt(request.getParameter("cvc"));
+        String cvcs = request.getParameter("cvc");
+        int cvc = Integer.parseInt(cvcs);
         String expirtyDate = request.getParameter("expiryDate");
         String cardholderName = request.getParameter("cardholderName");
         String customer_id = request.getParameter("customer_id");
