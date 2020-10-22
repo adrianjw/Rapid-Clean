@@ -208,7 +208,7 @@
 
 
                 <h2>Payment Gateway</h2>
-                <form>
+                <form method="post" action="CreatePaymentDetailServlet?customerId=<%=customer.getId()%>">
                     <div class="form">
                         <div class="card space icon-relative">
                             <label class="label">Card holder:</label>
@@ -238,7 +238,7 @@
                             </div>
                         </div>
                         <div class="breaks"> </div>
-                        <a href="CreatePaymentDetailServlet?customerId=<%=customer.getId()%>" type="submit" value="Save Payment"><div class="btn" style="background-color: #5bdc9f">
+                         <div class="btn" style="background-color: #5bdc9f" type="submit">
                                 Save Payment
                             </div> </a>
                         <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
