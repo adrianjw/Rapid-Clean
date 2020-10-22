@@ -212,27 +212,27 @@
                     <div class="form">
                         <div class="card space icon-relative">
                             <label class="label">Card holder:</label>
-                            <input type="text" class="input" placeholder="Cardholder Name" name="cardholderName">
+                            <input type="text" name="cardholderName" class="input" placeholder="Cardholder Name" required>
                             <i class="fas fa-user"></i>
                         </div>
 
                         <div class="breaks"> </div>
                         <div class="card space icon-relative" style="background-color: #f8f8f8;">
                             <label class="label">Card number:</label>
-                            <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number" name="cardNumber">
+                            <input type="text" name="cardNumber" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number" required>
                             <i class="far fa-credit-card"></i>
                         </div>
                         <div class="breaks"> </div>
                         <div class="card-grp space">
                             <div class="card-item icon-relative">
                                 <label class="label">Expiry date:</label>
-                                <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00" name="expiryDate">
+                                <input type="text" name="expiryDate" class="input" data-mask="00 / 00"  placeholder="00 / 00" required>
                                 <i class="far fa-calendar-alt"></i>
                             </div>
                             <div class="breaks"> </div>
                             <div class="card-item icon-relative">
                                 <label class="label">CVC:</label>
-                                <input type="text" class="input" data-mask="000" placeholder="000" name="cvc">
+                                <input type="text"  name="cvc" class="input" data-mask="000" placeholder="000" required>
                                 <i class="fas fa-lock"></i>
 
                             </div>
