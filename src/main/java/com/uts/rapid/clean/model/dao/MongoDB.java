@@ -12,7 +12,7 @@ public class MongoDB implements Serializable {
     
     public MongoDB() {
         String uri = "mongodb+srv://asduser1:uts2020@cluster0.vldlh.mongodb.net/rapidclean?retryWrites=true&w=majority";
-        mongoClient = MongoClients.create(uri);
+        mongoClient = MongoClients.create();
         database = mongoClient.getDatabase("rapidclean");
     }
     
