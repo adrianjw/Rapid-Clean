@@ -13,14 +13,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        
+        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
         <script>
             $(function () {
                 $("#nav-placeholder").load("navigationbar.jsp"); // Edit this
             });
         </script>
-        <% Customer customer = (Customer) session.getAttribute("customer"); %>
+        
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
@@ -188,8 +188,13 @@
                     margin-bottom: 20px;
 
                 }
-                .btn{
+                .btns{
                     margin-top: 20px;
+                    background-color: #5bdc9f;
+                }
+                .btns:hover
+                {
+                    opacity: 0.85;
                 }
             }
         </style>
@@ -238,9 +243,10 @@
                             </div>
                         </div>
                         <div class="breaks"> </div>
-                         <div class="btn" style="background-color: #5bdc9f" type="submit">
-                                Save Payment
-                            </div> </a>
+                         <button type="submit" class="btns" style="background-color: #5bdc9f; border: 0px; padding: 12px; width:100%; font-size: 16px">
+                              Save Payment 
+                            </button> 
+                        </form>
                         <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
 
 
@@ -249,7 +255,7 @@
                             </div></a>
 
                     </div>
-                </form>
+                
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>

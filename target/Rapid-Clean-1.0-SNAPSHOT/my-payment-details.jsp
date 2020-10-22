@@ -65,8 +65,6 @@
             </div>
             
             <% } } %>
-           
-
             <!-- For loop ends here -->
 
             <!-- Add payment button -->
