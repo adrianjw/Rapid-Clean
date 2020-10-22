@@ -128,7 +128,7 @@
                 cursor: pointer;
 
             }
-            
+
             .btn:hover{
                 opacity: 0.85;
             }
@@ -155,7 +155,7 @@
                 left: 5px;
                 width: 90px;
                 height: 90px;
-                background: #2196F3;
+                background: #5bdc9f;
                 border-radius: 50%;
 
             }
@@ -167,6 +167,9 @@
 
             }
 
+            input:focus::placeholder {
+                color: transparent;
+            }
             .breaks
             {
                 padding-bottom: 20px;
@@ -194,55 +197,57 @@
         <div id="nav-placeholder">
         </div>
 
-        <div style="padding-bottom: 200px"></div>
+        <div style="margin-top: 100px;"></div>
         <div class="wrapper">
             <div class="payment">
                 <div class="payment-logo">
-                    <img src="css/secure-payment.png" width="60px" height="60px" style="z-index: 100; position: relative; background-color: #2196F3; margin-top: 20px; color: #f8f8f8">
+                    <img src="css/secure-payment.png" width="60px" height="60px" style="z-index: 100; position: relative; background-color: #5bdc9f; margin-top: 20px; color: #f8f8f8">
                 </div>
 
 
                 <h2>Payment Gateway</h2>
-                <div class="form">
-                    <div class="card space icon-relative">
-                        <label class="label">Card holder:</label>
-                        <input type="text" class="input" placeholder="Cardholder Name">
-                        <i class="fas fa-user"></i>
-                    </div>
+                <form>
+                    <div class="form">
+                        <div class="card space icon-relative">
+                            <label class="label">Card holder:</label>
+                            <input type="text" class="input" placeholder="Cardholder Name">
+                            <i class="fas fa-user"></i>
+                        </div>
 
-                    <div class="breaks"> </div>
-                    <div class="card space icon-relative" style="background-color: #f8f8f8;">
-                        <label class="label">Card number:</label>
-                        <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number">
-                        <i class="far fa-credit-card"></i>
-                    </div>
-                    <div class="breaks"> </div>
-                    <div class="card-grp space">
-                        <div class="card-item icon-relative">
-                            <label class="label">Expiry date:</label>
-                            <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
-                            <i class="far fa-calendar-alt"></i>
+                        <div class="breaks"> </div>
+                        <div class="card space icon-relative" style="background-color: #f8f8f8;">
+                            <label class="label">Card number:</label>
+                            <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+                            <i class="far fa-credit-card"></i>
                         </div>
                         <div class="breaks"> </div>
-                        <div class="card-item icon-relative">
-                            <label class="label">CVC:</label>
-                            <input type="text" class="input" data-mask="000" placeholder="000">
-                            <i class="fas fa-lock"></i>
+                        <div class="card-grp space">
+                            <div class="card-item icon-relative">
+                                <label class="label">Expiry date:</label>
+                                <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="breaks"> </div>
+                            <div class="card-item icon-relative">
+                                <label class="label">CVC:</label>
+                                <input type="text" class="input" data-mask="000" placeholder="000">
+                                <i class="fas fa-lock"></i>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="breaks"> </div>
-                    <a href="#"><div class="btn">
-                        Save Payment
-                        </div> </a>
-                    <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
-                    
-                    
-                    <a href="#"><div class="btn" style="background-color: #dddddd; color: #24252A">
-                        Go Back
-                        </div></a>
+                        <div class="breaks"> </div>
+                        <a href="#" type="submit" value="Save Payment"><div class="btn" style="background-color: #5bdc9f">
+                                Save Payment
+                            </div> </a>
+                        <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>
 
-                </div>
+
+                        <a href="#"><div class="btn" style="background-color: #dddddd; color: #24252A">
+                                Go Back
+                            </div></a>
+
+                    </div>
+                </form>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
