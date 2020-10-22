@@ -1,7 +1,9 @@
+<%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/navigationbar.css">
     </head>
@@ -22,7 +24,7 @@
                     <div class="dropdown-content">
                         <a href="my-account.jsp">MY ACCOUNT</a>
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
-                        <a href="#">MY PAYMENT DETAILS</a>
+                        <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a>
                         <a href="my-orders.jsp">MY ORDERS</a>
                         <a href="LogoutServlet">LOGOUT</a>
                     </div>

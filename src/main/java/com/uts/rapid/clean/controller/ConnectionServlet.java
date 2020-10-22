@@ -20,6 +20,7 @@ public class ConnectionServlet extends HttpServlet {
     private OrderDAO orderDAO;
     private RatingDAO ratingDAO;
     private AcceptServiceDAO acceptServiceDAO;
+    private PaymentDetailsDAO paymentDetailsDAO;
     
     @Override
     public void init() {
@@ -32,6 +33,7 @@ public class ConnectionServlet extends HttpServlet {
         orderDAO = new OrderDAO(database);
         ratingDAO = new RatingDAO(database);
         acceptServiceDAO = new AcceptServiceDAO(database);
+        paymentDetailsDAO = new PaymentDetailsDAO(database);
     }
     
     @Override

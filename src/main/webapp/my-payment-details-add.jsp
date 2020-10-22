@@ -155,7 +155,7 @@
                 left: 5px;
                 width: 90px;
                 height: 90px;
-                background: #2196F3;
+                background: #5bdc9f;
                 border-radius: 50%;
 
             }
@@ -197,11 +197,11 @@
         <div id="nav-placeholder">
         </div>
 
-        <div style="padding-bottom: 150px"></div>
+        <div style="margin-top: 100px;"></div>
         <div class="wrapper">
             <div class="payment">
                 <div class="payment-logo">
-                    <img src="css/secure-payment.png" width="60px" height="60px" style="z-index: 100; position: relative; background-color: #2196F3; margin-top: 20px; color: #f8f8f8">
+                    <img src="css/secure-payment.png" width="60px" height="60px" style="z-index: 100; position: relative; background-color: #5bdc9f; margin-top: 20px; color: #f8f8f8">
                 </div>
 
 
@@ -236,7 +236,7 @@
                             </div>
                         </div>
                         <div class="breaks"> </div>
-                        <a href="#" type="submit" value="Save Payment"><div class="btn">
+                        <a href="#" type="submit" value="Save Payment"><div class="btn" style="background-color: #5bdc9f">
                                 Save Payment
                             </div> </a>
                         <div style="padding-bottom: 10px; background-color: #f8f8f8"> </div>

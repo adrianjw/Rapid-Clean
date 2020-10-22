@@ -1,6 +1,7 @@
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TestAcceptDAO.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Rating.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Order.java
+C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\PaymentDetail.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\ConnectionServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCustomerServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCleanerServlet.java
@@ -8,7 +9,6 @@ C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\u
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderRejectedServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AcceptServiceDAO.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\OrderDAO.java
-C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\PaymentDetails.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderHistory.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CustomerDAO.java
@@ -27,9 +27,11 @@ C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\u
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Cleaner.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeleteAccountServlet.java
+C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\PaymentDetailServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\LogoutServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Payment.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Customer.java
+C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreatePaymentDetailServlet.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\PaymentDetailsDAO.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TestRatingDAO.java
 C:\Users\David Guntoro\Desktop\RapidClean Branch\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CleanerDAO.java

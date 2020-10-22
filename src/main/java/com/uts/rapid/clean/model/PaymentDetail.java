@@ -18,19 +18,20 @@ public class PaymentDetail implements Serializable {
     private String cardholderName;
     private String customer_id;
 
-    public PaymentDetail(String _id, String cardNumber, String expiryDate,
-            int cvc, String cardholderName, String customer_id) {
+    public PaymentDetail(String _id, String customer_id, String cardNumber, String expiryDate,
+            int cvc, String cardholderName) {
         this._id = _id;
+        this.customer_id = customer_id;
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.cvc = cvc;
         this.cardholderName = cardholderName;
-        this.customer_id = customer_id;
+        
     }
 
     public static void main(String[] Args) {
-        PaymentDetail paymentDets = new PaymentDetail("1", "5218009488121234", "12/12", 122, "Bryan Guntoro", "12");
-        paymentDets.getLastFourDigits();
+        //PaymentDetail paymentDets = new PaymentDetail("1", "5218009488121234", "12/12", 122, "Bryan Guntoro", "12");
+        //paymentDets.getLastFourDigits();
     }
 
     public String getId() {
