@@ -30,8 +30,8 @@
             <%for (Address address : addresses) {%>
                 <div class="address-block">
                     <p><%=address.getStreetAddress()%><br><%=address.getSuburb()%> <%=address.getState()%> <%=address.getPostcode()%></p>
-                    <button>Edit</button>
-                    <button>Remove</button>
+                    <a href="edit-address.jsp"><button>Edit</button></a>
+                    <a href="DeleteAddressServlet?addressId="<%=address.getId()%>><button>Remove</button></a>
                 </div>
             <%}%>
         </div>

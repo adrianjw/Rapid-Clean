@@ -1,9 +1,3 @@
-<%-- 
-    Document   : contact-us
-    Created on : 22/10/2020, 9:18:19 AM
-    Author     : Sandy
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="ticket__html">

@@ -17,23 +17,22 @@ public class CustomerDAO implements Serializable {
         customerCollection = database.getCollection("Customer");
     }
     
-    // Insert a customer document with the specified paramters
+    // Insert a customer document with the given paramters
     public void createCustomer(String firstName, String lastName, String email,
             String password, String phoneNumber) {
-        Document document = new Document("firstName", firstName)
+        customerCollection.insertOne(new Document("firstName", firstName)
                 .append("lastName", lastName)
                 .append("email", email)
                 .append("password", password)
-                .append("phoneNumber", phoneNumber);
-        customerCollection.insertOne(document);
+                .append("phoneNumber", phoneNumber));
     }
     
-    // Find whether a customer document exists with the specified email address
+    // Find whether a customer document exists with the given email address
     public boolean hasCustomer(String email) {
         return customerCollection.find(eq("email", email)).first() != null;
     }
     
-    // Find a customer document with the specified email address and password, then return the customer object
+    // Find a customer document with the given email address and password, then return the customer object
     public Customer findCustomer(String email, String password) {
         Document document = customerCollection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -46,9 +45,8 @@ public class CustomerDAO implements Serializable {
         }
     }
     
-    // Delete a customer document with the specified customer ID
-    public void deleteCustomer(String customer_id) {
-        ObjectId customerObjId = new ObjectId(customer_id);
-        customerCollection.deleteOne(eq("_id", customerObjId));
+    // Delete a customer document with the given customer ID
+    public void deleteCustomer(String customerId) {
+        customerCollection.deleteOne(eq("_id", new ObjectId(customerId)));
     }
 }
