@@ -16,7 +16,7 @@ public class OrderServlet extends HttpServlet {
 //        int hourlyRate = Integer.parseInt(request.getParameter("hourlyRate"));
 //        session.setAttribute("service", service);
         
-        request.getRequestDispatcher("orderform.jsp").forward(request, response);
+        request.getRequestDispatcher("order-form.jsp").forward(request, response);
     }
 
     @Override

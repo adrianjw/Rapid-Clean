@@ -1,17 +1,10 @@
-<%-- 
-    To use this loading screen for rapid clean, simply copy and paste
-    then modify which servlet u want to take them after 4-5 seconds
-
-    Please make sure u have the rapidcleanloading.css installed
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Goodbye!</title>
-        <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
+        <link rel="stylesheet" type="text/css" href="css/rapidclean-loading.css">
         <meta http-equiv="refresh" content="1;url=index.jsp" />
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -31,7 +24,7 @@
         </style>
     </head>
     <body style="background-color:#24252A">
-        <img src="css/logotp.png" class="centerz">
+        <img src="css/rapidclean-navbar-icon.png" class="centerz">
         <div class="example">
             <div class="sk-fold sk-center">
                 <div class="sk-fold-cube"></div>
@@ -44,5 +37,6 @@
         <div class="a">
             <h1> Please wait while Rapid Clean system is loading... </h1>
         </div>
+        <%session.invalidate();%>
     </body>
 </html>

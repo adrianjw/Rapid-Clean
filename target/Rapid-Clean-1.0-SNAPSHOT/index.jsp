@@ -8,7 +8,7 @@
         <title>Welcome to Rapid Clean!</title>
     </head>
     <body style="background-color: #51abff">
-        <img src="css/offwhite.png" class="centerimg">
+        <img src="css/rapidclean-offwhite-icon.png" class="centerimg">
         <table class="noborders" cellspacing="0" cellpadding="0">
             <tr>
                 <td> <img src="css/cleaners.png" class="centerimg2"> </td>
