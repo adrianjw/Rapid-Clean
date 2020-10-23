@@ -20,7 +20,7 @@
         <div class="parent">
             <div class="child">
                 <h2>Update your address</h2>
-                <form action="UpdateAddressServlet" method="POST">
+                <form action="UpdateAddressServlet?addressId=<%=address.getId()%>" method="POST">
                     <table>
                         <tr>
                             <td colspan="3">Street Address</td>
