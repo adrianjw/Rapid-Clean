@@ -17,7 +17,8 @@ public class DeleteAddressServlet extends HttpServlet {
         
         String addressId = request.getParameter("addressId");
         
-        addressDAO.deleteAddress(addressId);
+//        addressDAO.deleteAddress(addressId);
+        session.setAttribute("addressId2", addressId);
         session.setAttribute("actionResult", "Address removed");
         request.getRequestDispatcher("my-addresses.jsp").forward(request, response);
     }

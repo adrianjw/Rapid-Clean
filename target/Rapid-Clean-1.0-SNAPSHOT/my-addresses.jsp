@@ -34,6 +34,7 @@
                     <a href="DeleteAddressServlet?addressId="<%=address.getId()%>><button>Remove</button></a>
                 </div>
             <%}%>
+            <p><%=session.getAttribute("addressId2")%></p>
         </div>
         <%
             session.setAttribute("streetAddressError", "");
