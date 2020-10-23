@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/navigationbar.css">
     </head>
     <body>
+        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <div id="sticky">
             <header>
                 <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">

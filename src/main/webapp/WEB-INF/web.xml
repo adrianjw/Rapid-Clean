@@ -70,6 +70,10 @@
         <servlet-class>com.uts.rapid.clean.controller.PaymentDetailServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SetAddressServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.SetAddressServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>SignupCleanerServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.SignupCleanerServlet</servlet-class>
     </servlet>
@@ -133,7 +137,7 @@
         <servlet-name>CreateAddressServlet</servlet-name>
         <url-pattern>/CreateAddressServlet</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CreatePaymentDetailServlet</servlet-name>
         <url-pattern>/CreatePaymentDetailServlet</url-pattern>
     </servlet-mapping>
@@ -176,6 +180,10 @@
     <servlet-mapping>
         <servlet-name>PaymentDetailServlet</servlet-name>
         <url-pattern>/PaymentDetailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SetAddressServlet</servlet-name>
+        <url-pattern>/SetAddressServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignupCleanerServlet</servlet-name>

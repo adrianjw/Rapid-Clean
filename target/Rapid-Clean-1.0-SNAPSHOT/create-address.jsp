@@ -60,6 +60,7 @@
                         </tr>
                     </table>
                     <button class="regular" type="submit">Add address</button>
+                    <a href="my-addresses.jsp"><button class="regular" type="button">Cancel</button></a>
                 </form>
             </div>
         </div>
