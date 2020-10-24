@@ -1,11 +1,10 @@
 package com.uts.rapid.clean.model.dao;
 
-import static com.mongodb.client.model.Filters.and;
+import com.mongodb.*;
 import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.uts.rapid.clean.model.Rating;
 import com.uts.rapid.clean.model.Ticket;
 import java.io.Serializable;
 import java.util.*;
@@ -14,6 +13,7 @@ import org.bson.types.ObjectId;
 
 public class TicketDAO implements Serializable {
     
+    // private members
     private MongoCollection<Document> ticketCollection;
     
     // Accessing collection via connection established in MongoDB
@@ -21,6 +21,7 @@ public class TicketDAO implements Serializable {
         ticketCollection = database.getCollection("Ticket");
     }
     
+    // Stores all tickets converted documents in an accessible list
     public List<Ticket> viewAllTickets() {
         List<Ticket> allTickets = new LinkedList<>();
         
@@ -44,6 +45,7 @@ public class TicketDAO implements Serializable {
         return allTickets;
     }
     
+    // Stores all tickets filed by a user in a list
     public List<Ticket> filterTicketByCustomerId(String custId) {
         List<Ticket> allTickets = viewAllTickets();
         List<Ticket> filteredTickets = new LinkedList<>();
@@ -55,6 +57,7 @@ public class TicketDAO implements Serializable {
         return filteredTickets;
     }
     
+    // Stores all tickets whose priority matches the given a priority parameter in a list
     public List<Ticket> filterByPriority(String priority) {
         List<Ticket> allTickets = viewAllTickets();
         List<Ticket> filteredTickets = new LinkedList<>();
@@ -66,6 +69,7 @@ public class TicketDAO implements Serializable {
         return filteredTickets;
     }
     
+    // Stores all tickets whose priority matches the given a status parameter in a list
     public List<Ticket> filterByStatus(String status) { 
         List<Ticket> allTickets = viewAllTickets();
         List<Ticket> filteredTickets = new LinkedList<>();
@@ -77,29 +81,7 @@ public class TicketDAO implements Serializable {
         return filteredTickets;
     }
     
-    public List<Ticket> filterByDepartment(String department) { 
-        List<Ticket> allTickets = viewAllTickets();
-        List<Ticket> filteredTickets = new LinkedList<>();
-        for (Ticket ticket : allTickets) {
-            if ( ticket.getDepartment().equals(department)) {
-                filteredTickets.add(ticket);
-            }
-        }
-        return filteredTickets;
-    }
-    
-    public List<Ticket> orderByDate(String option) { 
-        return new LinkedList<Ticket>();
-    }
-    
-    public List<Ticket> orderByStatus(String option) { 
-        return new LinkedList<Ticket>();
-    }
-    
-    public List<Ticket> orderByPriority(String option) { 
-        return new LinkedList<Ticket>();
-    }
-    
+    // Returns a ticket object whose id matches the given id parameter
     public Ticket findTicket(String ticketId) {
         List<Ticket> allTickets = viewAllTickets();
         for (Ticket ticket : allTickets) {
@@ -110,10 +92,22 @@ public class TicketDAO implements Serializable {
         return null;
     }
     
+    // Updates a ticket's status and priority by it's id with the given parameters.
+    public void updateTicket(String id, String status, String priority) {
+        ObjectId updateId = new ObjectId(id);
+        Document query = new Document("_id", updateId);
+        Document update = new Document();
+        update.put("$set", new Document("status", status).append("priority", priority));
+        
+        ticketCollection.updateOne(query, update);
+    }
+    
+    // Creates a new ticket. Adds to the collection
     public void createTicket(Ticket ticket) {
         ticketCollection.insertOne(toDocument(ticket));
     }
     
+    // Deletes a Ticket. Removes from collection
     public void deleteTicket(String ticketId) {
         ObjectId filter = new ObjectId(ticketId);
         ticketCollection.deleteOne(eq("_id", filter));
