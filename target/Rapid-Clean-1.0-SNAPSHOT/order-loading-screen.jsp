@@ -1,10 +1,3 @@
-<%-- 
-    To use this loading screen for rapid clean, simply copy and paste
-    then modify which servlet u want to take them after 4-5 seconds
-
-    Please make sure u have the rapidcleanloading.css installed
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,7 +26,7 @@
     </head>
     
     <body style="background-color:#24252A">
-        <img src="css/logotp.png" class="centerz">
+        <img src="css/rapidclean-navbar-icon.png" class="centerz">
         <div class="example">
             <div class="sk-fold sk-center">
                 <div class="sk-fold-cube"></div>

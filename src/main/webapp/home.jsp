@@ -6,7 +6,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/card.css">
         <title>Home</title>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -123,7 +122,5 @@
             <div class="top-left"><b><h1 style="background-color: #e4e5ea; color: #24252A; text-align: left; font-weight: bold"> Australia's No. 1 <br> Marketplace for <br> Professional Home <br> Online-based Cleaning </h1></b></div>
             <b><div class="top-left2"><h1 style="background-color: #efeef4; color: #51abff; font-size: 27px; font-weight: bold"> 100% Satisfaction Guarantee </h1></b></div>
         <a href="order.jsp"><button class="top-left3"> Book Now </button></a>
-
-
     </body>
 </html>

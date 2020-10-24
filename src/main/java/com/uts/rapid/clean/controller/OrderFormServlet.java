@@ -42,7 +42,7 @@ public class OrderFormServlet extends HttpServlet {
         
         orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         
-        request.getRequestDispatcher("orderload.jsp").forward(request, response);
+        request.getRequestDispatcher("order-loading-screen.jsp").forward(request, response);
     }
     
     @Override
