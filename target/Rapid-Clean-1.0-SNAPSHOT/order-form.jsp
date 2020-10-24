@@ -26,17 +26,6 @@
             }
             
             .form {
-/*                border: 1px solid white;
-                text-align: center;
-                position: relative;
-                justify-content: center;
-                margin: auto;
-                display: inline-block;
-                text-align: left;
-                margin-left: 24em;
-                margin: 0 auto;
-                width: 60%;
-                padding-left: 16em;*/
                 margin-left: 27em;
             }
             
@@ -108,19 +97,19 @@
                     </div>
                     <div class="input-field">
                         <p>Street Address</p>
-                        <input type="text" name="streetAddress">
+                        <input type="text" name="streetAddress" required>
                     </div>
                     <div class="input-field">
                         <p>Suburb</p>
-                        <input type="text" name="suburb">
+                        <input type="text" name="suburb" required>
                     </div>
                     <div class="input-field">
                         <p>State</p>
-                        <input type="text" name="state">
+                        <input type="text" name="state" required>
                     </div>
                     <div class="input-field">
                         <p>Postcode</p>
-                        <input type="text" name="postcode">
+                        <input type="text" name="postcode" required pattern="[0-9]{4}">
                     </div>
                     <div class="input-field">
                         <p>Type of resident</p>

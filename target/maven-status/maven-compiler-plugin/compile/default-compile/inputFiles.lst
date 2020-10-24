@@ -1,52 +1,56 @@
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreateAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCleanerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Rating.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Address.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Cleaner.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AcceptServiceDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\PaymentDetailsDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\PaymentDetail.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeleteAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderHistoryServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\PaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\OrderDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketStaffServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeletePaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\RatingDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCustomerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\LoginServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderAccepted.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\RejectedOrder.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Ticket.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderRejectedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketDeleteServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCreateServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Payment.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderHistory.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCleanerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\MongoDB.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Customer.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderCompleted.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\ViewRatingServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Order.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderPayServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketUpdateServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TicketDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\Validator.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCustomerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CleanerDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\UpdateAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderFormServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CustomerDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreatePaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketViewServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SetAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeleteAccountServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\ConnectionServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreateRatingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/SetAddressServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/UpdateAddressServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/DeleteAddressServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketDeleteServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Customer.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/RatingDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderAcceptedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CreateRatingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Rating.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/MongoDB.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderFormServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ConnectionServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderHistory.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/resources/JavaEE8Resource.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/AcceptServiceDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/PaymentDetail.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderHistoryServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/SignupCleanerServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketUpdateServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Payment.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderSortAscendingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketCreateServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Order.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/CustomerDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderLoadingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketCustomerServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CreatePaymentDetailServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketViewServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Cleaner.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/CleanerDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/SignupCustomerServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/TicketDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketStaffServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderAccepted.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderAcceptedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/AddressDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ViewRatingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ReOrderServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/RejectedOrder.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderCompletedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Address.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/DeleteAccountServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/PaymentDetailServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderPayServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderCompleted.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CleanerOrderRejectedServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/Validator.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/CreateAddressServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/PaymentDetailsDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/TicketCleanerServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/LoginServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/OrderDAO.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/DeletePaymentDetailServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Ticket.java

@@ -1,6 +1,7 @@
 package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.dao.AddressDAO;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.util.Date;
@@ -25,23 +26,23 @@ public class OrderFormServlet extends HttpServlet {
         String state = request.getParameter("state");
         String postcode = request.getParameter("postcode");
         
+        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+        AddressDAO addressDAO = (AddressDAO) session.getAttribute("addressDAO");
+        
         Customer customer = (Customer) session.getAttribute("customer");
               
         Date dateTime = new Date();
-//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss z");
         
         String customerId = customer.getId();
-        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
-        orderDAO.insertAddress(customerId, streetAddress, suburb, state, Integer.parseInt(postcode));
-//        String dateTime = formatter.format(date);
-//        Date newDateTime = formatter.parse(dateTime);
+        addressDAO.createAddress(customerId, streetAddress, suburb, state, Integer.parseInt(postcode));
         
-        String addressId = orderDAO.findAddressId(customerId);        
+        String addressId = orderDAO.findAddressId(customerId);
+
         
         orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        request.getRequestDispatcher("orderload.jsp").forward(request, response);
     }
     
     @Override

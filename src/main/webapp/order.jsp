@@ -4,181 +4,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/order.css">
         <title>Rapid Clean Services</title>
         <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
             
-            .container .box {
-                position: relative;
-                width: 300px;
-                padding: 30px;
-                background: #fff;
-                box-shadow: 0 5px 15px rgba(0,0,0,.1);
-                border-radius: 4px;
-                margin: 20px;
-                overflow: hidden;
-                box-sizing: border-box;
-                font-family: Helvetica, sans-serif;
-            }
-            
-            .container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .container .box .icon {
-                position: relative;
-                width: 80px;
-                height: 80px; 
-                color: #fff;
-                background: #000;
-                display: flex; 
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                margin: 0 auto; 
-                font-size: 25px;
-                font-weight: 700;
-                font-family: Helvetica, sans-serif;
-                /*transition: 0.3s;*/
-            }
-            
-            .box {
-                margin-bottom: 2em;
-                /*cursor: pointer;*/
-                color: black;
-                transition: 0.2s;
-            }
-            
-            .content {
-                transition: none !important;
-            }
-            
-            .box:hover {
-                background: #51abff;
-                color: #fff;    
-            }
-            
-            .box-1:hover {
-                background: #eccc68;
-                color: #fff;    
-            }
-            
-            .box-2:hover {
-                background: #1e272e;
-                color: #fff;    
-            }
-            
-            .content {
-                height: 200px;
-            }
-            
-            .container .box .icon {
-                box-shadow: 0 0 0 0 #51abff;
-                background: #51abff;
-                
-            }
-            
-/*            .container .box:nth-child(1):hover .icon {
-                box-shadow: 0 0 0 400px #51abff;
-            }*/
-            
-            .container .box-1 .icon {
-                box-shadow: 0 0 0 0 #eccc68;
-                background: #eccc68;
-                
-            }
-            
-/*            .container .box:nth-child(2):hover .icon {
-                box-shadow: 0 0 0 400px #eccc68;
-            }*/
-            
-            .container .box-2 .icon {
-                box-shadow: 0 0 0 0 #1e272e;
-                background: #1e272e;                
-            }
-            
-/*            .container .box:nth-child(3):hover .icon {
-                box-shadow: 0 0 0 400px #1e272e;
-            }*/
-            
-            .container .box .content {
-                position: relative;
-                transition: 0.1s;
-            }
-            
-            .container .box:hover .content {
-                /*color: #fff;*/
-            }            
-         
-            .content h3 {
-                text-align: center;
-                margin-top: 1em;
-                margin-bottom: 0.5em;
-            }
-            
-            p {
-                text-align: center;
-            }
-            
-            .btn-book {
-                border: 0px solid #ecf0f1;
-                width: 100%;
-                height: 33px;
-                font-size: 14px;
-                font-family: sans-serif;
-                background: #fff;
-                color: black;
-                position: relative;
-                justify-content: center;
-                text-align: center;
-                border-radius: 25px;
-                cursor: pointer;
-                margin: 0 auto;
-                display: inline-block;
-            }
-            
-            .btn-book:hover {
-                background-color: white;
-            }
-            
-            h1 {
-                text-align: center;
-                font-family: Helvetica, sans-serif;
-                color: white;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-            
-            .btn-back a {
-                width: 73%;
-                position: relative;
-            }
-            
-            .notbutton {
-                background: green;
-                width: 73%;
-                height: 40px;
-                padding: 10px;
-                position: relative;
-                justify-content: center;
-                text-align: center;
-                margin: 0;
-                border-radius: 5px;
-            }
-            
-            .price {
-                text-align: center;
-                margin-top: 1em;
-            }
-            
-            .price:hover {
-                font-weight: 1000;
-            }
         </style>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script>
@@ -203,11 +32,10 @@
                     <div class="icon">01</div>
                     <div class="title">
                         <div class="content">
-                            <h3>Rapid Cleaning</h3>
+                            <h3 style="color:#51abff">Rapid Cleaning</h3>
                             <p>Kitchen Cleaning, Bathroom Cleaning, Living Room Cleaning, and Room Cleaning</p>
                         </div>
-                        <!--<div class="price"><b>38$/hr</b></div>-->
-                        <button class="btn-book" type="submit">Book Now <b style="background-color: white">(38$/hr)</b></button>
+                        <button class="btn-book" type="submit">Book Now <b>(38$/hr)</b></button>
                     </div>
                 </div>
             </form>
@@ -223,10 +51,12 @@
                 <div class="icon">02</div>
                 <div class="title">
                     <div class="content">
-                        <h3>Deluxe Cleaning</h3>
-                        <p>Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.</p>
+                        <h3 style="color:#eccc68">Deluxe Cleaning</h3>
+                        <div class="paragraph">
+                            <p>Floor Cleaning, Window Cleaning, Steam Carpet Cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation.</p>
+                        </div>
+                        
                     </div>
-                    <!--<div class="price"><b>50$/hr</b></div>-->
                     <button class="btn-book" type="submit">Book Now <b>(50$/hr)</b></button>
                 </div>
                 
@@ -244,10 +74,9 @@
                 <div class="icon">03</div>
                 <div class="title">
                     <div class="content">
-                        <h3>Premium Cleaning</h3>
+                        <h3 style="color:#1e272e">Premium Cleaning</h3>
                         <p>Steam carpet cleaning, Kitchen Cleaning,  Bathroom Cleaning, Living Room Cleaning, Room Cleaning, Infection Control and Full House Sanitation</p>
                     </div>
-<!--                    <div class="price"><b>90$/hr</b></div>-->
                     <button class="btn-book" type="submit">Book Now <b>(90$/hr)</b></button>
                 </div>
             </div>
@@ -255,7 +84,7 @@
             
         <!--End of box-->
         
-        <a href="home.jsp" class="notbutton">Back</a>
         </div>
+        <a href="home.jsp" class="back-btn">Back</a>
     </body>
 </html>

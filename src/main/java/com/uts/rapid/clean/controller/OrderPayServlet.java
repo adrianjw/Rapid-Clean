@@ -1,6 +1,8 @@
 package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.Order;
+import com.uts.rapid.clean.model.OrderAccepted;
 import com.uts.rapid.clean.model.OrderCompleted;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
@@ -18,54 +20,65 @@ public class OrderPayServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         String customerId = customer.getId();
+        
         OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
         ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
         
-        // String orderId = orderManager.findOrderId(dateTime, customerId);
+        OrderAccepted orderAccepted = null;
         OrderCompleted orderCompleted = null;
+        Order order = null;
         
-        // check if orderId is in OrderCompleted collection
-        String orderIdToUse = ""; //this is the orderId to put in parameter to find order
+        //find orderid in orderAccepted
+        String orderAcceptedId = ""; //this is the orderId to put in parameter to find order
         for (String orderId : orderIdList) {
-            boolean checkOrderCompletedExist = orderDAO.checkOrderCompletedExist(orderId);
-            if (checkOrderCompletedExist == true) {
-                orderIdToUse = orderId;
+            boolean checkOrderAcceptedExist = orderDAO.checkOrderAcceptedExist(orderId);
+            if (checkOrderAcceptedExist == true) {
+                orderAcceptedId = orderId;
+                orderAccepted = orderDAO.findOrderAccepted(orderAcceptedId);
             } else {
                 continue;
             }
         }
         
-        // find order in OrderCompleted collection
-        try {
-            orderCompleted = orderDAO.findOrderCompleted(orderIdToUse);
-        } catch (NullPointerException ex) {
-            System.out.println(ex.getMessage());
-        }    
-        
-        double totalAmount = 0;
-        // calculate total amount
-        if (orderCompleted != null) {
-            try {
-                double workHours = orderCompleted.getWorkedHours();
-                double rate = orderDAO.findOrderRate(orderIdToUse);
-                totalAmount = workHours * rate;
-                session.setAttribute("totalAmount", totalAmount);
-            } catch (NullPointerException ex) {
-                System.out.println(ex.getMessage());
+        // check if orderId is in OrderCompleted collection
+        String orderCompletedId = ""; //this is the orderId to put in parameter to find order
+        for (String orderId : orderIdList) {
+            boolean checkOrderCompletedExist = orderDAO.checkOrderCompletedExist(orderId);
+            if (checkOrderCompletedExist == true) {
+                orderCompletedId = orderId;
+                orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
+            } else {
+                continue;
             }
         }
-       
-        // set sesssion for orderCompleted object
-        if (orderCompleted != null) {
-            session.setAttribute("orderCompleted", orderCompleted);
-        } else {
-            System.out.println("null");
-        }
+                
         
+        if (orderAccepted == null) {
+            System.out.println("Print null");
+        } else {
+            System.out.println("Print not null");
+        }
+       
+        // set sesssion for orderCompleted and order object
+        if (orderAccepted != null) {
+            order = orderDAO.order(orderAcceptedId);
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
+        } else if (orderCompleted != null) {
+            order = orderDAO.order(orderCompletedId);
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
+        } else {
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
+        }
+                        
         try {
-            session.setAttribute("totalAmount", totalAmount);
-            request.getRequestDispatcher("order-pay.jsp").include(request, response);
+            request.getRequestDispatcher("order-pay.jsp").forward(request, response);
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
             request.getRequestDispatcher("order-pay.jsp").include(request, response);
