@@ -20,6 +20,7 @@ public class OrderPayServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         String customerId = customer.getId();
+        
         OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
         ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
@@ -41,7 +42,7 @@ public class OrderPayServlet extends HttpServlet {
         }
         
         // check if orderId is in OrderCompleted collection
-        String orderCompletedId = null; //this is the orderId to put in parameter to find order
+        String orderCompletedId = ""; //this is the orderId to put in parameter to find order
         for (String orderId : orderIdList) {
             boolean checkOrderCompletedExist = orderDAO.checkOrderCompletedExist(orderId);
             if (checkOrderCompletedExist == true) {
@@ -52,12 +53,12 @@ public class OrderPayServlet extends HttpServlet {
             }
         }
                 
-        // find order in OrderCompleted collection
-//        try {
-//            orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
-//        } catch (NullPointerException ex) {
-//            System.out.println(ex.getMessage());
-//        }    
+        
+        if (orderAccepted == null) {
+            System.out.println("Print null");
+        } else {
+            System.out.println("Print not null");
+        }
        
         // set sesssion for orderCompleted and order object
         if (orderAccepted != null) {
@@ -66,6 +67,7 @@ public class OrderPayServlet extends HttpServlet {
             session.setAttribute("orderCompleted", orderCompleted);
             session.setAttribute("order", order);
         } else if (orderCompleted != null) {
+            order = orderDAO.order(orderCompletedId);
             session.setAttribute("orderAccepted", orderAccepted);
             session.setAttribute("orderCompleted", orderCompleted);
             session.setAttribute("order", order);
