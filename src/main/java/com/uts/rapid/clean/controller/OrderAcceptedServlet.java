@@ -66,6 +66,7 @@ public class OrderAcceptedServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         String customerId = customer.getId();
+        
         OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
         OrderAccepted orderAccepted = null;
@@ -93,45 +94,17 @@ public class OrderAcceptedServlet extends HttpServlet {
             if (checkOrderCompletedExist == true) {
                 orderCompletedId = orderId;
 //                orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
-                System.out.println(orderCompletedId);
             } else {
                 continue;
             }
         }
-                
-//        try {
-//            orderAccepted = orderDAO.findOrderAccepted(orderIdToUse);
-//        } catch (NullPointerException ex) {
-//            System.out.println(ex.getMessage());
-//        }    
-
-//        if (orderAcceptedId.equals("")) {
-//            System.out.println("no order in orderAccepted");
-//        } else {
-//            orderAccepted = orderDAO.findOrderAccepted(orderAcceptedId);
-//        }
-//
-//        System.out.println("Order id to use" + orderAcceptedId);
-//        
+        
         try {
             orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
         }
-        
-        if (orderAccepted != null) {
-            System.out.println("not nullllll");
-        } else {
-            System.out.println("order accpt null");
-            System.out.println("Order id to use" + orderAcceptedId);
-        }
-        
-        if (orderCompleted != null) {
-            System.out.println("order cpmlte not nullllll");
-        } else {
-            System.out.println("order cpmlte null");
-        }
-        
+                
         if (orderAccepted != null) {
             order = orderDAO.order(orderAcceptedId);
             session.setAttribute("orderAccepted", orderAccepted);
@@ -140,6 +113,10 @@ public class OrderAcceptedServlet extends HttpServlet {
         } else if (orderCompleted != null) {
             session.setAttribute("orderAccepted", orderAccepted);
             session.setAttribute("orderCompleted", orderCompleted);
+        } else {
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
         }
                         
         try {

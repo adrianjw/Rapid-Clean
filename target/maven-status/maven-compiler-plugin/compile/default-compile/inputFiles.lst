@@ -15,6 +15,7 @@
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ConnectionServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ViewRatingServlet.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/ReOrderServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/OrderHistory.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/RejectedOrder.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/resources/JavaEE8Resource.java
@@ -32,6 +33,7 @@
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/PaymentDetails.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/LoginServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Payment.java
+/Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderSortAscendingServlet.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/Order.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/model/dao/CustomerDAO.java
 /Users/trandamtrungthai/Desktop/rapidclean/Rapid-Clean/src/main/java/com/uts/rapid/clean/controller/OrderLoadingServlet.java

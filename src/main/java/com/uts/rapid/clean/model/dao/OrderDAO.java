@@ -1,11 +1,14 @@
 package com.uts.rapid.clean.model.dao;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Projections;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
+import com.mongodb.client.model.Sorts;
 import com.uts.rapid.clean.model.Address;
 import com.uts.rapid.clean.model.Cleaner;
 import com.uts.rapid.clean.model.Order;
@@ -56,10 +59,13 @@ public class OrderDAO implements Serializable {
         addressCollection.insertOne(doc);
     }
     
-    // get addressid using session in servlet 
+    // get addressid using customerId 
     public String findAddress(String customerId) {     
-        Document document = addressCollection.find(eq("customer_id", customerId)).first(); 
-        String addressId = document.get("_id").toString();
+//        Document document = addressCollection.find(eq("customer_id", customerId)).sort(); 
+        FindIterable<Document> cursor = addressCollection.find(eq("customer_id", customerId)).sort(new Document("_id", -1));
+        MongoCursor<Document> iterator = cursor.iterator();
+        Document doc = iterator.next();
+        String addressId = doc.get("_id").toString();
         return addressId;        
     }
     
@@ -90,20 +96,6 @@ public class OrderDAO implements Serializable {
         
         return cleanerId;
     }
-    
-    
-//    public String findOrderId(Date dateTime, String customerId) {
-//        collection = super.database.getCollection("Order");
-//        
-//        BasicDBObject criteria = new BasicDBObject();
-//        criteria.append("dateTime", dateTime);
-//        criteria.append("customer_id", customerId);
-//        
-//        Document document = collection.find(criteria).first();
-//        
-//        String orderId = (String) document.get("_id");
-//        return orderId;
-//    }
     
     public Order order(String orderId) {
         ObjectId orderObjId = new ObjectId(orderId);
@@ -185,6 +177,20 @@ public class OrderDAO implements Serializable {
         Cleaner cleaner = new Cleaner(cleanerId, (String) doc.get("firstName"), (String) doc.get("lastName"), (String) doc.get("email"), (String) doc.get("password"), (String) doc.get("phoneNumber"), (int) doc.get("bankBsbNumber"), (int) doc.get("bankAccountNumber"), (String) doc.get("bankAccountHolderName"));
         
         return cleaner;
+    }
+    
+    public List<Order> findAndSortOrder(String customerId) {
+        List<Order> listOfAscendingOrders = new ArrayList<Order>();
+        FindIterable<Document> cursor = orderCollection.find(eq("customer_id", customerId)).sort(Sorts.descending("dateTime"));
+        
+        MongoCursor<Document> iterator = cursor.iterator();
+        while(iterator.hasNext()) {
+            Document doc = iterator.next();
+            String orderId = doc.get("_id").toString();
+            Order order = new Order(orderId, (String) doc.get("customer_id"), (String) doc.get("address_id"), (String) doc.get("residentialType"), (double) doc.get("hourlyRate"), (String) doc.get("orderCategory"), (String) doc.get("orderCategoryDesc"), (Date) doc.get("dateTime"));
+            listOfAscendingOrders.add(order);
+        }
+        return listOfAscendingOrders;
     }
     
 }

@@ -4,6 +4,7 @@
     Author     : trandamtrungthai
 --%>
 
+<%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.uts.rapid.clean.model.Order"%>
@@ -33,7 +34,7 @@
             String customerId = customer.getId();
             OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
             orderDAO.getOrderList(customerId);
-            ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
+            List<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
             request.setAttribute("orders", orders);
         %>
             <h1>Your Order History</h1>
@@ -43,28 +44,30 @@
                 <button class="card-btn">Search</button>
             </form>
             
-            <form>
-                <button class="card-btn"></button>
+            <form method="get" action="OrderSortAscendingServlet">
+                <button class="card-btn">Sort by Date Ascending</button>
             </form>
-           
-<!--            <div class="card">
-               <div class="card-body">
-                   <h4>Body</h4>
-                   <p class="card-text">This is a sample text</p>
-                   <button class="card-btn">View</button>
-               </div>
-           </div>-->
+          
             <% for (Order order : orders) {%>
+            <form action="ReOrderServlet" method="post">
                 <div class="card">
                    <div class="card-body">
+                       <input type="hidden" name="orderCategory" value="<%=order.getOrderCategory()%>">
+                       <input type="hidden" name="residentialType" value="<%=order.getResidentialType()%>">
+                       <input type="hidden" name="hourlyRate" value="<%=order.getHourlyRate()%>">
+                       <input type="hidden" name="orderCategoryDesc" value="<%=order.getOrderCategoryDesc()%>">
+                       <input type="hidden" name="addressId" value="<%=order.getAddress_id()%>">
+                       
                        <h4><%=order.getId()%></h4>
                        <h4><%=order.getDateTime()%></h4> 
                        <p class="card-text">Service: <%=order.getOrderCategory()%></p>
                        <p class="card-text">Residential Type: <%=order.getResidentialType()%></p>
                        <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%></p>
-                       <!--<button class="card-btn">View</button>-->
+                       <button class="card-btn" type="submit">Re-order</button>
                    </div>
                </div>
+            </form>
+                
             <% } %>
         </div>
     </body>

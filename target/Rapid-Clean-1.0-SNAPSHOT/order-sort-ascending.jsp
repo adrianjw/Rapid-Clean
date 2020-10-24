@@ -1,10 +1,9 @@
 <%-- 
-    Document   : orderhistory
+    Document   : order-sort-ascending
     Created on : 27/08/2020, 1:44:27 PM
     Author     : trandamtrungthai
 --%>
 
-<%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.uts.rapid.clean.model.Order"%>
@@ -34,7 +33,7 @@
             String customerId = customer.getId();
             OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
             orderDAO.getOrderList(customerId);
-            List<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
+            ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
             request.setAttribute("orders", orders);
         %>
             <h1>Your Order History</h1>
@@ -44,12 +43,12 @@
                 <button class="card-btn">Search</button>
             </form>
             
-            <form method="get" action="OrderSortAscendingServlet">
-                <button class="card-btn">Sort by Date Ascending</button>
+            <form method="get" action="OrderHistoryServlet">
+                <button class="card-btn">Sort by Date Descending</button>
             </form>
-          
+            
             <% for (Order order : orders) {%>
-            <form action="ReOrderServlet" method="post">
+                <form action="ReOrderServlet" method="post">
                 <div class="card">
                    <div class="card-body">
                        <input type="hidden" name="orderCategory" value="<%=order.getOrderCategory()%>">
@@ -67,7 +66,6 @@
                    </div>
                </div>
             </form>
-                
             <% } %>
         </div>
     </body>

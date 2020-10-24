@@ -6,11 +6,12 @@
 package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
-import com.uts.rapid.clean.model.OrderAccepted;
+import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author trandamtrungthai
  */
-public class OrderLoadingServlet extends HttpServlet {
+public class OrderSortAscendingServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,34 +35,19 @@ public class OrderLoadingServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Customer customer = (Customer) session.getAttribute("customer");
-        String customerId = customer.getId();
-        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
-        
-        ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
-        OrderAccepted orderAccepted = null;
-        String orderAcceptedId = ""; //this is the orderId to put in parameter to find order
-        for (String orderId : orderIdList) {
-            boolean checkOrderAcceptedExist = orderDAO.checkOrderAcceptedExist(orderId);
-            if (checkOrderAcceptedExist == true) {
-                orderAcceptedId = orderId;
-                orderAccepted = orderDAO.findOrderAccepted(orderAcceptedId);
-            } else {
-                continue;
-            }
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet OrderSortAscendingServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet OrderSortAscendingServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        
-        try {
-            if (orderAccepted != null) { 
-            request.getRequestDispatcher("/OrderPayServlet").forward(request, response);
-            } else { 
-                request.getRequestDispatcher("orderload.jsp").forward(request, response); 
-            }
-        } catch (NullPointerException ex) {
-            System.out.println(ex.getMessage());
-        }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,7 +62,20 @@ public class OrderLoadingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+        String customerId = customer.getId();
+        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+        
+        ArrayList<Order> orders = orderDAO.findOrder(customerId);
+        for (Order order : orders) {
+            System.out.println(order.getOrderCategory());
+        }
+        
+        session.setAttribute("orders", orders);
+        
+        request.getRequestDispatcher("order-sort-ascending.jsp").include(request, response);
+       
     }
 
     /**

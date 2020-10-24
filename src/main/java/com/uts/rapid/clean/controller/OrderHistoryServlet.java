@@ -11,6 +11,7 @@ import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -49,19 +50,16 @@ public class OrderHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
+         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         String customerId = customer.getId();
         OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
-        ArrayList<Order> orders = orderDAO.findOrder(customerId);
-        for (Order order : orders) {
-            System.out.println(order.getOrderCategory());
-        }
+        List<Order> orders = orderDAO.findAndSortOrder(customerId);
         
         session.setAttribute("orders", orders);
         
-        request.getRequestDispatcher("orderhistory.jsp").include(request, response);
+        request.getRequestDispatcher("order-history.jsp").forward(request, response);
     }
 
     /**

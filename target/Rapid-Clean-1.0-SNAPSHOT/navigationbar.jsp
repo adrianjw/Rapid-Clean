@@ -10,7 +10,7 @@
             <header>
                 <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
                 <nav>
-                    <ul class="nav__links">
+                    <ul class="nav-links">
                         <li class="tab"><a href="./OrderAcceptedServlet">Home</a></li>
                         <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>

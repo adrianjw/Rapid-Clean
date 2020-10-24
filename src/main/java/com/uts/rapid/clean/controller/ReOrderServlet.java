@@ -6,11 +6,15 @@
 package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
+import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.OrderAccepted;
+import com.uts.rapid.clean.model.OrderCompleted;
+import com.uts.rapid.clean.model.dao.AddressDAO;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author trandamtrungthai
  */
-public class OrderLoadingServlet extends HttpServlet {
+public class ReOrderServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +39,27 @@ public class OrderLoadingServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        String orderCategory = request.getParameter("orderCategory");
+        String orderCategoryDesc = request.getParameter("orderCategoryDesc");
+        double hourlyRate = Double.parseDouble(request.getParameter("hourlyRate"));
+        String residentialType = request.getParameter("residentialType");
+        String addressId = request.getParameter("addressId");
+        
         Customer customer = (Customer) session.getAttribute("customer");
-        String customerId = customer.getId();
+        
         OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
         
-        ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
+        String customerId = customer.getId();
+        
+        Date dateTime = new Date();
+        
         OrderAccepted orderAccepted = null;
+        Order order = null;
+        OrderCompleted orderCompleted = null;
+        
+        ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
+        
+        //find orderid in orderAccepted
         String orderAcceptedId = ""; //this is the orderId to put in parameter to find order
         for (String orderId : orderIdList) {
             boolean checkOrderAcceptedExist = orderDAO.checkOrderAcceptedExist(orderId);
@@ -52,16 +71,25 @@ public class OrderLoadingServlet extends HttpServlet {
             }
         }
         
-        try {
-            if (orderAccepted != null) { 
-            request.getRequestDispatcher("/OrderPayServlet").forward(request, response);
-            } else { 
-                request.getRequestDispatcher("orderload.jsp").forward(request, response); 
+        //find orderid in orderCompleted
+        String orderCompletedId = "";
+        for (String orderId : orderIdList) {
+            boolean checkOrderCompletedExist = orderDAO.checkOrderCompletedExist(orderId);
+            if (checkOrderCompletedExist == true) {
+                orderCompletedId = orderId;
+                orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
+//                System.out.println(orderCompletedId);
+            } else {
+                continue;
             }
-        } catch (NullPointerException ex) {
-            System.out.println(ex.getMessage());
         }
         
+        if (orderAccepted == null && orderCompleted == null) { 
+            orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
+            request.getRequestDispatcher("orderload.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/OrderPayServlet").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

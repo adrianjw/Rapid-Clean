@@ -2,6 +2,7 @@ package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.Customer;
 import com.uts.rapid.clean.model.Order;
+import com.uts.rapid.clean.model.OrderAccepted;
 import com.uts.rapid.clean.model.OrderCompleted;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
@@ -23,12 +24,24 @@ public class OrderPayServlet extends HttpServlet {
         
         ArrayList<String> orderIdList = orderDAO.getOrderList(customerId);
         
-        // String orderId = orderManager.findOrderId(dateTime, customerId);
+        OrderAccepted orderAccepted = null;
         OrderCompleted orderCompleted = null;
         Order order = null;
         
         for (String orderId : orderIdList) {
             System.out.print(orderId);
+        }
+        
+        //find orderid in orderAccepted
+        String orderAcceptedId = ""; //this is the orderId to put in parameter to find order
+        for (String orderId : orderIdList) {
+            boolean checkOrderAcceptedExist = orderDAO.checkOrderAcceptedExist(orderId);
+            if (checkOrderAcceptedExist == true) {
+                orderAcceptedId = orderId;
+                orderAccepted = orderDAO.findOrderAccepted(orderAcceptedId);
+            } else {
+                continue;
+            }
         }
         
         // check if orderId is in OrderCompleted collection
@@ -50,12 +63,18 @@ public class OrderPayServlet extends HttpServlet {
         }    
        
         // set sesssion for orderCompleted and order object
-        if (orderCompleted != null) {
-            order = orderDAO.order(orderIdToUse); //find order to display more detail information
+        if (orderAccepted != null) {
+            order = orderDAO.order(orderAcceptedId);
+            session.setAttribute("orderAccepted", orderAccepted);
             session.setAttribute("orderCompleted", orderCompleted);
             session.setAttribute("order", order);
+        } else if (orderCompleted != null) {
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
         } else {
-            System.out.println("null");
+            session.setAttribute("orderAccepted", orderAccepted);
+            session.setAttribute("orderCompleted", orderCompleted);
+            session.setAttribute("order", order);
         }
                         
         try {

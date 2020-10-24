@@ -10,9 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Goodbye!</title>
+        <title>Finding your cleaner..</title>
         <link rel="stylesheet" type="text/css" href="css/rapidcleanloading.css">
-        <meta http-equiv="refresh" content="3;url=./OrderLoadingServlet" />
+        <meta http-equiv="refresh" content="3;url=./OrderLoadingServlet"/>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
             .example {

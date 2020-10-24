@@ -48,23 +48,18 @@ public class OrderServlet extends HttpServlet {
             if (checkOrderCompletedExist == true) {
                 orderCompletedId = orderId;
                 orderCompleted = orderDAO.findOrderCompleted(orderCompletedId);
-                System.out.println(orderCompletedId);
+//                System.out.println(orderCompletedId);
             } else {
                 continue;
             }
         }
         
         if (orderAccepted == null && orderCompleted == null) { 
-            request.getRequestDispatcher("orderform.jsp").forward(request, response);
+            request.getRequestDispatcher("order-form.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-        }
-//        String orderCategory = request.getParameter("orderCategory");
-//        int hourlyRate = Integer.parseInt(request.getParameter("hourlyRate"));
-//        session.setAttribute("service", service);
-        
+            request.getRequestDispatcher("/OrderPayServlet").forward(request, response);
+        }        
 
-        request.getRequestDispatcher("order-form.jsp").forward(request, response);
     }
 
     @Override

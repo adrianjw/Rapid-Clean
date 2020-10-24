@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <META HTTP-EQUIV="Refresh" CONTENT="5"; url="./OrderPayServlet">
+        <meta http-equiv="refresh" content="3;url=./OrderPayServlet"/>
         <title>Order Pay</title>
 
         <style>
@@ -99,6 +99,7 @@
         %>
         <div class="container">
         <% if (orderCompleted != null && order != null) {%>
+        <h3>Your order is ready to be paid.</h3>
         <div class="card">
                <div class="card-body">
                    <h4>Order Id: <%= orderCompleted.getOrder_id()%></h4>
@@ -115,12 +116,13 @@
            </div>
         </div>
         <%} else if (orderCompleted == null && orderAccepted != null) {%>
+        <h3>There is an order. Please wait for your order to be completed to book a new one.</h3>
         <div class="card">
             <div class="card-body">
                 <h4><%=orderAccepted.getId()%></h4>
                 <p class="card-text">Service: <%=order.getOrderCategory()%></p>
-                <p class="card-text">Residential Type: <%=order.getResidentialType()%>></p>
-                <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%>></p>
+                <p class="card-text">Residential Type: <%=order.getResidentialType()%></p>
+                <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%></p>
                 <!--<button class="card-btn">View</button>-->
             </div>
         </div>
