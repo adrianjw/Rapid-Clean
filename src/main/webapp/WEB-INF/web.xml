@@ -17,12 +17,9 @@
         <servlet-class>com.uts.rapid.clean.controller.CleanerOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.CleanerSignUpServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ConnectionServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ConnectionServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>CreateAddressServlet</servlet-name>
@@ -53,12 +50,20 @@
         <servlet-class>com.uts.rapid.clean.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>OrderAcceptedServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderAcceptedServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>OrderFormServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.OrderFormServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderHistoryServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.OrderHistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderLoadingServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderLoadingServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderPayServlet</servlet-name>
@@ -69,8 +74,16 @@
         <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>OrderSortAscendingServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.OrderSortAscendingServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>PaymentDetailServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.PaymentDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReOrderServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.ReOrderServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SetAddressServlet</servlet-name>
@@ -81,20 +94,8 @@
         <servlet-class>com.uts.rapid.clean.controller.SignupCleanerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OrderAcceptedServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderAcceptedServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>OrderLoadingServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderLoadingServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>OrderSortAscendingServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderSortAscendingServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ReOrderServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.ReOrderServlet</servlet-class>
+        <servlet-name>SignupCustomerServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.SignupCustomerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TicketCleanerServlet</servlet-name>
@@ -117,6 +118,10 @@
         <servlet-class>com.uts.rapid.clean.controller.TicketStaffServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>TicketUpdateServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.TicketUpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>TicketViewServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.TicketViewServlet</servlet-class>
     </servlet>
@@ -127,10 +132,6 @@
     <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TicketUpdateServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.TicketUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
@@ -147,10 +148,6 @@
     <servlet-mapping>
         <servlet-name>CleanerOrderServlet</servlet-name>
         <url-pattern>/CleanerOrderServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CleanerSignUpServlet</servlet-name>
-        <url-pattern>/CleanerSignUpServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConnectionServlet</servlet-name>
@@ -185,12 +182,20 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>OrderAcceptedServlet</servlet-name>
+        <url-pattern>/OrderAcceptedServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>OrderFormServlet</servlet-name>
         <url-pattern>/OrderFormServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderHistoryServlet</servlet-name>
         <url-pattern>/OrderHistoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderLoadingServlet</servlet-name>
+        <url-pattern>/OrderLoadingServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OrderPayServlet</servlet-name>
@@ -201,8 +206,16 @@
         <url-pattern>/OrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>OrderSortAscendingServlet</servlet-name>
+        <url-pattern>/OrderSortAscendingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>PaymentDetailServlet</servlet-name>
         <url-pattern>/PaymentDetailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReOrderServlet</servlet-name>
+        <url-pattern>/ReOrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SetAddressServlet</servlet-name>
@@ -213,20 +226,8 @@
         <url-pattern>/SignupCleanerServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>OrderAcceptedServlet</servlet-name>
-        <url-pattern>/OrderAcceptedServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OrderLoadingServlet</servlet-name>
-        <url-pattern>/OrderLoadingServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OrderSortAscendingServlet</servlet-name>
-        <url-pattern>/OrderSortAscendingServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ReOrderServlet</servlet-name>
-        <url-pattern>/ReOrderServlet</url-pattern>
+        <servlet-name>SignupCustomerServlet</servlet-name>
+        <url-pattern>/SignupCustomerServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TicketCleanerServlet</servlet-name>
@@ -249,6 +250,10 @@
         <url-pattern>/TicketStaffServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>TicketUpdateServlet</servlet-name>
+        <url-pattern>/TicketUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>TicketViewServlet</servlet-name>
         <url-pattern>/TicketViewServlet</url-pattern>
     </servlet-mapping>
@@ -260,13 +265,7 @@
         <servlet-name>ViewRatingServlet</servlet-name>
         <url-pattern>/ViewRatingServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TicketUpdateServlet</servlet-name>
-        <url-pattern>/TicketUpdateServlet</url-pattern>
-    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
