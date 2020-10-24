@@ -24,13 +24,16 @@ public class TicketDeleteServlet extends HttpServlet {
       protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+         // Gets current session and DAO
         HttpSession session = request.getSession();
         TicketDAO ticketDAO = (TicketDAO) session.getAttribute("ticketDAO");
         
+        // Gets parameters
         Customer customer = (Customer) session.getAttribute("customer");
         Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
-        
         String ticketId = (String) request.getParameter("ticketId");
+        
+        // Deletes the ticket
         ticketDAO.deleteTicket(ticketId);
         
         // Re-directs to ticketborad depending on type of user logged in

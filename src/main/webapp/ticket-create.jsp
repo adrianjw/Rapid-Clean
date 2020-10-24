@@ -28,7 +28,10 @@
         <% } %>
     </head>
     <body class="ticket__bd">
+        <!-- Navigation Bar-->
         <div id="nav-placeholder"></div>
+        
+        <!-- Ticket Create Form: Customer -->
         <div class="ticket-form center">
             <% if ( customer != null ) {%>
             <form style="background-color: #1a1a1a;" method="POST" action="TicketCreateServlet">
@@ -61,10 +64,12 @@
                 <textarea name="comment" class="ticket-description" rows="15"></textarea> 
                 <p style="background-color: #1a1a1a; padding-top: 2%;">
                     <button class="ticket-button" type="submit">Submit</button>
-                    <a class="clear ticket-link" href="TicketCustomerServlet">Cancel</a>
+                    <a class="clear ticket-link" href="contact-us.jsp">Cancel</a>
                 </p>
             </form>
             <% } else if ( cleaner != null ) {%>
+            
+            <!-- Ticket Create Form: Cleaner -->
             <form style="background-color: #1a1a1a;" method="POST" action="TicketCreateServlet">
                 <h1 class="clear" >File a Ticket</h1>
                 <p class="clear">Ticket ID: <%= ticketId.toHexString() %></p>
