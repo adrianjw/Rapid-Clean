@@ -1,51 +1,52 @@
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreateAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCleanerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Rating.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Address.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Cleaner.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\AcceptServiceDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\PaymentDetailsDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\PaymentDetail.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeleteAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderHistoryServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\PaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\OrderDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketStaffServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeletePaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\RatingDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCustomerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\LoginServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderAccepted.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\RejectedOrder.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Ticket.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderRejectedServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketDeleteServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCreateServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Payment.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderHistory.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketCleanerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\MongoDB.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Customer.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\OrderCompleted.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\ViewRatingServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\Order.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderPayServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\TicketDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\Validator.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SignupCustomerServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CleanerDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\UpdateAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\OrderFormServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\model\dao\CustomerDAO.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreatePaymentDetailServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\TicketViewServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\SetAddressServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CleanerOrderServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\DeleteAccountServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\ConnectionServlet.java
-C:\Users\a1998\OneDrive - UTS\2020 Spring\41026 Advanced Software Development\Rapid-Clean\src\main\java\com\uts\rapid\clean\controller\CreateRatingServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerOrderServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CreateRatingServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\OrderPayServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketViewServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\SignupCleanerServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Payment.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\PaymentDetail.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Address.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CreatePaymentDetailServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\OrderAccepted.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\RejectedOrder.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\OrderFormServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketStaffServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\DeletePaymentDetailServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\Validator.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketDeleteServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketCreateServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\ConnectionServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\OrderHistoryServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerOrderRejectedServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\CustomerDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\SignupCustomerServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\OrderHistory.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CreateAddressServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Cleaner.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\DeleteAddressServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\AddressDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\OrderDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\RatingDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\OrderServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\SetAddressServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\ViewRatingServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\resources\JavaEE8Resource.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Ticket.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketCustomerServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Order.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketCleanerServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\AcceptServiceDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\CleanerDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\PaymentDetailServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Rating.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\DeleteAccountServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\UpdateAddressServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\Customer.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\TicketDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\PaymentDetailsDAO.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\LoginServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\controller\TicketUpdateServlet.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\OrderCompleted.java
+D:\UTS Material\2020 Spring\Advanced Software Develpoment\RapidClean\41026-Advanced-Software-Development\src\main\java\com\uts\rapid\clean\model\dao\MongoDB.java

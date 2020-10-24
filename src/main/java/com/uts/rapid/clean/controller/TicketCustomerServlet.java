@@ -26,19 +26,23 @@ public class TicketCustomerServlet extends HttpServlet {
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          
+         // Gets current session and DAO
         HttpSession session = request.getSession();
         TicketDAO ticketDAO = (TicketDAO) session.getAttribute("ticketDAO");
         Customer customer = (Customer) session.getAttribute("customer");
         
+        // Gets parameters
         String customerId = customer.getId();
         
+        // Sets the attribute to list a tickets in the Collection
         try {
             List<Ticket> allTickets = ticketDAO.filterTicketByCustomerId(customerId);
             session.setAttribute("listTickets", allTickets);
         } catch (Exception e) {
             System.out.println("No tickets!");
         }
-
+        
+        // Redirects to their ticketboard
         request.getRequestDispatcher("ticketboard.jsp").forward(request, response);
     }
 

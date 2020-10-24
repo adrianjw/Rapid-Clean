@@ -1,4 +1,5 @@
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
+com\uts\rapid\clean\controller\TicketUpdateServlet.class
 com\uts\rapid\clean\model\PaymentDetail.class
 com\uts\rapid\clean\controller\OrderServlet.class
 com\uts\rapid\clean\model\Address.class
