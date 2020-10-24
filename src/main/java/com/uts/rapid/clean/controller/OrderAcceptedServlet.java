@@ -120,10 +120,10 @@ public class OrderAcceptedServlet extends HttpServlet {
         }
                         
         try {
-            request.getRequestDispatcher("home.jsp").include(request, response);
+            request.getRequestDispatcher("order-pay.jsp").include(request, response);
         } catch (NullPointerException ex) {
             System.out.println(ex.getMessage());
-            request.getRequestDispatcher("home.jsp").include(request, response);
+            request.getRequestDispatcher("order-pay.jsp").include(request, response);
         } 
     }
 

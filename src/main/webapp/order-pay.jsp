@@ -98,7 +98,7 @@
            OrderAccepted orderAccepted = (OrderAccepted) session.getAttribute("orderAccepted");
         %>
         <div class="container">
-        <% if (orderCompleted != null && order != null) {%>
+        <% if (orderCompleted != null) {%>
         <h3>Your order is ready to be paid.</h3>
         <div class="card">
                <div class="card-body">
@@ -115,7 +115,7 @@
                </div>
            </div>
         </div>
-        <%} else if (orderCompleted == null && orderAccepted != null) {%>
+        <%} else if (orderAccepted != null) {%>
         <h3>There is an order. Please wait for your order to be completed to book a new one.</h3>
         <div class="card">
             <div class="card-body">
