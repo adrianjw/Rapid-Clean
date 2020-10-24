@@ -1,3 +1,4 @@
+<%@page import="com.uts.rapid.clean.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,6 +7,7 @@
         <link rel="stylesheet" href="css/navigationbar.css">
     </head>
     <body>
+        <% Customer customer = (Customer) session.getAttribute("customer"); %>
         <div id="sticky">
             <header>
                 <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
@@ -14,7 +16,7 @@
                         <li class="tab"><a href="home.jsp">Home</a></li>
                         <li class="tab"><a href="order.jsp">Book Now</a></li>
                         <li class="tab"><a href="services.jsp">Services</a></li>
-                        <li class="tab"><a href="#">Contact Us</a></li>
+                        <li class="tab"><a href="contact-us.jsp">Contact Us</a></li>
                     </ul>
                 </nav>
                 <div class="dropdown">
@@ -22,9 +24,9 @@
                     <div class="dropdown-content">
                         <a href="my-account.jsp">MY ACCOUNT</a>
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
-                        <a href="#">MY PAYMENT DETAILS</a>
+                        <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a>
                         <a href="my-orders.jsp">MY ORDERS</a>
-                        <a href="LogoutServlet">LOGOUT</a>
+                        <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>
             </header>

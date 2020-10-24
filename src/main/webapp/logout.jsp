@@ -37,5 +37,6 @@
         <div class="a">
             <h1> Please wait while Rapid Clean system is loading... </h1>
         </div>
+        <%session.invalidate();%>
     </body>
 </html>

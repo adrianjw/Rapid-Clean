@@ -1,11 +1,11 @@
 package com.uts.rapid.clean.model.dao;
 
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Projections;
-import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Filters.and;
 import com.uts.rapid.clean.model.Address;
 import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.OrderAccepted;
@@ -57,7 +57,7 @@ public class OrderDAO implements Serializable {
     }
     
     // get addressid using session in servlet 
-    public String findAddress(String customerId) {     
+    public String findAddressId(String customerId) {     
         Document document = addressCollection.find(eq("customer_id", customerId)).first(); 
         String addressId = document.get("_id").toString();
         return addressId;        

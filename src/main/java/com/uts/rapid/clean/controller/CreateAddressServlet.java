@@ -48,7 +48,7 @@ public class CreateAddressServlet extends HttpServlet {
                 request.getRequestDispatcher("my-addresses.jsp").forward(request, response);
             }
             else {
-                session.setAttribute("addressExistError", "Address already exists");
+                session.setAttribute("addressExistError", "This address has already been added");
                 request.getRequestDispatcher("create-address.jsp").forward(request, response);
             }
         }
