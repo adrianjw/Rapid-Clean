@@ -1,9 +1,7 @@
-
 package com.uts.rapid.clean.controller;
 
 import com.uts.rapid.clean.model.dao.TicketDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
