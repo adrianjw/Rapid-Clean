@@ -20,7 +20,9 @@ public class ConnectionServlet extends HttpServlet {
     private AddressDAO addressDAO;
     private OrderDAO orderDAO;
     private RatingDAO ratingDAO;
+    private TicketDAO ticketDAO;
     private AcceptServiceDAO acceptServiceDAO;
+    private PaymentDetailsDAO paymentDetailsDAO;
     
     @Override
     public void init() {
@@ -32,7 +34,9 @@ public class ConnectionServlet extends HttpServlet {
         addressDAO = new AddressDAO(database);
         orderDAO = new OrderDAO(database);
         ratingDAO = new RatingDAO(database);
+        ticketDAO = new TicketDAO(database);
         acceptServiceDAO = new AcceptServiceDAO(database);
+        paymentDetailsDAO = new PaymentDetailsDAO(database);
     }
     
     @Override
@@ -45,7 +49,9 @@ public class ConnectionServlet extends HttpServlet {
         session.setAttribute("addressDAO", addressDAO);
         session.setAttribute("orderDAO", orderDAO);
         session.setAttribute("ratingDAO", ratingDAO);
+        session.setAttribute("ticketDAO", ticketDAO);
         session.setAttribute("acceptServiceDAO", acceptServiceDAO);
+        session.setAttribute("paymentDetailsDAO", paymentDetailsDAO);
         
         session.setAttribute("firstNameError", "");
         session.setAttribute("lastNameError", "");

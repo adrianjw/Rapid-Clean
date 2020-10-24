@@ -1,16 +1,18 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import com.uts.rapid.clean.model.Rating;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
 public class RatingDAO implements Serializable {
-   
+    
     MongoCollection ratingCollection;
     
     // Accessing collection via connection established in MongoDB

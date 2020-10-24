@@ -35,10 +35,10 @@ public class OrderFormServlet extends HttpServlet {
         
         String customerId = customer.getId();
         
-        
         addressDAO.createAddress(customerId, streetAddress, suburb, state, Integer.parseInt(postcode));
         
-        String addressId = orderDAO.findAddress(customerId);
+        String addressId = orderDAO.findAddressId(customerId);
+
         
         orderDAO.addOrder(customerId, addressId, residentialType, hourlyRate, orderCategory, orderCategoryDesc, dateTime);
         

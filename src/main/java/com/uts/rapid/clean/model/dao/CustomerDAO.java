@@ -1,13 +1,13 @@
 package com.uts.rapid.clean.model.dao;
 
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
-import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
-import org.bson.Document;
-import org.bson.types.ObjectId;
+import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.uts.rapid.clean.model.Customer;
 import java.io.Serializable;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class CustomerDAO implements Serializable {
     
@@ -17,23 +17,22 @@ public class CustomerDAO implements Serializable {
         customerCollection = database.getCollection("Customer");
     }
     
-    // Insert a customer document with the specified paramters
+    // Insert a customer document with the given paramters
     public void createCustomer(String firstName, String lastName, String email,
             String password, String phoneNumber) {
-        Document document = new Document("firstName", firstName)
+        customerCollection.insertOne(new Document("firstName", firstName)
                 .append("lastName", lastName)
                 .append("email", email)
                 .append("password", password)
-                .append("phoneNumber", phoneNumber);
-        customerCollection.insertOne(document);
+                .append("phoneNumber", phoneNumber));
     }
     
-    // Find whether a customer document exists with the specified email address
+    // Find whether a customer document exists with the given email address
     public boolean hasCustomer(String email) {
         return customerCollection.find(eq("email", email)).first() != null;
     }
     
-    // Find a customer document with the specified email address and password, then return the customer object
+    // Find a customer document with the given email address and password, then return the customer object
     public Customer findCustomer(String email, String password) {
         Document document = customerCollection.find(and(eq("email", email), eq("password", password))).first();
         if (document != null) {
@@ -46,9 +45,8 @@ public class CustomerDAO implements Serializable {
         }
     }
     
-    // Delete a customer document with the specified customer ID
-    public void deleteCustomer(String id) {
-        ObjectId customer_id = new ObjectId(id);
-        customerCollection.deleteOne(eq("_id", customer_id));
+    // Delete a customer document with the given customer ID
+    public void deleteCustomer(String customerId) {
+        customerCollection.deleteOne(eq("_id", new ObjectId(customerId)));
     }
 }

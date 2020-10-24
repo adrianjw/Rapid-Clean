@@ -23,7 +23,7 @@
                     <td><input type="password" name="password" required></td>
                 </tr>
                 <tr>
-                    <td class="errorMessage"><%=session.getAttribute("loginError")%></td>
+                    <td class="error-message"><%=session.getAttribute("loginError")%></td>
                 </tr>
             </table>
             <button class="regular" type="submit">Login</button>

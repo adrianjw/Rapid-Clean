@@ -2,12 +2,12 @@ package com.uts.rapid.clean.model.dao;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Projections;
-import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Filters.and;
 import com.mongodb.client.model.Sorts;
 import com.uts.rapid.clean.model.Address;
 import com.uts.rapid.clean.model.Cleaner;
@@ -60,12 +60,13 @@ public class OrderDAO implements Serializable {
     }
     
     // get addressid using customerId 
-    public String findAddress(String customerId) {     
+    public String findAddressId(String customerId) {     
 //        Document document = addressCollection.find(eq("customer_id", customerId)).sort(); 
         FindIterable<Document> cursor = addressCollection.find(eq("customer_id", customerId)).sort(new Document("_id", -1));
         MongoCursor<Document> iterator = cursor.iterator();
         Document doc = iterator.next();
         String addressId = doc.get("_id").toString();
+
         return addressId;        
     }
     

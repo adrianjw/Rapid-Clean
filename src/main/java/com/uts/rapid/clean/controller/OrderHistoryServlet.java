@@ -9,7 +9,6 @@ import com.uts.rapid.clean.model.Customer;
 import com.uts.rapid.clean.model.Order;
 import com.uts.rapid.clean.model.dao.OrderDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -35,7 +34,16 @@ public class OrderHistoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+        String customerId = customer.getId();
+        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
+        
+        List<Order> orders = orderDAO.findAndSortOrder(customerId);
+        
+        session.setAttribute("orders", orders);
+        
+        request.getRequestDispatcher("order-history.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -50,16 +58,7 @@ public class OrderHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         HttpSession session = request.getSession();
-        Customer customer = (Customer) session.getAttribute("customer");
-        String customerId = customer.getId();
-        OrderDAO orderDAO = (OrderDAO) session.getAttribute("orderDAO");
-        
-        List<Order> orders = orderDAO.findAndSortOrder(customerId);
-        
-        session.setAttribute("orders", orders);
-        
-        request.getRequestDispatcher("order-history.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
