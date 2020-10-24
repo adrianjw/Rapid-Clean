@@ -26,6 +26,7 @@
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
                         <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a>
                         <a href="my-orders.jsp">MY ORDERS</a>
+                        <a href="TicketCustomerServlet">MY TICKETS</a>
                         <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>

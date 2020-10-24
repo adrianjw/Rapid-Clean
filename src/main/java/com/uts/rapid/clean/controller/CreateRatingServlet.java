@@ -19,7 +19,7 @@ public class CreateRatingServlet extends HttpServlet {
         
         // Get current session, customer, paid order and ratingDAO
         HttpSession session = request.getSession();
-        Customer customer = (Customer) session.getAttribute("Customer");
+        Customer customer = (Customer) session.getAttribute("customer");
         RatingDAO ratingDAO = (RatingDAO) session.getAttribute("ratingDAO");
         
         // Gets all details/parameters/input
