@@ -64,10 +64,6 @@
         <servlet-name>OrderPayServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.OrderPayServlet</servlet-class>
     </servlet>
-<!--    <servlet>
-        <servlet-name>OrderHistoryServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.OrderHistoryServlet</servlet-class>
-    </servlet>-->
     <servlet>
         <servlet-name>OrderServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.OrderServlet</servlet-class>
@@ -200,10 +196,6 @@
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/OrderServlet</url-pattern>
     </servlet-mapping>
-<!--    <servlet-mapping>
-        <servlet-name>OrderHistoryServlet</servlet-name>
-        <url-pattern>/OrderHistoryServlet</url-pattern>
-    </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>PaymentDetailServlet</servlet-name>
         <url-pattern>/PaymentDetailServlet</url-pattern>
