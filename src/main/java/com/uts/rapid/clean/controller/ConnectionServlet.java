@@ -16,6 +16,7 @@ public class ConnectionServlet extends HttpServlet {
     private MongoDatabase database;
     private CustomerDAO customerDAO;
     private CleanerDAO cleanerDAO;
+    private StaffDAO staffDAO;
     private AddressDAO addressDAO;
     private OrderDAO orderDAO;
     private RatingDAO ratingDAO;
@@ -30,6 +31,7 @@ public class ConnectionServlet extends HttpServlet {
         database = mongoDB.getDatabase();
         customerDAO = new CustomerDAO(database);
         cleanerDAO = new CleanerDAO(database);
+        staffDAO = new StaffDAO(database);
         addressDAO = new AddressDAO(database);
         orderDAO = new OrderDAO(database);
         ratingDAO = new RatingDAO(database);
@@ -45,6 +47,7 @@ public class ConnectionServlet extends HttpServlet {
         
         session.setAttribute("customerDAO", customerDAO);
         session.setAttribute("cleanerDAO", cleanerDAO);
+        session.setAttribute("staffDAO", staffDAO);
         session.setAttribute("addressDAO", addressDAO);
         session.setAttribute("orderDAO", orderDAO);
         session.setAttribute("ratingDAO", ratingDAO);

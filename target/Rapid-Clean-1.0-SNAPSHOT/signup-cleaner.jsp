@@ -8,6 +8,7 @@
     </head>
     <body>
         <a href="signup.jsp"><button class="back">←</button></a>
+        <h1>Sign up as cleaner</h1>
         <form action="SignupCleanerServlet" method="POST">
             <table>
                 <tr>
@@ -56,7 +57,7 @@
                     <td class="error-message"><%=session.getAttribute("bankAccountHolderNameError")%></td>
                 </tr>
             </table>
-            <button class="regular" type="submit">Create Account</button>
+            <button class="regular" type="submit">Create account</button>
         </form>
     </body>
 </html>

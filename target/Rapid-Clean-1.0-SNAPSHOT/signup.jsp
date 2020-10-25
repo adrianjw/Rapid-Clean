@@ -10,7 +10,7 @@
     <body>
         <div>
             <a href="index.jsp"><button class="back">←</button></a>
-            <h1>Sign Up As</h1>
+            <h1>Sign up as</h1>
         </div>
         <div>
             <a href="signup-customer.jsp"><button class="customer">Customer</button></a>

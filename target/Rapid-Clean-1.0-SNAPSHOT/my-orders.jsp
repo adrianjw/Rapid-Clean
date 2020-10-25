@@ -60,15 +60,14 @@
     </head>
     <body>
         <div id="nav-placeholder"></div>
-        <div class="container">
+        <div class="container">            
             <form action="OrderPayServlet" method="get">
                 <button class="card-btn btn" type="submit">View unpaid order</button>
             </form>
             
-            <form action="" method="get">
+            <form action="OrderHistoryServlet" method="get">
                 <button class="card-btn btn" type="submit">Order History</button>
-            </form>
-            
+            </form>           
             
         </div>
     </body>

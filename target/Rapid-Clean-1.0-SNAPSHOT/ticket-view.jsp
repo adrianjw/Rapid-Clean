@@ -28,10 +28,16 @@
               $("#nav-placeholder").load("cleaner-navigationbar.jsp");
               });
             </script>
+        <% } else { %>
+            
         <% } %>
-    </head>
+    </head> 
     <body class="ticket__bd">
+        
+        <!-- Navigation Bar -->
         <div id="nav-placeholder"></div>
+        
+        <!-- Ticket View/Details -->
         <div class="ticket-form center">
                 <h1 class="clear">Ticket</h1>
                 <h1 class="clear">ID: <%= ticket.getId() %></h1> <%= ticket.getStatus() %>
@@ -57,7 +63,11 @@
                     <p style="background-color: #1a1a1a; padding-top: 2%;">
                        <a class="clear" href="TicketCleanerServlet"><button class="ticket-button">Back</button></a>
                     </p>
-                <%}%>
+                <%} else {%>
+                    <p style="background-color: #1a1a1a; padding-top: 2%;">
+                       <a class="clear" href="TicketStaffServlet"><button class="ticket-button">Back</button></a>
+                    </p>
+                <% } %>
         </div>
     </body>
 </html>

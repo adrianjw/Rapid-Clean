@@ -1,4 +1,5 @@
 <%@page import="com.uts.rapid.clean.model.Customer"%>
+<%@page import="com.uts.rapid.clean.model.Staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +9,7 @@
     </head>
     <body>
         <% Customer customer = (Customer) session.getAttribute("customer"); %>
+        <% Staff staff = (Staff) session.getAttribute("staff"); %>
         <div id="sticky">
             <header>
                 <img class="logo" src="css/rapidclean-navbar-icon.png" alt ="logo" width="158px" height="50px">
@@ -24,8 +26,10 @@
                     <div class="dropdown-content">
                         <a href="my-account.jsp">MY ACCOUNT</a>
                         <a href="my-addresses.jsp">MY ADDRESSES</a>
-                        <a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a>
+                        <%if (customer != null) {%><a href="PaymentDetailServlet?customerId=<%=customer.getId()%>">MY PAYMENT DETAILS</a><%}%>
                         <a href="my-orders.jsp">MY ORDERS</a>
+                        <%if (customer != null) {%><a href="TicketCustomerServlet">MY TICKETS</a><%}%>
+                        <%if (staff != null) {%><a href="TicketStaffServlet">MY TICKETS</a><%}%>
                         <a href="logout.jsp">LOGOUT</a>
                     </div>
                 </div>

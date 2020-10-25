@@ -1,11 +1,20 @@
+<%-- 
+    Document   : orderhistory
+    Created on : 27/08/2020, 1:44:27 PM
+    Author     : trandamtrungthai
+--%>
+
+<%@page import="com.uts.rapid.clean.model.OrderAccepted"%>
+<%@page import="com.uts.rapid.clean.model.Order"%>
 <%@page import="com.uts.rapid.clean.model.OrderCompleted"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <META HTTP-EQUIV="Refresh" CONTENT="5">
+        <meta http-equiv="refresh" content="7;url=./OrderPayServlet"/>
         <title>Order Pay</title>
+
         <style>
 /*            body {
                 background-color: #24252A;
@@ -85,20 +94,37 @@
     <body>
         <div id="nav-placeholder"></div>
         <% OrderCompleted orderCompleted = (OrderCompleted) session.getAttribute("orderCompleted");
-           double totalAmount = (Double) session.getAttribute("totalAmount");
+           Order order = (Order) session.getAttribute("order");
+           OrderAccepted orderAccepted = (OrderAccepted) session.getAttribute("orderAccepted");
         %>
         <div class="container">
         <% if (orderCompleted != null) {%>
+        <h3>Your order is ready to be paid.</h3>
         <div class="card">
                <div class="card-body">
                    <h4>Order Id: <%= orderCompleted.getOrder_id()%></h4>
-                   <p class="card-text">Hours work: <%= orderCompleted.getWorkedHours()%></p>
+                   <p class="card-text">Total Price: $<%= orderCompleted.getWorkedHours()%></p>
                    <p class="card-text">Start time: <%= orderCompleted.getStartTime()%></p>
                    <p class="card-text">End time: <%= orderCompleted.getEndTime()%></p>
-                   <p class="card-text">Total Amount: $<%=(totalAmount != 0 ? totalAmount : "")%></p>
-                   <button class="card-btn">Pay</button>
+                   <p class="card-text">Service: <%= order.getOrderCategory()%></p>
+                   <p class="card-text">Residential Type: <%= order.getResidentialType()%></p>
+                   <p class="card-text">Hourly Rate: <%= order.getHourlyRate()%></p>
+                   <p class="card-text">Date Ordered <%= order.getDateTime()%></p>
+                   
+                   <button class="card-btn" disabled>Pay</button>
                </div>
            </div>
+        </div>
+        <%} else if (orderAccepted != null) {%>
+        <h3>There is an order. Please wait for your order to be completed to book a new one.</h3>
+        <div class="card">
+            <div class="card-body">
+                <h4><%=orderAccepted.getId()%></h4>
+                <p class="card-text">Service: <%=order.getOrderCategory()%></p>
+                <p class="card-text">Residential Type: <%=order.getResidentialType()%></p>
+                <p class="card-text">Hourly Rate: <%=order.getHourlyRate()%></p>
+                <!--<button class="card-btn">View</button>-->
+            </div>
         </div>
         <%} else {%>
         <h3>There is no order available. Please refresh and try again.</h3>

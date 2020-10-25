@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.uts.rapid.clean.model.dao;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.uts.rapid.clean.model.PaymentDetail;
+import java.io.Serializable;
 import java.util.ArrayList;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-/**
- *
- * @author Bryan Guntoro
- */
-public class PaymentDetailsDAO {
+public class PaymentDetailsDAO implements Serializable {
 
     private MongoCollection<Document> customerCollection;
     private MongoCollection<Document> paymentDetailCollection;
