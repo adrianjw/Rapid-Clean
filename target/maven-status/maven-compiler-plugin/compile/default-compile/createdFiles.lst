@@ -2,6 +2,7 @@ com\uts\rapid\clean\controller\ReOrderServlet.class
 com\uts\rapid\clean\controller\CleanerOrderAcceptedServlet.class
 com\uts\rapid\clean\controller\TicketUpdateServlet.class
 com\uts\rapid\clean\model\PaymentDetail.class
+com\uts\rapid\clean\model\Staff.class
 com\uts\rapid\clean\controller\OrderServlet.class
 com\uts\rapid\clean\model\Address.class
 com\uts\rapid\clean\controller\ConnectionServlet.class
@@ -32,6 +33,7 @@ com\uts\rapid\clean\model\dao\AddressDAO.class
 com\uts\rapid\clean\controller\PaymentDetailServlet.class
 com\uts\rapid\clean\controller\CreateAddressServlet.class
 com\uts\rapid\clean\controller\Validator.class
+com\uts\rapid\clean\model\dao\StaffDAO.class
 com\uts\rapid\clean\model\dao\AcceptServiceDAO.class
 com\uts\rapid\clean\controller\OrderHistoryServlet.class
 com\uts\rapid\clean\controller\DeleteAddressServlet.class
