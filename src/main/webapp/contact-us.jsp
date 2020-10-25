@@ -27,7 +27,7 @@
             <br>Phone: 06 3456 2345
             <br>Email: support@rapidclean.com
             <br><br>Or file a ticket below: <br><br>
-            <button class="ticket-button"><a style="background-color: #51abff;" href="ticket-create.jsp">Create Ticket</a></button>
+            <button class="ticket-button"><a style="background-color: #51abff;" href="create-ticket.jsp">Create Ticket</a></button>
             <button class="ticket-button"><a style="background-color: #51abff;" href="TicketCustomerServlet">My Tickets</a></button>
         </div>
         

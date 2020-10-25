@@ -37,7 +37,7 @@
                 To contact staff for inquires and issues, please file a ticket. Any tickets filed may also be viewed or cancelled below.
             </p>
             
-            <p class="clear" style="float:right;"><a class="clear" href="ticket-create.jsp"><button>Create Ticket</button></a></p>
+            <p class="clear" style="float:right;"><a class="clear" href="create-ticket.jsp"><button>Create Ticket</button></a></p>
 
             <!-- Ticket List -->
             <table class="ticketboard-tb clear center">
@@ -57,8 +57,8 @@
                         <td><c:out value="${ticket.status}"/></td>
                         <td><c:out value="${ticket.date}"/></td>
                         <td>
-                            <a class="ticket-link clear" href="TicketViewServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
-                            <br><br><a class="ticket-link clear" href="TicketDeleteServlet?ticketId=<c:out value="${ticket.id}"/>">Delete</a>
+                            <a class="ticket-link clear" href="ViewTicketServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
+                            <br><br><a class="ticket-link clear" href="DeleteTicketServlet?ticketId=<c:out value="${ticket.id}"/>">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>

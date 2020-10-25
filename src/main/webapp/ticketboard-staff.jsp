@@ -9,6 +9,11 @@
         <link rel="stylesheet" type="text/css" href="css/ticket-support.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+          $(function(){
+          $("#nav-placeholder").load("navigationbar.jsp");
+          });
+        </script>
     </head>
     <body class="ticket__bd">
         
@@ -71,7 +76,7 @@
                     <th>Action</th>
                 </tr>
                 <c:forEach var="ticket" items="${listTickets}">
-                    <form method="POST" action="TicketUpdateServlet?ticketId=<c:out value="${ticket.id}"/>">
+                    <form method="POST" action="UpdateTicketServlet?ticketId=<c:out value="${ticket.id}"/>">
                     <tr>
                         <td><c:out value="${ticket.id}"/></td>
                         <td><c:out value="${ticket.department}"/></td>
@@ -109,7 +114,7 @@
                         <td>
                             <p style="background-color: #1a1a1a; padding-top: 2%;">
                                 <button class="ticket-button" type="submit">Update</button>
-                                <br><br><a style="text-decoration: none; text-align: center;" class="ticket-link" href="TicketViewServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
+                                <br><br><a style="text-decoration: none; text-align: center;" class="ticket-link" href="ViewTicketServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
                             </p>
                         </td>
                     </tr>

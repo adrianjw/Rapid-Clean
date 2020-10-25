@@ -33,7 +33,7 @@ public class TicketCustomerServlet extends HttpServlet {
         }
         
         // Redirects to their ticketboard
-        request.getRequestDispatcher("ticketboard.jsp").forward(request, response);
+        request.getRequestDispatcher("ticketboard-customer.jsp").forward(request, response);
     }
 
     @Override
