@@ -41,6 +41,7 @@ com\uts\rapid\clean\controller\TicketCreateServlet.class
 com\uts\rapid\clean\model\dao\CustomerDAO.class
 com\uts\rapid\clean\controller\CleanerOrderCompletedServlet.class
 com\uts\rapid\clean\controller\OrderPayServlet.class
+.netbeans_automatic_build
 com\uts\rapid\clean\controller\TicketStaffServlet.class
 com\uts\rapid\clean\controller\TicketCustomerServlet.class
 com\uts\rapid\clean\model\Payment.class

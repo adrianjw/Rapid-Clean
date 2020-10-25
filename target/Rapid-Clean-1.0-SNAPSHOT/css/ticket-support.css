@@ -72,6 +72,8 @@ hr { opacity: 0.1; }
     border: 2px solid white;
     border-radius: 5px;
     padding: 1%;
+    color: white;
+    font-family: "Montserrat", sans-serif;
 }
 
 #subject {

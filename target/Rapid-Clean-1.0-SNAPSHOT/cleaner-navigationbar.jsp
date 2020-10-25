@@ -17,7 +17,7 @@
                         <li class="tab"><a href="CleanerOrderServlet?cleanerId=<%=cleaner.getId()%>">Home</a></li>
                         <li class="tab"><a href="#">Earnings</a></li>
                         <li class="tab"><a href="#">Safety Checklist</a></li>
-                        <li class="tab"><a href="#">Contact Us</a></li>
+                        <li class="tab"><a href="TicketCleanerServlet">Contact Us</a></li>
                     </ul>
                 </nav>
                 <div class="dropdown">
