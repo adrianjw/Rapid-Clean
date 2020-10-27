@@ -31,7 +31,7 @@
         <h1 class="clear"> <%= customer.getFirstName() %>'s Ticketboard</h1>
         
             <p class="clear" style="float:right;">
-                <a class="clear" href="ticket-create.jsp">
+                <a class="clear" href="create-ticket.jsp">
                     <button class="ticket-button">Create Ticket</button>
                 </a>
             </p>
@@ -54,8 +54,8 @@
                         <td><c:out value="${ticket.status}"/></td>
                         <td><c:out value="${ticket.date}"/></td>
                         <td>
-                            <a class="ticket-link clear" href="TicketViewServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
-                            <br><br><a class="ticket-link clear" href="TicketDeleteServlet?ticketId=<c:out value="${ticket.id}"/>">Delete</a>
+                            <a class="ticket-link clear" href="ViewTicketServlet?ticketId=<c:out value="${ticket.id}"/>">View</a>
+                            <br><br><a class="ticket-link clear" href="DeleteTicketServlet?ticketId=<c:out value="${ticket.id}"/>">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>

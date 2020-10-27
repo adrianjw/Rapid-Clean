@@ -34,6 +34,10 @@
         <servlet-class>com.uts.rapid.clean.controller.CreateRatingServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CreateTicketServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.CreateTicketServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteAccountServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.DeleteAccountServlet</servlet-class>
     </servlet>
@@ -44,6 +48,10 @@
     <servlet>
         <servlet-name>DeletePaymentDetailServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.DeletePaymentDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteTicketServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.DeleteTicketServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -102,36 +110,28 @@
         <servlet-class>com.uts.rapid.clean.controller.TicketCleanerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TicketCreateServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.TicketCreateServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>TicketCustomerServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.TicketCustomerServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TicketDeleteServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.TicketDeleteServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TicketStaffServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.TicketStaffServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>TicketUpdateServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.TicketUpdateServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TicketViewServlet</servlet-name>
-        <servlet-class>com.uts.rapid.clean.controller.TicketViewServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>UpdateAddressServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.UpdateAddressServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.UpdateTicketServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ViewRatingServlet</servlet-name>
         <servlet-class>com.uts.rapid.clean.controller.ViewRatingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewTicketServlet</servlet-name>
+        <servlet-class>com.uts.rapid.clean.controller.ViewTicketServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CleanerOrderAcceptedServlet</servlet-name>
@@ -166,6 +166,10 @@
         <url-pattern>/CreateRatingServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>CreateTicketServlet</servlet-name>
+        <url-pattern>/CreateTicketServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>DeleteAccountServlet</servlet-name>
         <url-pattern>/DeleteAccountServlet</url-pattern>
     </servlet-mapping>
@@ -176,6 +180,10 @@
     <servlet-mapping>
         <servlet-name>DeletePaymentDetailServlet</servlet-name>
         <url-pattern>/DeletePaymentDetailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteTicketServlet</servlet-name>
+        <url-pattern>/DeleteTicketServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -234,36 +242,28 @@
         <url-pattern>/TicketCleanerServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TicketCreateServlet</servlet-name>
-        <url-pattern>/TicketCreateServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>TicketCustomerServlet</servlet-name>
         <url-pattern>/TicketCustomerServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TicketDeleteServlet</servlet-name>
-        <url-pattern>/TicketDeleteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TicketStaffServlet</servlet-name>
         <url-pattern>/TicketStaffServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TicketUpdateServlet</servlet-name>
-        <url-pattern>/TicketUpdateServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TicketViewServlet</servlet-name>
-        <url-pattern>/TicketViewServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>UpdateAddressServlet</servlet-name>
         <url-pattern>/UpdateAddressServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <url-pattern>/UpdateTicketServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ViewRatingServlet</servlet-name>
         <url-pattern>/ViewRatingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewTicketServlet</servlet-name>
+        <url-pattern>/ViewTicketServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

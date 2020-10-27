@@ -1,5 +1,6 @@
 package com.uts.rapid.clean.controller;
 
+import com.uts.rapid.clean.model.*;
 import com.uts.rapid.clean.model.dao.TicketDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,28 +9,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class TicketUpdateServlet extends HttpServlet {
+public class DeleteTicketServlet extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // Gets current session and DAO layer
+         // Gets current session and DAO
         HttpSession session = request.getSession();
         TicketDAO ticketDAO = (TicketDAO) session.getAttribute("ticketDAO");
         
         // Gets parameters
-        String status = (String) request.getParameter("status-fd");
-        String priority = (String) request.getParameter("priority-fd");
+        Customer customer = (Customer) session.getAttribute("customer");
+        Cleaner cleaner = (Cleaner) session.getAttribute("cleaner");
         String ticketId = (String) request.getParameter("ticketId");
         
-        // Test: Print the parameter values
-        System.out.println(status + " " + priority);
+        // Deletes the ticket
+        ticketDAO.deleteTicket(ticketId);
         
-        // Update the document
-        ticketDAO.updateTicket(ticketId, status, priority);
-        
-        // Redirects to the staff ticketboard
-        request.getRequestDispatcher("TicketStaffServlet").forward(request, response);
+        // Re-directs to ticketborad depending on type of user logged in
+        if ( customer != null ) {
+            request.getRequestDispatcher("TicketCustomerServlet").forward(request, response);
+        } else if ( cleaner != null ) {
+            request.getRequestDispatcher("TicketCleanerServlet").forward(request, response);
+        }
     }
 
     @Override

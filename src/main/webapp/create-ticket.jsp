@@ -34,7 +34,7 @@
         <!-- Ticket Create Form: Customer -->
         <div class="ticket-form center">
             <% if ( customer != null ) {%>
-            <form style="background-color: #1a1a1a;" method="POST" action="TicketCreateServlet">
+            <form style="background-color: #1a1a1a;" method="POST" action="CreateTicketServlet">
                 <h1 class="clear" >File a Ticket</h1>
                 <p class="clear">Ticket ID: <%= ticketId.toHexString() %></p>
                 <input type="hidden" name="ticketId" value="<%= ticketId.toHexString() %>">
@@ -70,7 +70,7 @@
             <% } else if ( cleaner != null ) {%>
             
             <!-- Ticket Create Form: Cleaner -->
-            <form style="background-color: #1a1a1a;" method="POST" action="TicketCreateServlet">
+            <form style="background-color: #1a1a1a;" method="POST" action="CreateTicketServlet">
                 <h1 class="clear" >File a Ticket</h1>
                 <p class="clear">Ticket ID: <%= ticketId.toHexString() %></p>
                 <input type="hidden" name="cleaner-ticketId" value="<%= ticketId.toHexString() %>">
